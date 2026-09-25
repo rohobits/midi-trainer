@@ -32,9 +32,10 @@ test('browse lists paths, the daily challenge and more than 80 DJ drills', async
   await expect(page.locator('#dailyBtn')).toBeVisible();
   await expect(page.locator('section.path')).toHaveCount(6);
   expect(await page.locator('a.drillcard').count()).toBeGreaterThan(80);
-  await expect(page.locator('a.drillcard[data-drill="phrase-counting"] .badge.lock')).toContainText('unmapped');
-  await page.evaluate((m) => window.__trainer.setMap(m), MAP);
+  // The shipped FLX4 default map covers every control, so nothing is locked for mapping.
   await expect(page.locator('a.drillcard[data-drill="phrase-counting"] .badge.lock')).toHaveCount(0);
+  await page.evaluate(() => window.__trainer.setMap({}));
+  await expect(page.locator('a.drillcard[data-drill="phrase-counting"] .badge.lock')).toContainText('unmapped');
 });
 
 test('practice: Space starts the clock and an injected note-on scores a Perfect; extra presses count', async ({ page }) => {
@@ -98,4 +99,41 @@ test('piano, dashboard, settings and calibration views render', async ({ page })
   await expect(page.locator('.form label').first()).toContainText('Theme');
   await ready(page, 'calibrate');
   await expect(page.locator('.wizard .step')).toHaveText('Ready');
+});
+
+test('editor validates JSON and saves a custom drill; decks, report and replay views render', async ({ page }) => {
+  await ready(page, 'editor');
+  await expect(page.locator('#jsonErr')).toContainText('Valid');
+  await page.fill('#drillJson', '{"id":"custom-e2e","name":"E2E","tier":"Custom","profile":"flx4","bpm":120,"bars":1,"targets":[{"type":"tap","c":"hcA1","t":0}],"lesson":"## x"}');
+  await expect(page.locator('#jsonErr')).toContainText('1 targets');
+  await page.click('#saveDrill');
+  await expect(page.locator('#toast')).toContainText('Saved');
+  await page.fill('#drillJson', '{"id":"Bad Id","name":"x"}');
+  await expect(page.locator('#jsonErr')).toContainText('id');
+  await ready(page, 'mix');
+  await expect(page.locator('#mixStart')).toBeVisible();
+  await expect(page.locator('.deckcard')).toHaveCount(2);
+  await ready(page, 'report');
+  await expect(page.locator('h2').first()).toContainText('Practice report');
+  await ready(page, 'placement');
+  await expect(page.locator('#placementStart')).toBeVisible();
+});
+
+test('history and replay work after a finished attempt', async ({ page }) => {
+  await ready(page, 'editor');
+  await page.fill('#drillJson', '{"id":"custom-e2e","name":"E2E","tier":"Custom","profile":"flx4","bpm":120,"bars":1,"targets":[{"type":"tap","c":"hcA1","t":0}],"lesson":"## x"}');
+  await page.click('#saveDrill');
+  await expect(page.locator('#toast')).toContainText('Saved');
+  await page.evaluate(() => window.__trainer.navigate('practice/custom-e2e'));
+  await page.waitForFunction(() => location.hash.includes('custom-e2e') && !!window.__practice?.run());
+  await page.evaluate((m) => window.__trainer.setMap(m), MAP);
+  await page.keyboard.press('Space');
+  await page.evaluate(() => window.__trainer.injectMidi([0x90, 11, 100], window.__practice.startedAt() + 10));
+  await expect.poll(() => page.evaluate(() => window.__practice.run()?.phase), { timeout: 8000 }).toBe('finished');
+  await ready(page, 'history/custom-e2e');
+  await expect(page.locator('table tbody tr')).toHaveCount(1);
+  await page.click('table tbody tr button');
+  await page.waitForFunction(() => location.hash.startsWith('#/replay/'));
+  await expect(page.locator('#replayPlay')).toBeVisible();
+  await expect(page.locator('#scrub')).toBeVisible();
 });

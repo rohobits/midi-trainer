@@ -78,3 +78,19 @@ describe('profiles', () => {
     expect(v.playA).toBe(0);
   });
 });
+
+describe('FLX4 default map', () => {
+  it('maps only known controls, every entry verified, no two controls on the same key', async () => {
+    const { FLX4_DEFAULT_MAP } = await import('../src/profiles/flx4/default-map');
+    const ids = new Set(FLX4_CONTROLS.map((c) => c.id));
+    const keys = new Set<string>();
+    for (const [c, e] of Object.entries(FLX4_DEFAULT_MAP)) {
+      expect(ids.has(c), `unknown control ${c}`).toBe(true);
+      expect(e.verified, `${c} not verified`).toBe(true);
+      expect(keys.has(e.key), `${c} shares key ${e.key}`).toBe(false);
+      keys.add(e.key);
+    }
+    expect(Object.keys(FLX4_DEFAULT_MAP).length).toBeGreaterThan(150);
+    expect(FLX4_DEFAULT_MAP.playA?.key).toBe('n:0:11');
+  });
+});

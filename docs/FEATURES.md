@@ -65,6 +65,15 @@ See `docs/research/skills.md` for the full cited taxonomy. Mapping of each techn
 - **Advanced**: hot cue drumming (ALTERNATE M2; prototype M1); cue juggling (SEQUENCE, M3); word play (A); tone play (M3, A); stem swaps (CROSS M2 schema, A); live remixing (M3); scratching basic and advanced (JOG STROKE + ALTERNATE, M3); routines (M3); beat juggling (M3, A); cue-point scratch (M3).
 - **Pro/signature**: Cox (M3, needs 3 decks), Hype (M2/M3, 2-deck reduction), Fisher (M2), de Witte (M1/M2), Skrillex (M3), Craze and A-Trak (M3), Flash (M3, A).
 
+## Build status (September 2026)
+
+Milestones 1–5 are implemented in this repository; see the README for the feature list as
+shipped. Milestone 6 is documented in `docs/MONETISATION.md` and awaits owner decisions.
+The sync spike is written up in `docs/SYNC.md`. Items that need real hardware: the FLX4
+default map (empty until an export from a learn session is committed) and jog-wheel tick
+scaling (relative-encoder deltas are consumed as sent; the `minTicks` threshold may need
+tuning on the actual wheel).
+
 ## Milestones
 
 - **M1 — v1, parity plus.** PR 1 repo, engine core, docs; PR 2 FLX4 profile; PR 3 Piano88 parity; PR 4 history, settings, calibration. Exit: works on Chrome + FLX4 + rekordbox; exported map committed.

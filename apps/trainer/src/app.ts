@@ -1,5 +1,5 @@
 import {
-  MidiAccess, Sounds, TrainerDb, MidiClock, FLX4_PROFILE, GENERIC_PROFILE, DEFAULT_SETTINGS,
+  MidiAccess, Sounds, TrainerDb, MidiClock, FLX4_PROFILE, GENERIC_PROFILE, DEFAULT_SETTINGS, FLX4_DEFAULT_MAP,
   controlById, controlKinds, defaultValues, mappedControls, reverseMap, relativeDelta, readLegacy, totalXp, levelFor, xpForAttempt,
   practiceByDay, streakInfo,
   type ControlMap, type Drill, type MidiEvent, type Profile, type Settings, type AttemptRecord, type StoredDrill,
@@ -151,6 +151,10 @@ export class App {
   async setProfile(id: string): Promise<void> {
     this.profile = PROFILES[id] ?? FLX4_PROFILE;
     this.map = await this.db.getMap(this.profile.id);
+    if (!Object.keys(this.map).length && this.profile.id === 'flx4') {
+      this.map = structuredClone(FLX4_DEFAULT_MAP);
+      await this.db.saveMap('flx4', this.map);
+    }
     this.rev = reverseMap(this.map);
     this.values = defaultValues(this.profile);
     this.learn = createLearnUi(this.profile, this.map, (map) => {

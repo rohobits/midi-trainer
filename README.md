@@ -55,7 +55,7 @@ in beats from the start, 4/4; values are 0–1. Minimal example:
 }
 ```
 
-Target types in v1: `tap`, `ramp`, `hold`, `note`. The schema lives in
+Target types: `tap`, `ramp`, `hold`, `note`, `cut`, `cross`, `alternate`, `step`, `jog`, `select`, `sequence`. The schema lives in
 `packages/engine/src/drills/schema.ts` and every file under `content/` is validated in CI.
 You can also load a drill file at runtime with **Load drill .json**.
 
@@ -80,8 +80,26 @@ Carried over from the prototypes and tunable per drill (`thresholds`) or globall
 | judgement tiers | Perfect ±40 ms, Great ±90 ms, OK ±140 ms |
 | medals | bronze 80, silver 90, gold 96 |
 
-## Status
+## What's in the app
 
-Milestone 1, PR 1: engine, schema, judges, FLX4 and generic profiles, 18 migrated drills,
-DJ drill runner. Piano runner, learn-dialog polish, history views, settings and calibration
-follow in the next three PRs. See `docs/FEATURES.md`.
+- **Drills**: 91 DJ drills across Foundations, Mixing, Performance, Advanced and Pro
+  (signature moves, source-cited), organised into six paths with levels; 5 piano exercises;
+  a generator (templates × genre presets); the daily challenge; a spaced review queue; the
+  placement test.
+- **Practice**: ms-accurate judging with Perfect / Great / OK tiers and medals, tempo scale,
+  section loop, wait mode, deck or mixer isolation, master mode, performance mode
+  (multiplier, Euphoria, energy, stars), ghost of your best run, on-screen controller.
+- **Piano**: falling notes, wait / play-along, hands, guide tones, `.mid` import.
+- **Decks**: two synthesized tracks (no licensed audio) through an FLX4-shaped mixer with
+  EQ, filter, echo, loops, hot cues, sync, jog nudge, brake and backspin. Free-mix session
+  scoring, beatmatch-by-ear with strobe dots and reveal, song mode with a crowd meter and
+  requests.
+- **Progress**: streaks, daily goal, trophies, calendar, XP and levels, records, medals by
+  tier, accuracy by control type, timing histograms, replay scrubber, printable report.
+- **Editor**: timeline plus JSON with live validation, pack export / import.
+- **Settings**: thresholds, strictness, calibration wizard with per-device offsets, themes,
+  backup export / import. Installs as a PWA.
+
+Milestone 6 (accounts, sync, leaderboards, paid tiers) is deliberately not built; the
+decisions it needs are listed in `docs/MONETISATION.md`. The sync investigation is in
+`docs/SYNC.md`.

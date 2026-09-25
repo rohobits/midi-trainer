@@ -10,6 +10,7 @@ import { $, el } from '../ui/dom';
 import { md } from '../ui/markdown';
 import { createStage } from '../ui/stage';
 import { createController } from '../ui/controller';
+import { getMixer } from './mix';
 
 function isControlDrill(d: Drill): boolean {
   return d.targets.every((t) => t.type !== 'note');
@@ -176,7 +177,7 @@ export const practiceView: View = (root, app, params) => {
     bpmInput.value = String(d.bpm);
     stage.title.textContent = d.name;
     const av = availability(d, app.mapped(), { capabilities: new Set(app.profile.capabilities) });
-    const reasons = av.reasons.map((r) => (r.kind === 'unmapped' ? `Unmapped: ${r.controls.map((c) => names[c] ?? c).join(', ')}. Open Map controls.` : r.kind === 'needsAudio' ? 'Needs the audio decks (open Decks and load two tracks).' : `Needs hardware this profile lacks: ${r.hardware.join(', ')}.`));
+    const reasons = av.reasons.map((r) => (r.kind === 'unmapped' ? `Unmapped: ${r.controls.map((c) => names[c] ?? c).join(', ')}. Open Map controls.` : r.kind === 'needsAudio' ? (getMixer()?.a.loaded ? '' : 'Best with audio: open Decks, start audio and load two tracks; deck A then plays along with this drill.') : `Needs hardware this profile lacks: ${r.hardware.join(', ')}.`)).filter(Boolean);
     lessonCard.innerHTML = md(d.lesson || '## Loaded drill\n\nCustom drill from file.') + (d.sources?.length ? `<h3>Sources</h3><p>${d.sources.map((u) => `<a href="${u}" target="_blank" rel="noopener">${new URL(u).hostname}</a>`).join(' · ')}</p>` : '') + (d.artist ? `<p class="hint">Technique attributed to ${d.artist} by the sources above.</p>` : '') + (reasons.length ? `<p class="hint">${reasons.join(' ')}</p>` : '');
     $('hint').textContent = `${d.bars} bars at ${d.bpm} BPM · ${d.tier}${d.path ? ` · ${d.path} L${d.level ?? '?'}` : ''}. Play A (or Space) on a phrase downbeat starts the clock.`;
     void app.saveSettings({ lastDrill: d.id });
@@ -211,6 +212,7 @@ export const practiceView: View = (root, app, params) => {
     const now = performance.now();
     if (run.active) {
       run.stop(now);
+      getMixer()?.a.pause();
       playBtn.textContent = 'Start';
       cancelAnimationFrame(raf);
       return;
@@ -218,6 +220,13 @@ export const practiceView: View = (root, app, params) => {
     if (run.phase === 'finished' || run.phase === 'failed') newRun();
     startedAt = now;
     run!.start(now);
+    // Audio-backed drills: start deck A from the top so the judged moves are heard.
+    const mixer = getMixer();
+    if (drill!.needsAudio && mixer?.a.loaded) {
+      mixer.a.seek(0);
+      mixer.a.play(0);
+      if (mixer.b.loaded) mixer.b.seek(0);
+    }
     playBtn.textContent = 'Stop';
     stage.result.style.display = 'none';
     loop();
@@ -342,6 +351,23 @@ export const practiceView: View = (root, app, params) => {
     if (!run.active && Object.keys(run.flashes).length) requestAnimationFrame(draw);
   }
 
+  /** While an audio-backed drill runs, the mixer follows faders, EQ, filter and crossfader too. */
+  function routeToMixer(ev: ControlEvent): void {
+    const m = getMixer();
+    if (!m || !drill?.needsAudio || ev.kind !== 'cc') return;
+    const d = ev.c.endsWith('A') ? m.a : ev.c.endsWith('B') ? m.b : null;
+    const base = ev.c.replace(/[AB]$/, '');
+    if (d) {
+      if (base === 'fader') d.setFader(ev.value);
+      else if (base === 'low') d.setEq('low', ev.value);
+      else if (base === 'mid') d.setEq('mid', ev.value);
+      else if (base === 'hi') d.setEq('high', ev.value);
+      else if (base === 'filt') d.setFilter(ev.value);
+      else if (base === 'tempo') d.setTempoFader(ev.value);
+      else if (base === 'trim') d.setTrim(ev.value);
+    } else if (ev.c === 'xf') m.setCrossfader(ev.value);
+  }
+
   function step(dir: 1 | -1): void {
     const i = ordered.findIndex((d) => d.id === drill!.id);
     const n = ordered[(i + dir + ordered.length) % ordered.length];
@@ -422,6 +448,7 @@ export const practiceView: View = (root, app, params) => {
   offs.push(
     app.on('control', (ev) => {
       updateExplain(ev);
+      routeToMixer(ev);
       if (!run) return;
       if (ev.kind === 'midi' as never) return;
       if (ev.kind === 'tap') {
