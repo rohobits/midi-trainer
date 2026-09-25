@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Piano Trainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#EFE9DC; --panel:#F7F3EA; --ink:#1E1B18; --muted:#6B6459; --line:#D8D0C0;
+  --ivory:#FBF8F0; --ebony:#231F1B; --keyline:#B9B0A0;
+  --rh:#D9A441; --lh:#6F8FB8; --ok:#3E9A62; --bad:#C63B32; --hit:#3E9A62;
+  --font:"Manrope","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1E1B18; --panel:#27231F; --ink:#F1ECE1; --muted:#A79E8F; --line:#3A342D;
+    --ivory:#EFEADC; --ebony:#15120F; --keyline:#8C8375;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1E1B18; --panel:#27231F; --ink:#F1ECE1; --muted:#A79E8F; --line:#3A342D;
+  --ivory:#EFEADC; --ebony:#15120F; --keyline:#8C8375;
+}
+*{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.5}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:7px 12px}
+button:hover{border-color:var(--ink)}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--rh);outline-offset:2px}
+button.primary{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:700;min-width:96px}
+button.on{background:var(--rh);color:#1E1B18;border-color:var(--rh)}
+select,input[type=number]{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:7px 10px}
+.wrap{max-width:1180px;margin:0 auto;padding:14px 16px 40px}
+header{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-bottom:10px}
+header h1{font-size:20px;font-weight:800;letter-spacing:-.01em;margin:0 8px 0 0}
+.status{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--bad);display:inline-block}
+.dot.on{background:var(--ok)}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:8px 0 12px}
+.group{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.group label{color:var(--muted);font-size:13px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{border:0;border-radius:0;border-right:1px solid var(--line);padding:7px 11px}
+.seg button:last-child{border-right:0}
+.seg button.on{background:var(--ink);color:var(--bg)}
+#stage{position:relative;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;touch-action:none}
+canvas{display:block;width:100%}
+.overlay{position:absolute;left:0;right:0;top:0;padding:14px 16px;pointer-events:none;display:flex;justify-content:space-between;font-weight:600}
+.overlay .big{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.overlay .sub{font-size:13px;color:var(--muted);font-weight:500}
+.waitmsg{position:absolute;left:50%;top:38%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:8px;font-weight:700;font-size:14px;display:none}
+.below{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:14px}
+@media(max-width:820px){.below{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.card h2{font-size:15px;font-weight:800;margin:0 0 8px}
+.card p{margin:0 0 10px;max-width:68ch}
+.card p:last-child{margin-bottom:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.stat b{display:block;font-size:24px;font-weight:800;letter-spacing:-.02em}
+.stat span{font-size:12px;color:var(--muted)}
+.legend{display:flex;gap:14px;font-size:13px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+.file{position:relative;overflow:hidden;display:inline-block}
+.file input{position:absolute;inset:0;opacity:0;cursor:pointer}
+kbd{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:0 5px;font-family:inherit;font-size:12px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Piano Trainer</h1>
+  <div class="status"><span class="dot" id="dot"></span><span id="devname">Connecting to MIDI…</span></div>
+  <button id="midiBtn">Connect keyboard</button>
+</header>
+
+<div class="toolbar">
+  <div class="group">
+    <label for="ex">Exercise</label>
+    <select id="ex"></select>
+    <span class="file"><button>Load .mid</button><input type="file" id="midfile" accept=".mid,.midi"></span>
+  </div>
+  <div class="group">
+    <label>Mode</label>
+    <div class="seg" id="modeSeg"><button data-v="wait" class="on">Wait for me</button><button data-v="play">Play along</button></div>
+  </div>
+  <div class="group">
+    <label>Hands</label>
+    <div class="seg" id="handSeg"><button data-v="B" class="on">Both</button><button data-v="R">Right</button><button data-v="L">Left</button></div>
+  </div>
+  <div class="group">
+    <label for="bpm">Tempo</label>
+    <input type="range" id="bpm" min="30" max="180" value="70" style="width:120px"><span id="bpmv">70</span>
+  </div>
+  <div class="group">
+    <label for="bar">Start bar</label>
+    <input type="number" id="bar" min="1" value="1" style="width:64px">
+    <button id="loopBtn">Loop</button>
+    <button id="guideBtn">Guide sound</button>
+    <button id="clickBtn">Metronome</button>
+  </div>
+  <div class="group">
+    <button class="primary" id="playBtn">Start</button>
+    <button id="resetBtn">Restart</button>
+  </div>
+</div>
+
+<div id="stage">
+  <canvas id="cv"></canvas>
+  <div class="overlay"><div><div class="big" id="title"></div><div class="sub" id="barinfo"></div></div><div class="sub" id="nextnote"></div></div>
+  <div class="waitmsg" id="waitmsg">Play the highlighted keys</div>
+</div>
+
+<div class="below">
+  <div class="card" id="lesson"><h2></h2></div>
+  <div class="card">
+    <h2>This run</h2>
+    <div class="stats">
+      <div class="stat"><b id="sAcc">—</b><span>accuracy</span></div>
+      <div class="stat"><b id="sWrong">0</b><span>wrong notes</span></div>
+      <div class="stat"><b id="sMiss">0</b><span>missed (play along)</span></div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--rh)"></i>right hand</span>
+      <span><i style="background:var(--lh)"></i>left hand</span>
+      <span><i style="background:var(--ok)"></i>correct</span>
+      <span><i style="background:var(--bad)"></i>wrong key</span>
+    </div>
+    <p style="margin-top:12px;color:var(--muted);font-size:13px">Open this in Chrome or Edge on a laptop with the Casio plugged in by USB (the square USB-B port on the back). Bluetooth MIDI via the WU-BT10 also works in Chrome. Click on-screen keys to test without a keyboard. <kbd>Space</kbd> starts and pauses.</p>
+  </div>
+</div>
+</div>
+
+<script>
+// ---------- Built-in exercises (beats: 4/4, t = start beat, d = duration in beats) ----------
+function seq(hand, start, notes, dur){ return notes.map((n,i)=>({n, t:start+i*dur, d:dur, h:hand})); }
+function chord(hand, t, notes, d){ return notes.map(n=>({n,t,d,h:hand})); }
+
+const EX = [];
+EX.push({ name:"1 · C major scale, right hand", bpm:70, notes:[
+  ...seq('R',0,[60,62,64,65,67,69,71,72,71,69,67,65,64,62,60],1)],
+  lesson:`<h2>Why this first</h2>
+  <p>Every song in C major is built from these seven notes. The scale is the alphabet; chords and melodies are the words. Play with your right hand starting on middle C (the C nearest the middle of the keyboard).</p>
+  <p>Fingering going up: thumb 1, 2, 3, then tuck the thumb under to 1, 2, 3, 4, 5. Coming down is the mirror: 5 4 3 2 1, then cross the 3rd finger over the thumb, 3 2 1. The thumb tuck is the whole skill here; go slow enough that it never feels rushed.</p>
+  <p>Listen for the pattern of gaps: two whole steps, a half step, three whole steps, a half step. That W W H W W W H recipe is what makes anything sound "major".</p>`});
+
+EX.push({ name:"2 · C major scale, left hand", bpm:70, notes:[
+  ...seq('L',0,[48,50,52,53,55,57,59,60,59,57,55,53,52,50,48],1)],
+  lesson:`<h2>Same alphabet, other hand</h2>
+  <p>Start on the C one octave below middle C with your pinky. Fingering going up: 5 4 3 2 1, then cross the 3rd finger over the thumb, 3 2 1. Coming down: 1 2 3, tuck the thumb under to 1, 2 3 4 5.</p>
+  <p>The left hand feels weaker because it is. Play at a tempo where every note is even in volume, and drop the tempo slider until that is true.</p>`});
+
+EX.push({ name:"3 · The four chords: C, F, G, Am", bpm:60, notes:[
+  ...chord('R',0,[60,64,67],4), ...chord('L',0,[48],4),
+  ...chord('R',4,[65,69,72],4), ...chord('L',4,[53],4),
+  ...chord('R',8,[67,71,74],4), ...chord('L',8,[55],4),
+  ...chord('R',12,[69,72,76],4), ...chord('L',12,[57],4)],
+  lesson:`<h2>How chords are built</h2>
+  <p>A triad is three notes from the scale, skipping one each time: pick a note, skip one, pick, skip, pick. Start on C and you get C E G. Start on F and you get F A C. That skip-one rule is why chords look like a stack of every-other key under your hand.</p>
+  <p>In C major, the chords on the 1st, 4th and 5th notes (C, F, G) are major and feel bright. The chord on the 6th note (A minor) is minor and feels darker, because its middle note is a half step lower. Same shape, one note moved, completely different mood.</p>
+  <p>Left hand plays the root of each chord; right hand plays all three. Hold each for a full bar and hear how G wants to go back to C.</p>`});
+
+EX.push({ name:"4 · I–V–vi–IV progression (C, G, Am, F)", bpm:72, notes:[
+  ...seq('R',0,[60,64,67,72],1), ...chord('L',0,[48],4),
+  ...seq('R',4,[67,71,74,79],1), ...chord('L',4,[43],4),
+  ...seq('R',8,[69,72,76,81],1), ...chord('L',8,[45],4),
+  ...seq('R',12,[65,69,72,77],1), ...chord('L',12,[41],4)],
+  lesson:`<h2>The progression behind thousands of songs</h2>
+  <p>Musicians number chords by which scale note they sit on, using Roman numerals: C is I, G is V, A minor is vi, F is IV. I–V–vi–IV is the pop progression: Let It Be, Don't Stop Believin', With or Without You, half the Top 40.</p>
+  <p>Why it works: I is home. V is the tension that pulls hardest back to home. vi is the sad cousin of I (it shares two of its three notes). IV is a gentle lift that sets up the return. Tension, release, colour, lift, repeat.</p>
+  <p>Right hand plays each chord broken into an arpeggio (one note at a time, root to octave). Left hand holds the root. Once it is clean, try playing the right hand as a block chord on beat 1 instead.</p>`});
+
+EX.push({ name:"5 · Ode to Joy (first 8 bars)", bpm:80, notes:[
+  ...seq('R',0,[64,64,65,67],1), ...chord('L',0,[48],4),
+  ...seq('R',4,[67,65,64,62],1), ...chord('L',4,[43],4),
+  ...seq('R',8,[60,60,62,64],1), ...chord('L',8,[48],4),
+  {n:64,t:12,d:1.5,h:'R'},{n:62,t:13.5,d:.5,h:'R'},{n:62,t:14,d:2,h:'R'}, ...chord('L',12,[43],2), ...chord('L',14,[48],2),
+  ...seq('R',16,[64,64,65,67],1), ...chord('L',16,[48],4),
+  ...seq('R',20,[67,65,64,62],1), ...chord('L',20,[43],4),
+  ...seq('R',24,[60,60,62,64],1), ...chord('L',24,[48],4),
+  {n:62,t:28,d:1.5,h:'R'},{n:60,t:29.5,d:.5,h:'R'},{n:60,t:30,d:2,h:'R'}, ...chord('L',28,[43],2), ...chord('L',30,[48],2)],
+  lesson:`<h2>Your first song, and why it sounds right</h2>
+  <p>Beethoven's melody uses only five notes (C D E F G) and moves almost entirely by step, which is why it is easy to sing and easy to play: your fingers 1 to 5 sit on C to G and never move.</p>
+  <p>The left hand alternates between C (the I chord) and G (the V chord). Notice bar 4 ends on D, a note inside the G chord, so it feels unfinished. Bar 8 ends on C, inside the C chord, so it feels done. That is a "half cadence" then a "full cadence": the question and the answer.</p>
+  <p>Bars 4 and 8 have a dotted rhythm (long-short). Count "1-and-2-and": the long note takes "1 and 2", the short one lands on "and".</p>`});
+
+// ---------- State ----------
+const S = {
+  ex:null, notes:[], lengthBeats:0, pos:0, playing:false, waiting:false,
+  mode:'wait', hand:'B', bpm:70, loop:false, guide:false, click:false,
+  pressed:new Set(), flash:{}, hit:new Set(), missed:new Set(), wrong:0, correct:0,
+  lastTs:0, lastBeatTick:-1
+};
+try{ const s=JSON.parse(localStorage.getItem('pt-settings')||'{}'); Object.assign(S,{mode:s.mode||S.mode,hand:s.hand||S.hand,guide:!!s.guide,click:!!s.click}); }catch(e){}
+function saveSettings(){ try{ localStorage.setItem('pt-settings',JSON.stringify({mode:S.mode,hand:S.hand,guide:S.guide,click:S.click})); }catch(e){} }
+
+// ---------- DOM ----------
+const $=id=>document.getElementById(id);
+const cv=$('cv'), ctx=cv.getContext('2d');
+const exSel=$('ex');
+EX.forEach((e,i)=>{ const o=document.createElement('option'); o.value=i; o.textContent=e.name; exSel.appendChild(o); });
+
+function loadExercise(e){
+  S.ex=e; S.notes=e.notes.map(n=>({...n})).sort((a,b)=>a.t-b.t||a.n-b.n);
+  S.notes.forEach((n,i)=>n.id=i);
+  S.lengthBeats=Math.max(...S.notes.map(n=>n.t+n.d),4);
+  S.bpm=e.bpm||S.bpm; $('bpm').value=S.bpm; $('bpmv').textContent=S.bpm;
+  $('title').textContent=e.name.replace(/^\d+ · /,'');
+  $('lesson').innerHTML=e.lesson||'<h2>Loaded file</h2><p>Hands were split by track (or at middle C if the file has one track). Right hand in amber, left in blue.</p>';
+  $('bar').max=Math.ceil(S.lengthBeats/4); $('bar').value=1;
+  reset();
+}
+exSel.onchange=()=>loadExercise(EX[+exSel.value]);
+
+function reset(){
+  S.pos=(+$('bar').value-1)*4; S.playing=false; S.waiting=false; S.hit.clear(); S.missed.clear(); S.wrong=0; S.correct=0; S.flash={}; S.lastBeatTick=-1;
+  $('playBtn').textContent='Start'; $('waitmsg').style.display='none'; updateStats(); draw();
+}
+$('resetBtn').onclick=reset;
+$('bar').onchange=reset;
+$('playBtn').onclick=togglePlay;
+function togglePlay(){ ensureAudio(); S.playing=!S.playing; $('playBtn').textContent=S.playing?'Pause':'Start'; S.lastTs=0; if(S.playing) requestAnimationFrame(loop); else $('waitmsg').style.display='none'; }
+document.addEventListener('keydown',e=>{ if(e.code==='Space'&&e.target.tagName!=='INPUT'&&e.target.tagName!=='SELECT'){ e.preventDefault(); togglePlay(); } });
+
+function segInit(id,key){ const seg=$(id); [...seg.children].forEach(b=>{ b.classList.toggle('on',b.dataset.v===S[key]); b.onclick=()=>{ S[key]=b.dataset.v; [...seg.children].forEach(x=>x.classList.toggle('on',x===b)); saveSettings(); reset(); }; }); }
+segInit('modeSeg','mode'); segInit('handSeg','hand');
+$('bpm').oninput=e=>{ S.bpm=+e.target.value; $('bpmv').textContent=S.bpm; };
+function toggleBtn(id,key){ const b=$(id); b.classList.toggle('on',S[key]); b.onclick=()=>{ S[key]=!S[key]; b.classList.toggle('on',S[key]); saveSettings(); if(key==='guide'||key==='click') ensureAudio(); }; }
+toggleBtn('loopBtn','loop'); toggleBtn('guideBtn','guide'); toggleBtn('clickBtn','click');
+
+// ---------- MIDI ----------
+let midi=null;
+async function connectMIDI(){
+  if(!navigator.requestMIDIAccess){ $('devname').textContent='This browser has no Web MIDI. Use Chrome or Edge.'; return; }
+  try{
+    midi=await navigator.requestMIDIAccess({sysex:false});
+    bindInputs(); midi.onstatechange=bindInputs;
+  }catch(e){ $('devname').textContent='MIDI access blocked. Click "Connect keyboard" and allow it.'; }
+}
+function bindInputs(){
+  const names=[];
+  midi.inputs.forEach(inp=>{ inp.onmidimessage=onMIDI; names.push(inp.name); });
+  const on=names.length>0; $('dot').classList.toggle('on',on);
+  $('devname').textContent=on?names.join(', '):'No keyboard found. Plug in USB, then click Connect.';
+}
+function onMIDI(m){
+  const [st,n,v]=m.data; const cmd=st&0xF0;
+  if(cmd===0x90&&v>0) noteOn(n); else if(cmd===0x80||(cmd===0x90&&v===0)) noteOff(n);
+}
+$('midiBtn').onclick=connectMIDI;
+connectMIDI();
+
+// ---------- Hit logic ----------
+const TOL=0.3; // beats, play-along window
+function active(n){ return S.hand==='B'||n.h===S.hand; }
+function dueGroup(){ // wait mode: earliest unhit active note time, and all notes at that time
+  const pend=S.notes.filter(n=>active(n)&&!S.hit.has(n.id)&&n.t>=S.pos-1e-6&&n.t<=S.pos+1e-6);
+  return pend;
+}
+function noteOn(n){
+  S.pressed.add(n);
+  if(!S.playing){ flash(n,'ok'); draw(); return; }
+  let target=null;
+  if(S.mode==='wait'){
+    target=dueGroup().find(x=>x.n===n);
+  }else{
+    target=S.notes.filter(x=>active(x)&&!S.hit.has(x.id)&&!S.missed.has(x.id)&&x.n===n&&Math.abs(x.t-S.pos)<=TOL).sort((a,b)=>Math.abs(a.t-S.pos)-Math.abs(b.t-S.pos))[0];
+  }
+  if(target){ S.hit.add(target.id); S.correct++; flash(n,'ok'); }
+  else{ S.wrong++; flash(n,'bad'); }
+  updateStats();
+}
+function noteOff(n){ S.pressed.delete(n); }
+function flash(n,kind){ S.flash[n]={kind,until:performance.now()+260}; }
+
+// ---------- Loop ----------
+function loop(ts){
+  if(!S.playing) return;
+  if(!S.lastTs) S.lastTs=ts;
+  const dt=(ts-S.lastTs)/1000; S.lastTs=ts;
+  if(S.mode==='wait'){
+    // advance until we reach an unhit active note, then freeze
+    const nextUnhit=S.notes.filter(n=>active(n)&&!S.hit.has(n.id)&&n.t>=S.pos-1e-6).sort((a,b)=>a.t-b.t)[0];
+    const adv=dt*S.bpm/60;
+    if(nextUnhit&&S.pos+adv>=nextUnhit.t){ S.pos=nextUnhit.t; S.waiting=true; }
+    else { S.pos+=adv; S.waiting=false; }
+    if(S.waiting&&dueGroup().length===0){ S.waiting=false; S.pos+=0.0001; }
+    $('waitmsg').style.display=S.waiting?'block':'none';
+  }else{
+    S.pos+=dt*S.bpm/60;
+    S.notes.forEach(n=>{ if(active(n)&&!S.hit.has(n.id)&&!S.missed.has(n.id)&&S.pos>n.t+TOL){ S.missed.add(n.id); } });
+  }
+  // guide + click
+  const tick=Math.floor(S.pos);
+  if(tick!==S.lastBeatTick){ S.lastBeatTick=tick; if(S.click) clickSound(tick%4===0); }
+  if(S.guide) S.notes.forEach(n=>{ if(!n.g&&n.t<=S.pos&&n.t>S.pos-0.2){ n.g=true; guideTone(n.n,n.d*60/S.bpm); } });
+  S.notes.forEach(n=>{ if(n.t>S.pos+0.5) n.g=false; });
+  updateStats();
+  if(S.pos>=S.lengthBeats+1){
+    if(S.loop){ S.pos=(+$('bar').value-1)*4; S.hit.clear(); S.missed.clear(); S.notes.forEach(n=>n.g=false); }
+    else { S.playing=false; $('playBtn').textContent='Start'; $('waitmsg').style.display='none'; }
+  }
+  draw();
+  if(S.playing) requestAnimationFrame(loop);
+}
+function updateStats(){
+  const tot=S.correct+S.wrong+S.missed.size;
+  $('sAcc').textContent=tot?Math.round(100*S.correct/tot)+'%':'—';
+  $('sWrong').textContent=S.wrong; $('sMiss').textContent=S.missed.size;
+  $('barinfo').textContent='Bar '+(Math.floor(S.pos/4)+1)+' of '+Math.ceil(S.lengthBeats/4)+' · beat '+(Math.floor(S.pos%4)+1);
+  const nxt=S.notes.filter(n=>active(n)&&n.t>=S.pos-1e-6&&!S.hit.has(n.id)).sort((a,b)=>a.t-b.t);
+  if(nxt.length){ const t0=nxt[0].t; $('nextnote').textContent='Next: '+nxt.filter(n=>n.t===t0).map(n=>noteName(n.n)).join(' + '); } else $('nextnote').textContent='';
+}
+
+// ---------- Audio ----------
+let AC=null;
+function ensureAudio(){ if(!AC){ try{ AC=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } if(AC&&AC.state==='suspended') AC.resume(); }
+function guideTone(n,secs){ if(!AC) return; const o=AC.createOscillator(), g=AC.createGain(); o.type='triangle'; o.frequency.value=440*Math.pow(2,(n-69)/12); g.gain.setValueAtTime(0,AC.currentTime); g.gain.linearRampToValueAtTime(0.18,AC.currentTime+0.01); g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+Math.max(0.15,secs*0.9)); o.connect(g).connect(AC.destination); o.start(); o.stop(AC.currentTime+secs+0.1); }
+function clickSound(down){ if(!AC) return; const o=AC.createOscillator(), g=AC.createGain(); o.type='square'; o.frequency.value=down?1400:1000; g.gain.setValueAtTime(0.12,AC.currentTime); g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+0.05); o.connect(g).connect(AC.destination); o.start(); o.stop(AC.currentTime+0.06); }
+
+// ---------- Keyboard geometry (A0=21 .. C8=108) ----------
+const LO=21, HI=108, NAMES=['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
+const isBlack=n=>[1,3,6,8,10].includes(n%12);
+function noteName(n){ return NAMES[n%12]+(Math.floor(n/12)-1); }
+const whiteIdx={}; let wc=0; for(let n=LO;n<=HI;n++){ if(!isBlack(n)) whiteIdx[n]=wc++; }
+const WHITES=wc;
+let W=0,H=0,KH=0,KW=0,BW=0,BH=0,PPB=0;
+function resize(){
+  const r=cv.parentElement.getBoundingClientRect(); W=Math.floor(r.width); const dpr=window.devicePixelRatio||1;
+  H=Math.min(560,Math.max(360,Math.round(W*0.42)));
+  cv.width=W*dpr; cv.height=H*dpr; cv.style.height=H+'px'; ctx.setTransform(dpr,0,0,dpr,0,0);
+  KW=W/WHITES; KH=Math.max(70,Math.min(110,KW*6)); BW=KW*0.62; BH=KH*0.62; PPB=(H-KH)/4.5;
+  draw();
+}
+window.addEventListener('resize',resize);
+function keyRect(n){
+  if(isBlack(n)){ const x=(whiteIdx[n-1]+1)*KW-BW/2; return {x,y:H-KH,w:BW,h:BH,black:true}; }
+  return {x:whiteIdx[n]*KW,y:H-KH,w:KW,h:KH,black:false};
+}
+function noteAt(px,py){
+  for(let n=LO;n<=HI;n++){ if(isBlack(n)){ const k=keyRect(n); if(px>=k.x&&px<=k.x+k.w&&py>=k.y&&py<=k.y+k.h) return n; } }
+  for(let n=LO;n<=HI;n++){ if(!isBlack(n)){ const k=keyRect(n); if(px>=k.x&&px<=k.x+k.w&&py>=k.y) return n; } }
+  return null;
+}
+let mouseNote=null;
+cv.addEventListener('pointerdown',e=>{ ensureAudio(); const r=cv.getBoundingClientRect(); const n=noteAt(e.clientX-r.left,e.clientY-r.top); if(n!=null){ mouseNote=n; noteOn(n); guideTone(n,0.4); } });
+window.addEventListener('pointerup',()=>{ if(mouseNote!=null){ noteOff(mouseNote); mouseNote=null; draw(); } });
+
+// ---------- Draw ----------
+function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+function draw(){
+  const C={bg:css('--panel'),ivory:css('--ivory'),ebony:css('--ebony'),line:css('--keyline'),rh:css('--rh'),lh:css('--lh'),ok:css('--ok'),bad:css('--bad'),muted:css('--muted'),ink:css('--ink')};
+  ctx.clearRect(0,0,W,H);
+  const top=H-KH;
+  // beat lines
+  ctx.strokeStyle=C.line; ctx.globalAlpha=0.35;
+  for(let b=Math.floor(S.pos);b<S.pos+5;b++){ const y=top-(b-S.pos)*PPB; ctx.lineWidth=(b%4===0)?1.5:0.5; ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+  ctx.globalAlpha=1;
+  // falling notes
+  const now=performance.now();
+  S.notes.forEach(n=>{
+    const yb=top-(n.t-S.pos)*PPB, yt=yb-n.d*PPB; if(yb<0||yt>top) return;
+    const k=keyRect(n.n); const w=k.black?k.w:k.w*0.86; const x=k.black?k.x:k.x+(k.w-w)/2;
+    const act=active(n);
+    let col=n.h==='L'?C.lh:C.rh;
+    if(S.hit.has(n.id)) col=C.ok; else if(S.missed.has(n.id)) col=C.bad;
+    ctx.globalAlpha=act?1:0.28;
+    ctx.fillStyle=col; roundRect(x,Math.max(yt,0),w,Math.min(yb,top)-Math.max(yt,0)-2,4); ctx.fill();
+    if(n.d*PPB>18&&act){ ctx.fillStyle='rgba(0,0,0,.55)'; ctx.font='600 11px '+css('--font'); ctx.textAlign='center'; ctx.fillText(NAMES[n.n%12],x+w/2,Math.min(yb,top)-6); }
+    ctx.globalAlpha=1;
+  });
+  // strike line
+  ctx.strokeStyle=C.ink; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(0,top); ctx.lineTo(W,top); ctx.stroke();
+  // keys: which are expected right now
+  const expected=new Set(S.notes.filter(n=>active(n)&&!S.hit.has(n.id)&&n.t<=S.pos+1e-6&&n.t+n.d>S.pos).map(n=>n.n));
+  const expHand={}; S.notes.forEach(n=>{ if(expected.has(n.n)&&n.t<=S.pos+1e-6&&n.t+n.d>S.pos) expHand[n.n]=n.h; });
+  const drawKey=n=>{
+    const k=keyRect(n); let fill=k.black?C.ebony:C.ivory;
+    const f=S.flash[n]; if(f&&f.until<now) delete S.flash[n];
+    if(expected.has(n)) fill=expHand[n]==='L'?C.lh:C.rh;
+    if(S.flash[n]) fill=S.flash[n].kind==='ok'?C.ok:C.bad;
+    else if(S.pressed.has(n)) fill=expected.has(n)?C.ok:C.bad;
+    ctx.fillStyle=fill; ctx.strokeStyle=C.line; ctx.lineWidth=1;
+    if(k.black){ roundRect(k.x,k.y,k.w,k.h,3); ctx.fill(); }
+    else { ctx.fillRect(k.x,k.y,k.w,k.h); ctx.strokeRect(k.x+0.5,k.y+0.5,k.w-1,k.h-1); if(n%12===0){ ctx.fillStyle=C.muted; ctx.font='500 10px '+css('--font'); ctx.textAlign='center'; ctx.fillText('C'+(n/12-1),k.x+k.w/2,H-6); } }
+  };
+  for(let n=LO;n<=HI;n++) if(!isBlack(n)) drawKey(n);
+  for(let n=LO;n<=HI;n++) if(isBlack(n)) drawKey(n);
+  if(Object.keys(S.flash).length&&!S.playing) requestAnimationFrame(draw);
+}
+function roundRect(x,y,w,h,r){ if(h<0)h=0; ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }
+
+// ---------- Standard MIDI file parser ----------
+$('midfile').onchange=async e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const buf=new Uint8Array(await f.arrayBuffer());
+  try{ const ex=parseMIDI(buf,f.name); const o=document.createElement('option'); o.value=EX.length; o.textContent='File · '+f.name; EX.push(ex); exSel.appendChild(o); exSel.value=EX.length-1; loadExercise(ex); }
+  catch(err){ alert('Could not read that MIDI file: '+err.message); }
+};
+function parseMIDI(b,name){
+  let p=0; const u32=()=>(b[p++]<<24|b[p++]<<16|b[p++]<<8|b[p++])>>>0, u16=()=>(b[p++]<<8|b[p++]);
+  const vlq=()=>{ let v=0,c; do{ c=b[p++]; v=(v<<7)|(c&0x7F); }while(c&0x80); return v; };
+  if(String.fromCharCode(...b.slice(0,4))!=='MThd') throw new Error('not a MIDI file');
+  p=4; const hl=u32(); u16(); const ntr=u16(); const div=u16(); p=8+hl;
+  if(div&0x8000) throw new Error('SMPTE timing not supported');
+  const tracks=[]; let tempo=null;
+  for(let t=0;t<ntr;t++){
+    if(String.fromCharCode(...b.slice(p,p+4))!=='MTrk') throw new Error('bad track');
+    p+=4; const len=u32(); const end=p+len; let tick=0, st=0; const open={}, notes=[];
+    while(p<end){
+      tick+=vlq(); let s=b[p];
+      if(s<0x80){ s=st; } else { p++; st=s; }
+      if(s===0xFF){ const type=b[p++]; const l=vlq(); if(type===0x51&&tempo===null) tempo=(b[p]<<16|b[p+1]<<8|b[p+2]); p+=l; }
+      else if(s===0xF0||s===0xF7){ const l=vlq(); p+=l; }
+      else{
+        const cmd=s&0xF0, ch=s&0x0F; const d1=b[p++]; const d2=(cmd===0xC0||cmd===0xD0)?0:b[p++];
+        if(ch===9) continue;
+        if(cmd===0x90&&d2>0){ open[d1]=tick; }
+        else if(cmd===0x80||(cmd===0x90&&d2===0)){ if(open[d1]!=null){ notes.push({n:d1,t:open[d1]/div,d:Math.max((tick-open[d1])/div,0.125)}); delete open[d1]; } }
+      }
+    }
+    p=end; if(notes.length) tracks.push(notes);
+  }
+  if(!tracks.length) throw new Error('no notes found');
+  let notes=[];
+  if(tracks.length===1){ notes=tracks[0].map(n=>({...n,h:n.n<60?'L':'R'})); }
+  else{ const avg=tr=>tr.reduce((a,n)=>a+n.n,0)/tr.length; const sorted=tracks.map((tr,i)=>({tr,a:avg(tr)})).sort((x,y)=>y.a-x.a); const half=Math.ceil(sorted.length/2); sorted.forEach((s,i)=>s.tr.forEach(n=>notes.push({...n,h:i<half?'R':'L'}))); }
+  notes=notes.filter(n=>n.n>=LO&&n.n<=HI);
+  const t0=Math.min(...notes.map(n=>n.t)); notes.forEach(n=>n.t=Math.round((n.t-t0)*16)/16);
+  return {name, bpm:tempo?Math.round(60000000/tempo):80, notes, lesson:null};
+}
+
+// ---------- Boot ----------
+resize(); loadExercise(EX[0]);
+</script>
+</body>
+</html>

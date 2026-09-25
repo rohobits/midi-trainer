@@ -1,0 +1,62 @@
+{
+  "id": "phrase-counting",
+  "version": 1,
+  "name": "Phrase counting",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 64,
+  "targets": [
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 0
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 32
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 64
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 96
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 128
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 160
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 192
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 224
+    }
+  ],
+  "lesson": "## Count in phrases, not bars\n\nHouse and techno move in 8-bar phrases; most changes (drops, breakdowns, new elements) land on a 16- or 32-bar boundary. Tap hot cue A1 on the first beat of every 8-bar phrase for 64 bars. Prompts are shown, but the aim is to hit them from your own count with the prompt only confirming you.\n\nEvery other drill assumes you can feel these boundaries without looking. If your timing here is over 60 ms, stay on this one.\n",
+  "skills": [
+    "counting",
+    "phrasing"
+  ],
+  "genre": [
+    "house",
+    "techno"
+  ],
+  "path": "pads",
+  "level": 1
+}

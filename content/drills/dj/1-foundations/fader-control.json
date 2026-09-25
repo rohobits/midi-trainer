@@ -1,0 +1,59 @@
+{
+  "id": "fader-control",
+  "version": 1,
+  "name": "Fader control",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 24,
+  "targets": [
+    {
+      "c": "faderB",
+      "type": "ramp",
+      "t": 0,
+      "t1": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 32,
+      "t1": 48,
+      "v": 1
+    },
+    {
+      "c": "faderB",
+      "type": "ramp",
+      "t": 48,
+      "t1": 64,
+      "v0": 1,
+      "v1": 0
+    },
+    {
+      "c": "faderB",
+      "type": "ramp",
+      "t": 64,
+      "t1": 72,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "c": "faderB",
+      "type": "ramp",
+      "t": 80,
+      "t1": 84,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Smooth over 8, decisive over 1\n\nBring B's channel fader up evenly across 8 bars, hold 4, down over 4, back up in 2, then off in a single bar. The slow ramps train an even hand; the fast ones train commitment. A fader that stalls halfway is the most common tell of a nervous mix.\n\nWatch the blue path: your live position is the dot on the strike line. Stay inside it.\n",
+  "skills": [
+    "fader-blend"
+  ],
+  "genre": [
+    "house"
+  ],
+  "path": "mixer",
+  "level": 2
+}

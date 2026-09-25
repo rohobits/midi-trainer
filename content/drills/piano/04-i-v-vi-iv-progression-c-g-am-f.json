@@ -1,0 +1,159 @@
+{
+  "id": "i-v-vi-iv-progression-c-g-am-f",
+  "version": 1,
+  "name": "I–V–vi–IV progression (C, G, Am, F)",
+  "tier": "Week 1",
+  "profile": "piano88",
+  "bpm": 72,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "note",
+      "n": 60,
+      "t": 0,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 64,
+      "t": 1,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 67,
+      "t": 2,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 72,
+      "t": 3,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 48,
+      "t": 0,
+      "d": 4,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 67,
+      "t": 4,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 71,
+      "t": 5,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 74,
+      "t": 6,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 79,
+      "t": 7,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 43,
+      "t": 4,
+      "d": 4,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 69,
+      "t": 8,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 72,
+      "t": 9,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 76,
+      "t": 10,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 81,
+      "t": 11,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 45,
+      "t": 8,
+      "d": 4,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 65,
+      "t": 12,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 69,
+      "t": 13,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 72,
+      "t": 14,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 77,
+      "t": 15,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 41,
+      "t": 12,
+      "d": 4,
+      "hand": "L"
+    }
+  ],
+  "lesson": "## The progression behind thousands of songs\n\n\n  Musicians number chords by which scale note they sit on, using Roman numerals: C is I, G is V, A minor is vi, F is IV. I–V–vi–IV is the pop progression: Let It Be, Don't Stop Believin', With or Without You, half the Top 40.\n\n\n  Why it works: I is home. V is the tension that pulls hardest back to home. vi is the sad cousin of I (it shares two of its three notes). IV is a gentle lift that sets up the return. Tension, release, colour, lift, repeat.\n\n\n  Right hand plays each chord broken into an arpeggio (one note at a time, root to octave). Left hand holds the root. Once it is clean, try playing the right hand as a block chord on beat 1 instead.\n",
+  "path": "piano",
+  "skills": [
+    "progression",
+    "arpeggio",
+    "roman-numerals"
+  ],
+  "level": 2
+}

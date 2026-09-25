@@ -1,0 +1,299 @@
+{
+  "id": "ode-to-joy-first-8-bars",
+  "version": 1,
+  "name": "Ode to Joy (first 8 bars)",
+  "tier": "Week 1",
+  "profile": "piano88",
+  "bpm": 80,
+  "bars": 8,
+  "targets": [
+    {
+      "type": "note",
+      "n": 64,
+      "t": 0,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 64,
+      "t": 1,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 65,
+      "t": 2,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 67,
+      "t": 3,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 48,
+      "t": 0,
+      "d": 4,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 67,
+      "t": 4,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 65,
+      "t": 5,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 64,
+      "t": 6,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 62,
+      "t": 7,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 43,
+      "t": 4,
+      "d": 4,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 60,
+      "t": 8,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 60,
+      "t": 9,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 62,
+      "t": 10,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 64,
+      "t": 11,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 48,
+      "t": 8,
+      "d": 4,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 64,
+      "t": 12,
+      "d": 1.5,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 62,
+      "t": 13.5,
+      "d": 0.5,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 62,
+      "t": 14,
+      "d": 2,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 43,
+      "t": 12,
+      "d": 2,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 48,
+      "t": 14,
+      "d": 2,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 64,
+      "t": 16,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 64,
+      "t": 17,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 65,
+      "t": 18,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 67,
+      "t": 19,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 48,
+      "t": 16,
+      "d": 4,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 67,
+      "t": 20,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 65,
+      "t": 21,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 64,
+      "t": 22,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 62,
+      "t": 23,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 43,
+      "t": 20,
+      "d": 4,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 60,
+      "t": 24,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 60,
+      "t": 25,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 62,
+      "t": 26,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 64,
+      "t": 27,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 48,
+      "t": 24,
+      "d": 4,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 62,
+      "t": 28,
+      "d": 1.5,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 60,
+      "t": 29.5,
+      "d": 0.5,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 60,
+      "t": 30,
+      "d": 2,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 43,
+      "t": 28,
+      "d": 2,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 48,
+      "t": 30,
+      "d": 2,
+      "hand": "L"
+    }
+  ],
+  "lesson": "## Your first song, and why it sounds right\n\n\n  Beethoven's melody uses only five notes (C D E F G) and moves almost entirely by step, which is why it is easy to sing and easy to play: your fingers 1 to 5 sit on C to G and never move.\n\n\n  The left hand alternates between C (the I chord) and G (the V chord). Notice bar 4 ends on D, a note inside the G chord, so it feels unfinished. Bar 8 ends on C, inside the C chord, so it feels done. That is a \"half cadence\" then a \"full cadence\": the question and the answer.\n\n\n  Bars 4 and 8 have a dotted rhythm (long-short). Count \"1-and-2-and\": the long note takes \"1 and 2\", the short one lands on \"and\".\n",
+  "path": "piano",
+  "skills": [
+    "melody",
+    "cadence",
+    "dotted-rhythm"
+  ],
+  "level": 3
+}

@@ -1,0 +1,130 @@
+{
+  "id": "the-four-chords-c-f-g-am",
+  "version": 1,
+  "name": "The four chords: C, F, G, Am",
+  "tier": "Week 1",
+  "profile": "piano88",
+  "bpm": 60,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "note",
+      "n": 60,
+      "t": 0,
+      "d": 4,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 64,
+      "t": 0,
+      "d": 4,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 67,
+      "t": 0,
+      "d": 4,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 48,
+      "t": 0,
+      "d": 4,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 65,
+      "t": 4,
+      "d": 4,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 69,
+      "t": 4,
+      "d": 4,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 72,
+      "t": 4,
+      "d": 4,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 53,
+      "t": 4,
+      "d": 4,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 67,
+      "t": 8,
+      "d": 4,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 71,
+      "t": 8,
+      "d": 4,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 74,
+      "t": 8,
+      "d": 4,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 55,
+      "t": 8,
+      "d": 4,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 69,
+      "t": 12,
+      "d": 4,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 72,
+      "t": 12,
+      "d": 4,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 76,
+      "t": 12,
+      "d": 4,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 57,
+      "t": 12,
+      "d": 4,
+      "hand": "L"
+    }
+  ],
+  "lesson": "## How chords are built\n\n\n  A triad is three notes from the scale, skipping one each time: pick a note, skip one, pick, skip, pick. Start on C and you get C E G. Start on F and you get F A C. That skip-one rule is why chords look like a stack of every-other key under your hand.\n\n\n  In C major, the chords on the 1st, 4th and 5th notes (C, F, G) are major and feel bright. The chord on the 6th note (A minor) is minor and feels darker, because its middle note is a half step lower. Same shape, one note moved, completely different mood.\n\n\n  Left hand plays the root of each chord; right hand plays all three. Hold each for a full bar and hear how G wants to go back to C.\n",
+  "path": "piano",
+  "skills": [
+    "triads",
+    "chords"
+  ],
+  "level": 2
+}

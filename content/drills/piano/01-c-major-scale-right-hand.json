@@ -1,0 +1,123 @@
+{
+  "id": "c-major-scale-right-hand",
+  "version": 1,
+  "name": "C major scale, right hand",
+  "tier": "Week 1",
+  "profile": "piano88",
+  "bpm": 70,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "note",
+      "n": 60,
+      "t": 0,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 62,
+      "t": 1,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 64,
+      "t": 2,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 65,
+      "t": 3,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 67,
+      "t": 4,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 69,
+      "t": 5,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 71,
+      "t": 6,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 72,
+      "t": 7,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 71,
+      "t": 8,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 69,
+      "t": 9,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 67,
+      "t": 10,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 65,
+      "t": 11,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 64,
+      "t": 12,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 62,
+      "t": 13,
+      "d": 1,
+      "hand": "R"
+    },
+    {
+      "type": "note",
+      "n": 60,
+      "t": 14,
+      "d": 1,
+      "hand": "R"
+    }
+  ],
+  "lesson": "## Why this first\n\n\n  Every song in C major is built from these seven notes. The scale is the alphabet; chords and melodies are the words. Play with your right hand starting on middle C (the C nearest the middle of the keyboard).\n\n\n  Fingering going up: thumb 1, 2, 3, then tuck the thumb under to 1, 2, 3, 4, 5. Coming down is the mirror: 5 4 3 2 1, then cross the 3rd finger over the thumb, 3 2 1. The thumb tuck is the whole skill here; go slow enough that it never feels rushed.\n\n\n  Listen for the pattern of gaps: two whole steps, a half step, three whole steps, a half step. That W W H W W W H recipe is what makes anything sound \"major\".\n",
+  "path": "piano",
+  "skills": [
+    "scale",
+    "fingering"
+  ],
+  "level": 1
+}

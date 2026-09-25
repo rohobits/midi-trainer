@@ -1,0 +1,52 @@
+{
+  "id": "manual-beatmatch-nudge",
+  "version": 1,
+  "name": "Manual beatmatch nudge",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 16,
+  "targets": [
+    {
+      "c": "tempoB",
+      "type": "ramp",
+      "t": 0,
+      "t1": 16,
+      "v0": 0.5,
+      "v1": 0.56
+    },
+    {
+      "type": "hold",
+      "c": "tempoB",
+      "t": 16,
+      "t1": 32,
+      "v": 0.56
+    },
+    {
+      "c": "tempoB",
+      "type": "ramp",
+      "t": 32,
+      "t1": 48,
+      "v0": 0.56,
+      "v1": 0.5
+    },
+    {
+      "type": "hold",
+      "c": "tempoB",
+      "t": 48,
+      "t1": 64,
+      "v": 0.5
+    }
+  ],
+  "lesson": "## Ride the pitch without sync\n\nSync off. Push B's tempo fader up a small, even amount over 4 bars, hold, bring it back to centre over 4, hold. The hand should move so slowly it looks still. Manual beatmatching is 10% ear and 90% not overcorrecting; this drill trains the 90%.\n",
+  "skills": [
+    "beatmatching",
+    "pitch-riding"
+  ],
+  "genre": [
+    "house",
+    "techno"
+  ],
+  "path": "jog",
+  "level": 2
+}

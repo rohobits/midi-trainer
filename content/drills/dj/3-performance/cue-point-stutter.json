@@ -1,0 +1,100 @@
+{
+  "id": "cue-point-stutter",
+  "version": 1,
+  "name": "Cue-point stutter",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 4,
+  "targets": [
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 0
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 1
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 2
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 3
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 4
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 5
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 6
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 7
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 8
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 9
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 10
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 11
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 12
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 13
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 14
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 15
+    }
+  ],
+  "lesson": "## Retrigger on every beat\n\nHot cue 1 on the downbeat of the track; hit it on every beat for 4 bars so the intro stutters in time with the beat. It sounds simple and it is unforgiving: any press off by 30 ms is audible as a flam against the other deck.\n",
+  "skills": [
+    "cue-retrigger"
+  ],
+  "genre": [
+    "house"
+  ],
+  "path": "pads",
+  "level": 2
+}

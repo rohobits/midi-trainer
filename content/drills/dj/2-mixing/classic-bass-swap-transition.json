@@ -1,0 +1,67 @@
+{
+  "id": "classic-bass-swap-transition",
+  "version": 1,
+  "name": "Classic bass-swap transition",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 36,
+  "targets": [
+    {
+      "c": "playB",
+      "type": "tap",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 64,
+      "v": 0
+    },
+    {
+      "c": "faderB",
+      "type": "ramp",
+      "t": 0,
+      "t1": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "c": "lowA",
+      "type": "ramp",
+      "t": 64,
+      "t1": 80,
+      "v0": 0.5,
+      "v1": 0
+    },
+    {
+      "c": "lowB",
+      "type": "ramp",
+      "t": 64,
+      "t1": 80,
+      "v0": 0,
+      "v1": 0.5
+    },
+    {
+      "c": "faderA",
+      "type": "ramp",
+      "t": 96,
+      "t1": 128,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## The transition every DJ is judged on\n\nDeck B starts with its bass fully cut (the low knob turned off before you press play). Bring B in over the first 8 bars on hi and mids only, so two kicks never fight. At bar 17, swap the bass over 4 bars: A's low down while B's low comes up to centre. Then A's fader out over bars 25 to 33.\n\nThe reason it works: two bass lines in the same register cancel and mud the mix; the swap means exactly one kick owns the low end at every moment.\n",
+  "skills": [
+    "bass-swap",
+    "phrase-mixing"
+  ],
+  "genre": [
+    "house",
+    "tech-house",
+    "techno"
+  ],
+  "path": "transitions",
+  "level": 1
+}

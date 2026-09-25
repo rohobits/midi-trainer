@@ -1,0 +1,124 @@
+{
+  "id": "c-major-scale-left-hand",
+  "version": 1,
+  "name": "C major scale, left hand",
+  "tier": "Week 1",
+  "profile": "piano88",
+  "bpm": 70,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "note",
+      "n": 48,
+      "t": 0,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 50,
+      "t": 1,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 52,
+      "t": 2,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 53,
+      "t": 3,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 55,
+      "t": 4,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 57,
+      "t": 5,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 59,
+      "t": 6,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 60,
+      "t": 7,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 59,
+      "t": 8,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 57,
+      "t": 9,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 55,
+      "t": 10,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 53,
+      "t": 11,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 52,
+      "t": 12,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 50,
+      "t": 13,
+      "d": 1,
+      "hand": "L"
+    },
+    {
+      "type": "note",
+      "n": 48,
+      "t": 14,
+      "d": 1,
+      "hand": "L"
+    }
+  ],
+  "lesson": "## Same alphabet, other hand\n\n\n  Start on the C one octave below middle C with your pinky. Fingering going up: 5 4 3 2 1, then cross the 3rd finger over the thumb, 3 2 1. Coming down: 1 2 3, tuck the thumb under to 1, 2 3 4 5.\n\n\n  The left hand feels weaker because it is. Play at a tempo where every note is even in volume, and drop the tempo slider until that is true.\n",
+  "path": "piano",
+  "skills": [
+    "scale",
+    "fingering",
+    "left-hand"
+  ],
+  "level": 1
+}
