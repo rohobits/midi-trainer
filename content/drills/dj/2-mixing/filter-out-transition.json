@@ -1,0 +1,58 @@
+{
+  "id": "filter-out-transition",
+  "version": 1,
+  "name": "Filter-out transition",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 36,
+  "targets": [
+    {
+      "c": "playB",
+      "type": "tap",
+      "t": 0
+    },
+    {
+      "c": "faderB",
+      "type": "ramp",
+      "t": 0,
+      "t1": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "c": "filtA",
+      "type": "ramp",
+      "t": 32,
+      "t1": 96,
+      "v0": 0.5,
+      "v1": 0.95
+    },
+    {
+      "c": "faderA",
+      "type": "ramp",
+      "t": 96,
+      "t1": 112,
+      "v0": 1,
+      "v1": 0
+    },
+    {
+      "c": "filtA",
+      "type": "ramp",
+      "t": 112,
+      "t1": 116,
+      "v0": 0.95,
+      "v1": 0.5
+    }
+  ],
+  "lesson": "## Sweep the old track into the air\n\nBring B in normally, then take A's filter high-pass over 16 bars, thinning it until only hats and air remain, and pull A's fader once there is nothing left to lose. Reset the filter to centre after A is out so the next track loads clean.\n\nA filter sweep is a bass swap and an energy build in one move, which is why it dominates melodic and progressive sets.\n",
+  "skills": [
+    "filter-mix-out"
+  ],
+  "genre": [
+    "melodic-house",
+    "progressive"
+  ],
+  "path": "transitions",
+  "level": 2
+}

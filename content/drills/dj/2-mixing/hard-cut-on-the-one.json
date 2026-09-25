@@ -1,0 +1,51 @@
+{
+  "id": "hard-cut-on-the-one",
+  "version": 1,
+  "name": "Hard cut on the one",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 34,
+  "targets": [
+    {
+      "c": "playB",
+      "type": "tap",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 0,
+      "t1": 128,
+      "v": 0
+    },
+    {
+      "c": "faderB",
+      "type": "ramp",
+      "t": 128,
+      "t1": 128.25,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "c": "faderA",
+      "type": "ramp",
+      "t": 128,
+      "t1": 128.25,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Sometimes the best mix is no mix\n\nB runs silent with its fader down for 32 bars; on the first beat of bar 33 you swap both faders inside a quarter beat. The cut works only if bar 33 is a phrase boundary in both tracks, so cue B to its drop.\n\nBig-room and techno DJs cut more than they blend. The skill is the count, not the hands.\n",
+  "skills": [
+    "drop-mix",
+    "crossfader-cut"
+  ],
+  "genre": [
+    "techno",
+    "big-room",
+    "hip-hop"
+  ],
+  "path": "transitions",
+  "level": 2
+}

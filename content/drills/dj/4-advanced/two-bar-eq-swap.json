@@ -1,0 +1,82 @@
+{
+  "id": "two-bar-eq-swap",
+  "version": 1,
+  "name": "Two-bar EQ swap",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 128,
+  "bars": 12,
+  "targets": [
+    {
+      "c": "playB",
+      "type": "tap",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 32,
+      "v": 0
+    },
+    {
+      "c": "faderB",
+      "type": "ramp",
+      "t": 0,
+      "t1": 16,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "c": "hiA",
+      "type": "ramp",
+      "t": 32,
+      "t1": 34,
+      "v0": 0.5,
+      "v1": 0
+    },
+    {
+      "c": "midA",
+      "type": "ramp",
+      "t": 34,
+      "t1": 36,
+      "v0": 0.5,
+      "v1": 0
+    },
+    {
+      "c": "lowA",
+      "type": "ramp",
+      "t": 36,
+      "t1": 38,
+      "v0": 0.5,
+      "v1": 0
+    },
+    {
+      "c": "lowB",
+      "type": "ramp",
+      "t": 36,
+      "t1": 38,
+      "v0": 0,
+      "v1": 0.5
+    },
+    {
+      "c": "faderA",
+      "type": "ramp",
+      "t": 38,
+      "t1": 40,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## The whole handover in two bars\n\nSame as the staggered blend, compressed to 8 beats: hi, mid, low of A leave in sequence while B's bass arrives, and A's fader is gone by bar 11. Peak-time technique for when the crowd will not wait 32 bars.\n\nBoth hands are busy at once: left on A's EQs, right on B's low and then A's fader. Practise the hand path with the clock stopped first.\n",
+  "skills": [
+    "staggered-eq",
+    "quick-mix"
+  ],
+  "genre": [
+    "tech-house",
+    "techno"
+  ],
+  "path": "transitions",
+  "level": 4
+}

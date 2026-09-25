@@ -1,0 +1,67 @@
+{
+  "id": "loop-build-and-release",
+  "version": 1,
+  "name": "Loop build and release",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 24,
+  "targets": [
+    {
+      "c": "loopA",
+      "type": "tap",
+      "t": 32
+    },
+    {
+      "c": "loopOutA",
+      "type": "tap",
+      "t": 36
+    },
+    {
+      "c": "loopA",
+      "type": "tap",
+      "t": 48
+    },
+    {
+      "c": "loopOutA",
+      "type": "tap",
+      "t": 50
+    },
+    {
+      "c": "loopA",
+      "type": "tap",
+      "t": 56
+    },
+    {
+      "c": "loopOutA",
+      "type": "tap",
+      "t": 57
+    },
+    {
+      "c": "loopA",
+      "type": "tap",
+      "t": 60
+    },
+    {
+      "c": "loopOutA",
+      "type": "tap",
+      "t": 60.5
+    },
+    {
+      "c": "loopOutA",
+      "type": "tap",
+      "t": 64
+    }
+  ],
+  "lesson": "## Halve the loop, double the tension\n\nAt bar 9 set a 4-beat loop, then re-set it at 2 beats, 1 beat, then half a beat, and exit exactly on bar 17. Map \"Loop A\" to your loop-in or the 4-beat auto-loop button and \"Loop out\" to the out/exit button; on the FLX4, the auto-loop halve button also works if you prefer.\n\nThis is a manual build. Do it into a breakdown or over the last 8 bars before a drop.\n",
+  "skills": [
+    "loop-roll"
+  ],
+  "genre": [
+    "edm",
+    "house",
+    "techno"
+  ],
+  "path": "fx",
+  "level": 3
+}

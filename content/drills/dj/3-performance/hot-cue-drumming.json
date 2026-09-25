@@ -1,0 +1,222 @@
+{
+  "id": "hot-cue-drumming",
+  "version": 1,
+  "name": "Hot-cue drumming",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 8,
+  "targets": [
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 0
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 1
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 2
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 2.5
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 3
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 4
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 5
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 6
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 6.5
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 7
+    },
+    {
+      "c": "hcA2",
+      "type": "tap",
+      "t": 8
+    },
+    {
+      "c": "hcA2",
+      "type": "tap",
+      "t": 9
+    },
+    {
+      "c": "hcA2",
+      "type": "tap",
+      "t": 10
+    },
+    {
+      "c": "hcA2",
+      "type": "tap",
+      "t": 10.5
+    },
+    {
+      "c": "hcA2",
+      "type": "tap",
+      "t": 11
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 12
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 13
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 14
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 14.5
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 15
+    },
+    {
+      "c": "hcA3",
+      "type": "tap",
+      "t": 16
+    },
+    {
+      "c": "hcA3",
+      "type": "tap",
+      "t": 17
+    },
+    {
+      "c": "hcA3",
+      "type": "tap",
+      "t": 18
+    },
+    {
+      "c": "hcA3",
+      "type": "tap",
+      "t": 18.5
+    },
+    {
+      "c": "hcA3",
+      "type": "tap",
+      "t": 19
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 20
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 21
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 22
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 22.5
+    },
+    {
+      "c": "hcA1",
+      "type": "tap",
+      "t": 23
+    },
+    {
+      "c": "hcA2",
+      "type": "tap",
+      "t": 24
+    },
+    {
+      "c": "hcA2",
+      "type": "tap",
+      "t": 25
+    },
+    {
+      "c": "hcA2",
+      "type": "tap",
+      "t": 26
+    },
+    {
+      "c": "hcA2",
+      "type": "tap",
+      "t": 26.5
+    },
+    {
+      "c": "hcA2",
+      "type": "tap",
+      "t": 27
+    },
+    {
+      "c": "hcA4",
+      "type": "tap",
+      "t": 28
+    },
+    {
+      "c": "hcA4",
+      "type": "tap",
+      "t": 29
+    },
+    {
+      "c": "hcA4",
+      "type": "tap",
+      "t": 30
+    },
+    {
+      "c": "hcA4",
+      "type": "tap",
+      "t": 30.5
+    },
+    {
+      "c": "hcA4",
+      "type": "tap",
+      "t": 31
+    }
+  ],
+  "lesson": "## Pads as an instrument\n\nSet hot cues 1 to 4 on a kick, clap, hat and a vocal stab. Each bar plays a pad on beats 1, 2, 3, the and-of-3, and 4, rotating which pad owns the bar. The and-of-3 is the hard one: it is an eighth note, and sloppy eighths are what make pad play sound amateur.\n\nTiming target here is under 40 ms. Set the metronome on until it is.\n",
+  "skills": [
+    "hot-cue-drumming"
+  ],
+  "genre": [
+    "house",
+    "bass",
+    "open-format"
+  ],
+  "path": "pads",
+  "level": 3
+}

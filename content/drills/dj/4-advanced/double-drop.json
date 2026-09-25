@@ -1,0 +1,57 @@
+{
+  "id": "double-drop",
+  "version": 1,
+  "name": "Double drop",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 24,
+  "targets": [
+    {
+      "c": "playB",
+      "type": "tap",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 0,
+      "t1": 64,
+      "v": 0
+    },
+    {
+      "c": "faderB",
+      "type": "ramp",
+      "t": 63.75,
+      "t1": 64,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderA",
+      "t": 0,
+      "t1": 80,
+      "v": 1
+    },
+    {
+      "c": "faderA",
+      "type": "ramp",
+      "t": 80,
+      "t1": 96,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Two drops on the same beat\n\nCue B so its drop lands on bar 17 of A's drop section. B waits silent, then its fader slams up in the quarter beat before bar 17 so both drops hit together; A leaves over bars 21 to 25. Key-match the two tracks or the moment collapses.\n\nThe prep is the skill: you need both tracks' drop points as hot cues before you begin.\n",
+  "skills": [
+    "double-drop"
+  ],
+  "genre": [
+    "drum-and-bass",
+    "dubstep",
+    "edm"
+  ],
+  "path": "transitions",
+  "level": 4
+}

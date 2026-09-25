@@ -1,0 +1,32 @@
+{
+  "name": "midi-trainer",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @midi-trainer/app dev",
+    "build": "pnpm -r build",
+    "preview": "pnpm --filter @midi-trainer/app preview",
+    "test": "pnpm -r test",
+    "e2e": "pnpm --filter @midi-trainer/app e2e",
+    "lint": "eslint .",
+    "typecheck": "pnpm -r typecheck",
+    "check": "pnpm lint && pnpm typecheck && pnpm test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
+    "globals": "^16.5.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.55.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "type": "module"
+}

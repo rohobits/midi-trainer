@@ -1,0 +1,97 @@
+{
+  "id": "staggered-eq-blend",
+  "version": 1,
+  "name": "Staggered EQ blend",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 36,
+  "targets": [
+    {
+      "c": "playB",
+      "type": "tap",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 64,
+      "v": 0
+    },
+    {
+      "type": "hold",
+      "c": "midB",
+      "t": 0,
+      "t1": 32,
+      "v": 0
+    },
+    {
+      "c": "faderB",
+      "type": "ramp",
+      "t": 0,
+      "t1": 16,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "c": "hiA",
+      "type": "ramp",
+      "t": 16,
+      "t1": 32,
+      "v0": 0.5,
+      "v1": 0.2
+    },
+    {
+      "c": "midB",
+      "type": "ramp",
+      "t": 32,
+      "t1": 48,
+      "v0": 0,
+      "v1": 0.5
+    },
+    {
+      "c": "midA",
+      "type": "ramp",
+      "t": 48,
+      "t1": 64,
+      "v0": 0.5,
+      "v1": 0
+    },
+    {
+      "c": "lowA",
+      "type": "ramp",
+      "t": 64,
+      "t1": 80,
+      "v0": 0.5,
+      "v1": 0
+    },
+    {
+      "c": "lowB",
+      "type": "ramp",
+      "t": 64,
+      "t1": 80,
+      "v0": 0,
+      "v1": 0.5
+    },
+    {
+      "c": "faderA",
+      "type": "ramp",
+      "t": 96,
+      "t1": 128,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Hand over the frequency spectrum one band at a time\n\nHighs first, then mids, then bass. A's hi comes down as B arrives, B's mids arrive over bars 9 to 13 while A's mids leave, and the bass swaps last at bar 17. At no point do both tracks own the same band at full.\n\nThis is the blend you use when two tracks are melodically close and a plain fader mix would clash.\n",
+  "skills": [
+    "staggered-eq",
+    "bass-swap"
+  ],
+  "genre": [
+    "techno",
+    "house"
+  ],
+  "path": "transitions",
+  "level": 2
+}
