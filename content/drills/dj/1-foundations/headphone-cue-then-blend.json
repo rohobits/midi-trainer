@@ -1,0 +1,57 @@
+{
+  "id": "headphone-cue-then-blend",
+  "version": 1,
+  "name": "Headphone cue, then blend",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 24,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "cueHpB",
+      "t": 0
+    },
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 32
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 32,
+      "t1": 64,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "tap",
+      "c": "cueHpB",
+      "t": 64
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 64,
+      "t1": 96,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Hear it before the room does\n\nPress headphone CUE on channel B while A plays to the room, audition B for 8 bars, then play it on bar 9 and blend it in over 8 bars. Once B is in the mix, press CUE B again to turn its headphone feed off, and fade A out.\n\nThe order matters: cue on, audition, play on the phrase, blend, cue off. Leaving the cue button lit after the mix means your next audition is two tracks in one ear. Set the headphone MIX knob to the cue side while you audition and to master while you blend, so what you hear is what you are judging.\n",
+  "skills": [
+    "headphone-cueing",
+    "fader-blend"
+  ],
+  "genre": [
+    "house",
+    "open-format"
+  ],
+  "path": "combined",
+  "level": 1,
+  "sources": [
+    "https://www.digitaldjtips.com/mixing-in-your-headphones/",
+    "https://support.rane.com/en/support/solutions/articles/69000858891-understanding-and-utilizing-the-headphone-cue"
+  ]
+}

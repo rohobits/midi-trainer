@@ -1,0 +1,98 @@
+{
+  "id": "tempo-fader-ride",
+  "version": 1,
+  "name": "Tempo-fader ride",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 12,
+  "targets": [
+    {
+      "type": "ramp",
+      "c": "tempoB",
+      "t": 0,
+      "t1": 2,
+      "v0": 0.5,
+      "v1": 0.54
+    },
+    {
+      "type": "ramp",
+      "c": "tempoB",
+      "t": 2,
+      "t1": 4,
+      "v0": 0.54,
+      "v1": 0.5
+    },
+    {
+      "type": "hold",
+      "c": "tempoB",
+      "t": 4,
+      "t1": 16,
+      "v": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "tempoB",
+      "t": 16,
+      "t1": 18,
+      "v0": 0.5,
+      "v1": 0.46
+    },
+    {
+      "type": "ramp",
+      "c": "tempoB",
+      "t": 18,
+      "t1": 20,
+      "v0": 0.46,
+      "v1": 0.5
+    },
+    {
+      "type": "hold",
+      "c": "tempoB",
+      "t": 20,
+      "t1": 32,
+      "v": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "tempoB",
+      "t": 32,
+      "t1": 34,
+      "v0": 0.5,
+      "v1": 0.54
+    },
+    {
+      "type": "ramp",
+      "c": "tempoB",
+      "t": 34,
+      "t1": 36,
+      "v0": 0.54,
+      "v1": 0.5
+    },
+    {
+      "type": "hold",
+      "c": "tempoB",
+      "t": 36,
+      "t1": 48,
+      "v": 0.5
+    }
+  ],
+  "lesson": "## Push, return, leave it\n\nPitch riding: nudge the tempo fader up for two beats, bring it straight back to where it was, and leave it for the rest of the phrase. Then the same downward at bar 5, upward again at bar 9. The return has to land on exactly the starting value or the tracks drift for the rest of the mix.\n\nThis is what you do when the beats have slipped a few milliseconds but the tempos are actually matched: a temporary speed change moves the phase, the return keeps the tempo. Riders who forget to return end up chasing the drift they just created.\n",
+  "skills": [
+    "beatmatching",
+    "pitch-riding"
+  ],
+  "genre": [
+    "house",
+    "techno",
+    "drum-and-bass"
+  ],
+  "path": "jog",
+  "level": 2,
+  "sources": [
+    "https://bangerz-army.com/blog/mastering-dj-beat-matching-techniques-a-comprehensive-guide/"
+  ],
+  "prereqs": [
+    "tempo-match-ramp"
+  ]
+}

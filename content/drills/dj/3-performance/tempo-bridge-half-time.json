@@ -1,0 +1,91 @@
+{
+  "id": "tempo-bridge-half-time",
+  "version": 1,
+  "name": "Tempo bridge: half time to double",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 124,
+  "bars": 24,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "chSelect1",
+      "t": 0
+    },
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 0,
+      "t1": 63,
+      "v": 0
+    },
+    {
+      "type": "sequence",
+      "t": 63,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "beatFxOn",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "faderA",
+          "t": 0.5,
+          "v0": 1,
+          "v1": 0
+        },
+        {
+          "type": "tap",
+          "c": "playB",
+          "t": 1
+        },
+        {
+          "type": "cut",
+          "c": "faderB",
+          "t": 1,
+          "v0": 0,
+          "v1": 1
+        },
+        {
+          "type": "tap",
+          "c": "beatFxOn",
+          "t": 8
+        }
+      ]
+    },
+    {
+      "type": "hold",
+      "c": "tempoB",
+      "t": 64,
+      "t1": 96,
+      "v": 0.5
+    }
+  ],
+  "lesson": "## 124 out, 87 under, 174 on top\n\nA at 124 BPM echoes out on the last beat of bar 16. B is a 174 BPM track playing at half time (87), so its half-time feel lands on the one of bar 17 and the room reads it as a slow-down. Leave B's tempo untouched afterwards; the double-time kick arrives when B's own arrangement brings it in.\n\nHalf and double time work because 87 and 174 share every downbeat. The echo out hides the fact that 124 and 87 do not, so the echo tail is the bridge. This drill needs the audio to make sense: the timing is scored, but what you are learning is the feel of the switch.\n",
+  "skills": [
+    "tempo-bridging",
+    "echo-out"
+  ],
+  "genre": [
+    "drum-and-bass",
+    "house",
+    "open-format"
+  ],
+  "path": "combined",
+  "level": 4,
+  "sources": [
+    "https://www.digitaldjtips.com/how-to-mix-using-half-time-and-double-time-bpms/",
+    "https://vibesdj.io/learn/techniques/auto-bpm-transition",
+    "https://blog.pioneerdj.com/djtips/how-djs-think-about-tempo-and-genre/"
+  ],
+  "prereqs": [
+    "echo-out"
+  ],
+  "needsAudio": true
+}

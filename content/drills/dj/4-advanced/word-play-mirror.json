@@ -1,0 +1,81 @@
+{
+  "id": "word-play-mirror",
+  "version": 1,
+  "name": "Word play",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 92,
+  "bars": 8,
+  "targets": [
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 0,
+      "t1": 15,
+      "v": 0
+    },
+    {
+      "type": "sequence",
+      "t": 15,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 16,
+      "t1": 31,
+      "v": 1
+    },
+    {
+      "type": "sequence",
+      "t": 31,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        }
+      ]
+    }
+  ],
+  "lesson": "## Answer the last word with the same word\n\nA's phrase ends with a word on beat 4 of bar 4; B has a hot cue on the same word in a different track. On that beat press B1 and snap the crossfader to B; B carries on. On beat 4 of bar 8, A1 with a snap back.\n\nWord play is a hip-hop transition where the lyric does the mixing: the room hears the word twice, in two voices, and the second track has arrived. The cue press has to sit on the exact beat the word falls on, which is why this only makes sense with the audio on. Prepare the cues on the word's first consonant, not the beat before it.\n",
+  "skills": [
+    "word-play",
+    "cue-points"
+  ],
+  "genre": [
+    "hip-hop",
+    "open-format"
+  ],
+  "path": "combined",
+  "level": 2,
+  "sources": [
+    "https://wearecrossfader.co.uk/blog/how-to-mix-hip-hop/"
+  ],
+  "prereqs": [
+    "xf-drop-mix"
+  ],
+  "needsAudio": true
+}

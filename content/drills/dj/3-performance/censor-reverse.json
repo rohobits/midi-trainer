@@ -1,0 +1,46 @@
+{
+  "id": "censor-reverse",
+  "version": 1,
+  "name": "Censor with reverse",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 96,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "beatJumpA8",
+      "t": 3
+    },
+    {
+      "type": "tap",
+      "c": "beatJumpA8",
+      "t": 4
+    },
+    {
+      "type": "tap",
+      "c": "beatJumpA8",
+      "t": 11
+    },
+    {
+      "type": "tap",
+      "c": "beatJumpA8",
+      "t": 12
+    }
+  ],
+  "lesson": "## Reverse the word, keep the beat\n\nBeat Jump pad 8 on the FLX4 reverses playback while held. Press it on beat 4 of bar 1 and release on the one of bar 2; again on beat 4 of bar 3. The word under the reversed beat is gone, and because the software keeps the grid moving, the track resumes in time when you let go.\n\nThis is the clean-edit censor: a reversed syllable rather than a gap. The press must sit on the beat where the word starts, and the release on the next beat, so the reverse sounds like a scratch. Practise with the track's lyric sheet; on the night you have one chance.\n",
+  "skills": [
+    "censor",
+    "pad-fx"
+  ],
+  "genre": [
+    "hip-hop",
+    "open-format"
+  ],
+  "path": "pads",
+  "level": 2,
+  "sources": [
+    "https://support.serato.com/hc/en-us/articles/10173686473231-Pioneer-DJ-DDJ-FLX4-Quickstart-Guide"
+  ],
+  "needsAudio": true
+}

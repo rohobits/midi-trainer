@@ -1,0 +1,95 @@
+{
+  "id": "fisher-pre-drop-entry",
+  "version": 1,
+  "name": "Fisher-style pre-drop entry",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 40,
+  "targets": [
+    {
+      "type": "hold",
+      "c": "faderA",
+      "t": 0,
+      "t1": 120,
+      "v": 1
+    },
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 64
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 64,
+      "t1": 120,
+      "v": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 64,
+      "t1": 96,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 100,
+      "t1": 102,
+      "v0": 1,
+      "v1": 0.6
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 102,
+      "t1": 104,
+      "v0": 0.6,
+      "v1": 1
+    },
+    {
+      "type": "cut",
+      "c": "faderA",
+      "t": 120,
+      "v0": 1,
+      "v1": 0
+    },
+    {
+      "type": "ramp",
+      "c": "lowB",
+      "t": 120,
+      "t1": 124,
+      "v0": 0,
+      "v1": 0.5
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 128,
+      "t1": 160,
+      "v": 1
+    }
+  ],
+  "lesson": "## In 16 bars after the drop, out 2 bars before the next\n\nThe drill starts on A's last drop. B, with its low cut, starts 16 bars later on bar 17 and rises to full over 8 bars. In bar 26 dip B's fader to about 60% and straight back: a one-bar breath. Kill A on bar 31, two bars before B's drop on bar 33, bring B's low up in that gap, and hold B at full through the drop.\n\nClub Ready's breakdown of Fisher's mixing is this shape: full tracks over full outros, EQ and filter doing the work, short dips for movement, and an early kill so the new drop lands in silence. The early kill is the part people get wrong; two bars of just B's build makes the drop feel earned.\n",
+  "skills": [
+    "fisher-entry",
+    "phrase-mixing",
+    "fader-dips"
+  ],
+  "genre": [
+    "tech-house"
+  ],
+  "path": "transitions",
+  "level": 4,
+  "sources": [
+    "https://www.clubreadydjschool.com/tribe-talk/mix-tips/how-to-dj-like-fisher",
+    "https://doubleclap.dance/fisher-dj-essential-guide-to-the-tech-house-phenomenon/"
+  ],
+  "prereqs": [
+    "outro-to-intro-full-volume"
+  ],
+  "artist": "Fisher"
+}

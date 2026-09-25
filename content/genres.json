@@ -1,0 +1,114 @@
+[
+  {
+    "id": "house",
+    "name": "House",
+    "bpmRange": [
+      120,
+      128
+    ],
+    "transitionBars": 24,
+    "notes": "Outro-to-intro at full volume with the bass swapped on a phrase boundary, over 16 to 32 bars.",
+    "sources": [
+      "https://wearecrossfader.co.uk/blog/3-ways-to-mix-house-music/",
+      "https://blog.pioneerdj.com/djtips/we-uncover-the-mixing-techniques-behind-every-major-genre/"
+    ]
+  },
+  {
+    "id": "tech-house",
+    "name": "Tech house",
+    "bpmRange": [
+      124,
+      130
+    ],
+    "transitionBars": 16,
+    "notes": "Same outro-to-intro shape as house with the bass swap done inside a bar or two, Fisher-style early kills and dips.",
+    "sources": [
+      "https://blog.pioneerdj.com/djtips/we-uncover-the-mixing-techniques-behind-every-major-genre/",
+      "https://www.clubreadydjschool.com/tribe-talk/mix-tips/how-to-dj-like-fisher"
+    ]
+  },
+  {
+    "id": "techno",
+    "name": "Techno",
+    "bpmRange": [
+      128,
+      140
+    ],
+    "transitionBars": 48,
+    "notes": "Long 32 to 64-bar EQ blends, the outgoing outro looped, filters doing the last few bars.",
+    "sources": [
+      "https://blog.pioneerdj.com/djtips/we-uncover-the-mixing-techniques-behind-every-major-genre/",
+      "https://www.electronicbeats.net/played-out-charlotte-de-witte/"
+    ]
+  },
+  {
+    "id": "trance",
+    "name": "Trance",
+    "bpmRange": [
+      136,
+      142
+    ],
+    "transitionBars": 48,
+    "notes": "32 to 64-bar blends, breakdown swaps and strict harmonic matching because melodies overlap for a minute.",
+    "sources": [
+      "https://wearecrossfader.co.uk/blog/how-to-dj-trance-music/",
+      "https://www.mixgraph.io/mixing-guide/trance"
+    ]
+  },
+  {
+    "id": "drum-and-bass",
+    "name": "Drum and bass",
+    "bpmRange": [
+      170,
+      176
+    ],
+    "transitionBars": 24,
+    "notes": "16 to 32-bar mixes with the lows cut hard on the incoming track and double drops on 32-bar boundaries.",
+    "sources": [
+      "https://www.mixgraph.io/mixing-guide/drum-and-bass",
+      "https://wearecrossfader.co.uk/blog/how-to-mix-drum-bass-free-dj-tutorial/"
+    ]
+  },
+  {
+    "id": "dubstep",
+    "name": "Dubstep",
+    "bpmRange": [
+      138,
+      142
+    ],
+    "transitionBars": 8,
+    "notes": "Half-time at 140 with bass swaps, hard cuts and drop swaps, and 70 to 140 tempo bridges.",
+    "sources": [
+      "https://dj.studio/blog/bpm-for-dubstep",
+      "https://blog.pioneerdj.com/djtips/we-uncover-the-mixing-techniques-behind-every-major-genre/"
+    ]
+  },
+  {
+    "id": "hip-hop",
+    "name": "Hip-hop",
+    "bpmRange": [
+      85,
+      100
+    ],
+    "transitionBars": 8,
+    "notes": "Drop mix on the one every 8 bars, word play, fader cuts, backspins and tempo jumps rather than blends.",
+    "sources": [
+      "https://blog.pioneerdj.com/djtips/we-uncover-the-mixing-techniques-behind-every-major-genre/",
+      "https://www.digitaldjtips.com/dropmix-like-a-pro-hip-hop-dj/"
+    ]
+  },
+  {
+    "id": "open-format",
+    "name": "Open format",
+    "bpmRange": [
+      90,
+      130
+    ],
+    "transitionBars": 8,
+    "notes": "Hip-hop rules across every tempo: cut on the one, 8-bar dwell, samplers and word play, echo outs for tempo changes.",
+    "sources": [
+      "https://blog.pioneerdj.com/djtips/we-uncover-the-mixing-techniques-behind-every-major-genre/",
+      "https://www.mixcloud.com/blog/2026/04/13/a-guide-to-open-format-djing-with-dj88/"
+    ]
+  }
+]

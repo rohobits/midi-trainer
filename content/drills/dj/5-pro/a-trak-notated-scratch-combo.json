@@ -1,0 +1,130 @@
+{
+  "id": "a-trak-notated-scratch-combo",
+  "version": 1,
+  "name": "A-Trak: notated scratch combo",
+  "tier": "Pro",
+  "profile": "flx4",
+  "bpm": 95,
+  "bars": 2,
+  "targets": [
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 0,
+      "t1": 2,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 0,
+      "n": 8,
+      "step": 0.25,
+      "v0": 1,
+      "v1": 0
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 2,
+      "t1": 4,
+      "pattern": [
+        "f",
+        "f",
+        "b",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 4,
+      "t1": 6,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 4.2,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 4.7,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 5.2,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 5.7,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 6,
+      "t1": 8,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    }
+  ],
+  "lesson": "## A written line, played as read\n\nTwo bars from a notated scratch line, the way A-Trak writes them. Beats 1 and 2: chirps on every eighth. Beats 3 and 4: a tear, two forward halves then two back. Beats 5 and 6: one-click flares on every eighth. Beats 7 and 8: a scribble-speed baby scratch.\n\nMixmag's oral history and EDM.com's piece on A-Trak's notation make the point that scratching can be written down and read, which is what this drill does: the pattern is the score. Each technique has its own fader rule (chirp closes at the end of the stroke, flare clicks in the middle, tear and baby leave it open), so the exercise is switching rules on the beat without the hands arguing.\n",
+  "skills": [
+    "scratch-combo",
+    "scratch-chirp",
+    "scratch-flare",
+    "scratch-tear"
+  ],
+  "genre": [
+    "hip-hop",
+    "turntablism"
+  ],
+  "path": "jog",
+  "level": 5,
+  "sources": [
+    "https://mixmag.net/feature/an-oral-history-a-traks-journey-with-turntables",
+    "https://edm.com/gear-tech/a-trak-dj-notes-art-of-scratching"
+  ],
+  "prereqs": [
+    "flare-scratch-one-click",
+    "tear-scratch"
+  ],
+  "artist": "A-Trak"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "camelot-energy-boost",
+  "version": 1,
+  "name": "Camelot energy boost",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 128,
+  "bars": 20,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "select",
+      "c": "keyShiftB6",
+      "choices": [
+        "keyShiftB1",
+        "keyShiftB2",
+        "keyShiftB3",
+        "keyShiftB4",
+        "keyShiftB5",
+        "keyShiftB6",
+        "keyShiftB7",
+        "keyShiftB8"
+      ],
+      "t": 44,
+      "t1": 48
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 48,
+      "t1": 80,
+      "v": 1
+    }
+  ],
+  "lesson": "## Two semitones up on a percussive section\n\nMix B in normally over 8 bars. During the drum-only section that follows, in the last bar before bar 13, press the KEY SHIFT pad two semitones up (pad 6 here). The track lifts in energy without a new track.\n\nMixed In Key calls this the energy boost: +2 on the Camelot wheel is a whole step up and reads as a lift, +7 is a semitone and reads as tension. Do it where there is no melody to expose the artefacts of the shift, which is why the drill puts it over drums. Bigger shifts than two semitones sound like a chipmunk; the pad choice is the score.\n",
+  "skills": [
+    "harmonic-mixing",
+    "energy-boost",
+    "key-shift"
+  ],
+  "genre": [
+    "house",
+    "edm"
+  ],
+  "path": "pads",
+  "level": 4,
+  "sources": [
+    "https://mixedinkey.com/workflows/change-energy-with-camelot-wheel/",
+    "https://wearecrossfader.co.uk/blog/key-lock/"
+  ],
+  "prereqs": [
+    "harmonic-key-shift-choice"
+  ]
+}

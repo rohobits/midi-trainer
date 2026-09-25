@@ -1,0 +1,39 @@
+{
+  "id": "beat-roll-build",
+  "version": 1,
+  "name": "Beat roll build",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 128,
+  "bars": 16,
+  "targets": [
+    {
+      "type": "step",
+      "c": "padFxA4",
+      "t": 48,
+      "step": 2,
+      "count": 8,
+      "exitC": "hcA1",
+      "exitAt": 64
+    }
+  ],
+  "lesson": "## Roll into the drop\n\nPad FX A4 set to a short Roll (1/4 beat). Retrigger it every two beats through bars 13 to 16 so the roll restarts eight times, then press hot cue A1 on the one of bar 17 to land the drop clean.\n\nBeat rolls repeat the last fraction of a beat while the track keeps moving underneath, so unlike a loop you never lose your place. Carl Cox's rolls are subtle: short, on the beat, used for a bar or two. The pad retriggers must sit on beats 1 and 3 of each bar; the hot cue press is what turns the build into a release.\n",
+  "skills": [
+    "beat-roll",
+    "pad-fx"
+  ],
+  "genre": [
+    "techno",
+    "house",
+    "edm"
+  ],
+  "path": "fx",
+  "level": 4,
+  "sources": [
+    "https://djtechtools.com/2011/03/20/create-amazing-build-ups-beat-roll/",
+    "https://wearecrossfader.co.uk/blog/carl-cox-mixing-techniques/"
+  ],
+  "prereqs": [
+    "loop-roll-halving"
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "id": "beat-juggle-extend",
+  "version": 1,
+  "name": "Beat juggle: extend the one",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 96,
+  "bars": 8,
+  "targets": [
+    {
+      "type": "sequence",
+      "t": 0,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 2
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 2,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 4
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 4,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 6
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 6,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 8,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 2
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 2,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 4
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 4,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 6
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 6,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 16,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 1
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 1,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 2
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 2,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 3
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 3,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 4
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 4,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 5
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 5,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 6
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 6,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 7
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 7,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 24,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 1
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 1,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 2
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 2,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 3
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 3,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 4
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 4,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 5
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 5,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 6
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 6,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 7
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 7,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        }
+      ]
+    }
+  ],
+  "lesson": "## Two copies, one endless first beat\n\nThe same break on both decks, hot cue 1 on its first beat. Play A's one, and two beats later cut to B and press B1 so the room hears the first two beats again; two beats later back to A. The break's first half repeats forever. From bar 5 the cut comes every beat, so only the downbeat is left.\n\nThis is beat juggling as Wikipedia and School of Scratch describe it: extending a section by alternating between two copies. The cue press restarts the copy that is silent, the crossfader reveals it, and both must be on the beat. You need the audio to hear whether the juggle is seamless; the scorer checks that the cue and the cut are one event.\n",
+  "skills": [
+    "beat-juggling",
+    "cue-juggling"
+  ],
+  "genre": [
+    "hip-hop",
+    "turntablism"
+  ],
+  "path": "combined",
+  "level": 4,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Beat_juggling",
+    "https://schoolofscratch.com/beat-juggling/"
+  ],
+  "prereqs": [
+    "cue-juggle-across-decks"
+  ],
+  "needsAudio": true
+}

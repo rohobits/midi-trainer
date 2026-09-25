@@ -1,0 +1,115 @@
+{
+  "id": "top-down-eq-handover",
+  "version": 1,
+  "name": "Top-down EQ handover",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 130,
+  "bars": 24,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "hiB",
+      "t": 0,
+      "t1": 16,
+      "v": 0
+    },
+    {
+      "type": "hold",
+      "c": "midB",
+      "t": 0,
+      "t1": 32,
+      "v": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 48,
+      "v": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 16,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "ramp",
+      "c": "hiA",
+      "t": 16,
+      "t1": 32,
+      "v0": 0.5,
+      "v1": 0
+    },
+    {
+      "type": "ramp",
+      "c": "hiB",
+      "t": 16,
+      "t1": 32,
+      "v0": 0,
+      "v1": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "midA",
+      "t": 32,
+      "t1": 48,
+      "v0": 0.5,
+      "v1": 0
+    },
+    {
+      "type": "ramp",
+      "c": "midB",
+      "t": 32,
+      "t1": 48,
+      "v0": 0,
+      "v1": 0.5
+    },
+    {
+      "type": "cross",
+      "c": "lowA",
+      "c2": "lowB",
+      "t": 48,
+      "t1": 64,
+      "va0": 0.5,
+      "va1": 0,
+      "vb0": 0,
+      "vb1": 0.5,
+      "ceiling": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 64,
+      "t1": 96,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Three bands, four bars each\n\nB comes in with all three EQ bands cut and its fader up in 4 bars. Then, four bars per band: highs swap over bars 5 to 9, mids over 9 to 13, lows over 13 to 17. A's fader leaves over bars 17 to 25.\n\nTop-down works because the ear notices highs first and bass last: by the time the bass swaps, the listener has been hearing B's hats and synths for 8 bars and the new kick feels like it was always there. Each pair of ramps is a see-saw: A's band goes down at the same speed B's comes up, so the total energy in that band stays flat.\n",
+  "skills": [
+    "staggered-eq",
+    "bass-swap"
+  ],
+  "genre": [
+    "techno",
+    "house"
+  ],
+  "path": "transitions",
+  "level": 2,
+  "sources": [
+    "https://homedjstudio.com/dj-eqing/",
+    "https://www.mixgraph.io/learn/dj-transition-techniques"
+  ],
+  "prereqs": [
+    "staggered-eq-blend"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "smart-fader-transition",
+  "version": 1,
+  "name": "Smart Fader transition",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 124,
+  "bars": 24,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "smartFader",
+      "t": 0
+    },
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 32
+    },
+    {
+      "type": "ramp",
+      "c": "xf",
+      "t": 32,
+      "t1": 64,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 64,
+      "t1": 96,
+      "v": 1
+    }
+  ],
+  "lesson": "## Let the crossfader do the tempo\n\nPress SMART FADER, play B on bar 9, and move the crossfader from A to B evenly across bars 9 to 17. Hold it on B afterwards. With Smart Fader on, the crossfader ramps B's BPM toward A's and adds echo as you move, so tracks at different tempos can be joined.\n\nIt still has to be phrased. The automation handles tempo and the echo tail; it does not know where the bars are. A crossfader that arrives at B on the one of bar 17 sounds like a mix; one that arrives on beat 3 sounds like the machine did it. Use it for tempo jumps you could not beatmatch by hand.\n",
+  "skills": [
+    "smart-fader",
+    "tempo-bridging"
+  ],
+  "genre": [
+    "open-format",
+    "house"
+  ],
+  "path": "mixer",
+  "level": 3,
+  "sources": [
+    "https://wearecrossfader.co.uk/blog/ddj-flx4-smart-fader-tutorial/",
+    "https://assets.ctfassets.net/q602vtcuu3w3/2vz7GMLHawLZBK6gWpCP9V/26bd62eef3eca3714ddb1d3396d30f7b/DDJ-FLX4_manual_EN.pdf"
+  ],
+  "prereqs": [
+    "fader-blend-8-bars"
+  ]
+}

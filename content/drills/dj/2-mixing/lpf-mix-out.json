@@ -1,0 +1,67 @@
+{
+  "id": "lpf-mix-out",
+  "version": 1,
+  "name": "Low-pass mix out",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 124,
+  "bars": 20,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "ramp",
+      "c": "filtA",
+      "t": 32,
+      "t1": 64,
+      "v0": 0.5,
+      "v1": 0.1
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 64,
+      "t1": 68,
+      "v0": 1,
+      "v1": 0
+    },
+    {
+      "type": "ramp",
+      "c": "filtA",
+      "t": 68,
+      "t1": 72,
+      "v0": 0.1,
+      "v1": 0.5
+    }
+  ],
+  "lesson": "## Muffle it out of the room\n\nB in over 8 bars. From bar 9 turn CFX A left into low-pass over 8 bars until only a dull thud is left, drop A's fader in the first bar of 17, and return the filter knob to centre in the next bar.\n\nLow-pass out is the softer sibling of the high-pass sweep: the track sinks into the floor rather than rising into the air. Use it when the incoming track is bright and you want the old one to vanish underneath it. The reset matters as much as the sweep; a filter left at 10% will swallow the next track you load.\n",
+  "skills": [
+    "filter-mix-out",
+    "cfx"
+  ],
+  "genre": [
+    "house",
+    "melodic-house",
+    "tech-house"
+  ],
+  "path": "transitions",
+  "level": 2,
+  "sources": [
+    "https://www.musicradar.com/news/eq-and-filter-tricks-for-djs",
+    "https://learningtodj.com/blog/practical-guide-to-dj-filters/"
+  ],
+  "prereqs": [
+    "cfx-return-to-detent"
+  ]
+}

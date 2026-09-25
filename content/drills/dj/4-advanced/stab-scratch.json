@@ -1,0 +1,105 @@
+{
+  "id": "stab-scratch",
+  "version": 1,
+  "name": "Stab scratch",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 95,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 0,
+      "t1": 4,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 4,
+      "t1": 8,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 8,
+      "t1": 12,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 12,
+      "t1": 16,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 0,
+      "n": 32,
+      "step": 0.5,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Open on the push, closed on the pull\n\nA quick forward stroke on each beat with the crossfader opening as the stroke starts, then the fader closes and the platter comes back silently on the off-beat. Eight strokes a bar, only the forward half is heard.\n\nThe stab (forward scratch) is the first scratch that uses the fader, and it teaches the coordination that everything after it needs: the fader hand and the platter hand move at the same instant, in opposite senses. The scorer counts the fader opens against the grid and the strokes against the pattern. Sharp crossfader curve, fader resting closed.\n",
+  "skills": [
+    "scratch-stab",
+    "scratching",
+    "fader-cuts"
+  ],
+  "genre": [
+    "hip-hop",
+    "turntablism"
+  ],
+  "path": "jog",
+  "level": 4,
+  "sources": [
+    "https://dj.fandom.com/wiki/Scratching",
+    "https://djingpro.com/learn-how-to-scratch/",
+    "https://studioscratches.com/the-transformer-scratch-tutorial/"
+  ],
+  "prereqs": [
+    "baby-scratch",
+    "transformer-on-the-crossfader"
+  ]
+}

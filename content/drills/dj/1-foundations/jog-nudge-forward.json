@@ -1,0 +1,62 @@
+{
+  "id": "jog-nudge-forward",
+  "version": 1,
+  "name": "Jog nudge forward",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 8,
+  "targets": [
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 4,
+      "t1": 5,
+      "pattern": [
+        "f"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 12,
+      "t1": 13,
+      "pattern": [
+        "f"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 20,
+      "t1": 21,
+      "pattern": [
+        "f"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 28,
+      "t1": 29,
+      "pattern": [
+        "f"
+      ]
+    }
+  ],
+  "lesson": "## One push, then hands off\n\nOn beat 1 of bars 2, 4, 6 and 8, push the edge of jog A forward for one beat and release. Nothing in between. The jog on the FLX4 is a pitch bend in the platter edge: pushing forward speeds the track for as long as your hand moves, and letting go restores the tempo.\n\nA nudge is a correction of phase, not tempo. The fault to avoid is the second push: if the first one was right, a second makes it wrong again. Give each nudge a beat, then listen for a bar before deciding you need another.\n",
+  "skills": [
+    "jog-nudge",
+    "beatmatching"
+  ],
+  "genre": [
+    "house",
+    "techno"
+  ],
+  "path": "jog",
+  "level": 1,
+  "sources": [
+    "https://pirate.com/en/blog/how-to-beatmatch/",
+    "https://bangerz-army.com/blog/mastering-dj-beat-matching-techniques-a-comprehensive-guide/"
+  ]
+}

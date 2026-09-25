@@ -1,0 +1,120 @@
+{
+  "id": "quick-mix-8-bar-dropmix",
+  "version": 1,
+  "name": "Quick mix: 8-bar dropmix",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 96,
+  "bars": 32,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 0,
+      "t1": 32,
+      "v": 0
+    },
+    {
+      "type": "sequence",
+      "t": 32,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 32,
+      "t1": 64,
+      "v": 1
+    },
+    {
+      "type": "sequence",
+      "t": 64,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 64,
+      "t1": 96,
+      "v": 0
+    },
+    {
+      "type": "sequence",
+      "t": 96,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcB2",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 96,
+      "t1": 128,
+      "v": 1
+    }
+  ],
+  "lesson": "## A new hook every 8 bars\n\nHot cues on the hooks: B1 and B2 on deck B, A1 on deck A. Every 8 bars, press the next hot cue and snap the crossfader to that deck in the same motion: B1 at bar 9, A1 at bar 17, B2 at bar 25. Each cut is a switch inside 100 ms, on the one.\n\nThis is the hip-hop dropmix from the sources: 8 or 16 bars of each record, cut on the downbeat, no blend. The hot cue press and the crossfader snap are one gesture; the cue press is on the beat and the fader lands on it. Keep both tracks running so the cues retrigger the hook, not the intro.\n",
+  "skills": [
+    "quick-mix",
+    "drop-mix",
+    "cue-points"
+  ],
+  "genre": [
+    "hip-hop",
+    "open-format"
+  ],
+  "path": "transitions",
+  "level": 3,
+  "sources": [
+    "https://www.digitaldjtips.com/dropmix-like-a-pro-hip-hop-dj/",
+    "https://www.mixcloud.com/blog/2026/04/13/a-guide-to-open-format-djing-with-dj88/"
+  ],
+  "prereqs": [
+    "xf-drop-mix"
+  ]
+}

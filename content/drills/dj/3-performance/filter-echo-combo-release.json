@@ -1,0 +1,91 @@
+{
+  "id": "filter-echo-combo-release",
+  "version": 1,
+  "name": "Filter and echo combo release",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 20,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "smartCfx",
+      "t": 0
+    },
+    {
+      "type": "tap",
+      "c": "chSelect1",
+      "t": 0
+    },
+    {
+      "type": "ramp",
+      "c": "filtA",
+      "t": 48,
+      "t1": 62,
+      "v0": 0.5,
+      "v1": 0.9
+    },
+    {
+      "type": "tap",
+      "c": "beatFxOn",
+      "t": 62
+    },
+    {
+      "type": "sequence",
+      "t": 64,
+      "steps": [
+        {
+          "type": "cut",
+          "c": "filtA",
+          "t": 0,
+          "v0": 0.9,
+          "v1": 0.5
+        },
+        {
+          "type": "cut",
+          "c": "faderA",
+          "t": 0.5,
+          "v0": 1,
+          "v1": 0
+        },
+        {
+          "type": "tap",
+          "c": "playB",
+          "t": 1
+        },
+        {
+          "type": "cut",
+          "c": "faderB",
+          "t": 1,
+          "v0": 0,
+          "v1": 1
+        },
+        {
+          "type": "tap",
+          "c": "beatFxOn",
+          "t": 8
+        }
+      ]
+    }
+  ],
+  "lesson": "## Sweep up, echo, drop it\n\nSmart CFX on and Beat FX on ECHO for channel 1. Sweep A's CFX right over bars 13 to 16, press ECHO on the last half beat, snap the filter back to centre on the one, cut A's fader inside half a beat, and play B on the following beat. Turn the echo off two bars later.\n\nThis is the combined version of the Smart CFX sweep and the echo out. The filter builds the tension, the echo catches the last hit, the cut removes the dry signal so only the echo tail carries into B. The filter reset on the one is the moment the crowd hears as the \"drop\" even though B is what follows.\n",
+  "skills": [
+    "smart-cfx",
+    "echo-out",
+    "filter-mix-out"
+  ],
+  "genre": [
+    "house",
+    "tech-house"
+  ],
+  "path": "fx",
+  "level": 5,
+  "sources": [
+    "https://wearecrossfader.co.uk/blog/ddj-flx4-smart-fader-tutorial/",
+    "https://support.serato.com/hc/en-us/articles/202304784-How-to-do-echo-transitions-in-Serato-DJ"
+  ],
+  "prereqs": [
+    "smart-cfx-sweep",
+    "echo-out"
+  ]
+}

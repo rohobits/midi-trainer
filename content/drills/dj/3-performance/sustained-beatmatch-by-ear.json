@@ -1,0 +1,64 @@
+{
+  "id": "sustained-beatmatch-by-ear",
+  "version": 1,
+  "name": "Sustained beatmatch by ear",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 32,
+  "targets": [
+    {
+      "type": "ramp",
+      "c": "tempoB",
+      "t": 0,
+      "t1": 16,
+      "v0": 0.5,
+      "v1": 0.53
+    },
+    {
+      "type": "hold",
+      "c": "tempoB",
+      "t": 16,
+      "t1": 128,
+      "v": 0.53
+    },
+    {
+      "type": "jog",
+      "c": "jogB",
+      "t": 16,
+      "t1": 17,
+      "pattern": [
+        "f"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogB",
+      "t": 48,
+      "t1": 49,
+      "pattern": [
+        "b"
+      ]
+    }
+  ],
+  "lesson": "## Lock it, then keep it locked\n\nSync off, headphones on B. Bring B's tempo to match A over the first 4 bars, nudge once to align on bar 5, and keep the two tracks locked for 32 bars with as few corrections as possible; one small backward nudge on bar 13 is expected.\n\nThe sources score this as drift under 20 ms over 32 bars and a count of corrections. Fewer corrections is better, because every nudge is a chance to overshoot. Once the tempo is right, most of the work is listening for the flam between the kicks and doing nothing until you are sure which side it is on.\n",
+  "skills": [
+    "beatmatching",
+    "jog-nudge"
+  ],
+  "genre": [
+    "house",
+    "techno"
+  ],
+  "path": "jog",
+  "level": 2,
+  "sources": [
+    "https://manual.mixxx.org/2.4/en/chapters/djing_with_mixxx.html",
+    "https://pirate.com/en/blog/how-to-beatmatch/"
+  ],
+  "prereqs": [
+    "jog-nudge-correct-and-return",
+    "tempo-match-ramp"
+  ],
+  "needsAudio": true
+}

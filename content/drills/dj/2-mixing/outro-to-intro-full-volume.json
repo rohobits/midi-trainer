@@ -1,0 +1,83 @@
+{
+  "id": "outro-to-intro-full-volume",
+  "version": 1,
+  "name": "Outro to intro at full volume",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 124,
+  "bars": 36,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 64,
+      "v": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 8,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 8,
+      "t1": 144,
+      "v": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderA",
+      "t": 0,
+      "t1": 96,
+      "v": 1
+    },
+    {
+      "type": "cross",
+      "c": "lowA",
+      "c2": "lowB",
+      "t": 64,
+      "t1": 68,
+      "va0": 0.5,
+      "va1": 0,
+      "vb0": 0,
+      "vb1": 0.5,
+      "ceiling": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 96,
+      "t1": 128,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Both faders up, one bass at a time\n\nA is in its outro; B's intro starts on the one with its low cut. B's fader goes straight to full in 2 bars and both channels sit at full for 22 bars. The bass swaps in a single bar at bar 17, and A's fader only leaves over bars 25 to 33, well after B owns the mix.\n\nHouse tracks are built for this: outros and intros are stripped to drums so they stack without clashing. The scorer holds you to two faders at full; the only thing that stops it becoming mud is the low EQ, which is why the swap is the one precise move in an otherwise lazy transition.\n",
+  "skills": [
+    "outro-intro",
+    "bass-swap",
+    "phrase-mixing"
+  ],
+  "genre": [
+    "house",
+    "tech-house"
+  ],
+  "path": "transitions",
+  "level": 2,
+  "sources": [
+    "https://wearecrossfader.co.uk/blog/3-ways-to-mix-house-music/"
+  ],
+  "prereqs": [
+    "classic-bass-swap-transition"
+  ]
+}

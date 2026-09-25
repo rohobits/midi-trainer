@@ -1,0 +1,116 @@
+{
+  "id": "charlotte-de-witte-loop-out-high-cut",
+  "version": 1,
+  "name": "Charlotte de Witte: loop out and high-cut",
+  "tier": "Pro",
+  "profile": "flx4",
+  "bpm": 134,
+  "bars": 40,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "loopA",
+      "t": 32
+    },
+    {
+      "type": "tap",
+      "c": "loopOutA",
+      "t": 64
+    },
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 64
+    },
+    {
+      "type": "hold",
+      "c": "hiB",
+      "t": 64,
+      "t1": 96,
+      "v": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 64,
+      "t1": 112,
+      "v": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 64,
+      "t1": 80,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "ramp",
+      "c": "hiB",
+      "t": 96,
+      "t1": 112,
+      "v0": 0,
+      "v1": 0.5
+    },
+    {
+      "type": "cross",
+      "c": "lowA",
+      "c2": "lowB",
+      "t": 112,
+      "t1": 120,
+      "va0": 0.5,
+      "va1": 0,
+      "vb0": 0,
+      "vb1": 0.5,
+      "ceiling": 0.5
+    },
+    {
+      "type": "tap",
+      "c": "reloopA",
+      "t": 128
+    },
+    {
+      "type": "tap",
+      "c": "chSelect1",
+      "t": 120
+    },
+    {
+      "type": "tap",
+      "c": "beatFxOn",
+      "t": 127
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 128,
+      "t1": 144,
+      "v0": 1,
+      "v1": 0
+    },
+    {
+      "type": "tap",
+      "c": "beatFxOn",
+      "t": 144
+    }
+  ],
+  "lesson": "## Loop the end, cut the top of the incoming, swap the bass\n\nAn 8-bar loop on A from bar 9 to bar 17 (IN on 9, OUT on 17). B starts on bar 17 with both its highs and its lows cut, fader up over 4 bars; its highs return over bars 25 to 29 and the bass swaps across bars 29 to 31. Exit A's loop on bar 33, put reverb on A's channel from the last beat of bar 32, fade A over 4 bars and switch the reverb off.\n\nThis is the transition Electronic Beats' \"Played Out\" piece has de Witte describe: loop the outgoing about 45 seconds before its end, high-cut the incoming during breaks so it sits underneath, swap the bass, and reverb the final echoed notes. The high-cut is the unusual step; it keeps B's hats from announcing the new track before the bass does.\n",
+  "skills": [
+    "loop-outro",
+    "high-cut",
+    "bass-swap",
+    "reverb-wash"
+  ],
+  "genre": [
+    "techno"
+  ],
+  "path": "transitions",
+  "level": 5,
+  "sources": [
+    "https://www.electronicbeats.net/played-out-charlotte-de-witte/"
+  ],
+  "prereqs": [
+    "loop-the-outro",
+    "top-down-eq-handover"
+  ],
+  "artist": "Charlotte de Witte"
+}

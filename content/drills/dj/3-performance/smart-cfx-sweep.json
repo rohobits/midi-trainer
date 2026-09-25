@@ -1,0 +1,51 @@
+{
+  "id": "smart-cfx-sweep",
+  "version": 1,
+  "name": "Smart CFX sweep",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 16,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "smartCfx",
+      "t": 0
+    },
+    {
+      "type": "ramp",
+      "c": "filtA",
+      "t": 32,
+      "t1": 60,
+      "v0": 0.5,
+      "v1": 0.95
+    },
+    {
+      "type": "ramp",
+      "c": "filtA",
+      "t": 60,
+      "t1": 64,
+      "v0": 0.95,
+      "v1": 0.5
+    }
+  ],
+  "lesson": "## One knob, then back to the click\n\nPress SMART CFX so the CFX knob drives a filter-plus-effect combination. From bar 9 sweep A's knob right over 7 bars to almost full, then bring it back to the centre detent in the last bar so it lands on the one of bar 17.\n\nSmart CFX stacks a filter with an effect like echo or noise; the further you turn, the more of both. It sounds like a big build because it is one, and like any build it has to resolve on the one. The return to centre is the release; a knob that comes back late leaves the effect smeared over the first beat of the phrase.\n",
+  "skills": [
+    "smart-cfx",
+    "cfx",
+    "build"
+  ],
+  "genre": [
+    "house",
+    "edm"
+  ],
+  "path": "fx",
+  "level": 2,
+  "sources": [
+    "https://wearecrossfader.co.uk/blog/ddj-flx4-smart-fader-tutorial/",
+    "https://assets.ctfassets.net/q602vtcuu3w3/2vz7GMLHawLZBK6gWpCP9V/26bd62eef3eca3714ddb1d3396d30f7b/DDJ-FLX4_manual_EN.pdf"
+  ],
+  "prereqs": [
+    "cfx-return-to-detent"
+  ]
+}

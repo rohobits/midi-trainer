@@ -1,0 +1,65 @@
+{
+  "id": "beat-jump-navigation",
+  "version": 1,
+  "name": "Beat jump navigation",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 16,
+  "targets": [
+    {
+      "type": "select",
+      "c": "beatJumpB2",
+      "choices": [
+        "beatJumpB1",
+        "beatJumpB2",
+        "beatJumpB3",
+        "beatJumpB4"
+      ],
+      "t": 0,
+      "t1": 4
+    },
+    {
+      "type": "select",
+      "c": "beatJumpB4",
+      "choices": [
+        "beatJumpB1",
+        "beatJumpB2",
+        "beatJumpB3",
+        "beatJumpB4"
+      ],
+      "t": 32,
+      "t1": 36
+    },
+    {
+      "type": "select",
+      "c": "beatJumpB1",
+      "choices": [
+        "beatJumpB1",
+        "beatJumpB2",
+        "beatJumpB3",
+        "beatJumpB4"
+      ],
+      "t": 48,
+      "t1": 52
+    }
+  ],
+  "lesson": "## Jump the right distance\n\nB's BEAT JUMP pads 1 to 4 set to 4, 8, 16 and 32 beats. Three situations: B is 8 beats behind, so jump 8 within the first bar; B has a 32-beat beatless intro you want to skip, so jump 32 at bar 9; B is 4 beats out, so jump 4 at bar 13.\n\nBeat jump moves the playhead by an exact number of beats while keeping it on the grid, so the phrase realigns instantly instead of over a nudge. The choice is the score: jumping 16 when the answer was 8 puts you on the wrong bar of the right phrase. Decide from the count, then press once.\n",
+  "skills": [
+    "beat-jump",
+    "phrasing"
+  ],
+  "genre": [
+    "house",
+    "techno"
+  ],
+  "path": "pads",
+  "level": 2,
+  "sources": [
+    "https://djtechtools.com/amp/2016/09/15/underused-dj-techniques-beat-jump/",
+    "https://www.digitaldjtips.com/dj-tips-tricks-mixing-serato-dj-beatless-intros/"
+  ],
+  "prereqs": [
+    "phrase-counting"
+  ]
+}

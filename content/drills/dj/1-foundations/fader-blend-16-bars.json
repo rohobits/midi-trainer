@@ -1,0 +1,57 @@
+{
+  "id": "fader-blend-16-bars",
+  "version": 1,
+  "name": "Fader blend over 16 bars",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 124,
+  "bars": 24,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 64,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderA",
+      "t": 0,
+      "t1": 64,
+      "v": 1
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 64,
+      "t1": 96,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Half the speed, same shape\n\nThe 8-bar blend stretched to 16: B up across bars 1 to 17, A down over bars 17 to 25. At this length the tracks sit together for a full phrase with both audible, so the blend only works if they were beatmatched and phrase-aligned before you started.\n\nLonger blends are the deep house and progressive default because they let the listener stop noticing there are two tracks. The trade is exposure: any drift, any clashing key, is on show for 30 seconds. Cut B's low EQ before you start if the basses fight; this drill leaves EQ alone so you can hear the fader on its own.\n",
+  "skills": [
+    "fader-blend",
+    "phrase-mixing"
+  ],
+  "genre": [
+    "house",
+    "progressive"
+  ],
+  "path": "mixer",
+  "level": 2,
+  "sources": [
+    "https://www.digitaldjtips.com/rock-the-dancefloor/five-basic-dj-transitions/",
+    "https://blog.native-instruments.com/dj-transitions/"
+  ],
+  "prereqs": [
+    "fader-blend-8-bars"
+  ]
+}

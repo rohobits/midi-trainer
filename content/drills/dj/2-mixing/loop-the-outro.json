@@ -1,0 +1,62 @@
+{
+  "id": "loop-the-outro",
+  "version": 1,
+  "name": "Loop the outro",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 132,
+  "bars": 24,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "loopA",
+      "t": 32
+    },
+    {
+      "type": "tap",
+      "c": "loopOutA",
+      "t": 48
+    },
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 64
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 64,
+      "t1": 80,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "tap",
+      "c": "reloopA",
+      "t": 80
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 80,
+      "t1": 96,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Buy yourself time\n\nA is near its end. Press IN on the downbeat of bar 9 and OUT on the downbeat of bar 13: a clean 4-bar loop of the outro that will run for as long as you need. Bring B in on bar 17, and exit the loop with RELOOP/EXIT on bar 21 as A fades.\n\nTechno outros are often shorter than the blend you want, and this is the fix Charlotte de Witte describes: loop the last section about 45 seconds before the end so the mix is on your schedule, not the track's. The two loop presses have to land on bar lines; a loop that starts on beat 2 lurches every time it wraps.\n",
+  "skills": [
+    "loop-outro",
+    "looping"
+  ],
+  "genre": [
+    "techno",
+    "house"
+  ],
+  "path": "fx",
+  "level": 1,
+  "sources": [
+    "https://www.electronicbeats.net/played-out-charlotte-de-witte/",
+    "https://wearecrossfader.co.uk/blog/dj-looping-guide/"
+  ]
+}

@@ -54,6 +54,10 @@ export interface Settings {
   /** Follow an incoming MIDI clock's BPM when present. */
   followMidiClock: boolean;
   genre: string;
+  /** Auto-BPM ladder: pass at 80% → 90% → 100%. */
+  autoBpm: boolean;
+  isolation: 'all' | 'A' | 'B' | 'mixer';
+  showController: boolean;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -84,6 +88,9 @@ export const DEFAULT_SETTINGS: Settings = {
   deviceOffsets: {},
   followMidiClock: false,
   genre: 'house',
+  autoBpm: false,
+  isolation: 'all',
+  showController: false,
 };
 
 export class TrainerDb extends Dexie {

@@ -1,0 +1,72 @@
+{
+  "id": "backspin-out-pad-fx",
+  "version": 1,
+  "name": "Backspin out with Pad FX",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 124,
+  "bars": 16,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 0,
+      "t1": 47,
+      "v": 0
+    },
+    {
+      "type": "sequence",
+      "t": 47,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "padFxA5",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "faderA",
+          "t": 1,
+          "v0": 1,
+          "v1": 0
+        },
+        {
+          "type": "tap",
+          "c": "playB",
+          "t": 1
+        },
+        {
+          "type": "cut",
+          "c": "faderB",
+          "t": 1,
+          "v0": 0,
+          "v1": 1
+        }
+      ]
+    }
+  ],
+  "lesson": "## Spin it back, cut before it comes round\n\nAssign Pad FX A5 to Backspin. On beat 4 of bar 12 press it; on the one of bar 13 kill A's fader, play B and push its fader up. The spin sound lasts a beat and then the track would restart at speed, which is why the fader cut has to happen before that.\n\nOn a controller the pad does what a hand on a turntable does: winds the track backwards with a pitch dive. The pad version is repeatable and always the same length, which makes it easier to time than the real thing, so the score here is strict: the pad on beat 4, the cut and the new track inside a quarter beat of the one.\n",
+  "skills": [
+    "backspin",
+    "pad-fx"
+  ],
+  "genre": [
+    "house",
+    "hip-hop",
+    "open-format"
+  ],
+  "path": "fx",
+  "level": 2,
+  "sources": [
+    "https://www.djingtips.com/how-to-dj/backspins-stops-and-power-offs/",
+    "https://support.serato.com/hc/en-us/articles/10173686473231-Pioneer-DJ-DDJ-FLX4-Quickstart-Guide"
+  ],
+  "prereqs": [
+    "hard-cut-on-the-one"
+  ]
+}

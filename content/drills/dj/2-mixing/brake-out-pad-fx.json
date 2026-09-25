@@ -1,0 +1,72 @@
+{
+  "id": "brake-out-pad-fx",
+  "version": 1,
+  "name": "Brake out with Pad FX",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 95,
+  "bars": 16,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 0,
+      "t1": 47,
+      "v": 0
+    },
+    {
+      "type": "sequence",
+      "t": 47,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "padFxA6",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "faderA",
+          "t": 1,
+          "v0": 1,
+          "v1": 0
+        },
+        {
+          "type": "tap",
+          "c": "playB",
+          "t": 1
+        },
+        {
+          "type": "cut",
+          "c": "faderB",
+          "t": 1,
+          "v0": 0,
+          "v1": 1
+        }
+      ]
+    }
+  ],
+  "lesson": "## Power-off, then the new one\n\nPad FX A6 set to Braker. Press it on beat 4 of bar 12 so A slows to a stop across that beat; on the one of bar 13 pull A's fader, play B and bring its fader up. Everything after the brake happens on the downbeat.\n\nA brake is a full stop, so unlike an echo out there is no tail to hide the incoming track under: B has to land exactly on the one or the room hears the gap. This is the most common way out of a track in hip-hop sets because it works at any tempo and needs no beatmatching.\n",
+  "skills": [
+    "brake",
+    "pad-fx"
+  ],
+  "genre": [
+    "hip-hop",
+    "open-format",
+    "rnb"
+  ],
+  "path": "fx",
+  "level": 2,
+  "sources": [
+    "https://support.serato.com/hc/en-us/articles/10173686473231-Pioneer-DJ-DDJ-FLX4-Quickstart-Guide",
+    "https://dj.studio/blog/dj-crossfade-techniques"
+  ],
+  "prereqs": [
+    "hard-cut-on-the-one"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "hot-cue-drumming-offbeat",
+  "version": 1,
+  "name": "Hot-cue drumming: off-beat hats",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 128,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "alternate",
+      "c": "hcA1",
+      "t": 0,
+      "n": 8,
+      "step": 2
+    },
+    {
+      "type": "alternate",
+      "c": "hcA2",
+      "t": 1,
+      "n": 8,
+      "step": 2
+    },
+    {
+      "type": "alternate",
+      "c": "hcA3",
+      "t": 0.5,
+      "n": 16,
+      "step": 1
+    }
+  ],
+  "lesson": "## Kick, snare, and every \"and\"\n\nHot cues on a kick (A1), a snare (A2) and a closed hat (A3). Kick on 1 and 3, snare on 2 and 4, hat on every off-beat eighth, for 4 bars. Three fingers, three lanes, a full drum pattern from one track's cues.\n\nThe off-beat hat is what makes it hard: your hand wants to put the hat on the beat with the kick. Play the kick and snare with one hand and the hat with the other, then swap. James Hype and DJ EZ build entire sections this way; at 128 BPM the \"and\" is 234 ms after the beat and the score wants you within 20 ms of it.\n",
+  "skills": [
+    "hot-cue-drumming"
+  ],
+  "genre": [
+    "house",
+    "open-format",
+    "bass"
+  ],
+  "path": "pads",
+  "level": 3,
+  "sources": [
+    "https://djtechtools.com/2008/01/03/controllerism-basics-cue-point-juggling/",
+    "https://wearecrossfader.co.uk/blog/how-to-mix-hip-hop/",
+    "https://dj.studio/blog/dj-cue-points"
+  ],
+  "prereqs": [
+    "hot-cue-drumming"
+  ]
+}

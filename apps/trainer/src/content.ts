@@ -1,6 +1,7 @@
 import { parseDrill, formatDrillError, type Drill } from '@midi-trainer/engine';
 
 const modules = import.meta.glob('../../../content/drills/**/*.json', { eager: true, import: 'default' }) as Record<string, unknown>;
+const extras = import.meta.glob('../../../content/*.json', { eager: true, import: 'default' }) as Record<string, unknown>;
 
 /** Built-in drills, validated at load. A bad file throws with its path so it never ships. */
 export function builtinDrills(): Drill[] {
@@ -15,7 +16,42 @@ export function builtinDrills(): Drill[] {
   return out;
 }
 
-export const TIER_ORDER = ['Foundations', 'Mixing', 'Performance', 'Advanced', 'Pro'];
+export interface PathDef {
+  id: string;
+  name: string;
+  description: string;
+  levels: { level: number; name: string }[];
+}
+
+export interface GenreDef {
+  id: string;
+  name: string;
+  bpmRange: [number, number];
+  transitionBars: number;
+  notes: string;
+  sources?: string[];
+}
+
+const DEFAULT_PATHS: PathDef[] = [
+  { id: 'pads', name: 'Pads', description: 'Timing on hot cues, samplers and pad FX.', levels: [1, 2, 3, 4, 5].map((l) => ({ level: l, name: `Level ${l}` })) },
+  { id: 'mixer', name: 'Mixer', description: 'Faders, EQ, filter and gain.', levels: [1, 2, 3, 4, 5].map((l) => ({ level: l, name: `Level ${l}` })) },
+  { id: 'transitions', name: 'Transitions', description: 'Whole handovers from one track to the next.', levels: [1, 2, 3, 4, 5].map((l) => ({ level: l, name: `Level ${l}` })) },
+  { id: 'jog', name: 'Jog', description: 'Nudges, beatmatching and scratching.', levels: [1, 2, 3, 4, 5].map((l) => ({ level: l, name: `Level ${l}` })) },
+  { id: 'fx', name: 'FX', description: 'Loops, rolls, echo and builds.', levels: [1, 2, 3, 4, 5].map((l) => ({ level: l, name: `Level ${l}` })) },
+  { id: 'combined', name: 'Combined', description: 'Both hands at once.', levels: [1, 2, 3, 4, 5].map((l) => ({ level: l, name: `Level ${l}` })) },
+];
+
+export function paths(): PathDef[] {
+  const raw = Object.entries(extras).find(([k]) => k.endsWith('/paths.json'))?.[1];
+  return Array.isArray(raw) && raw.length ? (raw as PathDef[]) : DEFAULT_PATHS;
+}
+
+export function genres(): GenreDef[] {
+  const raw = Object.entries(extras).find(([k]) => k.endsWith('/genres.json'))?.[1];
+  return Array.isArray(raw) ? (raw as GenreDef[]) : [{ id: 'house', name: 'House', bpmRange: [120, 128], transitionBars: 16, notes: 'Outro to intro, bass swap on the phrase.' }];
+}
+
+export const TIER_ORDER = ['Foundations', 'Mixing', 'Performance', 'Advanced', 'Pro', 'Week 1', 'Generated', 'Daily', 'Custom'];
 
 export function tierRank(tier: string): number {
   const i = TIER_ORDER.indexOf(tier);

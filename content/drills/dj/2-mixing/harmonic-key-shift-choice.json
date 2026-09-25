@@ -1,0 +1,89 @@
+{
+  "id": "harmonic-key-shift-choice",
+  "version": 1,
+  "name": "Harmonic key shift",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 28,
+  "targets": [
+    {
+      "type": "select",
+      "c": "keyShiftB5",
+      "choices": [
+        "keyShiftB1",
+        "keyShiftB2",
+        "keyShiftB3",
+        "keyShiftB4",
+        "keyShiftB5",
+        "keyShiftB6",
+        "keyShiftB7",
+        "keyShiftB8"
+      ],
+      "t": 28,
+      "t1": 32
+    },
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 32
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 32,
+      "t1": 64,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 64,
+      "t1": 96,
+      "v": 1
+    },
+    {
+      "type": "select",
+      "c": "keyShiftB4",
+      "choices": [
+        "keyShiftB1",
+        "keyShiftB2",
+        "keyShiftB3",
+        "keyShiftB4",
+        "keyShiftB5",
+        "keyShiftB6",
+        "keyShiftB7",
+        "keyShiftB8"
+      ],
+      "t": 92,
+      "t1": 96
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 96,
+      "t1": 112,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Make the key fit before you press play\n\nB is one semitone below a compatible key. In the bar before bar 9, press the KEY SHIFT pad that raises B one semitone (pad 5 here, the first step up from the original; remap the lane if your software puts it elsewhere), then play B on the one and blend. Once B carries the mix, step it back to its original key on the bar before 25, when A is gone.\n\nThe Camelot rule: same code, one step either side, or the A/B pair. A one-semitone shift moves a track seven steps around the wheel, which is exactly what you need when two tracks are a semitone apart. Shift with the incoming track silent and shift back once nothing else is playing; a key shift in the middle of a blend is audible.\n",
+  "skills": [
+    "harmonic-mixing",
+    "key-shift"
+  ],
+  "genre": [
+    "house",
+    "trance",
+    "melodic-house"
+  ],
+  "path": "pads",
+  "level": 4,
+  "sources": [
+    "https://mixedinkey.com/harmonic-mixing-guide/",
+    "https://dj.studio/blog/camelot-wheel",
+    "https://wearecrossfader.co.uk/blog/key-lock/",
+    "https://support.serato.com/hc/en-us/articles/10173686473231-Pioneer-DJ-DDJ-FLX4-Quickstart-Guide"
+  ]
+}

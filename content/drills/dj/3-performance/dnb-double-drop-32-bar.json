@@ -1,0 +1,82 @@
+{
+  "id": "dnb-double-drop-32-bar",
+  "version": 1,
+  "name": "Drum and bass double drop",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 174,
+  "bars": 48,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 128,
+      "v": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 32,
+      "t1": 192,
+      "v": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderA",
+      "t": 0,
+      "t1": 160,
+      "v": 1
+    },
+    {
+      "type": "cross",
+      "c": "lowA",
+      "c2": "lowB",
+      "t": 128,
+      "t1": 130,
+      "va0": 0.5,
+      "va1": 0,
+      "vb0": 0,
+      "vb1": 0.5,
+      "ceiling": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 160,
+      "t1": 192,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Thirty-two bars of overlap, one bass\n\nB enters on A's second drop section with its low cut, up to full in 8 bars, and both faders sit at full for 32 bars. On the one of bar 33 the two drops land together and the bass swaps in half a bar so B owns the sub. A leaves over bars 41 to 49.\n\nAt 174 BPM everything is twice as fast, which is why DnB DJs cut lows hard rather than fading them: two sub-basses at once is a wall of mud. The score is the swap: half a bar, never both above half. Both tracks need their drops on 32-bar boundaries, and they must be in a compatible key or the double drop is a clash.\n",
+  "skills": [
+    "double-drop",
+    "bass-swap"
+  ],
+  "genre": [
+    "drum-and-bass"
+  ],
+  "path": "transitions",
+  "level": 4,
+  "sources": [
+    "https://wearecrossfader.co.uk/blog/how-to-mix-drum-bass-free-dj-tutorial/",
+    "https://www.mixgraph.io/mixing-guide/drum-and-bass"
+  ],
+  "prereqs": [
+    "double-drop"
+  ]
+}

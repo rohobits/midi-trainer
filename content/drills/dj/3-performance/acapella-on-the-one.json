@@ -1,0 +1,56 @@
+{
+  "id": "acapella-on-the-one",
+  "version": 1,
+  "name": "Acapella over an instrumental",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 124,
+  "bars": 24,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 32
+    },
+    {
+      "type": "cut",
+      "c": "faderB",
+      "t": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 32,
+      "t1": 96,
+      "v": 1
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 96,
+      "v": 0.3
+    }
+  ],
+  "lesson": "## Start it on the phrase, keep the bass off it\n\nAn instrumental on A, a key- and BPM-matched acapella cued to its first word on B. Play B on the one of bar 9 with its fader already up and its low EQ trimmed back so the vocal sits on top rather than fighting the kick. Hold it there for 16 bars.\n\nThe acapella has no beat of its own, so the only thing that makes it land is your press on the phrase one; there is nothing to nudge afterwards. Trim the vocal's low end because most acapellas carry room rumble that muddies the instrumental. Key match first, because an out-of-key vocal is the one mistake every listener hears.\n",
+  "skills": [
+    "acapella",
+    "phrase-mixing"
+  ],
+  "genre": [
+    "house",
+    "hip-hop",
+    "open-format"
+  ],
+  "path": "transitions",
+  "level": 3,
+  "sources": [
+    "https://www.digitaldjtips.com/how-to-dj-with-acapellas/"
+  ],
+  "prereqs": [
+    "phrase-matched-mix-in"
+  ],
+  "needsAudio": true
+}

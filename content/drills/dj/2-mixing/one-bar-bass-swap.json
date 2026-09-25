@@ -1,0 +1,69 @@
+{
+  "id": "one-bar-bass-swap",
+  "version": 1,
+  "name": "One-bar bass swap",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 128,
+  "bars": 20,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 32,
+      "v": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "cross",
+      "c": "lowA",
+      "c2": "lowB",
+      "t": 32,
+      "t1": 36,
+      "va0": 0.5,
+      "va1": 0,
+      "vb0": 0,
+      "vb1": 0.5,
+      "ceiling": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 48,
+      "t1": 80,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Swap the bass inside one bar\n\nB in over 8 bars with the low knob off. On bar 9, A's low goes down while B's low comes up to centre, both inside the single bar, and at no point are both above half. Then A's fader out over bars 13 to 21.\n\nThe rule the scorer enforces is exclusivity: one kick owns the low end at every instant. A one-bar swap is faster than the classic four and is the tech-house default because the crowd hears a switch, not a fade. Two hands: left on A's low, right on B's low, moving together like a see-saw.\n",
+  "skills": [
+    "bass-swap"
+  ],
+  "genre": [
+    "tech-house",
+    "house",
+    "techno"
+  ],
+  "path": "transitions",
+  "level": 2,
+  "sources": [
+    "https://vibesdj.io/learn/techniques/eq-swapping",
+    "https://dj.studio/blog/dj-eqmixing"
+  ],
+  "prereqs": [
+    "classic-bass-swap-transition"
+  ]
+}

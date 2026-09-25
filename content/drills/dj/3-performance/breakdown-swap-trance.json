@@ -1,0 +1,78 @@
+{
+  "id": "breakdown-swap-trance",
+  "version": 1,
+  "name": "Breakdown swap",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 138,
+  "bars": 32,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 64,
+      "v": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 32,
+      "t1": 128,
+      "v": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderA",
+      "t": 0,
+      "t1": 64,
+      "v": 1
+    },
+    {
+      "type": "cut",
+      "c": "faderA",
+      "t": 64,
+      "v0": 1,
+      "v1": 0
+    },
+    {
+      "type": "ramp",
+      "c": "lowB",
+      "t": 64,
+      "t1": 66,
+      "v0": 0,
+      "v1": 0.5
+    }
+  ],
+  "lesson": "## Beat under the breakdown, drop replaces it\n\nA goes into its breakdown on bar 1 and B's beat, low cut, comes in under it over 8 bars. On the one of bar 17, where A's breakdown would resolve, cut A's fader and let B's low up in half a bar: B's drop lands where A's was going to.\n\nTrance breakdowns are long and melodic, which gives the incoming beat plenty of room, and the swap works because the crowd's tension was built by A but paid off by B. Harmonic match is non-negotiable here since the melodies overlap for 16 bars. Everything hinges on the cut landing on the one.\n",
+  "skills": [
+    "breakdown-swap",
+    "phrase-mixing"
+  ],
+  "genre": [
+    "trance",
+    "progressive"
+  ],
+  "path": "transitions",
+  "level": 3,
+  "sources": [
+    "https://www.mixgraph.io/mixing-guide/trance",
+    "https://wearecrossfader.co.uk/blog/how-to-dj-trance-music/"
+  ],
+  "prereqs": [
+    "phrase-matched-mix-in"
+  ]
+}

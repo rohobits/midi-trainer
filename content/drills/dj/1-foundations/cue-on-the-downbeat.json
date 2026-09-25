@@ -1,0 +1,69 @@
+{
+  "id": "cue-on-the-downbeat",
+  "version": 1,
+  "name": "Cue on the downbeat",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 124,
+  "bars": 20,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "cueA",
+      "t": 0
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 16
+    },
+    {
+      "type": "tap",
+      "c": "hcA2",
+      "t": 32
+    },
+    {
+      "type": "tap",
+      "c": "hcA3",
+      "t": 48
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 64
+    },
+    {
+      "type": "tap",
+      "c": "hcA2",
+      "t": 68
+    },
+    {
+      "type": "tap",
+      "c": "hcA3",
+      "t": 72
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 76
+    }
+  ],
+  "lesson": "## Set it on the one, recall it on the one\n\nCUE on the first downbeat, then set hot cues A1, A2 and A3 on the downbeats of bars 5, 9 and 13. From bar 17 recall them one per bar: A1, A2, A3, A1. Setting and recalling are the same skill; a cue placed 30 ms late is 30 ms late every time you press it for the rest of your career.\n\nSet cues while the track is playing rather than paused: the press has to be in time, and in time means on the kick, not on the flash of the waveform. If a recall sounds like a flam against the beat, the cue itself is off; delete and reset rather than compensating with your hand.\n",
+  "skills": [
+    "cue-points",
+    "counting"
+  ],
+  "genre": [
+    "house",
+    "hip-hop",
+    "open-format"
+  ],
+  "path": "pads",
+  "level": 1,
+  "sources": [
+    "https://wearecrossfader.co.uk/blog/hot-cues-complete-guide/"
+  ],
+  "prereqs": [
+    "phrase-counting"
+  ]
+}

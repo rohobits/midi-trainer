@@ -1,0 +1,74 @@
+{
+  "id": "reverb-wash-out",
+  "version": 1,
+  "name": "Reverb wash out",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 128,
+  "bars": 20,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "chSelect1",
+      "t": 0
+    },
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "ramp",
+      "c": "fxLevel",
+      "t": 60,
+      "t1": 64,
+      "v0": 0.3,
+      "v1": 0.9
+    },
+    {
+      "type": "tap",
+      "c": "beatFxOn",
+      "t": 63
+    },
+    {
+      "type": "cut",
+      "c": "faderA",
+      "t": 64,
+      "v0": 1,
+      "v1": 0
+    },
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 64
+    },
+    {
+      "type": "ramp",
+      "c": "fxLevel",
+      "t": 68,
+      "t1": 76,
+      "v0": 0.9,
+      "v1": 0
+    },
+    {
+      "type": "tap",
+      "c": "beatFxOn",
+      "t": 76
+    }
+  ],
+  "lesson": "## Let the last hit ring\n\nBEAT FX on REVERB, CH SELECT on channel 1. Over the last bar of the phrase bring the LEVEL/DEPTH knob up, press BEAT FX ON on the last beat so the final snare is what gets washed, cut A's fader on the one and start B at the same instant. Fade the reverb level to nothing over the next two bars and switch it off.\n\nReverb has no rhythm, so unlike an echo it does not need to be in time; what it needs is a single strong hit to catch. Turning the depth up before the button is pressed is what makes the wash big; turning it down afterwards is what stops it smearing B's intro.\n",
+  "skills": [
+    "reverb-wash",
+    "beat-fx"
+  ],
+  "genre": [
+    "house",
+    "techno",
+    "open-format"
+  ],
+  "path": "fx",
+  "level": 1,
+  "sources": [
+    "https://homedjstudio.com/dj-sound-effects/"
+  ]
+}

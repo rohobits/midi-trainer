@@ -1,0 +1,124 @@
+{
+  "id": "tear-scratch",
+  "version": 1,
+  "name": "Tear scratch",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 92,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 0,
+      "t1": 16,
+      "v": 0
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 0,
+      "t1": 1.5,
+      "pattern": [
+        "f",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 2,
+      "t1": 3.5,
+      "pattern": [
+        "f",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 4,
+      "t1": 5.5,
+      "pattern": [
+        "f",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 6,
+      "t1": 7.5,
+      "pattern": [
+        "f",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 8,
+      "t1": 9.5,
+      "pattern": [
+        "f",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 10,
+      "t1": 11.5,
+      "pattern": [
+        "f",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 12,
+      "t1": 13.5,
+      "pattern": [
+        "f",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 14,
+      "t1": 15.5,
+      "pattern": [
+        "f",
+        "f",
+        "b"
+      ]
+    }
+  ],
+  "lesson": "## Break the forward stroke in two\n\nFader open. Push the platter forward in two separate halves, with a stop between them, then one continuous stroke back: three segments in a beat and a half, repeated every two beats. The forward half sounds torn, which is the name.\n\nThe tear comes entirely from the platter hand; the fader never moves. The pause between the two forward halves has to be a real stop, not a slowdown, and both halves the same length. Once the hand can do it evenly, tears combine with the fader work from the stab and chirp to make most of the classic combos.\n",
+  "skills": [
+    "scratch-tear",
+    "scratching"
+  ],
+  "genre": [
+    "hip-hop",
+    "turntablism"
+  ],
+  "path": "jog",
+  "level": 4,
+  "sources": [
+    "https://dj.fandom.com/wiki/Scratching",
+    "https://djingpro.com/learn-how-to-scratch/"
+  ],
+  "prereqs": [
+    "baby-scratch"
+  ]
+}

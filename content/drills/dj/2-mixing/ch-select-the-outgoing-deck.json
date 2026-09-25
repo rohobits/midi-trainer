@@ -1,0 +1,117 @@
+{
+  "id": "ch-select-the-outgoing-deck",
+  "version": 1,
+  "name": "CH SELECT the outgoing deck",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 36,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 0,
+      "t1": 63,
+      "v": 0
+    },
+    {
+      "type": "select",
+      "c": "chSelect1",
+      "choices": [
+        "chSelect1",
+        "chSelect2",
+        "chSelectMaster"
+      ],
+      "t": 56,
+      "t1": 63
+    },
+    {
+      "type": "tap",
+      "c": "beatFxOn",
+      "t": 63
+    },
+    {
+      "type": "cut",
+      "c": "faderA",
+      "t": 64,
+      "v0": 1,
+      "v1": 0
+    },
+    {
+      "type": "cut",
+      "c": "faderB",
+      "t": 64,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "tap",
+      "c": "beatFxOn",
+      "t": 72
+    },
+    {
+      "type": "tap",
+      "c": "playA",
+      "t": 96
+    },
+    {
+      "type": "select",
+      "c": "chSelect2",
+      "choices": [
+        "chSelect1",
+        "chSelect2",
+        "chSelectMaster"
+      ],
+      "t": 120,
+      "t1": 127
+    },
+    {
+      "type": "tap",
+      "c": "beatFxOn",
+      "t": 127
+    },
+    {
+      "type": "cut",
+      "c": "faderB",
+      "t": 128,
+      "v0": 1,
+      "v1": 0
+    },
+    {
+      "type": "cut",
+      "c": "faderA",
+      "t": 128,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "tap",
+      "c": "beatFxOn",
+      "t": 136
+    }
+  ],
+  "lesson": "## Point the effect at the right channel\n\nThe FLX4 has one BEAT FX and three CH SELECT buttons. Before the first echo out, choose channel 1 because A is leaving; before the second, choose channel 2 because now B is leaving. Each choice is made in the bar before the phrase end, and the echo goes on on the last beat.\n\nEcho on the wrong channel is the classic FLX4 mistake: you press ON, cut the fader, and the tail comes from the track that is still playing. MASTER is the third choice and is rarely right for a transition, since it effects both decks. Get in the habit of touching CH SELECT as part of the move, not as setup.\n",
+  "skills": [
+    "ch-select",
+    "echo-out",
+    "beat-fx"
+  ],
+  "genre": [
+    "house",
+    "tech-house"
+  ],
+  "path": "fx",
+  "level": 2,
+  "sources": [
+    "https://support.serato.com/hc/en-us/articles/202304784-How-to-do-echo-transitions-in-Serato-DJ",
+    "https://assets.ctfassets.net/q602vtcuu3w3/2vz7GMLHawLZBK6gWpCP9V/26bd62eef3eca3714ddb1d3396d30f7b/DDJ-FLX4_manual_EN.pdf"
+  ],
+  "prereqs": [
+    "echo-out"
+  ]
+}

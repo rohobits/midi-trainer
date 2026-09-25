@@ -1,0 +1,54 @@
+{
+  "id": "sampler-drops-and-risers",
+  "version": 1,
+  "name": "Sampler drops and risers",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 128,
+  "bars": 36,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "samplerA1",
+      "t": 48
+    },
+    {
+      "type": "tap",
+      "c": "samplerA2",
+      "t": 64
+    },
+    {
+      "type": "tap",
+      "c": "samplerA2",
+      "t": 68
+    },
+    {
+      "type": "tap",
+      "c": "samplerA1",
+      "t": 112
+    },
+    {
+      "type": "tap",
+      "c": "samplerA3",
+      "t": 128
+    }
+  ],
+  "lesson": "## Riser four bars early, hit on the one\n\nSampler pad A1 holds a 4-bar riser, A2 a one-shot hit, A3 a vocal tag. Fire the riser on bar 13 so it peaks on bar 17, hit A2 on the one of 17 and again on 18, then a riser at bar 29 and the tag on bar 33.\n\nRisers are launched a known number of bars early; one-shots land on the downbeat. Both come from the same pads and the difference is entirely in the count. Set SAMPLER VOLUME before you start so the hit sits level with the track; a sample that is louder than the mix sounds like a mistake, not an accent.\n",
+  "skills": [
+    "sampler",
+    "counting"
+  ],
+  "genre": [
+    "open-format",
+    "edm"
+  ],
+  "path": "pads",
+  "level": 2,
+  "sources": [
+    "https://www.productlondon.com/dj-sampler-techniques/",
+    "https://www.digitaldjtips.com/how-to-add-a-sampler-to-your-dj-set-up/"
+  ],
+  "prereqs": [
+    "phrase-counting"
+  ]
+}

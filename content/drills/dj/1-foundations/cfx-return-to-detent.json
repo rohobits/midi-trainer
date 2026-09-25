@@ -1,0 +1,72 @@
+{
+  "id": "cfx-return-to-detent",
+  "version": 1,
+  "name": "CFX: return to detent",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 16,
+  "targets": [
+    {
+      "type": "ramp",
+      "c": "filtA",
+      "t": 0,
+      "t1": 16,
+      "v0": 0.5,
+      "v1": 0.15
+    },
+    {
+      "type": "ramp",
+      "c": "filtA",
+      "t": 16,
+      "t1": 32,
+      "v0": 0.15,
+      "v1": 0.5
+    },
+    {
+      "type": "hold",
+      "c": "filtA",
+      "t": 32,
+      "t1": 36,
+      "v": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "filtA",
+      "t": 36,
+      "t1": 48,
+      "v0": 0.5,
+      "v1": 0.85
+    },
+    {
+      "type": "ramp",
+      "c": "filtA",
+      "t": 48,
+      "t1": 60,
+      "v0": 0.85,
+      "v1": 0.5
+    },
+    {
+      "type": "hold",
+      "c": "filtA",
+      "t": 60,
+      "t1": 64,
+      "v": 0.5
+    }
+  ],
+  "lesson": "## The knob has a home\n\nTurn CFX A left into low-pass over 4 bars, bring it back to the centre click over 4, rest a bar; then right into high-pass over 3 bars, back over 3, rest. The score cares most about the two returns: the knob must sit exactly on the detent, because anything else is a filter you forgot about.\n\nLeft of centre is low-pass (the track gets muffled, bass stays), right is high-pass (the track gets thin, bass goes). The FLX4 CFX has a physical notch at the middle; learn to feel it without looking. A filter left a few degrees off centre is the most common reason a \"clean\" mix sounds dull.\n",
+  "skills": [
+    "filter",
+    "cfx"
+  ],
+  "genre": [
+    "house",
+    "techno",
+    "melodic-house"
+  ],
+  "path": "fx",
+  "level": 1,
+  "sources": [
+    "https://djlearn.de/en/how-to-use-filters-dj"
+  ]
+}

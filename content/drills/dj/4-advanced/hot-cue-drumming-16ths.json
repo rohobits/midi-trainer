@@ -1,0 +1,71 @@
+{
+  "id": "hot-cue-drumming-16ths",
+  "version": 1,
+  "name": "Hot-cue drumming: sixteenth fills",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 124,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "alternate",
+      "c": "hcA1",
+      "t": 0,
+      "n": 16,
+      "step": 1
+    },
+    {
+      "type": "alternate",
+      "c": "hcA2",
+      "t": 1,
+      "n": 8,
+      "step": 2
+    },
+    {
+      "type": "alternate",
+      "c": "hcA3",
+      "t": 3,
+      "n": 4,
+      "step": 0.25
+    },
+    {
+      "type": "alternate",
+      "c": "hcA3",
+      "t": 7,
+      "n": 4,
+      "step": 0.25
+    },
+    {
+      "type": "alternate",
+      "c": "hcA3",
+      "t": 11,
+      "n": 4,
+      "step": 0.25
+    },
+    {
+      "type": "alternate",
+      "c": "hcA3",
+      "t": 15,
+      "n": 4,
+      "step": 0.25
+    }
+  ],
+  "lesson": "## Four on the floor with a sixteenth fill\n\nKick (A1) on every beat, snare (A2) on 2 and 4, and on beat 4 of each bar a four-hit sixteenth-note fill on the hat (A3). The fill is 121 ms between hits at this tempo.\n\nSixteenth fills on pads are played with two alternating fingers, not one finger four times; one finger cannot keep 121 ms even for four hits. The fill starts exactly on beat 4 and the last hit lands on the \"a\" of 4 so the next bar's kick is clean. Slow the tempo until the fill is even, then bring it back up.\n",
+  "skills": [
+    "hot-cue-drumming"
+  ],
+  "genre": [
+    "house",
+    "open-format",
+    "bass"
+  ],
+  "path": "pads",
+  "level": 4,
+  "sources": [
+    "https://djtechtools.com/2008/01/03/controllerism-basics-cue-point-juggling/",
+    "https://dj.studio/blog/dj-cue-points"
+  ],
+  "prereqs": [
+    "hot-cue-drumming-offbeat"
+  ]
+}

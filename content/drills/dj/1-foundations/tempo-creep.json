@@ -1,0 +1,48 @@
+{
+  "id": "tempo-creep",
+  "version": 1,
+  "name": "Tempo creep",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 124,
+  "bars": 40,
+  "targets": [
+    {
+      "type": "ramp",
+      "c": "tempoB",
+      "t": 0,
+      "t1": 64,
+      "v0": 0.5,
+      "v1": 0.52
+    },
+    {
+      "type": "hold",
+      "c": "tempoB",
+      "t": 64,
+      "t1": 96,
+      "v": 0.52
+    },
+    {
+      "type": "ramp",
+      "c": "tempoA",
+      "t": 96,
+      "t1": 160,
+      "v0": 0.5,
+      "v1": 0.52
+    }
+  ],
+  "lesson": "## Two percent nobody notices\n\nPush B's tempo up by about 2% over 16 bars, hold for 8, then bring A up to meet it over the next 16. The move is so slow that the ramp reads as a straight, almost flat line on the lane; that flatness is the skill.\n\nA set that goes from 122 to 128 does it one track at a time, a percent or two each, never in one jump. Master tempo on, so the key does not climb with it. Creep on the outgoing track before the mix and the incoming track simply arrives faster; creep during a blend and the two tracks pull apart.\n",
+  "skills": [
+    "tempo-creep",
+    "set-energy"
+  ],
+  "genre": [
+    "house",
+    "techno"
+  ],
+  "path": "jog",
+  "level": 1,
+  "sources": [
+    "https://dj.studio/blog/dj-tempo-change-techniques"
+  ]
+}

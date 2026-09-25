@@ -1,0 +1,141 @@
+{
+  "id": "cue-point-scratch",
+  "version": 1,
+  "name": "Cue-point scratch",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 96,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 0
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 0.25,
+      "n": 4,
+      "step": 0.125,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 2
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 2.25,
+      "n": 4,
+      "step": 0.125,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 4
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 4.25,
+      "n": 4,
+      "step": 0.125,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 6
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 6.25,
+      "n": 4,
+      "step": 0.125,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 8
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 8.25,
+      "n": 6,
+      "step": 0.125,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 10
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 10.25,
+      "n": 6,
+      "step": 0.125,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 12
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 12.25,
+      "n": 6,
+      "step": 0.125,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 14
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 14.25,
+      "n": 6,
+      "step": 0.125,
+      "v0": 0,
+      "v1": 1
+    }
+  ],
+  "lesson": "## Voice a cue press like a stab\n\nHot cue A1 on a vocal stab, crossfader open to A. Press the cue on the beat, then immediately close and open the crossfader twice in the following half beat; in the second half of the drill, three times. The cue restarts the sound, the fader chops it.\n\nDJ TechTools' cue-point scratch uses the pad instead of the platter: the cue press does what the forward stroke does, and the crossfader does what it always does. Because there is no platter movement, the timing is purely fader against grid, which makes it the best way into transformer-style clicks for a controller DJ.\n",
+  "skills": [
+    "cue-point-scratch",
+    "transformer"
+  ],
+  "genre": [
+    "hip-hop",
+    "open-format"
+  ],
+  "path": "pads",
+  "level": 4,
+  "sources": [
+    "https://djtechtools.com/2011/02/27/the-cue-point-scratch-a-new-concept-in-digital-djing/"
+  ],
+  "prereqs": [
+    "cue-point-stutter",
+    "transformer-on-the-crossfader"
+  ]
+}

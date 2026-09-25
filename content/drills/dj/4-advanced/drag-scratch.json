@@ -1,0 +1,80 @@
+{
+  "id": "drag-scratch",
+  "version": 1,
+  "name": "Drag scratch",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 90,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 0,
+      "t1": 16,
+      "v": 0
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 0,
+      "t1": 4,
+      "pattern": [
+        "f",
+        "b"
+      ],
+      "minTicks": 6
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 4,
+      "t1": 8,
+      "pattern": [
+        "f",
+        "b"
+      ],
+      "minTicks": 6
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 8,
+      "t1": 12,
+      "pattern": [
+        "f",
+        "b"
+      ],
+      "minTicks": 6
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 12,
+      "t1": 16,
+      "pattern": [
+        "f",
+        "b"
+      ],
+      "minTicks": 6
+    }
+  ],
+  "lesson": "## Slow strokes that fill the bar\n\nFader open. One long forward stroke across two beats, one long back stroke across the next two, so each bar is a single forward-and-back. The sample plays at less than its real speed and the pitch drops with it.\n\nA drag is the baby scratch stretched out: same hand shape, a quarter of the speed. It is easier on the ear than fast scratches and harder on the hand, because the platter has to move at one constant speed for two whole beats. Watch the pitch: an even drag has an even pitch, and a stroke that speeds up at the end is the thing to correct.\n",
+  "skills": [
+    "scratch-drag",
+    "scratching"
+  ],
+  "genre": [
+    "hip-hop",
+    "turntablism"
+  ],
+  "path": "jog",
+  "level": 3,
+  "sources": [
+    "https://dj.fandom.com/wiki/Scratching",
+    "https://djingpro.com/learn-how-to-scratch/"
+  ],
+  "prereqs": [
+    "baby-scratch"
+  ]
+}

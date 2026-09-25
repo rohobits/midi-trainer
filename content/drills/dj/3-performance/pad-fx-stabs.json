@@ -1,0 +1,108 @@
+{
+  "id": "pad-fx-stabs",
+  "version": 1,
+  "name": "Pad FX stabs",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 8,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "padFxA1",
+      "t": 0
+    },
+    {
+      "type": "tap",
+      "c": "padFxA1",
+      "t": 1
+    },
+    {
+      "type": "tap",
+      "c": "padFxA1",
+      "t": 4
+    },
+    {
+      "type": "tap",
+      "c": "padFxA1",
+      "t": 5
+    },
+    {
+      "type": "tap",
+      "c": "padFxA2",
+      "t": 8
+    },
+    {
+      "type": "tap",
+      "c": "padFxA2",
+      "t": 10
+    },
+    {
+      "type": "tap",
+      "c": "padFxA3",
+      "t": 12
+    },
+    {
+      "type": "tap",
+      "c": "padFxA3",
+      "t": 14
+    },
+    {
+      "type": "tap",
+      "c": "padFxA1",
+      "t": 16
+    },
+    {
+      "type": "tap",
+      "c": "padFxA1",
+      "t": 17
+    },
+    {
+      "type": "tap",
+      "c": "padFxA1",
+      "t": 20
+    },
+    {
+      "type": "tap",
+      "c": "padFxA1",
+      "t": 21
+    },
+    {
+      "type": "tap",
+      "c": "padFxA2",
+      "t": 24
+    },
+    {
+      "type": "tap",
+      "c": "padFxA2",
+      "t": 26
+    },
+    {
+      "type": "tap",
+      "c": "padFxA4",
+      "t": 28
+    },
+    {
+      "type": "tap",
+      "c": "padFxA4",
+      "t": 30
+    }
+  ],
+  "lesson": "## Whole beats, on and off\n\nPad FX A1 to A4 set to Echo, Flanger, Reverb and Roll. Each pair of prompts is a press and a release: hold Echo for one beat on beats 1 and 5 of bars 1 and 2, Flanger for two beats at bar 3, Reverb for two beats at bar 4, then repeat with Roll in the last slot.\n\nPad FX on the FLX4 are momentary: the effect runs while the pad is held. That makes the release as musical as the press, and this drill scores both. Hold for whole beats and release on the beat; an effect that trails off between beats sounds like it was switched off by accident.\n",
+  "skills": [
+    "pad-fx",
+    "fx-stabs"
+  ],
+  "genre": [
+    "house",
+    "open-format"
+  ],
+  "path": "fx",
+  "level": 3,
+  "sources": [
+    "https://support.serato.com/hc/en-us/articles/10173686473231-Pioneer-DJ-DDJ-FLX4-Quickstart-Guide"
+  ],
+  "prereqs": [
+    "reverb-wash-out"
+  ]
+}

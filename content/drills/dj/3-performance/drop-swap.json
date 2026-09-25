@@ -1,0 +1,68 @@
+{
+  "id": "drop-swap",
+  "version": 1,
+  "name": "Drop swap",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 128,
+  "bars": 20,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 0,
+      "t1": 64,
+      "v": 0
+    },
+    {
+      "type": "sequence",
+      "t": 64,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 64,
+      "t1": 80,
+      "v": 1
+    }
+  ],
+  "lesson": "## Build on A, land on B\n\nA is playing its build. B is running silently on the right side of the crossfader with hot cue B1 on its drop. On the one of bar 17 press B1 and snap the crossfader across in the same motion; the room hears A's build resolve into B's drop.\n\nThe swap replaces a drop the crowd has heard with one they have not, which is why it is the go-to in bass and EDM sets. Two things must be true: B1 is on beat 1 of B's drop, and the crossfader curve is sharp. The pad and the fader are one gesture, left hand and right hand at the same instant.\n",
+  "skills": [
+    "drop-swap",
+    "crossfader-cut"
+  ],
+  "genre": [
+    "edm",
+    "dubstep",
+    "hip-hop"
+  ],
+  "path": "transitions",
+  "level": 4,
+  "sources": [
+    "https://vibesdj.io/learn/techniques/track-transition-techniques"
+  ],
+  "prereqs": [
+    "hard-cut-on-the-one",
+    "cue-on-the-downbeat"
+  ]
+}

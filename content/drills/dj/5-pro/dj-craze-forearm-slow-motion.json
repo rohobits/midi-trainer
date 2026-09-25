@@ -1,0 +1,61 @@
+{
+  "id": "dj-craze-forearm-slow-motion",
+  "version": 1,
+  "name": "DJ Craze: forearm slow-motion scratch",
+  "tier": "Pro",
+  "profile": "flx4",
+  "bpm": 90,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 0,
+      "t1": 16,
+      "v": 0
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 0,
+      "t1": 4,
+      "pattern": [
+        "f",
+        "b"
+      ],
+      "minTicks": 10
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 8,
+      "t1": 12,
+      "pattern": [
+        "f",
+        "b"
+      ],
+      "minTicks": 10
+    }
+  ],
+  "lesson": "## The whole platter, driven by the forearm\n\nFader open. Over bars 1 and 3, push the record forward for two beats using the forearm laid across the platter, then draw it back for two beats; bars 2 and 4 are rest. The stroke is huge and slow and the pitch drops nearly to a stop.\n\nComplex describes Craze's forearm scratch as a signature, and it needs a motorised platter: the forearm's weight and the motor's drag are what make the slow-motion pitch sag, and a controller jog has neither. The lanes here score the stroke shape so a turntable owner can drill it; on the FLX4 it is flagged as unavailable rather than pretended.\n",
+  "skills": [
+    "scratch-drag",
+    "scratching"
+  ],
+  "genre": [
+    "hip-hop",
+    "turntablism"
+  ],
+  "path": "jog",
+  "level": 5,
+  "sources": [
+    "https://www.complex.com/music/a/khrisd/dj-craze-scratch-routines"
+  ],
+  "prereqs": [
+    "drag-scratch"
+  ],
+  "requires": [
+    "turntable"
+  ],
+  "artist": "DJ Craze"
+}

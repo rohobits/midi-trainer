@@ -1,0 +1,101 @@
+{
+  "id": "baby-scratch",
+  "version": 1,
+  "name": "Baby scratch",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 95,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 0,
+      "t1": 16,
+      "v": 0
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 0,
+      "t1": 4,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 4,
+      "t1": 8,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 8,
+      "t1": 12,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 12,
+      "t1": 16,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    }
+  ],
+  "lesson": "## Forward, back, in time\n\nCrossfader open the whole time. Move jog A forward for an eighth note, back for an eighth, and repeat: eight strokes a bar for 4 bars at 95 BPM. The sound is the sample going forwards and backwards; the skill is that each stroke is the same length and lands on the grid.\n\nEvery other scratch is a baby scratch with the fader doing something, which is why this is first. On a controller jog the sample follows your hand only while you touch the top plate; keep the fingers on the platter for the whole stroke and let go only between bars. Digital DJ Tips' point stands: the jog is not a turntable, but the hand movement is identical.\n",
+  "skills": [
+    "scratch-baby",
+    "scratching"
+  ],
+  "genre": [
+    "hip-hop",
+    "turntablism"
+  ],
+  "path": "jog",
+  "level": 3,
+  "sources": [
+    "https://dj.fandom.com/wiki/Scratching",
+    "https://djingpro.com/learn-how-to-scratch/",
+    "https://www.digitaldjtips.com/scratching-on-controllers-7-myths-busted/"
+  ],
+  "prereqs": [
+    "jog-nudge-correct-and-return"
+  ]
+}

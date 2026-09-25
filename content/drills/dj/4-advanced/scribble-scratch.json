@@ -1,0 +1,136 @@
+{
+  "id": "scribble-scratch",
+  "version": 1,
+  "name": "Scribble scratch",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 90,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 0,
+      "t1": 16,
+      "v": 0
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 0,
+      "t1": 2,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ],
+      "minTicks": 2
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 4,
+      "t1": 6,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ],
+      "minTicks": 2
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 8,
+      "t1": 10,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ],
+      "minTicks": 2
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 12,
+      "t1": 14,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ],
+      "minTicks": 2
+    }
+  ],
+  "lesson": "## Tiny, fast, tense\n\nFader open. For the first two beats of each bar, shake the jog forward and back as fast as it will go: sixteen tiny strokes in two beats, sixteenth-note triplet speed, then rest for two beats. The strokes are millimetres long and come from the fingers, not the wrist.\n\nThe scribble is a tension sound: it sits on a snare or a vocal and buzzes. The scorer wants sixteen direction changes in the window and does not care how far the platter moves, so keep the movement small; big movements slow you down and lose the grid. Two beats on, two beats off, for the whole drill.\n",
+  "skills": [
+    "scratch-scribble",
+    "scratching"
+  ],
+  "genre": [
+    "hip-hop",
+    "turntablism"
+  ],
+  "path": "jog",
+  "level": 3,
+  "sources": [
+    "https://dj.fandom.com/wiki/Scratching",
+    "https://djingpro.com/learn-how-to-scratch/"
+  ],
+  "prereqs": [
+    "baby-scratch"
+  ]
+}

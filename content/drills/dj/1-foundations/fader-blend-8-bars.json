@@ -1,0 +1,56 @@
+{
+  "id": "fader-blend-8-bars",
+  "version": 1,
+  "name": "Fader blend over 8 bars",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 128,
+  "bars": 12,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderA",
+      "t": 0,
+      "t1": 32,
+      "v": 1
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 32,
+      "t1": 48,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## The simplest transition, done evenly\n\nPlay B on the one. Channel fader B travels from closed to full across bars 1 to 9 at one speed, A stays full until B is there, then A leaves over bars 9 to 13. Both moves start and end on a bar line.\n\nA blend is judged on monotonic movement: the fader never pauses, never backs up. Eight bars at 128 BPM is 15 seconds, so the hand is moving about a millimetre a second. Rest your wrist on the controller and push with the fingers; a floating hand cannot move that slowly.\n",
+  "skills": [
+    "fader-blend"
+  ],
+  "genre": [
+    "house",
+    "tech-house"
+  ],
+  "path": "mixer",
+  "level": 2,
+  "sources": [
+    "https://www.digitaldjtips.com/rock-the-dancefloor/five-basic-dj-transitions/",
+    "https://blog.native-instruments.com/dj-transitions/"
+  ],
+  "prereqs": [
+    "fader-control"
+  ]
+}

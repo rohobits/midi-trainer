@@ -1,0 +1,79 @@
+{
+  "id": "fader-blend-32-bars",
+  "version": 1,
+  "name": "Fader blend over 32 bars",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 138,
+  "bars": 48,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 128,
+      "v": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 128,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderA",
+      "t": 0,
+      "t1": 128,
+      "v": 1
+    },
+    {
+      "type": "cross",
+      "c": "lowA",
+      "c2": "lowB",
+      "t": 128,
+      "t1": 136,
+      "va0": 0.5,
+      "va1": 0,
+      "vb0": 0,
+      "vb1": 0.5,
+      "ceiling": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 136,
+      "t1": 192,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## The trance-length blend\n\nB enters with its low EQ off and its fader rising across the full 32 bars to bar 33. There the bass swaps over two bars and A leaves across bars 35 to 49. A minute of two tracks playing together, which is why trance and progressive DJs are strict about key.\n\nAt 138 BPM, 32 bars is 56 seconds of fader travel. Nobody moves a fader that slowly by hand in one motion; you move it a few millimetres every 4 bars, on the bar line, and the ramp scores the sum. Keep the low cut on B until the swap; the swap is where the mix becomes B's.\n",
+  "skills": [
+    "fader-blend",
+    "long-blend",
+    "bass-swap"
+  ],
+  "genre": [
+    "trance",
+    "progressive",
+    "techno"
+  ],
+  "path": "mixer",
+  "level": 3,
+  "sources": [
+    "https://www.digitaldjtips.com/rock-the-dancefloor/five-basic-dj-transitions/",
+    "https://wearecrossfader.co.uk/blog/how-to-dj-trance-music/",
+    "https://thedjmixtape.com/how-to-use-dj-set/"
+  ],
+  "prereqs": [
+    "fader-blend-16-bars"
+  ]
+}

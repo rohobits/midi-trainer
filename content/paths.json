@@ -1,0 +1,164 @@
+[
+  {
+    "id": "pads",
+    "name": "Pads",
+    "description": "Count, cue and eventually drum with the performance pads.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Count it"
+      },
+      {
+        "level": 2,
+        "name": "Retrigger it"
+      },
+      {
+        "level": 3,
+        "name": "Drum it"
+      },
+      {
+        "level": 4,
+        "name": "Juggle it"
+      },
+      {
+        "level": 5,
+        "name": "Play it"
+      }
+    ]
+  },
+  {
+    "id": "mixer",
+    "name": "Mixer",
+    "description": "Levels, faders and the crossfader from a steady blend to a switch.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Set it"
+      },
+      {
+        "level": 2,
+        "name": "Blend it"
+      },
+      {
+        "level": 3,
+        "name": "Chop it"
+      },
+      {
+        "level": 4,
+        "name": "Cut it"
+      },
+      {
+        "level": 5,
+        "name": "Transform it"
+      }
+    ]
+  },
+  {
+    "id": "transitions",
+    "name": "Transitions",
+    "description": "Getting from one track to the next so the room never notices the seam.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Swap it"
+      },
+      {
+        "level": 2,
+        "name": "Phrase it"
+      },
+      {
+        "level": 3,
+        "name": "Sweep it"
+      },
+      {
+        "level": 4,
+        "name": "Drop it"
+      },
+      {
+        "level": 5,
+        "name": "Block it"
+      }
+    ]
+  },
+  {
+    "id": "jog",
+    "name": "Jog",
+    "description": "Tempo, nudges and scratching on the jog wheel.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Nudge it"
+      },
+      {
+        "level": 2,
+        "name": "Ride it"
+      },
+      {
+        "level": 3,
+        "name": "Baby it"
+      },
+      {
+        "level": 4,
+        "name": "Chirp it"
+      },
+      {
+        "level": 5,
+        "name": "Flare it"
+      }
+    ]
+  },
+  {
+    "id": "fx",
+    "name": "FX",
+    "description": "Filters, Beat FX, Pad FX and loops as tools for tension and release.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Loop it"
+      },
+      {
+        "level": 2,
+        "name": "Echo it"
+      },
+      {
+        "level": 3,
+        "name": "Roll it"
+      },
+      {
+        "level": 4,
+        "name": "Build it"
+      },
+      {
+        "level": 5,
+        "name": "Combine it"
+      }
+    ]
+  },
+  {
+    "id": "combined",
+    "name": "Combined",
+    "description": "Routines that use both hands across decks, pads, faders and FX at once.",
+    "levels": [
+      {
+        "level": 1,
+        "name": "Stack it"
+      },
+      {
+        "level": 2,
+        "name": "Answer it"
+      },
+      {
+        "level": 3,
+        "name": "Juggle it"
+      },
+      {
+        "level": 4,
+        "name": "Bridge it"
+      },
+      {
+        "level": 5,
+        "name": "Sign it"
+      }
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "id": "sync-then-nudge",
+  "version": 1,
+  "name": "SYNC, then still nudge",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 8,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "syncB",
+      "t": 0
+    },
+    {
+      "type": "jog",
+      "c": "jogB",
+      "t": 4,
+      "t1": 5,
+      "pattern": [
+        "f"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogB",
+      "t": 20,
+      "t1": 21,
+      "pattern": [
+        "b"
+      ]
+    }
+  ],
+  "lesson": "## Sync is a tempo tool, not a phase tool\n\nPress BEAT SYNC on B on the downbeat, then nudge B's jog forward on bar 2 and backward on bar 6. Sync locks the BPM to the master deck; whether the kicks land together depends on the beatgrid, and beatgrids are wrong often enough that you still listen.\n\nUse sync to remove the arithmetic and keep your hand on the jog to remove the drift. If a track needs a nudge every 8 bars with sync on, the grid is off: fix the grid in rekordbox before the gig rather than nudging all night.\n",
+  "skills": [
+    "sync",
+    "jog-nudge"
+  ],
+  "genre": [
+    "house",
+    "tech-house"
+  ],
+  "path": "jog",
+  "level": 1,
+  "sources": [
+    "https://www.digitaldjtips.com/5-tips-for-better-sync-mixing/",
+    "https://djtechtools.com/2014/04/23/how-to-set-beatgrids-and-use-sync-properly-in-serato-dj/"
+  ],
+  "needsAudio": true
+}

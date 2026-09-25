@@ -1,0 +1,72 @@
+{
+  "id": "xf-drop-mix",
+  "version": 1,
+  "name": "Crossfader drop mix",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 92,
+  "bars": 20,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 0,
+      "t1": 32,
+      "v": 0
+    },
+    {
+      "type": "cut",
+      "c": "xf",
+      "t": 32,
+      "v0": 0,
+      "v1": 1,
+      "maxMs": 100
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 32,
+      "t1": 64,
+      "v": 1
+    },
+    {
+      "type": "cut",
+      "c": "xf",
+      "t": 64,
+      "v0": 1,
+      "v1": 0,
+      "maxMs": 100
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 64,
+      "t1": 80,
+      "v": 0
+    }
+  ],
+  "lesson": "## Snap it on the one\n\nB plays silently on the right side while the crossfader sits hard left for 8 bars. On the first beat of bar 9 the crossfader snaps to B in under 100 ms; on bar 17 it snaps back to A. No fade, no EQ: a switch.\n\nHip-hop and open-format sets are built on this because rap tracks rarely have beat-only intros to blend. The move works when the cut lands inside 30 ms of the downbeat so the new kick replaces the old one rather than doubling it. Set the crossfader curve to sharp so the whole travel happens in the first few millimetres.\n",
+  "skills": [
+    "drop-mix",
+    "crossfader-cut"
+  ],
+  "genre": [
+    "hip-hop",
+    "open-format",
+    "trap"
+  ],
+  "path": "mixer",
+  "level": 3,
+  "sources": [
+    "https://www.digitaldjtips.com/dropmix-like-a-pro-hip-hop-dj/",
+    "https://vibesdj.io/learn/techniques/track-transition-techniques"
+  ],
+  "prereqs": [
+    "hard-cut-on-the-one"
+  ]
+}

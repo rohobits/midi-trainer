@@ -1,0 +1,123 @@
+{
+  "id": "skrillex-power-block",
+  "version": 1,
+  "name": "Skrillex: power-block mixing",
+  "tier": "Pro",
+  "profile": "flx4",
+  "bpm": 140,
+  "bars": 64,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 0,
+      "t1": 64,
+      "v": 0
+    },
+    {
+      "type": "sequence",
+      "t": 64,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 64,
+      "t1": 128,
+      "v": 1
+    },
+    {
+      "type": "sequence",
+      "t": 128,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA2",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 128,
+      "t1": 192,
+      "v": 0
+    },
+    {
+      "type": "sequence",
+      "t": 192,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcB2",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 192,
+      "t1": 256,
+      "v": 1
+    }
+  ],
+  "lesson": "## A new track every 16 bars\n\nFour tracks in 64 bars at 140 BPM: cue-and-cut to B1 on bar 17, to A2 on bar 33, to B2 on bar 49, each a hot cue press with a crossfader snap on the one. Nothing dwells longer than 27 seconds.\n\nMixed In Key's power-block tutorial names Skrillex among the DJs who play in short blocks of harmonically matched tracks, and Final Scratch notes dubstep's short breaks and outros make long blends impossible anyway. The technique is preparation: cues on every drop, tracks grouped by key so the cuts are safe, and then the cut itself, which is just the dropmix done every 16 bars without a miss.\n",
+  "skills": [
+    "power-block",
+    "drop-mix",
+    "cue-points"
+  ],
+  "genre": [
+    "dubstep",
+    "edm",
+    "trap"
+  ],
+  "path": "transitions",
+  "level": 5,
+  "sources": [
+    "https://mixedinkey.com/harmonic-mixing-guide/power-block-dj-mixing-tutorial/",
+    "https://finalscratch.com/blog/how-to-dj-like-skrillex/"
+  ],
+  "prereqs": [
+    "quick-mix-8-bar-dropmix",
+    "drop-swap"
+  ],
+  "artist": "Skrillex"
+}

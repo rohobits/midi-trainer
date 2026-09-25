@@ -1,0 +1,70 @@
+{
+  "id": "phrase-matched-mix-in",
+  "version": 1,
+  "name": "Phrase-matched mix in",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 24,
+  "targets": [
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 64,
+      "v": 0
+    },
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 32
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 32,
+      "t1": 64,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "cross",
+      "c": "lowA",
+      "c2": "lowB",
+      "t": 64,
+      "t1": 72,
+      "va0": 0.5,
+      "va1": 0,
+      "vb0": 0,
+      "vb1": 0.5,
+      "ceiling": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 80,
+      "t1": 96,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Start on the one that matters\n\nA is playing; you have B cued to its first downbeat with its bass cut. PLAY B on bar 9 of A, exactly on the beat, bring its fader up over 8 bars, swap the bass at bar 17 and take A out over bars 21 to 25.\n\nThe press is scored to 30 ms. If B starts half a beat late the phrases are offset for the whole mix and every later move lands in the wrong place; there is no fader trick that fixes a late start. Count A out loud from bar 5 and press on \"one\".\n",
+  "skills": [
+    "phrase-mixing",
+    "bass-swap"
+  ],
+  "genre": [
+    "house",
+    "tech-house",
+    "techno"
+  ],
+  "path": "transitions",
+  "level": 1,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Phrasing_(DJ)",
+    "https://vibesdj.io/learn/techniques/phrase-mixing"
+  ],
+  "prereqs": [
+    "phrase-counting"
+  ]
+}

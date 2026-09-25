@@ -47,3 +47,8 @@ export * from './game/challenge';
 export * from './game/placement';
 export * from './game/session';
 export * from './midi/clock';
+export * from './audio/patterns';
+export * from './audio/synth';
+export * from './audio/deck';
+export * from './audio/mixer';
+export * from './audio/crowd';

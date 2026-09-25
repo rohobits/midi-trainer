@@ -1,0 +1,102 @@
+{
+  "id": "long-eq-morph-64-bars",
+  "version": 1,
+  "name": "Long EQ morph",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 138,
+  "bars": 64,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 128,
+      "v": 0
+    },
+    {
+      "type": "hold",
+      "c": "midB",
+      "t": 0,
+      "t1": 32,
+      "v": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 64,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "ramp",
+      "c": "midB",
+      "t": 32,
+      "t1": 96,
+      "v0": 0,
+      "v1": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "hiA",
+      "t": 64,
+      "t1": 128,
+      "v0": 0.5,
+      "v1": 0.3
+    },
+    {
+      "type": "ramp",
+      "c": "midA",
+      "t": 96,
+      "t1": 160,
+      "v0": 0.5,
+      "v1": 0.25
+    },
+    {
+      "type": "cross",
+      "c": "lowA",
+      "c2": "lowB",
+      "t": 128,
+      "t1": 144,
+      "va0": 0.5,
+      "va1": 0,
+      "vb0": 0,
+      "vb1": 0.5,
+      "ceiling": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 192,
+      "t1": 256,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## A mix that takes a whole section\n\nSixty-four bars: B's fader over 16, its mids over 16, A's highs easing back over 16, A's mids over 16, the bass swap across bars 33 to 37, and A's fader over the last 16. Every ramp is slow enough that no single move is audible; only the sum is.\n\nThis is the trance and techno long blend from the sources: two tracks that share the floor for a minute and a half. It only works with harmonically compatible tracks, so check the key first. The trap is impatience: if you feel a move needs to be faster, the problem is usually that the tracks do not sit together, not that the ramp is too long.\n",
+  "skills": [
+    "long-blend",
+    "staggered-eq",
+    "bass-swap"
+  ],
+  "genre": [
+    "trance",
+    "techno",
+    "progressive"
+  ],
+  "path": "transitions",
+  "level": 3,
+  "sources": [
+    "https://thedjmixtape.com/how-to-use-dj-set/",
+    "https://wearecrossfader.co.uk/blog/how-to-dj-trance-music/"
+  ],
+  "prereqs": [
+    "top-down-eq-handover"
+  ]
+}

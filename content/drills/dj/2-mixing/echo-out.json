@@ -1,0 +1,82 @@
+{
+  "id": "echo-out",
+  "version": 1,
+  "name": "Echo out",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 20,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "chSelect1",
+      "t": 0
+    },
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 0,
+      "t1": 63,
+      "v": 0
+    },
+    {
+      "type": "sequence",
+      "t": 63,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "beatFxOn",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "faderA",
+          "t": 0.5,
+          "v0": 1,
+          "v1": 0
+        },
+        {
+          "type": "tap",
+          "c": "playB",
+          "t": 1
+        },
+        {
+          "type": "cut",
+          "c": "faderB",
+          "t": 1,
+          "v0": 0,
+          "v1": 1
+        },
+        {
+          "type": "tap",
+          "c": "beatFxOn",
+          "t": 8
+        }
+      ]
+    }
+  ],
+  "lesson": "## Turn the last beat into a tail\n\nBEAT FX set to ECHO with CH SELECT on channel 1 and a 1/2 or 3/4 beat time. On the last beat of bar 16 press BEAT FX ON, pull A's fader down within half a beat, and on the one of bar 17 press PLAY on B and push its fader up. Turn the echo off two bars later once the tail has died.\n\nThe order is the whole trick: the effect must be on before the fader goes down, or there is nothing to echo. The fader cut is what makes the echo audible, because the dry signal is gone and only the repeats remain. Two bars of tail into B's intro is enough; longer and the echo fights B's kick.\n",
+  "skills": [
+    "echo-out",
+    "beat-fx"
+  ],
+  "genre": [
+    "house",
+    "tech-house",
+    "hip-hop"
+  ],
+  "path": "fx",
+  "level": 2,
+  "sources": [
+    "https://support.serato.com/hc/en-us/articles/202304784-How-to-do-echo-transitions-in-Serato-DJ",
+    "https://www.djgym.co.uk/post/5-ways-to-use-echo"
+  ],
+  "prereqs": [
+    "hard-cut-on-the-one"
+  ]
+}

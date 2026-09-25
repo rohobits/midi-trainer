@@ -1,0 +1,64 @@
+{
+  "id": "gain-staging-trim-window",
+  "version": 1,
+  "name": "Gain staging: hold the trim",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 16,
+  "targets": [
+    {
+      "type": "ramp",
+      "c": "trimA",
+      "t": 0,
+      "t1": 4,
+      "v0": 0.5,
+      "v1": 0.6
+    },
+    {
+      "type": "hold",
+      "c": "trimA",
+      "t": 4,
+      "t1": 36,
+      "v": 0.6
+    },
+    {
+      "type": "ramp",
+      "c": "trimB",
+      "t": 32,
+      "t1": 36,
+      "v0": 0.5,
+      "v1": 0.4
+    },
+    {
+      "type": "hold",
+      "c": "trimB",
+      "t": 36,
+      "t1": 64,
+      "v": 0.4
+    },
+    {
+      "type": "hold",
+      "c": "master",
+      "t": 0,
+      "t1": 64,
+      "v": 0.5
+    }
+  ],
+  "lesson": "## Set it once, then leave it alone\n\nTrack A is quiet: bring TRIM A up to about 60% in the first bar and hold it there. Track B is hot: at bar 9 bring TRIM B down to about 40% and hold. MASTER stays at its centre the whole time. The score is how steady your hand is once the level is set.\n\nLevels are matched at the trim, not the fader and never the master. Faders are for the mix, the master is for the room; if either is doing the trim's job, every transition changes the loudness. On the FLX4 watch the channel meters: peaks in the top green and occasional orange, never red, and both channels meeting the same peak.\n",
+  "skills": [
+    "gain-staging",
+    "levels"
+  ],
+  "genre": [
+    "house",
+    "techno",
+    "open-format"
+  ],
+  "path": "mixer",
+  "level": 1,
+  "sources": [
+    "https://djtechtools.com/2015/10/11/gain-staging-for-djs-staying-out-of-the-red/",
+    "https://wearecrossfader.co.uk/blog/setting-and-managing-your-levels/"
+  ]
+}

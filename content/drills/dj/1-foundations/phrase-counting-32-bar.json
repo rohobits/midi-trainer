@@ -1,0 +1,71 @@
+{
+  "id": "phrase-counting-32-bar",
+  "version": 1,
+  "name": "Phrase counting: 32 bars",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 130,
+  "bars": 64,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 0
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 128
+    },
+    {
+      "type": "tap",
+      "c": "hcA2",
+      "t": 64
+    },
+    {
+      "type": "tap",
+      "c": "hcA2",
+      "t": 192
+    },
+    {
+      "type": "tap",
+      "c": "hcA3",
+      "t": 32
+    },
+    {
+      "type": "tap",
+      "c": "hcA3",
+      "t": 96
+    },
+    {
+      "type": "tap",
+      "c": "hcA3",
+      "t": 160
+    },
+    {
+      "type": "tap",
+      "c": "hcA3",
+      "t": 224
+    }
+  ],
+  "lesson": "## The 32-bar section\n\nA1 on bars 1 and 33, A2 on bars 17 and 49, A3 on every other 8-bar line (9, 25, 41, 57). Three pads, three levels of the same count: the 32-bar section, its 16-bar halves, the 8-bar phrases inside them.\n\nDrops, breakdowns and full mix-ins in dance music sit on 32-bar boundaries. If you can only count to 8 you will mix into the right bar of the wrong section, which sounds fine for 8 bars and then falls apart. Keep the metronome off once you pass this; the aim is an internal count that survives a noisy booth.\n",
+  "skills": [
+    "counting",
+    "phrasing"
+  ],
+  "genre": [
+    "house",
+    "techno",
+    "trance"
+  ],
+  "path": "pads",
+  "level": 1,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Phrasing_(DJ)",
+    "https://dj.studio/blog/phrasing-dj-mixing",
+    "https://github.com/mixxxdj/mixxx/wiki/Measures-Downbeats-Bars-And-Phrases"
+  ],
+  "prereqs": [
+    "phrase-counting-16-bar"
+  ]
+}

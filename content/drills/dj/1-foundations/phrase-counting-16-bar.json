@@ -1,0 +1,71 @@
+{
+  "id": "phrase-counting-16-bar",
+  "version": 1,
+  "name": "Phrase counting: 16 bars",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 128,
+  "bars": 64,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 0
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 64
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 128
+    },
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 192
+    },
+    {
+      "type": "tap",
+      "c": "hcA2",
+      "t": 32
+    },
+    {
+      "type": "tap",
+      "c": "hcA2",
+      "t": 96
+    },
+    {
+      "type": "tap",
+      "c": "hcA2",
+      "t": 160
+    },
+    {
+      "type": "tap",
+      "c": "hcA2",
+      "t": 224
+    }
+  ],
+  "lesson": "## Feel the 16, confirm the 8\n\nHot cue A1 on the first beat of every 16-bar phrase (bars 1, 17, 33, 49) and A2 on the 8-bar midpoint between them (bars 9, 25, 41, 57). Count \"one\" only on the downbeat; everything else is a number you say quietly.\n\nMost house and techno tracks change something every 16 bars: a new hat, a vocal, the bass dropping out. If your A1 lands where the track changes, your count is right. Two pads instead of one force you to know which phrase you are in, not just that a phrase ended.\n",
+  "skills": [
+    "counting",
+    "phrasing"
+  ],
+  "genre": [
+    "house",
+    "techno",
+    "tech-house"
+  ],
+  "path": "pads",
+  "level": 1,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Phrasing_(DJ)",
+    "https://dj.studio/blog/phrasing-dj-mixing",
+    "https://github.com/mixxxdj/mixxx/wiki/Measures-Downbeats-Bars-And-Phrases"
+  ],
+  "prereqs": [
+    "phrase-counting"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "flanger-build",
+  "version": 1,
+  "name": "Flanger build",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 128,
+  "bars": 20,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "chSelect1",
+      "t": 0
+    },
+    {
+      "type": "tap",
+      "c": "beatFxOn",
+      "t": 48
+    },
+    {
+      "type": "ramp",
+      "c": "fxLevel",
+      "t": 48,
+      "t1": 64,
+      "v0": 0.2,
+      "v1": 0.9
+    },
+    {
+      "type": "tap",
+      "c": "beatFxOn",
+      "t": 64
+    },
+    {
+      "type": "hold",
+      "c": "fxLevel",
+      "t": 64,
+      "t1": 80,
+      "v": 0
+    }
+  ],
+  "lesson": "## On for sixteen beats, off on the drop\n\nBEAT FX on FLANGER, CH SELECT on channel 1. Press ON on the one of bar 13, sweep LEVEL/DEPTH from about 20% to 90% across the four bars, and press OFF exactly on the one of bar 17 where the drop hits. Leave the depth at zero afterwards.\n\nA flanger through a build makes the last 4 bars sound like they are rising; switching it off at the drop is what makes the drop sound big, because the clean signal returns at the same instant as the kick. The off press is timed as strictly as a cue hit; late and the first beat of the drop is still swirling.\n",
+  "skills": [
+    "flanger-build",
+    "beat-fx"
+  ],
+  "genre": [
+    "edm",
+    "house",
+    "techno"
+  ],
+  "path": "fx",
+  "level": 2,
+  "sources": [
+    "https://www.thomann.de/blog/en/inspire/dj-effects-chasing-the-dramatic-drop/"
+  ],
+  "prereqs": [
+    "reverb-wash-out"
+  ]
+}

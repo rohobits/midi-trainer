@@ -1,0 +1,82 @@
+{
+  "id": "lpf-out-hpf-in",
+  "version": 1,
+  "name": "Low-pass out, high-pass in",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 24,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "filtB",
+      "t": 0,
+      "t1": 32,
+      "v": 0.85
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "ramp",
+      "c": "filtB",
+      "t": 32,
+      "t1": 64,
+      "v0": 0.85,
+      "v1": 0.5
+    },
+    {
+      "type": "ramp",
+      "c": "filtA",
+      "t": 32,
+      "t1": 64,
+      "v0": 0.5,
+      "v1": 0.15
+    },
+    {
+      "type": "cut",
+      "c": "faderA",
+      "t": 64,
+      "v0": 1,
+      "v1": 0
+    },
+    {
+      "type": "ramp",
+      "c": "filtA",
+      "t": 64,
+      "t1": 68,
+      "v0": 0.15,
+      "v1": 0.5
+    }
+  ],
+  "lesson": "## Two filters, one crossing\n\nB starts with its CFX held right in high-pass and its fader up over 8 bars: only its top end is in the mix. Over bars 9 to 17, B's filter opens back to centre while A's filter closes into low-pass; the two knobs move as mirror images. Kill A's fader on bar 17 and reset its filter.\n\nThe crossing keeps the frequency budget honest: as A loses its top end, B gains it; as B gains its bass, A loses it. This is the filter version of a bass swap and needs the same phrase alignment: both filters must reach their end value on bar 17 or the drop has two kicks.\n",
+  "skills": [
+    "filter-mix-out",
+    "cfx"
+  ],
+  "genre": [
+    "melodic-house",
+    "progressive",
+    "techno"
+  ],
+  "path": "transitions",
+  "level": 3,
+  "sources": [
+    "https://www.musicradar.com/news/eq-and-filter-tricks-for-djs",
+    "https://learningtodj.com/blog/practical-guide-to-dj-filters/"
+  ],
+  "prereqs": [
+    "lpf-mix-out",
+    "filter-out-transition"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "loop-roll-halving",
+  "version": 1,
+  "name": "Loop roll halving build",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 128,
+  "bars": 16,
+  "targets": [
+    {
+      "type": "step",
+      "c": "loopA",
+      "t": 48,
+      "step": 4,
+      "count": 4,
+      "exitC": "reloopA",
+      "exitAt": 64
+    }
+  ],
+  "lesson": "## Halve it every bar, out on the one\n\nFrom bar 13, press IN/4BEAT on each downbeat of bars 13, 14, 15 and 16, halving the loop length each time in rekordbox (4 beats, 2, 1, half), then RELOOP/EXIT exactly on the one of bar 17 so the track carries on from where it would have been.\n\nThe build works because the audience hears the same fragment getting shorter and expects a release; if the exit misses the one the release lands in the wrong place and the drop stumbles. On the FLX4, RELOOP/EXIT with a loop active is exit; make sure the drop is on beat 1 of bar 17 in your track.\n",
+  "skills": [
+    "loop-roll",
+    "looping"
+  ],
+  "genre": [
+    "edm",
+    "house",
+    "techno"
+  ],
+  "path": "fx",
+  "level": 3,
+  "sources": [
+    "https://www.digitaldjtips.com/three-ways-to-use-loops-without-annoying-everyone/",
+    "https://wearecrossfader.co.uk/blog/12-high-energy-dj-transitions/"
+  ],
+  "prereqs": [
+    "loop-build-and-release"
+  ]
+}

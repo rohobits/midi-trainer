@@ -1,0 +1,57 @@
+{
+  "id": "instant-doubles-half-beat",
+  "version": 1,
+  "name": "Instant doubles, half-beat offset",
+  "tier": "Performance",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 8,
+  "targets": [
+    {
+      "type": "sequence",
+      "t": 0,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 0.5
+        }
+      ]
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0.5,
+      "t1": 4,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 4,
+      "t1": 32,
+      "v": 1
+    }
+  ],
+  "lesson": "## The same track, half a beat apart\n\nLoad the same track on both decks (instant doubles), hot cue 1 on the same downbeat. Press A1 on the one and B1 exactly half a beat later, then bring B's fader up over the rest of the bar and hold both at full.\n\nOffsetting a doubled track by a precise eighth note turns one kick into a gallop; anything other than a precise half beat sounds like bad beatmatching. The score is the gap between the two cue presses. Because both copies are the same track, the audio is the only thing that tells you whether it worked.\n",
+  "skills": [
+    "instant-doubles",
+    "cue-points"
+  ],
+  "genre": [
+    "house",
+    "tech-house"
+  ],
+  "path": "combined",
+  "level": 3,
+  "sources": [
+    "https://wearecrossfader.co.uk/blog/instant-doubles-routine-how-its-done/"
+  ],
+  "needsAudio": true
+}

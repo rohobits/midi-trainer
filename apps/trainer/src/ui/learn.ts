@@ -22,17 +22,14 @@ export function createLearnUi(profile: Profile, map: ControlMap, onChange: (map:
   function render(): void {
     groups.innerHTML = '';
     const byGroup = new Map<string, typeof profile.controls>();
-    for (const c of profile.controls) {
-      const list = byGroup.get(c.group) ?? [];
-      byGroup.set(c.group, [...list, c]);
-    }
+    for (const c of profile.controls) byGroup.set(c.group, [...(byGroup.get(c.group) ?? []), c]);
     for (const [group, controls] of byGroup) {
       groups.appendChild(el('h3', {}, group));
       const grid = el('div', { class: 'grid' });
       for (const c of controls) {
         const entry = map[c.id];
         const cls = ['ctl', session.current === c.id ? 'arm' : entry ? 'done' : '', entry && !entry.verified ? 'unverified' : ''].filter(Boolean).join(' ');
-        const d = el('div', { class: cls, 'data-control': c.id });
+        const d = el('div', { class: cls, 'data-control': c.id, role: 'button', tabindex: '0' });
         d.appendChild(el('span', {}, c.name));
         const status = session.current === c.id ? 'touch it now' : entry ? entry.key + (entry.verified ? '' : ' · unverified') : 'not mapped';
         d.appendChild(el('small', {}, status));
@@ -40,10 +37,15 @@ export function createLearnUi(profile: Profile, map: ControlMap, onChange: (map:
           session.arm(c.id);
           render();
         };
+        d.onkeydown = (e) => {
+          if (e.key === 'Enter' || e.key === ' ') d.click();
+        };
         grid.appendChild(d);
       }
       groups.appendChild(grid);
     }
+    const current = groups.querySelector('.ctl.arm');
+    current?.scrollIntoView({ block: 'nearest' });
   }
 
   $('learnBtn').onclick = () => ui.open();
@@ -63,11 +65,10 @@ export function createLearnUi(profile: Profile, map: ControlMap, onChange: (map:
     render();
     onChange(map);
   };
-  $('exportMap').onclick = () => {
-    download(`${profile.id}-map.json`, JSON.stringify(exportMap(profile.id, map), null, 2));
-  };
+  $('exportMap').onclick = () => download(`${profile.id}-map.json`, JSON.stringify(exportMap(profile.id, map), null, 2));
   $<HTMLInputElement>('importMap').onchange = async (e) => {
-    const f = (e.target as HTMLInputElement).files?.[0];
+    const input = e.target as HTMLInputElement;
+    const f = input.files?.[0];
     if (!f) return;
     try {
       const { profile: p, map: imported } = importMap(JSON.parse(await f.text()));
@@ -78,7 +79,10 @@ export function createLearnUi(profile: Profile, map: ControlMap, onChange: (map:
     } catch (err) {
       alert('Could not import map: ' + (err as Error).message);
     }
-    (e.target as HTMLInputElement).value = '';
+    input.value = '';
+  };
+  modal.onkeydown = (e) => {
+    if (e.key === 'Escape') ui.close();
   };
 
   const ui: LearnUi = {

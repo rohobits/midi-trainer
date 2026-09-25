@@ -1,0 +1,207 @@
+{
+  "id": "flare-scratch-one-click",
+  "version": 1,
+  "name": "One-click flare",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 92,
+  "bars": 2,
+  "targets": [
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 0,
+      "t1": 4,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "jog",
+      "c": "jogA",
+      "t": 4,
+      "t1": 8,
+      "pattern": [
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b",
+        "f",
+        "b"
+      ]
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 0.2,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 0.7,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 1.2,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 1.7,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 2.2,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 2.7,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 3.2,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 3.7,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 4.2,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 4.7,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 5.2,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 5.7,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 6.2,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 6.7,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 7.2,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "xf",
+      "t": 7.7,
+      "n": 2,
+      "step": 0.1,
+      "v0": 0,
+      "v1": 1
+    }
+  ],
+  "lesson": "## Fader open, one click in the middle of every stroke\n\nCrossfader open. Baby-scratch strokes on every eighth for 2 bars; in the middle of each stroke the fader closes and reopens once, quickly. That one click splits each stroke into two sounds, so a single forward-back becomes four notes.\n\nThe flare is the reverse of the chirp: the fader starts open and the cut is in the middle rather than at the end. DJ Times' tutorial builds the two-click flare and the orbit from this, so get the single click exact first. The click must be under 60 ms and dead centre of the stroke; early or late and the two halves are unequal, which the ear hears immediately.\n",
+  "skills": [
+    "scratch-flare",
+    "scratching",
+    "fader-cuts"
+  ],
+  "genre": [
+    "hip-hop",
+    "turntablism"
+  ],
+  "path": "jog",
+  "level": 5,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Scratching",
+    "https://www.djtimes.com/2021/08/itching-to-scratch-tutorial-2-click-flare-orbit/",
+    "https://djtechtools.com/2015/01/22/take-your-scratch-technique-into-orbit/"
+  ],
+  "prereqs": [
+    "chirp-scratch"
+  ]
+}

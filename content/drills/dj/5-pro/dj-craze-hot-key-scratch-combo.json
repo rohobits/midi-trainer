@@ -1,0 +1,188 @@
+{
+  "id": "dj-craze-hot-key-scratch-combo",
+  "version": 1,
+  "name": "DJ Craze: hot key, scratch, deck switch",
+  "tier": "Pro",
+  "profile": "flx4",
+  "bpm": 95,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "sequence",
+      "t": 0,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "jog",
+          "c": "jogA",
+          "t": 0.5,
+          "t1": 1.5,
+          "pattern": [
+            "f",
+            "b"
+          ]
+        },
+        {
+          "type": "tap",
+          "c": "hcA2",
+          "t": 2
+        },
+        {
+          "type": "jog",
+          "c": "jogA",
+          "t": 2.5,
+          "t1": 3.5,
+          "pattern": [
+            "f",
+            "b"
+          ]
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 4,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 4
+        },
+        {
+          "type": "jog",
+          "c": "jogB",
+          "t": 4.5,
+          "t1": 5.5,
+          "pattern": [
+            "f",
+            "b"
+          ]
+        },
+        {
+          "type": "tap",
+          "c": "hcB2",
+          "t": 6
+        },
+        {
+          "type": "jog",
+          "c": "jogB",
+          "t": 6.5,
+          "t1": 7.5,
+          "pattern": [
+            "f",
+            "b"
+          ]
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 8,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 8,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "jog",
+          "c": "jogA",
+          "t": 0.5,
+          "t1": 1.5,
+          "pattern": [
+            "f",
+            "b"
+          ]
+        },
+        {
+          "type": "tap",
+          "c": "hcA2",
+          "t": 2
+        },
+        {
+          "type": "jog",
+          "c": "jogA",
+          "t": 2.5,
+          "t1": 3.5,
+          "pattern": [
+            "f",
+            "b"
+          ]
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 4,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 4
+        },
+        {
+          "type": "jog",
+          "c": "jogB",
+          "t": 4.5,
+          "t1": 5.5,
+          "pattern": [
+            "f",
+            "b"
+          ]
+        },
+        {
+          "type": "tap",
+          "c": "hcB2",
+          "t": 6
+        },
+        {
+          "type": "jog",
+          "c": "jogB",
+          "t": 6.5,
+          "t1": 7.5,
+          "pattern": [
+            "f",
+            "b"
+          ]
+        }
+      ]
+    }
+  ],
+  "lesson": "## Cue, scratch it, switch decks, repeat\n\nPress hot cue A1 on the one, scratch the sound with a baby stroke over the next beat, A2 on the three with another stroke, then snap the crossfader to B on the next one and do the same with B1 and B2 and jog B. Back to A for bars 3 and 4.\n\nComplex's breakdown of Craze's routines is built on this shape: a hot key launches the sound, the platter voices it, and the deck switch keeps both hands busy. Each stroke starts an eighth after the cue so the sound has begun before you grab it. On a controller this works as written; the crossfader snap is the deck switch, and it has to land on the beat with the cue press.\n",
+  "skills": [
+    "scratch-combo",
+    "cue-points",
+    "crossfader-cut"
+  ],
+  "genre": [
+    "hip-hop",
+    "turntablism"
+  ],
+  "path": "jog",
+  "level": 5,
+  "sources": [
+    "https://www.complex.com/music/a/khrisd/dj-craze-scratch-routines",
+    "https://djtechtools.com/2014/10/28/routine-crazes-response-to-realdjing/"
+  ],
+  "prereqs": [
+    "baby-scratch",
+    "cue-juggle-across-decks"
+  ],
+  "artist": "DJ Craze"
+}

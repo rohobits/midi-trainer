@@ -1,0 +1,490 @@
+{
+  "id": "cue-juggle-across-decks",
+  "version": 1,
+  "name": "Cue juggling across decks",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 120,
+  "bars": 8,
+  "targets": [
+    {
+      "type": "sequence",
+      "t": 0,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 1
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 1,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 2
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 2,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 3
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 3,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA2",
+          "t": 4
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 4,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB2",
+          "t": 5
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 5,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 6
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 6,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 7
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 7,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 7.5
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 7.5,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 8,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 1
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 1,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 2
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 2,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 3
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 3,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA2",
+          "t": 4
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 4,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB2",
+          "t": 5
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 5,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 6
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 6,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 7
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 7,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 7.5
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 7.5,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 16,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 1
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 1,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 2
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 2,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 3
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 3,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA2",
+          "t": 4
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 4,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB2",
+          "t": 5
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 5,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 6
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 6,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 7
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 7,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 7.5
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 7.5,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 24,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 1
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 1,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 2
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 2,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 3
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 3,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA2",
+          "t": 4
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 4,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB2",
+          "t": 5
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 5,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 6
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 6,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 7
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 7,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 7.5
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 7.5,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        }
+      ]
+    }
+  ],
+  "lesson": "## Trade hits between two decks\n\nHot cues A1, A2, B1 and B2 on hits from two different tracks. Every beat, press the next cue and snap the crossfader to that deck: A on the one, B on the two, A on the three, B on the four, with a pickup on the and-of-eight. Two bars per sequence, four times.\n\nThis is the two-deck reduction of DJ TechTools' four-song juggle: the crossfader routes the hit, the cue plays it, and both must land together or the wrong track is heard. Left hand on the pads of A, right hand on B and the crossfader between them; the crossfader moves on every press.\n",
+  "skills": [
+    "cue-juggling",
+    "crossfader-cut"
+  ],
+  "genre": [
+    "hip-hop",
+    "open-format"
+  ],
+  "path": "combined",
+  "level": 3,
+  "sources": [
+    "https://djtechtools.com/2010/04/18/4-song-cue-point-juggle/",
+    "https://djtechtools.com/2008/01/03/controllerism-basics-cue-point-juggling/"
+  ],
+  "prereqs": [
+    "hot-cue-drumming",
+    "xf-drop-mix"
+  ]
+}

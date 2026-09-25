@@ -1,0 +1,246 @@
+{
+  "id": "grandmaster-flash-quick-mix-backspin",
+  "version": 1,
+  "name": "Grandmaster Flash: quick-mix backspin extension",
+  "tier": "Pro",
+  "profile": "flx4",
+  "bpm": 96,
+  "bars": 16,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "hcA1",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "xf",
+      "t": 0,
+      "t1": 8,
+      "v": 0
+    },
+    {
+      "type": "sequence",
+      "t": 8,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "jog",
+          "c": "jogA",
+          "t": 0.5,
+          "t1": 2.5,
+          "pattern": [
+            "b"
+          ],
+          "minTicks": 8
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 16,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "jog",
+          "c": "jogB",
+          "t": 0.5,
+          "t1": 2.5,
+          "pattern": [
+            "b"
+          ],
+          "minTicks": 8
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 24,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "jog",
+          "c": "jogA",
+          "t": 0.5,
+          "t1": 2.5,
+          "pattern": [
+            "b"
+          ],
+          "minTicks": 8
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 32,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "jog",
+          "c": "jogB",
+          "t": 0.5,
+          "t1": 2.5,
+          "pattern": [
+            "b"
+          ],
+          "minTicks": 8
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 40,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "jog",
+          "c": "jogA",
+          "t": 0.5,
+          "t1": 2.5,
+          "pattern": [
+            "b"
+          ],
+          "minTicks": 8
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 48,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcA1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 1,
+          "v1": 0,
+          "maxMs": 100
+        },
+        {
+          "type": "jog",
+          "c": "jogB",
+          "t": 0.5,
+          "t1": 2.5,
+          "pattern": [
+            "b"
+          ],
+          "minTicks": 8
+        }
+      ]
+    },
+    {
+      "type": "sequence",
+      "t": 56,
+      "steps": [
+        {
+          "type": "tap",
+          "c": "hcB1",
+          "t": 0
+        },
+        {
+          "type": "cut",
+          "c": "xf",
+          "t": 0,
+          "v0": 0,
+          "v1": 1,
+          "maxMs": 100
+        },
+        {
+          "type": "jog",
+          "c": "jogA",
+          "t": 0.5,
+          "t1": 2.5,
+          "pattern": [
+            "b"
+          ],
+          "minTicks": 8
+        }
+      ]
+    }
+  ],
+  "lesson": "## Extend a two-bar break forever\n\nThe same break on both decks, hot cue 1 on its first beat. Play A's break; after two bars cut to B and press B1, then spin A backwards to its start while B plays; after two bars cut back to A and press A1 while B spins back. Eight times.\n\nThis is Quick Mix Theory as Wikipedia describes it: Flash extended a record's break by cutting between two copies, backspinning the silent one to the top each time. On the FLX4 the hot cue does the \"to the top\" part, so the backspin is the gesture that keeps the hand in rhythm and is scored as a stroke; the cut and the cue on the one are what the room hears. Turn the audio on for this, because the whole point is that the seam is inaudible.\n",
+  "skills": [
+    "beat-juggling",
+    "backspin",
+    "crossfader-cut"
+  ],
+  "genre": [
+    "hip-hop",
+    "turntablism"
+  ],
+  "path": "combined",
+  "level": 5,
+  "sources": [
+    "https://en.wikipedia.org/wiki/Grandmaster_Flash"
+  ],
+  "prereqs": [
+    "beat-juggle-extend"
+  ],
+  "needsAudio": true,
+  "artist": "Grandmaster Flash"
+}

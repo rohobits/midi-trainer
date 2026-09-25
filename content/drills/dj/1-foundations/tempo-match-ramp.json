@@ -1,0 +1,64 @@
+{
+  "id": "tempo-match-ramp",
+  "version": 1,
+  "name": "Tempo matching ramp",
+  "tier": "Foundations",
+  "profile": "flx4",
+  "bpm": 125,
+  "bars": 16,
+  "targets": [
+    {
+      "type": "ramp",
+      "c": "tempoB",
+      "t": 0,
+      "t1": 8,
+      "v0": 0.5,
+      "v1": 0.53
+    },
+    {
+      "type": "hold",
+      "c": "tempoB",
+      "t": 8,
+      "t1": 24,
+      "v": 0.53
+    },
+    {
+      "type": "ramp",
+      "c": "tempoB",
+      "t": 24,
+      "t1": 40,
+      "v0": 0.53,
+      "v1": 0.47
+    },
+    {
+      "type": "hold",
+      "c": "tempoB",
+      "t": 40,
+      "t1": 56,
+      "v": 0.47
+    },
+    {
+      "type": "ramp",
+      "c": "tempoB",
+      "t": 56,
+      "t1": 64,
+      "v0": 0.47,
+      "v1": 0.5
+    }
+  ],
+  "lesson": "## Land on the number and stop\n\nSync off. Move TEMPO B up by a small amount over 2 bars, hold 4, then across the centre to the same distance below over 4 bars, hold 4, and back to centre over 2. The goal is arriving at each value without overshooting and then not touching it.\n\nThe sound of bad beatmatching is oscillation: pushed too far, pulled back too far, and so on. A pitch fader has enough resolution that a 3% move is a visible travel; make that travel one continuous motion at one speed. Your beat-lock will come from your ear later; the hand discipline comes from here.\n",
+  "skills": [
+    "beatmatching",
+    "tempo-matching"
+  ],
+  "genre": [
+    "house",
+    "techno"
+  ],
+  "path": "jog",
+  "level": 1,
+  "sources": [
+    "https://manual.mixxx.org/2.4/en/chapters/djing_with_mixxx.html",
+    "https://pirate.com/en/blog/how-to-beatmatch/"
+  ]
+}

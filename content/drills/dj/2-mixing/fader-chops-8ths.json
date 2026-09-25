@@ -1,0 +1,37 @@
+{
+  "id": "fader-chops-8ths",
+  "version": 1,
+  "name": "Fader chops on eighths",
+  "tier": "Mixing",
+  "profile": "flx4",
+  "bpm": 100,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "alternate",
+      "c": "faderA",
+      "t": 0,
+      "n": 32,
+      "step": 0.5,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## The channel fader as a switch\n\nChannel fader A closes on every off-beat and opens on every beat, for 4 bars at 100 BPM: 32 moves, one per eighth note. The fader has to travel its full length each time; a half-open fader scores as a miss.\n\nChops turn a static bar into a rhythm. The technique is a wrist flick, not an arm movement, and the fader should hit the bottom of its throw so the cut is silent, not quiet. Practise at this tempo until it is even, then take the same pattern to the crossfader.\n",
+  "skills": [
+    "fader-cuts"
+  ],
+  "genre": [
+    "hip-hop",
+    "open-format"
+  ],
+  "path": "mixer",
+  "level": 3,
+  "sources": [
+    "https://www.digitaldjtips.com/fader-cut-fundamentals-free-lesson/",
+    "https://wearecrossfader.co.uk/blog/12-high-energy-dj-transitions/"
+  ],
+  "prereqs": [
+    "fader-control"
+  ]
+}

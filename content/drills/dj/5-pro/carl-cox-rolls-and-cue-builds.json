@@ -1,0 +1,92 @@
+{
+  "id": "carl-cox-rolls-and-cue-builds",
+  "version": 1,
+  "name": "Carl Cox: rolls and cue builds",
+  "tier": "Pro",
+  "profile": "flx4",
+  "bpm": 130,
+  "bars": 32,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 64,
+      "v": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "alternate",
+      "c": "cueA",
+      "t": 48,
+      "n": 8,
+      "step": 1
+    },
+    {
+      "type": "alternate",
+      "c": "cueA",
+      "t": 56,
+      "n": 16,
+      "step": 0.5
+    },
+    {
+      "type": "tap",
+      "c": "playA",
+      "t": 64
+    },
+    {
+      "type": "cross",
+      "c": "lowA",
+      "c2": "lowB",
+      "t": 64,
+      "t1": 68,
+      "va0": 0.5,
+      "va1": 0,
+      "vb0": 0,
+      "vb1": 0.5,
+      "ceiling": 0.5
+    },
+    {
+      "type": "step",
+      "c": "padFxA4",
+      "t": 112,
+      "step": 2,
+      "count": 8,
+      "exitC": "hcA1",
+      "exitAt": 128
+    }
+  ],
+  "lesson": "## The two-deck version of a three-deck set\n\nB enters over A with its low cut. From bar 13, A's CUE button becomes an instrument: press it on every beat for two bars, then on every eighth for two, and hit PLAY on the one of bar 17 so A runs on; the bass swaps to B in that same bar. At bar 29, a short roll on Pad FX A4 retriggered every two beats into hot cue A1 on bar 33.\n\nDJ Mag and We Are Crossfader describe Cox's cue-button builds and subtle rolls; the third deck carrying an acapella is left out here because the FLX4 has two channels. The cue stutter works because CUE restarts from the cue point on every press and plays only while held, so the presses have to be even. Keep the rolls short and on the beat; the point is tension, not a stutter effect.\n",
+  "skills": [
+    "cue-retrigger",
+    "beat-roll",
+    "bass-swap"
+  ],
+  "genre": [
+    "techno",
+    "tech-house"
+  ],
+  "path": "combined",
+  "level": 5,
+  "sources": [
+    "https://djmag.com/longreads/how-carl-cox-became-known-three-deck-wizard",
+    "https://wearecrossfader.co.uk/blog/carl-cox-mixing-techniques/"
+  ],
+  "prereqs": [
+    "beat-roll-build",
+    "cue-point-stutter"
+  ],
+  "artist": "Carl Cox"
+}

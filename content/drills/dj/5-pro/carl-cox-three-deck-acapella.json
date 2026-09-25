@@ -1,0 +1,103 @@
+{
+  "id": "carl-cox-three-deck-acapella",
+  "version": 1,
+  "name": "Carl Cox: three-deck acapella layer",
+  "tier": "Pro",
+  "profile": "flx4",
+  "bpm": 130,
+  "bars": 40,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "playB",
+      "t": 0
+    },
+    {
+      "type": "hold",
+      "c": "lowB",
+      "t": 0,
+      "t1": 64,
+      "v": 0
+    },
+    {
+      "type": "ramp",
+      "c": "faderB",
+      "t": 0,
+      "t1": 32,
+      "v0": 0,
+      "v1": 1
+    },
+    {
+      "type": "hold",
+      "c": "faderA",
+      "t": 0,
+      "t1": 128,
+      "v": 1
+    },
+    {
+      "type": "cross",
+      "c": "lowA",
+      "c2": "lowB",
+      "t": 64,
+      "t1": 68,
+      "va0": 0.5,
+      "va1": 0,
+      "vb0": 0,
+      "vb1": 0.5,
+      "ceiling": 0.5
+    },
+    {
+      "type": "hold",
+      "c": "faderB",
+      "t": 32,
+      "t1": 160,
+      "v": 1
+    },
+    {
+      "type": "alternate",
+      "c": "cueA",
+      "t": 120,
+      "n": 16,
+      "step": 0.5
+    },
+    {
+      "type": "tap",
+      "c": "playA",
+      "t": 128
+    },
+    {
+      "type": "ramp",
+      "c": "faderA",
+      "t": 128,
+      "t1": 160,
+      "v0": 1,
+      "v1": 0
+    }
+  ],
+  "lesson": "## Two beats under, a voice on top\n\nThe full version of Cox's layering: A and B run together as in the two-deck drill, bass swapped at bar 17, and an acapella on a third deck starts on the one of bar 17 and rides over both until A leaves. On bars 31 and 32, A's cue stutters on eighths before it plays out.\n\nThe FLX4 has two channels, so this drill is flagged as needing a third deck: the acapella's fader and play button are not on this controller, and the lanes only show what your two hands do on decks A and B. What you are practising is keeping two full tracks level for 32 bars while the third element carries the room. A four-channel mixer or a second controller unlocks it.\n",
+  "skills": [
+    "three-deck",
+    "bass-swap",
+    "cue-retrigger",
+    "acapella"
+  ],
+  "genre": [
+    "techno",
+    "tech-house"
+  ],
+  "path": "combined",
+  "level": 5,
+  "sources": [
+    "https://djmag.com/longreads/how-carl-cox-became-known-three-deck-wizard",
+    "https://wearecrossfader.co.uk/blog/carl-cox-mixing-techniques/",
+    "https://blog.pioneerdj.com/djtips/a-complete-guide-to-multi-deck-mixing/"
+  ],
+  "prereqs": [
+    "carl-cox-rolls-and-cue-builds"
+  ],
+  "requires": [
+    "decks:3"
+  ],
+  "needsAudio": true,
+  "artist": "Carl Cox"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "tone-play-melody",
+  "version": 1,
+  "name": "Tone play melody",
+  "tier": "Advanced",
+  "profile": "flx4",
+  "bpm": 120,
+  "bars": 4,
+  "targets": [
+    {
+      "type": "tap",
+      "c": "keyShiftA4",
+      "t": 0
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA4",
+      "t": 1
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA6",
+      "t": 2
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA6",
+      "t": 3
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA7",
+      "t": 4
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA7",
+      "t": 5
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA6",
+      "t": 6
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA5",
+      "t": 8
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA5",
+      "t": 9
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA4",
+      "t": 10
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA4",
+      "t": 11
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA3",
+      "t": 12
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA3",
+      "t": 13
+    },
+    {
+      "type": "tap",
+      "c": "keyShiftA2",
+      "t": 14
+    }
+  ],
+  "lesson": "## Play the pads as notes\n\nHot cue 1 on a single sustained note or stab, KEY SHIFT mode on the pads so each pad retriggers that cue at a different pitch. The drill plays a simple two-bar melody: two notes each on pads 4, 6 and 7, then down through 5, 4, 3 to 2, one press per beat.\n\nTone play turns one sample into an instrument, and it is scored like drumming: the press has to be on the beat. The musical part is choosing the source: a clean, short sound with a clear pitch. Which pad is which pitch depends on your software's key shift layout, so learn it before the melody, and turn the audio on for this one.\n",
+  "skills": [
+    "tone-play",
+    "key-shift"
+  ],
+  "genre": [
+    "open-format",
+    "hip-hop"
+  ],
+  "path": "pads",
+  "level": 5,
+  "sources": [
+    "https://wearecrossfader.co.uk/blog/free-tone-play-mixing-lesson/",
+    "https://djtechtools.com/2016/06/19/new-turntablism-trick-midi-mapped-tone-play-cue-points/"
+  ],
+  "prereqs": [
+    "harmonic-key-shift-choice"
+  ],
+  "needsAudio": true
+}

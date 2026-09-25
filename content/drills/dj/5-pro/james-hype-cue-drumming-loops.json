@@ -1,0 +1,82 @@
+{
+  "id": "james-hype-cue-drumming-loops",
+  "version": 1,
+  "name": "James Hype: cue drumming and loops",
+  "tier": "Pro",
+  "profile": "flx4",
+  "bpm": 126,
+  "bars": 16,
+  "targets": [
+    {
+      "type": "alternate",
+      "c": "hcA1",
+      "t": 0,
+      "n": 16,
+      "step": 1
+    },
+    {
+      "type": "alternate",
+      "c": "hcA2",
+      "t": 1,
+      "n": 8,
+      "step": 2
+    },
+    {
+      "type": "alternate",
+      "c": "hcA3",
+      "t": 0.5,
+      "n": 16,
+      "step": 1
+    },
+    {
+      "type": "alternate",
+      "c": "hcB1",
+      "t": 16,
+      "n": 16,
+      "step": 1
+    },
+    {
+      "type": "alternate",
+      "c": "hcB2",
+      "t": 17,
+      "n": 8,
+      "step": 2
+    },
+    {
+      "type": "alternate",
+      "c": "hcA3",
+      "t": 16.5,
+      "n": 16,
+      "step": 1
+    },
+    {
+      "type": "step",
+      "c": "loopB",
+      "t": 48,
+      "step": 4,
+      "count": 4,
+      "exitC": "reloopB",
+      "exitAt": 64
+    }
+  ],
+  "lesson": "## Drums on both decks, then a loop build\n\nBars 1 to 4: kick on A1 every beat, snare on A2 on 2 and 4, hat on A3 on every off-beat. Bars 5 to 8: the same pattern with the kick and snare from deck B's cues while A's hat continues. Bars 13 to 16: a halving loop on B, IN/4BEAT on each downbeat, exit on the one of bar 17.\n\nDJ Mag's \"How I DJ\" with Hype describes four-deck hot-cue drumming and loop builds; this is the two-deck reduction. The pads are an instrument, so the pattern is scored like a drummer: every hit on the grid, the off-beat hat especially. Switching decks mid-pattern without dropping a hit is the Hype part.\n",
+  "skills": [
+    "hot-cue-drumming",
+    "loop-roll"
+  ],
+  "genre": [
+    "house",
+    "tech-house"
+  ],
+  "path": "combined",
+  "level": 5,
+  "sources": [
+    "https://djmag.com/content/james-hype-how-i-dj",
+    "https://www.digitaldjtips.com/our-top-10-james-hype-moments-insane-dj-tricks-backstage-reveals/"
+  ],
+  "prereqs": [
+    "hot-cue-drumming-offbeat",
+    "loop-roll-halving"
+  ],
+  "artist": "James Hype"
+}

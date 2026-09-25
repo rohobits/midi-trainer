@@ -5,53 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MIDI Trainer</title>
 <meta name="description" content="Guitar Hero-style practice trainer for MIDI DJ controllers and pianos.">
+<meta name="theme-color" content="#16151A">
 <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
 <div class="wrap">
 <header>
-  <h1>MIDI Trainer</h1>
+  <a class="brand" href="#/browse"><h1>MIDI Trainer</h1></a>
+  <nav id="nav">
+    <a href="#/browse" data-route="browse">Drills</a>
+    <a href="#/practice" data-route="practice">Practice</a>
+    <a href="#/piano" data-route="piano">Piano</a>
+    <a href="#/mix" data-route="mix">Decks</a>
+    <a href="#/dashboard" data-route="dashboard">Progress</a>
+    <a href="#/editor" data-route="editor">Editor</a>
+    <a href="#/settings" data-route="settings">Settings</a>
+  </nav>
   <div class="status"><span class="dot" id="dot"></span><span id="devname">Connecting to MIDI…</span></div>
-  <button id="midiBtn">Connect controller</button>
+  <button id="midiBtn">Connect</button>
   <button id="learnBtn">Map controls</button>
   <div class="group"><label for="profile">Profile</label><select id="profile"></select></div>
 </header>
-
-<div class="toolbar">
-  <div class="group"><label for="drill">Drill</label><select id="drill"></select>
-    <span class="file"><button type="button">Load drill .json</button><input type="file" id="drillfile" accept=".json"></span></div>
-  <div class="group"><label for="bpm">BPM</label><input type="number" id="bpm" min="20" max="400" value="125"><button id="tapTempo">Tap tempo</button></div>
-  <div class="group"><button id="clickBtn">Metronome</button><button id="loopBtn">Loop</button><button id="autoBtn">Start on Play A</button></div>
-  <div class="group"><button class="primary" id="playBtn">Start</button><button id="resetBtn">Restart</button></div>
-</div>
-
-<div id="stage">
-  <canvas id="cv"></canvas>
-  <div class="overlay"><div><div class="big" id="title"></div><div class="sub" id="barinfo"></div></div><div class="sub" id="lastin"></div></div>
-  <div class="cue" id="cue"></div>
-  <div class="result" id="result"></div>
-</div>
-
-<div class="below">
-  <div class="card" id="lesson"></div>
-  <div class="card">
-    <h2>This run</h2>
-    <div class="stats">
-      <div class="stat"><b id="sScore">—</b><span>score</span></div>
-      <div class="stat"><b id="sTiming">—</b><span>avg timing (ms)</span></div>
-      <div class="stat"><b id="sTrack">—</b><span>fader tracking</span></div>
-      <div class="stat"><b id="sBest">—</b><span>best</span></div>
-    </div>
-    <div class="tiers" id="tiers"><span class="t-perfect">Perfect <b>0</b></span><span class="t-great">Great <b>0</b></span><span class="t-ok">OK <b>0</b></span><span class="t-miss">Miss <b>0</b></span><span class="t-extra">Extra <b>0</b></span></div>
-    <div class="legend"><span><i style="background:var(--tap)"></i>tap on the line</span><span><i style="background:var(--ramp)"></i>ride the fader along the path</span><span><i style="background:var(--ok)"></i>hit</span><span><i style="background:var(--bad)"></i>miss</span></div>
-    <p class="hint">Chrome on macOS with the controller on USB; rekordbox can stay open. Play a track on deck A, set BPM to match, then hit Play A (or <kbd>Space</kbd>) on a phrase downbeat. Run "Map controls" once so the trainer knows your pads and faders.</p>
-  </div>
-</div>
+<main id="view"></main>
 </div>
 
 <div id="learn" class="modal"><div class="box">
   <h2>Map controls</h2>
-  <p>Click a control, then touch it on the hardware. Buttons register on press; knobs and faders on any move. Map only what you use; unmapped lanes are dimmed and their drills are marked unavailable.</p>
+  <p>Click a control, then touch it on the hardware. Buttons register on press; knobs and faders on any move; jogs on rotation. Map only what you use; unmapped lanes are dimmed and their drills are marked unavailable. Dashed entries came from a file and have not been seen on this hardware yet.</p>
   <div id="ctlgroups"></div>
   <div class="row">
     <button id="learnAll">Map all in order</button>
@@ -62,7 +42,7 @@
     <button class="primary" id="learnDone">Done</button>
   </div>
 </div></div>
-
+<div id="toast" class="toast"></div>
 <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
