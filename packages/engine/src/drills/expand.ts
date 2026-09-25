@@ -1,6 +1,6 @@
 import type { Drill, PrimitiveTarget, Target } from './schema';
 
-export type ControlKindMap = Readonly<Record<string, 'tap' | 'cc' | 'rel'>>;
+export type ControlKindMap = Readonly<Record<string, 'tap' | 'cc' | 'rel' | 'switch'>>;
 
 export interface GroupInfo {
   id: number;

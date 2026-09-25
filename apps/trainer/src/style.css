@@ -108,3 +108,4 @@ textarea{width:100%;min-height:260px;font-family:ui-monospace,Menlo,monospace;fo
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 :root[data-reduced="1"] *{transition:none!important}
 @media print{header,nav,.toolbar,button{display:none!important}.wrap{padding:0}}
+.monitor{font-family:ui-monospace,Menlo,monospace;font-size:12px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;min-height:52px;max-height:150px;overflow:auto;white-space:pre-wrap;color:var(--muted);margin:0 0 10px}

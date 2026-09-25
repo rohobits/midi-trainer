@@ -9,7 +9,7 @@ export interface LaneFrame {
   values: Readonly<Record<string, number>>;
   flashes: Readonly<Record<string, Flash>>;
   names: Readonly<Record<string, string>>;
-  kinds: Readonly<Record<string, 'tap' | 'cc' | 'rel'>>;
+  kinds: Readonly<Record<string, 'tap' | 'cc' | 'rel' | 'switch'>>;
   mapped: ReadonlySet<string>;
   pos: number;
   /** Show the ±tap window band around the strike line. */

@@ -1,4 +1,4 @@
-import type { MidiEvent } from './parse';
+import { switchKey, type MidiEvent } from './parse';
 import type { ControlDef } from '../profiles/types';
 import type { ControlMap } from './map';
 
@@ -57,7 +57,9 @@ export class LearnSession {
     if (def.kind === 'tap' && ev.kind !== 'noteon') return null;
     if ((def.kind === 'cc' || def.kind === 'rel') && ev.kind !== 'cc') return null;
     const id = this.armed;
-    this.map[id] = { key: ev.key, verified: true, ...(note ? { note } : {}) };
+    // Switches store the qualified key (velocity or note-off), so positions sharing a note stay distinct.
+    const key = def.kind === 'switch' ? switchKey(ev) : ev.key;
+    this.map[id] = { key, verified: true, ...(note ? { note } : {}) };
     this.armed = this.queue.shift() ?? null;
     return id;
   }

@@ -5,7 +5,7 @@ import { el } from '../ui/dom';
 import { createStage } from '../ui/stage';
 
 /** Rebuild the run by replaying the input log against the judges, so hits and misses match what was scored. */
-export function reconstruct(drill: Drill, attempt: AttemptRecord, kinds: Record<string, 'tap' | 'cc' | 'rel'>): DrillRun {
+export function reconstruct(drill: Drill, attempt: AttemptRecord, kinds: Record<string, 'tap' | 'cc' | 'rel' | 'switch'>): DrillRun {
   const run = new DrillRun(drill, { thresholds: resolveThresholds(drill), strictness: attempt.strictness, kinds, tempoScale: attempt.tempoScale ?? 1 });
   const msPerBeat = 60000 / run.bpm;
   run.start(0);

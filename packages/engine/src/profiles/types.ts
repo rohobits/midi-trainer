@@ -1,5 +1,5 @@
-/** tap = press, cc = absolute 0..1, rel = relative encoder (jog rotate). */
-export type ControlKind = 'tap' | 'cc' | 'rel';
+/** tap = press, cc = absolute 0..1, rel = relative encoder (jog rotate), switch = multi-position switch. */
+export type ControlKind = 'tap' | 'cc' | 'rel' | 'switch';
 
 export interface ControlDef {
   id: string;

@@ -1,4 +1,4 @@
-import { LearnSession, exportMap, importMap, type ControlMap, type MidiEvent, type Profile } from '@midi-trainer/engine';
+import { LearnSession, exportMap, importMap, describeMidi, switchKey, type ControlMap, type MidiEvent, type Profile } from '@midi-trainer/engine';
 import { $, el, download } from './dom';
 
 export interface LearnUi {
@@ -16,8 +16,18 @@ export interface LearnUi {
 export function createLearnUi(profile: Profile, map: ControlMap, onChange: (map: ControlMap) => void): LearnUi {
   const modal = $('learn');
   const groups = $('ctlgroups');
+  const monitor = $('midiMonitor');
   const session = new LearnSession(profile.controls, map);
   let open = false;
+  const recent: string[] = [];
+
+  /** Raw MIDI monitor: last eight messages, newest first, with velocity / value and on/off. */
+  function logRaw(ev: MidiEvent): void {
+    const owner = Object.entries(map).find(([, e]) => e.key === switchKey(ev) || e.key === ev.key)?.[0];
+    recent.unshift(`${describeMidi(ev)}  →  ${switchKey(ev)}${owner ? `  (${profile.controls.find((c) => c.id === owner)?.name ?? owner})` : ''}`);
+    if (recent.length > 8) recent.pop();
+    monitor.textContent = recent.join('\n');
+  }
 
   function render(): void {
     groups.innerHTML = '';
@@ -31,7 +41,7 @@ export function createLearnUi(profile: Profile, map: ControlMap, onChange: (map:
         const cls = ['ctl', session.current === c.id ? 'arm' : entry ? 'done' : '', entry && !entry.verified ? 'unverified' : ''].filter(Boolean).join(' ');
         const d = el('div', { class: cls, 'data-control': c.id, role: 'button', tabindex: '0' });
         d.appendChild(el('span', {}, c.name));
-        const status = session.current === c.id ? 'touch it now' : entry ? entry.key + (entry.verified ? '' : ' · unverified') : 'not mapped';
+        const status = session.current === c.id ? (c.kind === 'switch' ? 'move it to this position now' : 'touch it now') : entry ? entry.key + (entry.verified ? '' : ' · unverified') : 'not mapped';
         d.appendChild(el('small', {}, status));
         d.onclick = () => {
           session.arm(c.id);
@@ -101,7 +111,9 @@ export function createLearnUi(profile: Profile, map: ControlMap, onChange: (map:
       return open;
     },
     offer(ev) {
-      if (!open || !session.current) return false;
+      if (!open) return false;
+      logRaw(ev);
+      if (!session.current) return false;
       const mapped = session.offer(ev, `learned ${new Date().toISOString().slice(0, 10)}`);
       if (mapped) {
         render();

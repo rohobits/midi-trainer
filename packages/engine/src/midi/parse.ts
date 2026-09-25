@@ -34,6 +34,28 @@ export function relativeDelta(raw: number): number {
   return raw - 64;
 }
 
+/**
+ * Qualified key for switches: the plain key plus `@<velocity>` for note-on or `@off` for
+ * note-off, so positions that share a note but differ in velocity or on/off are distinct.
+ */
+export function switchKey(ev: MidiEvent): string {
+  if (ev.kind === 'noteon') return `${ev.key}@${ev.velocity}`;
+  if (ev.kind === 'noteoff') return `${ev.key}@off`;
+  return `${ev.key}@${ev.raw}`;
+}
+
+/** Human-readable one-liner for the raw MIDI monitor. */
+export function describeMidi(ev: MidiEvent): string {
+  switch (ev.kind) {
+    case 'noteon':
+      return `ch ${ev.ch + 1} note ${ev.note} on · vel ${ev.velocity}`;
+    case 'noteoff':
+      return `ch ${ev.ch + 1} note ${ev.note} off`;
+    case 'cc':
+      return `ch ${ev.ch + 1} cc ${ev.cc} · ${ev.raw}`;
+  }
+}
+
 /** Whether a key string encodes a note (press) or a CC (continuous) source. */
 export function keyKind(key: string): 'note' | 'cc' | null {
   if (key.startsWith('n:')) return 'note';

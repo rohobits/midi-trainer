@@ -1,6 +1,6 @@
 import {
   MidiAccess, Sounds, TrainerDb, MidiClock, FLX4_PROFILE, GENERIC_PROFILE, DEFAULT_SETTINGS, FLX4_DEFAULT_MAP,
-  controlById, controlKinds, defaultValues, mappedControls, reverseMap, relativeDelta, readLegacy, totalXp, levelFor, xpForAttempt,
+  controlById, controlKinds, defaultValues, mappedControls, reverseMap, lookupControl, switchKey, relativeDelta, readLegacy, totalXp, levelFor, xpForAttempt,
   practiceByDay, streakInfo,
   type ControlMap, type Drill, type MidiEvent, type Profile, type Settings, type AttemptRecord, type StoredDrill,
 } from '@midi-trainer/engine';
@@ -170,7 +170,7 @@ export class App {
     return Object.fromEntries(this.profile.controls.map((c) => [c.id, c.name]));
   }
 
-  kinds(): Record<string, 'tap' | 'cc' | 'rel'> {
+  kinds(): Record<string, 'tap' | 'cc' | 'rel' | 'switch'> {
     return controlKinds(this.profile);
   }
 
@@ -215,7 +215,7 @@ export class App {
 
   handleMidi(ev: MidiEvent, timeStamp: number): void {
     if (this.learn?.offer(ev)) return;
-    const c = this.rev[ev.key];
+    const c = lookupControl(this.rev, ev.key, switchKey(ev));
     this.emit('midi', { ev, timeStamp, mapped: c ?? null });
     // Piano profile: raw notes are the instrument.
     if (ev.kind === 'noteon') this.emit('control', { kind: 'noteon', note: ev.note, velocity: ev.velocity, timeStamp });
@@ -228,7 +228,7 @@ export class App {
         this.values[c] = ev.value;
         this.emit('control', { kind: 'cc', c, value: ev.value, timeStamp });
       }
-    } else if (ev.kind === 'noteon') this.emit('control', { kind: 'tap', c, timeStamp });
+    } else if (ev.kind === 'noteon' || kind === 'switch') this.emit('control', { kind: 'tap', c, timeStamp });
     else this.emit('control', { kind: 'release', c, timeStamp });
   }
 

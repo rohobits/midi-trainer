@@ -14,6 +14,8 @@ const cc = (id: string, name: string, group: string, defaultValue: number, deck?
   id, name, kind: 'cc', group, defaultValue, ...(deck ? { deck } : {}),
 });
 const rel = (id: string, name: string, group: string, deck?: Deck): ControlDef => ({ id, name, kind: 'rel', group, ...(deck ? { deck } : {}) });
+/** Multi-position switch: positions may differ only by velocity or note-off, so learn stores a qualified key. */
+const sw = (id: string, name: string, group: string): ControlDef => ({ id, name, kind: 'switch', group });
 
 function deckControls(d: Deck): ControlDef[] {
   const out: ControlDef[] = [
@@ -66,15 +68,14 @@ export const FLX4_CONTROLS: readonly ControlDef[] = [
   cc('hpLevel', 'Headphones LEVEL', 'Mixer', 0.5),
   tap('beatFxOn', 'BEAT FX ON/OFF', 'FX'),
   tap('beatFxSelect', 'BEAT FX SELECT', 'FX'),
-  tap('chSelect1', 'CH SELECT 1', 'FX'),
-  tap('chSelect2', 'CH SELECT 2', 'FX'),
-  tap('chSelectMaster', 'CH SELECT MASTER', 'FX'),
+  sw('chSelect1', 'CH SELECT 1', 'FX'),
+  sw('chSelect2', 'CH SELECT 2', 'FX'),
+  sw('chSelectMaster', 'CH SELECT MASTER', 'FX'),
   cc('fxLevel', 'BEAT FX LEVEL/DEPTH', 'FX', 0),
   tap('beatLeft', 'BEAT ◀', 'FX'),
   tap('beatRight', 'BEAT ▶', 'FX'),
   tap('smartFader', 'SMART FADER', 'Smart'),
   tap('smartCfx', 'SMART CFX', 'Smart'),
-  cc('samplerVol', 'SAMPLER VOLUME', 'Mixer', 0.5),
   tap('browseLoadA', 'LOAD A', 'Browse'),
   tap('browseLoadB', 'LOAD B', 'Browse'),
   tap('browsePush', 'Rotary push', 'Browse'),

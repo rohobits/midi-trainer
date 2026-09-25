@@ -1,15 +1,18 @@
 import type { ControlMap } from '../../midi/map';
 
 /**
- * Default DDJ-FLX4 map, exported from a MIDI-learn session on the owner's controller
+ * Default DDJ-FLX4 map, merged from four MIDI-learn exports on the owner's controller
  * (2026-09-25, rekordbox mode). Every entry was seen on real hardware; nothing here was
  * typed from a manual. Re-learn any control in the Map controls dialog to override.
  *
- * Deliberately left out of the shipped default because the learn session captured the
- * same MIDI message for two controls (a later entry would steal the earlier one's
- * presses): chSelectMaster, samplerA1, samplerA2, samplerA3, samplerA4, samplerA5, samplerA6, samplerA7, samplerA8, samplerB1, samplerB2, samplerB3, samplerB4, samplerB5, samplerB6, samplerB7, samplerB8. The Sampler pads were learned while the pads were
- * still in HOT CUE mode, and CH SELECT Master matched CH SELECT 1. Map them in the dialog
- * once the pad mode / switch position is right.
+ * Pad modes send distinct note ranges per mode on the pad channel (deck A ch 7, deck B
+ * ch 9): HOT CUE 0–7, PAD FX 16–23, BEAT JUMP 32–39, SAMPLER 48–55, KEYBOARD 64–71,
+ * PAD FX 2 80–87, BEAT LOOP 96–103, KEY SHIFT 112–119.
+ *
+ * Not shipped: `chSelectMaster`. In every learn session it arrived as the same note-on as
+ * CH SELECT 1 (n:4:16). The dialog's raw MIDI monitor shows what the switch really sends
+ * in the MASTER position (a note-off, or a different velocity); map it there and the
+ * switch-aware learn stores the qualified key.
  */
 export const FLX4_DEFAULT_MAP: ControlMap = {
   beatFxOn: { key: 'n:4:71', verified: true, note: 'learned 2026-09-25' },
@@ -54,7 +57,7 @@ export const FLX4_DEFAULT_MAP: ControlMap = {
   browseTurn: { key: 'c:6:64', verified: true, note: 'learned 2026-09-25' },
   chSelect1: { key: 'n:4:16', verified: true, note: 'learned 2026-09-25' },
   chSelect2: { key: 'n:5:17', verified: true, note: 'learned 2026-09-25' },
-  cueA: { key: 'n:7:0', verified: true, note: 'learned 2026-09-25; came through on the pad channel unlike Cue B (n:1:12), re-learn if Cue A does not register' },
+  cueA: { key: 'n:0:12', verified: true, note: 'learned 2026-09-25' },
   cueB: { key: 'n:1:12', verified: true, note: 'learned 2026-09-25' },
   cueHpA: { key: 'n:0:84', verified: true, note: 'learned 2026-09-25' },
   cueHpB: { key: 'n:1:84', verified: true, note: 'learned 2026-09-25' },
@@ -63,22 +66,22 @@ export const FLX4_DEFAULT_MAP: ControlMap = {
   filtA: { key: 'c:6:23', verified: true, note: 'learned 2026-09-25' },
   filtB: { key: 'c:6:24', verified: true, note: 'learned 2026-09-25' },
   fxLevel: { key: 'c:4:2', verified: true, note: 'learned 2026-09-25' },
-  hcA1: { key: 'n:7:48', verified: true, note: 'learned 2026-09-25' },
-  hcA2: { key: 'n:7:49', verified: true, note: 'learned 2026-09-25' },
-  hcA3: { key: 'n:7:50', verified: true, note: 'learned 2026-09-25' },
-  hcA4: { key: 'n:7:51', verified: true, note: 'learned 2026-09-25' },
-  hcA5: { key: 'n:7:52', verified: true, note: 'learned 2026-09-25' },
-  hcA6: { key: 'n:7:53', verified: true, note: 'learned 2026-09-25' },
-  hcA7: { key: 'n:7:54', verified: true, note: 'learned 2026-09-25' },
-  hcA8: { key: 'n:7:55', verified: true, note: 'learned 2026-09-25' },
-  hcB1: { key: 'n:9:48', verified: true, note: 'learned 2026-09-25' },
-  hcB2: { key: 'n:9:49', verified: true, note: 'learned 2026-09-25' },
-  hcB3: { key: 'n:9:50', verified: true, note: 'learned 2026-09-25' },
-  hcB4: { key: 'n:9:51', verified: true, note: 'learned 2026-09-25' },
-  hcB5: { key: 'n:9:52', verified: true, note: 'learned 2026-09-25' },
-  hcB6: { key: 'n:9:53', verified: true, note: 'learned 2026-09-25' },
-  hcB7: { key: 'n:9:54', verified: true, note: 'learned 2026-09-25' },
-  hcB8: { key: 'n:9:55', verified: true, note: 'learned 2026-09-25' },
+  hcA1: { key: 'n:7:0', verified: true, note: 'learned 2026-09-25' },
+  hcA2: { key: 'n:7:1', verified: true, note: 'learned 2026-09-25' },
+  hcA3: { key: 'n:7:2', verified: true, note: 'learned 2026-09-25' },
+  hcA4: { key: 'n:7:3', verified: true, note: 'learned 2026-09-25' },
+  hcA5: { key: 'n:7:4', verified: true, note: 'learned 2026-09-25' },
+  hcA6: { key: 'n:7:5', verified: true, note: 'learned 2026-09-25' },
+  hcA7: { key: 'n:7:6', verified: true, note: 'learned 2026-09-25' },
+  hcA8: { key: 'n:7:7', verified: true, note: 'learned 2026-09-25' },
+  hcB1: { key: 'n:9:0', verified: true, note: 'learned 2026-09-25' },
+  hcB2: { key: 'n:9:1', verified: true, note: 'learned 2026-09-25' },
+  hcB3: { key: 'n:9:2', verified: true, note: 'learned 2026-09-25' },
+  hcB4: { key: 'n:9:3', verified: true, note: 'learned 2026-09-25' },
+  hcB5: { key: 'n:9:4', verified: true, note: 'learned 2026-09-25' },
+  hcB6: { key: 'n:9:5', verified: true, note: 'learned 2026-09-25' },
+  hcB7: { key: 'n:9:6', verified: true, note: 'learned 2026-09-25' },
+  hcB8: { key: 'n:9:7', verified: true, note: 'learned 2026-09-25' },
   hiA: { key: 'c:0:7', verified: true, note: 'learned 2026-09-25' },
   hiB: { key: 'c:1:7', verified: true, note: 'learned 2026-09-25' },
   hpLevel: { key: 'c:6:13', verified: true, note: 'learned 2026-09-25' },
@@ -172,6 +175,22 @@ export const FLX4_DEFAULT_MAP: ControlMap = {
   playB: { key: 'n:1:11', verified: true, note: 'learned 2026-09-25' },
   reloopA: { key: 'n:0:77', verified: true, note: 'learned 2026-09-25' },
   reloopB: { key: 'n:1:77', verified: true, note: 'learned 2026-09-25' },
+  samplerA1: { key: 'n:7:48', verified: true, note: 'learned 2026-09-25' },
+  samplerA2: { key: 'n:7:49', verified: true, note: 'learned 2026-09-25' },
+  samplerA3: { key: 'n:7:50', verified: true, note: 'learned 2026-09-25' },
+  samplerA4: { key: 'n:7:51', verified: true, note: 'learned 2026-09-25' },
+  samplerA5: { key: 'n:7:52', verified: true, note: 'learned 2026-09-25' },
+  samplerA6: { key: 'n:7:53', verified: true, note: 'learned 2026-09-25' },
+  samplerA7: { key: 'n:7:54', verified: true, note: 'learned 2026-09-25' },
+  samplerA8: { key: 'n:7:55', verified: true, note: 'learned 2026-09-25' },
+  samplerB1: { key: 'n:9:48', verified: true, note: 'learned 2026-09-25' },
+  samplerB2: { key: 'n:9:49', verified: true, note: 'learned 2026-09-25' },
+  samplerB3: { key: 'n:9:50', verified: true, note: 'learned 2026-09-25' },
+  samplerB4: { key: 'n:9:51', verified: true, note: 'learned 2026-09-25' },
+  samplerB5: { key: 'n:9:52', verified: true, note: 'learned 2026-09-25' },
+  samplerB6: { key: 'n:9:53', verified: true, note: 'learned 2026-09-25' },
+  samplerB7: { key: 'n:9:54', verified: true, note: 'learned 2026-09-25' },
+  samplerB8: { key: 'n:9:55', verified: true, note: 'learned 2026-09-25' },
   shiftA: { key: 'n:0:63', verified: true, note: 'learned 2026-09-25' },
   shiftB: { key: 'n:1:63', verified: true, note: 'learned 2026-09-25' },
   smartCfx: { key: 'n:6:0', verified: true, note: 'learned 2026-09-25' },

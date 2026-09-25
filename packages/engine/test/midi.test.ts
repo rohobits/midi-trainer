@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { parseMidi, relativeDelta, keyKind } from '../src/midi/parse';
-import { reverseMap, exportMap, importMap, mappedControls } from '../src/midi/map';
+import { parseMidi, relativeDelta, keyKind, switchKey, describeMidi } from '../src/midi/parse';
+import { reverseMap, exportMap, importMap, mappedControls, lookupControl } from '../src/midi/map';
 import { LearnSession } from '../src/midi/learn';
 import { GENERIC_CONTROLS } from '../src/profiles/generic/controls';
 import { FLX4_CONTROLS, FLX4_PROFILE } from '../src/profiles/flx4/controls';
+import type { ControlDef } from '../src/profiles/types';
 import { defaultValues } from '../src/profiles/types';
 
 describe('parseMidi', () => {
@@ -61,6 +62,32 @@ describe('LearnSession', () => {
   });
 });
 
+describe('switches', () => {
+  it('qualified keys distinguish velocity and note-off; lookup prefers the qualified key', () => {
+    expect(switchKey(parseMidi([0x94, 16, 127])!)).toBe('n:4:16@127');
+    expect(switchKey(parseMidi([0x94, 16, 0])!)).toBe('n:4:16@off');
+    expect(switchKey(parseMidi([0xb4, 16, 64])!)).toBe('c:4:16@64');
+    expect(describeMidi(parseMidi([0x94, 16, 127])!)).toBe('ch 5 note 16 on · vel 127');
+    expect(describeMidi(parseMidi([0x84, 16, 0])!)).toBe('ch 5 note 16 off');
+    const rev = reverseMap({ chSelect1: { key: 'n:4:16@127', verified: true }, chSelectMaster: { key: 'n:4:16@off', verified: true }, playA: { key: 'n:0:11', verified: true } });
+    expect(lookupControl(rev, 'n:4:16', 'n:4:16@off')).toBe('chSelectMaster');
+    expect(lookupControl(rev, 'n:4:16', 'n:4:16@127')).toBe('chSelect1');
+    expect(lookupControl(rev, 'n:0:11', 'n:0:11@100')).toBe('playA');
+    expect(() => importMap({ version: 1, profile: 'flx4', entries: { chSelectMaster: { key: 'n:4:16@off', verified: true } } })).not.toThrow();
+  });
+  it('learn stores a qualified key for a switch and accepts note-off; pads still need note-on', () => {
+    const controls: ControlDef[] = [{ id: 'sw', name: 'Switch', kind: 'switch', group: 'FX' }, { id: 'pad', name: 'Pad', kind: 'tap', group: 'Pads' }];
+    const map = {};
+    const s = new LearnSession(controls, map);
+    s.arm('sw');
+    expect(s.offer(parseMidi([0x84, 16, 0])!)).toBe('sw');
+    s.arm('pad');
+    expect(s.offer(parseMidi([0x84, 16, 0])!)).toBeNull();
+    expect(s.offer(parseMidi([0x94, 16, 100])!)).toBe('pad');
+    expect(map).toEqual({ sw: { key: 'n:4:16@off', verified: true }, pad: { key: 'n:4:16', verified: true } });
+  });
+});
+
 describe('profiles', () => {
   it('FLX4 has unique ids, keeps prototype ids, no FX on A/B, empty default map', () => {
     const ids = FLX4_CONTROLS.map((c) => c.id);
@@ -90,7 +117,12 @@ describe('FLX4 default map', () => {
       expect(keys.has(e.key), `${c} shares key ${e.key}`).toBe(false);
       keys.add(e.key);
     }
-    expect(Object.keys(FLX4_DEFAULT_MAP).length).toBeGreaterThan(150);
+    expect(Object.keys(FLX4_DEFAULT_MAP).length).toBe(FLX4_CONTROLS.length - 1); // everything but chSelectMaster
     expect(FLX4_DEFAULT_MAP.playA?.key).toBe('n:0:11');
+    expect(FLX4_DEFAULT_MAP.hcA1?.key).toBe('n:7:0');
+    expect(FLX4_DEFAULT_MAP.hcB8?.key).toBe('n:9:7');
+    expect(FLX4_DEFAULT_MAP.samplerB1?.key).toBe('n:9:48');
+    expect(FLX4_DEFAULT_MAP.chSelectMaster).toBeUndefined();
+    expect(FLX4_DEFAULT_MAP.samplerVol).toBeUndefined();
   });
 });
