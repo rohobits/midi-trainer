@@ -1,8 +1,9 @@
-import { DrillRun, LaneRenderer, themeFromCss, resolveThresholds, lengthBeats, type AttemptRecord, type Drill } from '@midi-trainer/engine';
+import { DrillRun, HighwayRenderer, highwayThemeFromCss, resolveThresholds, lengthBeats, laneGroups, type AttemptRecord, type Drill } from '@midi-trainer/engine';
 import type { View } from '../router';
 import { navigate } from '../router';
 import { el } from '../ui/dom';
 import { createStage } from '../ui/stage';
+import { icon } from '../ui/icons';
 
 /** Rebuild the run by replaying the input log against the judges, so hits and misses match what was scored. */
 export function reconstruct(drill: Drill, attempt: AttemptRecord, kinds: Record<string, 'tap' | 'cc' | 'rel' | 'switch'>): DrillRun {
@@ -30,6 +31,7 @@ export const replayView: View = (root, app, params) => {
   let playing = false;
   let pos = 0;
   let lastTs = 0;
+  let resize: () => void = () => {};
   const holder = el('div');
   root.appendChild(holder);
   void (async () => {
@@ -43,18 +45,28 @@ export const replayView: View = (root, app, params) => {
     const run = reconstruct(drill, attempt, kinds);
     const values: Record<string, number> = { ...run.values };
     const names = app.names();
-    holder.appendChild(el('h2', {}, `${drill.name} · replay · ${new Date(attempt.startedAt).toLocaleString()} · ${attempt.score ?? '—'}%`));
-    const bar = el('div', { class: 'toolbar' });
+    const bar = el('div', { class: 'rail' });
     const playBtn = el('button', { class: 'primary', id: 'replayPlay' }, 'Play');
-    const slider = el('input', { type: 'range', min: '-4', max: String(run.length + 2), step: '0.05', value: '-4', style: 'flex:1;min-width:240px', id: 'scrub' });
-    const posLabel = el('span', {});
-    const back = el('button', {}, 'Back to history');
+    const slider = el('input', { type: 'range', min: '-4', max: String(run.length + 2), step: '0.05', value: '-4', style: 'flex:1;min-width:240px', id: 'scrub', 'aria-label': 'Scrub' });
+    const posLabel = el('span', { class: 'mono' });
+    const back = el('button', { class: 'ghost' });
+    back.appendChild(icon('prev'));
+    back.appendChild(document.createTextNode(' History'));
     back.onclick = () => navigate(`history/${encodeURIComponent(drill.id)}`);
-    bar.append(playBtn, slider, posLabel, back);
+    bar.append(back, playBtn, slider, posLabel);
     holder.appendChild(bar);
     const stage = createStage(holder);
-    const renderer = new LaneRenderer(stage.ctx, themeFromCss());
-    stage.title.textContent = drill.name;
+    const renderer = new HighwayRenderer(stage.ctx, highwayThemeFromCss());
+    renderer.setReducedMotion(app.reducedMotion);
+    renderer.setFov(app.settings.fov);
+    const groups = laneGroups(app.profile);
+    stage.name.textContent = `${drill.name} · replay`;
+    stage.score.textContent = attempt.score == null ? '—' : String(attempt.score);
+    stage.acc.textContent = `${new Date(attempt.startedAt).toLocaleDateString()} · ${attempt.medal ?? 'no medal'}`;
+    const bpb = drill.timeSig?.[0] ?? 4;
+    const total = lengthBeats(drill);
+    const ticks: { at: number; phrase: boolean }[] = [];
+    for (let b = bpb; b < total; b += bpb) ticks.push({ at: b / total, phrase: b % (bpb * 8) === 0 });
     const log = [...attempt.inputLog].sort((a, b) => a.t - b.t);
     const valuesAt = (p: number) => {
       const v: Record<string, number> = { ...run.values };
@@ -65,16 +77,40 @@ export const replayView: View = (root, app, params) => {
       }
       return v;
     };
-    const flashesAt = (p: number) => {
-      const f: Record<string, { kind: 'ok' | 'bad'; tier: null; errMs: null; until: number }> = {};
-      for (const e of log) if (kinds[e.c] === 'tap' && e.v === 1 && e.t <= p && e.t > p - 0.25) f[e.c] = { kind: 'ok', tier: null, errMs: null, until: Infinity };
-      return f;
-    };
+    let firedUpTo = -Infinity;
+    const frameAt = (p: number) => ({
+      lanes: run.lanes,
+      states: run.states,
+      values: Object.assign(values, valuesAt(p)),
+      names,
+      kinds,
+      groups,
+      mapped: new Set(run.lanes),
+      pos: p,
+      beatsPerBar: bpb,
+      lookahead: app.settings.lookahead,
+      hitWindowBeats: run.thresholds.tapWindowBeats,
+    });
     const draw = () => {
       const bb = run.transport.barBeat(pos);
-      stage.barinfo.textContent = pos < 0 ? 'Before start' : `Bar ${bb.bar} · beat ${bb.beat}`;
+      stage.sub.textContent = pos < 0 ? 'before start' : `bar ${bb.bar} · beat ${bb.beat}`;
       posLabel.textContent = `${pos.toFixed(2)} beats`;
-      renderer.draw({ lanes: run.lanes, states: run.states, values: Object.assign(values, valuesAt(pos)), flashes: flashesAt(pos), names, kinds, mapped: new Set(run.lanes), pos, hitWindowBeats: run.thresholds.tapWindowBeats });
+      stage.next.textContent = `${attempt.inputLog.length} inputs logged`;
+      stage.setProgress(Math.max(0, pos) / total, ticks);
+      const now = performance.now();
+      const frame = frameAt(pos);
+      if (playing) {
+        for (const e of log) {
+          if (e.t <= firedUpTo || e.t > pos) continue;
+          if (kinds[e.c] === 'tap' && e.v === 1) {
+            const st = run.states.find((s) => s.kind === 'tap' && s.c === e.c && s.hitAt != null && Math.abs(s.hitAt - e.t) < 0.02);
+            if (st && st.kind === 'tap') renderer.pushEvent({ kind: 'hit', lane: e.c, tier: st.tier, errMs: st.errMs }, frame, now);
+            else renderer.pushEvent({ kind: 'press', lane: e.c, ok: false }, frame, now);
+          }
+        }
+        firedUpTo = pos;
+      }
+      renderer.draw(frame, now);
     };
     const tick = (ts: number) => {
       if (!playing) return;
@@ -96,23 +132,29 @@ export const replayView: View = (root, app, params) => {
       lastTs = 0;
       if (playing) {
         if (pos >= run.length + 2) pos = -4;
+        firedUpTo = pos;
         raf = requestAnimationFrame(tick);
       }
     };
     slider.oninput = () => {
       pos = Number(slider.value);
+      firedUpTo = pos;
+      renderer.effects.clear();
       draw();
     };
-    const resize = () => {
-      const { w, h } = stage.fit();
-      renderer.resize(w, h);
+    resize = () => {
+      const { w, h, dpr } = stage.fit(0.52);
+      renderer.resize(w, h, dpr);
       draw();
     };
     window.addEventListener('resize', resize);
     resize();
-    const stats = el('div', { class: 'card', style: 'margin-top:14px' });
-    stats.innerHTML = `<h2>Scored as</h2><p>${attempt.score ?? '—'}% · ${attempt.medal ?? 'no medal'} · timing ${attempt.timingMeanMs ?? '—'} ms · tracking ${attempt.subScores.tracking ?? '—'}% · extra presses ${attempt.extraPresses}</p><p class="hint">The lanes show the run rebuilt from your input log: green targets were hits, red were misses, faders follow your recorded movement as you scrub.</p>`;
+    const stats = el('div', { class: 'panel', style: 'margin-top:14px' });
+    stats.innerHTML = `<h2>Scored as</h2><div class="stats"><div class="stat"><b>${attempt.score ?? '—'}</b><span>score</span></div><div class="stat"><b>${attempt.timingMeanMs ?? '—'}</b><span>avg ms</span></div><div class="stat"><b>${attempt.subScores.tracking ?? '—'}</b><span>tracking</span></div><div class="stat"><b>${attempt.extraPresses}</b><span>extra presses</span></div></div><p class="hint">The highway is rebuilt from your input log: lit targets were hits, dim red ones were misses, faders follow your recorded movement as you scrub.</p>`;
     holder.appendChild(stats);
   })();
-  return () => cancelAnimationFrame(raf);
+  return () => {
+    cancelAnimationFrame(raf);
+    window.removeEventListener('resize', resize);
+  };
 };

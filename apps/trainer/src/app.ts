@@ -7,6 +7,8 @@ import {
 import { builtinDrills } from './content';
 import { $, el } from './ui/dom';
 import { createLearnUi, type LearnUi } from './ui/learn';
+import { toast } from './ui/toast';
+import { Sfx } from './ui/sfx';
 
 export const PROFILES: Record<string, Profile> = { flx4: FLX4_PROFILE, generic: GENERIC_PROFILE };
 
@@ -43,6 +45,7 @@ export class App {
   midi = new MidiAccess();
   sounds = new Sounds();
   clock = new MidiClock();
+  sfx = new Sfx();
   learn: LearnUi | null = null;
   deviceName = '';
   private listeners = new Map<keyof Events, Set<(v: never) => void>>();
@@ -141,11 +144,23 @@ export class App {
     const root = document.documentElement;
     const t = this.settings.theme;
     const cosmetic = this.settings.cosmeticTheme;
+    // Dark is the design and the default whatever the OS says; light is an explicit opt-in.
     if (cosmetic && cosmetic !== 'default') root.dataset.theme = cosmetic;
-    else if (t === 'system') delete root.dataset.theme;
-    else root.dataset.theme = t;
+    else if (t === 'light') root.dataset.theme = 'light';
+    else root.dataset.theme = 'dark';
     root.dataset.lanes = this.settings.laneSkin;
-    root.dataset.reduced = this.settings.reducedMotion ? '1' : '0';
+    root.dataset.reduced = this.settings.reducedMotion || matchMedia('(prefers-reduced-motion: reduce)').matches ? '1' : '0';
+    this.sfx.muted = this.settings.muteSfx;
+  }
+
+  get reducedMotion(): boolean {
+    return document.documentElement.dataset.reduced === '1';
+  }
+
+  /** Call from any user gesture: unlocks metronome/guide sounds and UI sfx. */
+  unlockAudio(): void {
+    this.sounds.ensure();
+    this.sfx.unlock();
   }
 
   async setProfile(id: string): Promise<void> {
@@ -239,9 +254,6 @@ export class App {
   }
 
   toast(text: string, ms = 2200): void {
-    const t = $('toast');
-    t.textContent = text;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), ms);
+    toast(text, ms);
   }
 }

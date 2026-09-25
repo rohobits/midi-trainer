@@ -15,7 +15,7 @@ export const placementView: View = (root, app, params) => {
   } catch {
     state = null;
   }
-  const card = el('div', { class: 'card' });
+  const card = el('div', { class: 'panel' });
   root.appendChild(card);
   const scoreParam = params.query.get('score');
   if (state && scoreParam != null) {
@@ -23,7 +23,7 @@ export const placementView: View = (root, app, params) => {
     sessionStorage.setItem(KEY, JSON.stringify(state));
   }
   if (!state || params.query.get('reset')) {
-    card.innerHTML = `<h2>Placement test</h2><p>${ladder.length} drills on the ladder, easiest to hardest. You start a few rungs up; a pass climbs two, a miss drops one; three misses end it (or eight drills). You get a 100–1900 score and a benchmark name.</p>`;
+    card.innerHTML = `<h2>Placement test</h2><p class="hint">${ladder.length} drills on the ladder, easiest to hardest. You start a few rungs up; a pass climbs two, a miss drops one; three misses end it (or eight drills). You get a 100–1900 score and a benchmark name.</p>`;
     const b = el('button', { class: 'primary', id: 'placementStart' }, 'Begin');
     b.onclick = () => {
       state = startPlacement(ladder);
@@ -35,7 +35,7 @@ export const placementView: View = (root, app, params) => {
   }
   if (state.finished) {
     const r = placementResult(state);
-    card.innerHTML = `<h2>Placement result</h2><b class="big" style="font-size:40px">${r.score}</b><p><b>${r.benchmark}</b></p><p class="hint">${state.steps.map((s) => `${app.drill(s.drillId)?.name ?? s.drillId}: ${s.score ?? '—'}% ${s.passed ? '✓' : '✗'}`).join(' · ')}</p>`;
+    card.innerHTML = `<div class="label">Placement result</div><b class="big" style="font-family:var(--display);font-size:72px;font-weight:800;display:block;line-height:1;margin:8px 0">${r.score}</b><p><b>${r.benchmark}</b></p><p class="hint">${state.steps.map((s) => `${app.drill(s.drillId)?.name ?? s.drillId}: ${s.score ?? '—'}% ${s.passed ? '✓' : '✗'}`).join(' · ')}</p>`;
     const again = el('button', {}, 'Take it again');
     again.onclick = () => {
       sessionStorage.removeItem(KEY);

@@ -3,6 +3,7 @@ import type { ControlEvent } from '../app';
 import type { View } from '../router';
 import { el } from '../ui/dom';
 import { createController } from '../ui/controller';
+import { icon } from '../ui/icons';
 
 type Mode = 'free' | 'beatmatch' | 'song';
 
@@ -30,7 +31,7 @@ export const mixView: View = (root, app, params) => {
   let lockSamples: number[] = [];
   let ctlOff: (() => void) | null = null;
 
-  const head = el('div', { class: 'toolbar' });
+  const head = el('div', { class: 'rail' });
   const modeSeg = el('div', { class: 'seg' });
   for (const [v, t] of [['free', 'Free mix'], ['beatmatch', 'Beatmatch by ear'], ['song', 'Song mode']] as const) {
     const b = el('button', { 'data-v': v }, t);
@@ -49,31 +50,45 @@ export const mixView: View = (root, app, params) => {
   root.appendChild(head);
   const intro = el('p', { class: 'hint' }, 'All audio here is synthesized on the fly (no licensed music). Load a track into each deck, then mix with your controller or the on-screen one. Faders, EQ, CFX, echo, loops, hot cues, sync, jog nudge, brake and backspin are wired to the FLX4 controls.');
   root.appendChild(intro);
-  const modePanel = el('div', { class: 'card', style: 'margin-bottom:14px' });
+  const modePanel = el('div', { class: 'panel', style: 'margin-bottom:14px' });
   root.appendChild(modePanel);
-  const decks = el('div', { class: 'decks' });
-  root.appendChild(decks);
-  const mixerCard = el('div', { class: 'card', style: 'margin-top:14px' });
-  root.appendChild(mixerCard);
+  const consoleEl = el('div', { class: 'console' });
+  root.appendChild(consoleEl);
+  const decks = consoleEl;
+  const mixerCard = el('div', { class: 'panel mixerstrip' });
   const ctlHost = el('div');
   root.appendChild(ctlHost);
 
-  const deckUi: Record<'A' | 'B', { card: HTMLElement; info: HTMLElement; meter: HTMLElement; stems: Record<StemName, HTMLButtonElement> }> = {} as never;
+  const deckUi: Record<'A' | 'B', { card: HTMLElement; info: HTMLElement; meter: HTMLElement; stems: Record<StemName, HTMLButtonElement>; grid: HTMLElement; head: HTMLElement; platter: HTMLElement; vu: HTMLElement; chips: { play: HTMLElement; section: HTMLElement; loop: HTMLElement } }> = {} as never;
   for (const name of ['A', 'B'] as const) {
-    const card = el('div', { class: 'card deckcard', 'data-deck': name });
-    card.appendChild(el('h2', {}, `Deck ${name}`));
+    const card = el('div', { class: 'panel deckcard', 'data-deck': name, style: `--accent: var(${name === 'A' ? '--deck-a' : '--deck-b'})` });
+    const headRow = el('div', { class: 'head' });
+    headRow.appendChild(el('h2', {}, `Deck ${name}`));
+    const chips = { play: el('span', { class: 'chip' }, 'stopped'), section: el('span', { class: 'chip' }, '—'), loop: el('span', { class: 'chip' }, 'no loop') };
+    const chipRow = el('span', { class: 'row', style: 'gap:4px' });
+    chipRow.append(chips.play, chips.section, chips.loop);
+    headRow.appendChild(chipRow);
+    const info = el('div', { class: 'track' }, 'Nothing loaded.');
+    const grid = el('div', { class: 'beatgrid' });
+    const platterRow = el('div', { class: 'platterrow' });
+    const platter = el('div', { class: 'platter' });
+    platter.appendChild(el('i'));
+    const right = el('div', { style: 'display:flex;flex-direction:column;gap:8px' });
     const loadRow = el('div', { class: 'row' });
     const genreSel = el('select');
     for (const g of genres) genreSel.appendChild(el('option', { value: g }, g));
     genreSel.value = (app.settings.genre as Genre) in genres ? app.settings.genre : 'house';
-    const seed = el('input', { type: 'number', value: String(name === 'A' ? 7 : 21), style: 'width:70px' });
-    const load = el('button', { id: `load${name}` }, 'Load track');
+    const seed = el('input', { type: 'number', value: String(name === 'A' ? 7 : 21), style: 'width:64px', 'aria-label': 'Seed' });
+    const load = el('button', { id: `load${name}`, class: 'small' }, 'Load');
     load.onclick = () => void loadDeck(name, Number(seed.value) || 1, genreSel.value as Genre);
-    const play = el('button', { id: `play${name}` }, 'Play/Pause');
+    const play = el('button', { id: `play${name}`, class: 'primary small' });
+    play.appendChild(icon('play', 14));
     play.onclick = () => mixer?.deck(name).toggle();
+    loadRow.append(genreSel, seed, load, play);
     const cueRow = el('div', { class: 'row' });
     for (let i = 0; i < 4; i++) {
-      const b = el('button', { class: 'small' }, `Cue ${i + 1}`);
+      const b = el('button', { class: 'small pad' }, `${i + 1}`);
+      b.title = `Hot cue ${i + 1}`;
       b.onclick = () => {
         mixer?.deck(name).cue(i);
         crowd?.event({ kind: 'cue', deck: name, beat: beatA() });
@@ -82,7 +97,7 @@ export const mixView: View = (root, app, params) => {
     }
     const loopBtn = el('button', { class: 'small' }, 'Loop 4');
     loopBtn.onclick = () => mixer?.deck(name).toggleLoop(4);
-    const halfBtn = el('button', { class: 'small' }, 'Halve');
+    const halfBtn = el('button', { class: 'small' }, '½');
     halfBtn.onclick = () => mixer?.deck(name).halveLoop();
     const syncBtn = el('button', { class: 'small' }, 'Sync');
     syncBtn.onclick = () => mixer?.sync(name);
@@ -91,10 +106,6 @@ export const mixView: View = (root, app, params) => {
     const spin = el('button', { class: 'small' }, 'Backspin');
     spin.onclick = () => mixer?.deck(name).backspin();
     cueRow.append(loopBtn, halfBtn, syncBtn, brake, spin);
-    loadRow.append(genreSel, seed, load, play);
-    const info = el('p', { class: 'hint' }, 'Nothing loaded.');
-    const meter = el('div', { class: 'meter' });
-    meter.appendChild(el('i', { style: 'width:0%' }));
     const stemsRow = el('div', { class: 'row' });
     const stems = {} as Record<StemName, HTMLButtonElement>;
     for (const s of STEM_NAMES) {
@@ -113,49 +124,90 @@ export const mixView: View = (root, app, params) => {
       stemsRow.appendChild(b);
     }
     const tempoRow = el('div', { class: 'row' });
-    const tempo = el('input', { type: 'range', min: '0', max: '1000', value: '500', id: `tempo${name}`, style: 'width:200px' });
+    const tempo = el('input', { type: 'range', min: '0', max: '1000', value: '500', id: `tempo${name}`, style: 'flex:1', 'aria-label': 'Tempo' });
     tempo.oninput = () => onControl({ kind: 'cc', c: `tempo${name}`, value: Number(tempo.value) / 1000, timeStamp: performance.now() });
-    tempoRow.append(el('label', {}, 'Tempo ±8%'), tempo);
-    card.append(loadRow, info, meter, cueRow, stemsRow, tempoRow);
+    tempoRow.append(el('span', { class: 'label' }, 'Tempo ±8%'), tempo);
+    right.append(loadRow, cueRow, stemsRow, tempoRow);
+    platterRow.append(platter, right);
+    const vu = el('div', { class: 'vu' });
+    for (let i = 0; i < 12; i++) vu.appendChild(el('i'));
+    const meter = el('div', { class: 'meter' });
+    meter.appendChild(el('i', { style: 'width:0%' }));
+    card.append(headRow, info, grid, platterRow, vu, meter);
     decks.appendChild(card);
-    deckUi[name] = { card, info, meter, stems };
+    deckUi[name] = { card, info, meter, stems, grid, head: grid, platter, vu, chips };
   }
-  const strip = el('div', { class: 'row' });
-  mixerCard.appendChild(el('h2', {}, 'Mixer'));
-  const slider = (id: string, label: string, v: number, fn: (x: number) => void) => {
-    const l = el('label', { style: 'display:flex;flex-direction:column;font-size:12px;color:var(--muted)' }, label);
-    const i = el('input', { type: 'range', min: '0', max: '1000', value: String(Math.round(v * 1000)), id: `mix-${id}` });
+  /** Beat grid: one bar per column, height and colour from the section's stem gains. */
+  function drawGrid(name: 'A' | 'B'): void {
+    const d = mixer?.deck(name);
+    const ui = deckUi[name];
+    ui.grid.innerHTML = '';
+    if (!d?.spec) return;
+    for (let bar = 0; bar < d.spec.bars; bar++) {
+      const sec = d.spec.sections.find((s) => bar >= s.start && bar < s.start + s.bars);
+      const i = el('i', { class: sec ? (sec.stems.bass > 0.5 && sec.stems.kick > 0.5 ? 'low' : sec.stems.kick > 0.5 ? 'mid' : 'hi') : '' });
+      const h = sec ? 20 + Math.round(70 * ((sec.stems.kick + sec.stems.bass + sec.stems.hat + sec.stems.pad) / 4)) : 15;
+      i.style.height = `${h}%`;
+      ui.grid.appendChild(i);
+    }
+    for (const sec of d.spec.sections) ui.grid.appendChild(el('span', { class: 'sec', style: `left:${((100 * sec.start) / d.spec.bars).toFixed(1)}%` }, sec.kind));
+    const head = el('div', { class: 'head', style: 'left:0' });
+    ui.grid.appendChild(head);
+    ui.head = head;
+  }
+  mixerCard.appendChild(el('div', { class: 'label' }, 'Mixer'));
+  const knobs = el('div', { class: 'knobs' });
+  const slots = el('div', { class: 'slots' });
+  const xfWrap = el('div', { class: 'xf' });
+  const mkRange = (id: string, v: number, fn: (x: number) => void, extra: Record<string, string> = {}) => {
+    const i = el('input', { type: 'range', min: '0', max: '1000', value: String(Math.round(v * 1000)), id: `mix-${id}`, 'aria-label': id, ...extra });
     i.oninput = () => fn(Number(i.value) / 1000);
-    l.appendChild(i);
-    strip.appendChild(l);
     return i;
   };
-  for (const name of ['A', 'B'] as const) {
-    slider(`trim${name}`, `Trim ${name}`, 0.5, (v) => onControl({ kind: 'cc', c: `trim${name}`, value: v, timeStamp: performance.now() }));
-    slider(`hi${name}`, `Hi ${name}`, 0.5, (v) => onControl({ kind: 'cc', c: `hi${name}`, value: v, timeStamp: performance.now() }));
-    slider(`mid${name}`, `Mid ${name}`, 0.5, (v) => onControl({ kind: 'cc', c: `mid${name}`, value: v, timeStamp: performance.now() }));
-    slider(`low${name}`, `Low ${name}`, 0.5, (v) => onControl({ kind: 'cc', c: `low${name}`, value: v, timeStamp: performance.now() }));
-    slider(`filt${name}`, `CFX ${name}`, 0.5, (v) => onControl({ kind: 'cc', c: `filt${name}`, value: v, timeStamp: performance.now() }));
-    slider(`fader${name}`, `Fader ${name}`, name === 'A' ? 1 : 0, (v) => onControl({ kind: 'cc', c: `fader${name}`, value: v, timeStamp: performance.now() }));
+  const cc = (id: string) => (v: number) => onControl({ kind: 'cc', c: id, value: v, timeStamp: performance.now() });
+  for (const k of ['trim', 'hi', 'mid', 'low', 'filt'] as const) {
+    for (const name of ['A', 'B'] as const) {
+      const w = el('label', { class: 'knob' }, `${k === 'filt' ? 'CFX' : k} ${name}`);
+      w.appendChild(mkRange(`${k}${name}`, 0.5, cc(`${k}${name}`)));
+      knobs.appendChild(w);
+    }
   }
-  slider('xf', 'Crossfader', 0.5, (v) => onControl({ kind: 'cc', c: 'xf', value: v, timeStamp: performance.now() }));
-  slider('fxLevel', 'Echo level', 0.5, (v) => onControl({ kind: 'cc', c: 'fxLevel', value: v, timeStamp: performance.now() }));
-  mixerCard.appendChild(strip);
-  const fxRow = el('div', { class: 'row' });
-  const echoBtn = el('button', { id: 'echoBtn' }, 'Beat FX (echo) off');
+  for (const name of ['A', 'B'] as const) {
+    const w = el('label', { class: 'slot' }, `Ch ${name}`);
+    w.appendChild(mkRange(`fader${name}`, name === 'A' ? 1 : 0, cc(`fader${name}`)));
+    slots.appendChild(w);
+  }
+  xfWrap.appendChild(document.createTextNode('Crossfader'));
+  xfWrap.appendChild(mkRange('xf', 0.5, cc('xf')));
+  const echoWrap = el('label', { class: 'knob' }, 'Echo level');
+  echoWrap.appendChild(mkRange('fxLevel', 0.5, cc('fxLevel')));
+  mixerCard.append(knobs, slots, xfWrap, echoWrap);
+  const fxRow = el('div', { class: 'row', style: 'justify-content:center' });
+  const echoBtn = el('button', { id: 'echoBtn', class: 'small' }, 'Echo');
   echoBtn.onclick = () => onControl({ kind: 'tap', c: 'beatFxOn', timeStamp: performance.now() });
   const chSeg = el('div', { class: 'seg' });
-  for (const [c, t] of [['chSelect1', 'CH 1'], ['chSelect2', 'CH 2'], ['chSelectMaster', 'Master']] as const) {
-    const b = el('button', {}, t);
+  for (const [c, t] of [['chSelect1', '1'], ['chSelect2', '2'], ['chSelectMaster', 'M']] as const) {
+    const b = el('button', { title: c }, t);
     b.classList.toggle('on', c === 'chSelect1');
     b.onclick = () => onControl({ kind: 'tap', c, timeStamp: performance.now() });
     chSeg.appendChild(b);
   }
-  const masterMeter = el('div', { class: 'meter', style: 'width:200px' });
-  masterMeter.appendChild(el('i', { style: 'width:0%' }));
-  fxRow.append(echoBtn, chSeg, el('label', {}, 'Master'), masterMeter);
+  fxRow.append(echoBtn, chSeg);
   mixerCard.appendChild(fxRow);
-
+  const masterWrap = el('div', {});
+  masterWrap.appendChild(el('div', { class: 'label', style: 'text-align:center' }, 'Master'));
+  const masterVu = el('div', { class: 'vu' });
+  for (let i = 0; i < 12; i++) masterVu.appendChild(el('i'));
+  masterWrap.appendChild(masterVu);
+  mixerCard.appendChild(masterWrap);
+  // the console order is deck A · mixer · deck B
+  consoleEl.insertBefore(mixerCard, deckUi.B.card);
+  function lightVu(vu: HTMLElement, level: number): void {
+    const n = Math.round(level * 12);
+    vu.querySelectorAll('i').forEach((seg, i) => {
+      seg.className = i < n ? `on${i >= 10 ? ' hot' : i >= 7 ? ' mid' : ''}` : '';
+    });
+  }
   // ---------- helpers ----------
   const beatA = () => mixer?.a.beatAt() ?? 0;
   function logEvent(c: string, v: number): void {
@@ -174,6 +226,8 @@ export const mixView: View = (root, app, params) => {
     const bpmOverride = name === 'B' && mode === 'beatmatch' && m.a.spec ? Math.round(m.a.spec.bpm * (1 + hiddenOffset)) : undefined;
     const spec = await m.loadTrack(name, seed, genre, bpmOverride);
     deckUi[name].info.textContent = `${spec.name} · ${spec.genre} · ${mode === 'beatmatch' && name === 'B' && !revealed ? '??' : spec.bpm} BPM · ${camelot(spec.root, spec.minor)}`;
+    deckUi[name].grid.innerHTML = '';
+    drawGrid(name);
     if (name === 'A') m.setEchoLevel(0.5);
   }
   function setupMode(): void {
@@ -203,7 +257,7 @@ export const mixView: View = (root, app, params) => {
           const tb = el('tbody');
           for (const m of r.moves.slice(0, 40)) {
             const tr = el('tr');
-            tr.innerHTML = `<td>${m.t.toFixed(1)}</td><td>${app.controlName(m.c)}</td><td style="color:${m.onGrid ? 'var(--ok)' : 'var(--bad)'}">${m.offBeats > 0 ? '+' : ''}${m.offBeats.toFixed(2)}</td>`;
+            tr.innerHTML = `<td>${m.t.toFixed(1)}</td><td>${app.controlName(m.c)}</td><td style="color:${m.onGrid ? 'var(--perfect)' : 'var(--miss)'}">${m.offBeats > 0 ? '+' : ''}${m.offBeats.toFixed(2)}</td>`;
             tb.appendChild(tr);
           }
           t.appendChild(tb);
@@ -320,7 +374,6 @@ export const mixView: View = (root, app, params) => {
     if (c === 'beatFxOn') {
       echoOn = !echoOn;
       m.setEcho(echoOn);
-      echoBtn.textContent = `Beat FX (echo) ${echoOn ? 'on' : 'off'}`;
       echoBtn.classList.toggle('on', echoOn);
       crowd?.event({ kind: 'fx', beat: beatA() });
     } else if (c === 'chSelect1' || c === 'chSelect2' || c === 'chSelectMaster') {
@@ -369,20 +422,33 @@ export const mixView: View = (root, app, params) => {
         const d = m.deck(name);
         const st = d.state();
         if (d.spec) {
+          const ui = deckUi[name];
           const bb = { bar: Math.floor(st.beat / 4) + 1, beat: (Math.floor(st.beat) % 4) + 1 };
           const hidden = mode === 'beatmatch' && name === 'B' && !revealed;
-          deckUi[name].info.textContent = `${d.spec.name} · ${d.spec.genre} · ${hidden ? '??' : st.bpm.toFixed(1)} BPM · ${camelot(d.spec.root, d.spec.minor)} · ${st.playing ? 'playing' : 'paused'} · bar ${bb.bar}.${bb.beat} · ${st.section ?? ''}${st.loop ? ` · loop ${st.loop.beats}` : ''}`;
-          (deckUi[name].meter.firstElementChild as HTMLElement).style.width = `${Math.round((100 * st.beat) / (d.spec.bars * 4))}%`;
+          ui.info.textContent = `${d.spec.name} · ${d.spec.genre} · ${hidden ? '??' : st.bpm.toFixed(1)} BPM · ${camelot(d.spec.root, d.spec.minor)} · bar ${bb.bar}.${bb.beat}`;
+          ui.chips.play.textContent = st.playing ? 'playing' : 'paused';
+          ui.chips.play.classList.toggle('on', st.playing);
+          ui.chips.section.textContent = st.section ?? '—';
+          ui.chips.loop.textContent = st.loop ? `loop ${st.loop.beats}` : 'no loop';
+          ui.chips.loop.classList.toggle('on', !!st.loop);
+          const frac = st.beat / (d.spec.bars * 4);
+          (ui.meter.firstElementChild as HTMLElement).style.width = `${Math.round(100 * frac)}%`;
+          if (!ui.grid.childElementCount) drawGrid(name);
+          ui.head.style.left = `${(100 * frac).toFixed(2)}%`;
+          (ui.platter.firstElementChild as HTMLElement).style.transform = `rotate(${((st.beat % 4) * 90).toFixed(1)}deg)`;
+          ui.platter.style.boxShadow = st.playing && (st.beat % 1) < 0.15 ? `var(--inset), 0 0 18px color-mix(in oklch, var(--accent) 40%, transparent)` : 'var(--inset)';
+          lightVu(ui.vu, st.playing ? Math.min(1, m.level() * d.fader.gain.value * 1.4 + ((st.beat % 1) < 0.1 ? 0.15 : 0)) : 0);
         }
       }
-      (masterMeter.firstElementChild as HTMLElement).style.width = `${Math.round(m.level() * 100)}%`;
+      lightVu(masterVu, m.level());
       const beat = beatA();
       if (mode === 'beatmatch' && m.a.spec && m.b.spec) {
         const phase = m.b.phaseTo(m.a);
         const dots = document.querySelectorAll<HTMLElement>('#strobe i');
         dots.forEach((dot, i) => {
           dot.style.transform = `translateX(${Math.round(phase * 40 * (i % 2 ? 1 : -1))}px)`;
-          dot.style.background = Math.abs(phase) < 0.04 ? 'var(--ok)' : 'var(--tap)';
+          dot.style.background = Math.abs(phase) < 0.04 ? 'var(--perfect)' : 'var(--deck-a)';
+          dot.style.boxShadow = Math.abs(phase) < 0.04 ? '0 0 8px var(--perfect)' : 'none';
         });
         if (lockStart != null) {
           lockSamples.push(Math.abs(phase));

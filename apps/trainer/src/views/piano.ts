@@ -4,6 +4,8 @@ import { navigate } from '../router';
 import { $, el } from '../ui/dom';
 import { md } from '../ui/markdown';
 import { createStage } from '../ui/stage';
+import { showResults, hideResults } from '../ui/results';
+import { icon } from '../ui/icons';
 
 function isNoteDrill(d: Drill): boolean {
   return d.targets.some((t) => t.type === 'note');
@@ -13,7 +15,7 @@ export const pianoView: View = (root, app, params) => {
   const exercises = () => app.drills.filter(isNoteDrill);
   let drill: Drill | undefined = exercises().find((d) => d.id === params.id) ?? exercises()[0];
   if (!drill) {
-    root.appendChild(el('p', {}, 'No piano exercises available.'));
+    root.appendChild(el('p', { class: 'hint' }, 'No piano exercises available.'));
     return;
   }
   const s = app.settings;
@@ -21,9 +23,9 @@ export const pianoView: View = (root, app, params) => {
   let raf = 0;
   const offs: Array<() => void> = [];
 
-  const toolbar = el('div', { class: 'toolbar' });
+  const rail = el('div', { class: 'rail' });
   const exGroup = el('div', { class: 'group' });
-  const exSel = el('select', { id: 'ex' });
+  const exSel = el('select', { id: 'ex', 'aria-label': 'Exercise' });
   const fill = () => {
     exSel.innerHTML = '';
     for (const e of exercises()) exSel.appendChild(el('option', { value: e.id }, e.name));
@@ -31,10 +33,10 @@ export const pianoView: View = (root, app, params) => {
   };
   fill();
   const midFile = el('span', { class: 'file' });
-  midFile.appendChild(el('button', { type: 'button' }, 'Load .mid'));
+  midFile.appendChild(el('button', { type: 'button', class: 'small' }, 'Load .mid'));
   const midInput = el('input', { type: 'file', id: 'midfile', accept: '.mid,.midi' });
   midFile.appendChild(midInput);
-  exGroup.append(el('label', { for: 'ex' }, 'Exercise'), exSel, midFile);
+  exGroup.append(exSel, midFile);
   const modeSeg = el('div', { class: 'seg', id: 'modeSeg' });
   for (const [v, t] of [['wait', 'Wait for me'], ['play', 'Play along']] as const) {
     const b = el('button', { 'data-v': v }, t);
@@ -48,40 +50,43 @@ export const pianoView: View = (root, app, params) => {
     handSeg.appendChild(b);
   }
   const tempoGroup = el('div', { class: 'group' });
-  const bpmRange = el('input', { type: 'range', id: 'bpm', min: '30', max: '180', value: String(drill.bpm) });
-  const bpmVal = el('span', { id: 'bpmv' }, String(drill.bpm));
+  const bpmRange = el('input', { type: 'range', id: 'bpm', min: '30', max: '180', value: String(drill.bpm), 'aria-label': 'Tempo' });
+  const bpmVal = el('span', { id: 'bpmv', class: 'mono' }, String(drill.bpm));
   tempoGroup.append(el('label', { for: 'bpm' }, 'Tempo'), bpmRange, bpmVal);
   const barGroup = el('div', { class: 'group' });
-  const barInput = el('input', { type: 'number', id: 'bar', min: '1', value: '1' });
+  const barInput = el('input', { type: 'number', id: 'bar', min: '1', value: '1', style: 'width:64px', 'aria-label': 'Start bar' });
+  const toggles = el('div', { class: 'seg' });
   const loopBtn = el('button', { id: 'loopBtn' }, 'Loop');
-  const guideBtn = el('button', { id: 'guideBtn' }, 'Guide sound');
-  const clickBtn = el('button', { id: 'clickBtn' }, 'Metronome');
+  const guideBtn = el('button', { id: 'guideBtn' }, 'Guide');
+  const clickBtn = el('button', { id: 'clickBtn' }, 'Click');
   loopBtn.classList.toggle('on', s.loop);
   guideBtn.classList.toggle('on', s.guide);
   clickBtn.classList.toggle('on', s.click);
-  barGroup.append(el('label', { for: 'bar' }, 'Start bar'), barInput, loopBtn, guideBtn, clickBtn);
-  const transport = el('div', { class: 'group' });
+  toggles.append(loopBtn, guideBtn, clickBtn);
+  barGroup.append(el('label', { for: 'bar' }, 'Bar'), barInput, toggles);
+  const transport = el('div', { class: 'group', style: 'margin-left:auto' });
   const playBtn = el('button', { class: 'primary', id: 'playBtn' }, 'Start');
-  const resetBtn = el('button', { id: 'resetBtn' }, 'Restart');
+  const resetBtn = el('button', { id: 'resetBtn', title: 'Restart' });
+  resetBtn.appendChild(icon('restart'));
   transport.append(playBtn, resetBtn);
-  toolbar.append(exGroup, el('div', { class: 'group' }, ''), modeSeg, handSeg, tempoGroup, barGroup, transport);
-  root.appendChild(toolbar);
+  rail.append(exGroup, modeSeg, handSeg, tempoGroup, barGroup, transport);
+  root.appendChild(rail);
   const stage = createStage(root);
-  const waitMsg = el('div', { class: 'cue', id: 'waitmsg' }, 'Play the highlighted keys');
-  stage.root.appendChild(waitMsg);
   const renderer = new KeyboardRenderer(stage.ctx, keyboardThemeFromCss());
+  renderer.setReducedMotion(app.reducedMotion);
   const below = el('div', { class: 'below' });
-  const lessonCard = el('div', { class: 'card', id: 'lesson' });
-  const statsCard = el('div', { class: 'card' });
+  const lessonCard = el('div', { class: 'panel', id: 'lesson' });
+  const statsCard = el('div', { class: 'panel' });
   statsCard.innerHTML = `<h2>This run</h2>
-    <div class="stats" style="grid-template-columns:repeat(4,1fr)">
+    <div class="stats">
       <div class="stat"><b id="sAcc">—</b><span>accuracy</span></div>
-      <div class="stat"><b id="sWrong">0</b><span>wrong notes</span></div>
-      <div class="stat"><b id="sMiss">0</b><span>missed (play along)</span></div>
+      <div class="stat"><b id="sWrong">0</b><span>wrong</span></div>
+      <div class="stat"><b id="sMiss">0</b><span>missed</span></div>
       <div class="stat"><b id="sBest">—</b><span>best</span></div>
     </div>
-    <div class="legend"><span><i style="background:var(--rh)"></i>right hand</span><span><i style="background:var(--lh)"></i>left hand</span><span><i style="background:var(--ok)"></i>correct</span><span><i style="background:var(--bad)"></i>wrong key</span></div>
-    <p class="hint">Chrome or Edge with the keyboard on USB (or Bluetooth MIDI). Click on-screen keys to test without a keyboard. <kbd>Space</kbd> starts and pauses.</p>`;
+    <div class="legend"><span><i style="background:var(--rh)"></i>right hand</span><span><i style="background:var(--lh)"></i>left hand</span><span><i style="background:var(--perfect)"></i>correct</span><span><i style="background:var(--miss)"></i>wrong key</span></div>
+    <p class="hint">Keyboard on USB or Bluetooth MIDI. Click on-screen keys to test without one. <kbd>Space</kbd> starts and pauses.</p>
+    <p class="hint"><a href="#/browse?profile=piano88">All piano exercises</a></p>`;
   below.append(lessonCard, statsCard);
   root.appendChild(below);
 
@@ -96,11 +101,11 @@ export const pianoView: View = (root, app, params) => {
       loop: st.loop,
       startBar: Number(barInput.value) || 1,
     });
-    const bpm = Number(bpmRange.value) || drill!.bpm;
-    run.setBpm(bpm, performance.now());
+    run.setBpm(Number(bpmRange.value) || drill!.bpm, performance.now());
+    renderer.effects.clear();
     playBtn.textContent = 'Start';
-    waitMsg.style.display = 'none';
-    stage.result.style.display = 'none';
+    stage.msg.style.display = 'none';
+    hideResults(stage.results);
     updateStats();
     draw();
   }
@@ -111,20 +116,20 @@ export const pianoView: View = (root, app, params) => {
     bpmVal.textContent = String(d.bpm);
     barInput.value = '1';
     barInput.max = String(Math.ceil(Math.max(...d.targets.map((t) => (t.type === 'note' ? t.t + t.d : 0)), 4) / 4));
-    stage.title.textContent = d.name;
-    lessonCard.innerHTML = md(d.lesson || '## Loaded file\n\nHands were split by track (or at middle C if the file has one track). Right hand in amber, left in blue.');
+    stage.name.textContent = d.name;
+    lessonCard.innerHTML = md(d.lesson || '## Loaded file\n\nHands were split by track (or at middle C if the file has one track). Right hand in cyan, left in amber.');
     location.hash = `#/piano/${encodeURIComponent(d.id)}`;
     newRun();
   }
 
   function togglePlay(): void {
     if (!run) return;
-    app.sounds.ensure();
+    app.unlockAudio();
     const now = performance.now();
     if (run.active) {
       run.pause(now);
       playBtn.textContent = 'Start';
-      waitMsg.style.display = 'none';
+      stage.msg.style.display = 'none';
       cancelAnimationFrame(raf);
       return;
     }
@@ -132,7 +137,7 @@ export const pianoView: View = (root, app, params) => {
     if (run!.phase === 'idle' && run!.inputLog.length === 0) run!.start(now);
     else run!.resume(now);
     playBtn.textContent = 'Pause';
-    stage.result.style.display = 'none';
+    hideResults(stage.results);
     loop();
   }
 
@@ -143,12 +148,13 @@ export const pianoView: View = (root, app, params) => {
     const r = run.tick(now);
     if (app.settings.click) for (const b of r.beats) if (b >= 0) app.sounds.click(b % 4 === 0, 1400);
     if (app.settings.guide) for (const n of r.guide) app.sounds.tone(n.n, (n.d * 60) / run.bpm);
-    waitMsg.style.display = r.waiting ? 'block' : 'none';
+    stage.msg.style.display = r.waiting ? 'block' : 'none';
+    stage.msg.textContent = 'Play the highlighted keys';
     updateStats();
     draw();
     if (r.ended) {
       playBtn.textContent = 'Start';
-      waitMsg.style.display = 'none';
+      stage.msg.style.display = 'none';
       void finishRun();
       return;
     }
@@ -159,45 +165,70 @@ export const pianoView: View = (root, app, params) => {
     if (!run || !drill) return;
     const attempt = run.attempt();
     const res = await app.addAttempt(attempt);
-    const box = stage.result;
-    box.innerHTML = '';
-    box.appendChild(el('small', {}, drill.name));
-    box.appendChild(el('b', {}, attempt.score == null ? '—' : `${attempt.score}%`));
-    box.appendChild(el('div', { class: `medal ${attempt.medal ? 'medal-' + attempt.medal : ''}` }, attempt.medal ?? (attempt.passed ? 'passed' : 'keep going')));
-    box.appendChild(el('small', {}, `${res.isPb ? 'New personal best · ' : ''}+${res.xp} XP`));
-    const again = el('button', { class: 'small' }, 'Again');
-    again.onclick = () => {
-      newRun();
-      togglePlay();
-    };
-    box.appendChild(again);
-    box.style.display = 'block';
+    showResults(stage.results, {
+      drill,
+      attempt,
+      isPb: res.isPb,
+      prevBest: res.isPb ? null : (app.best[drill.id] ?? null),
+      xp: res.xp,
+      leveledUp: res.leveledUp,
+      level: res.level,
+      streakLine: res.streak.todayMet ? `Daily goal met · ${res.streak.current}-day streak` : `${Math.max(0, Math.ceil(app.settings.goalMinutes - res.streak.todayMinutes))} min to today's goal`,
+      reduced: app.reducedMotion,
+      sfx: app.sfx,
+      onAgain: () => {
+        newRun();
+        togglePlay();
+      },
+      onSlower: () => {
+        bpmRange.value = String(Math.max(30, Math.round(Number(bpmRange.value) * 0.9)));
+        bpmVal.textContent = bpmRange.value;
+        newRun();
+        togglePlay();
+      },
+      onNext: () => {
+        const list = exercises();
+        const i = list.findIndex((d) => d.id === drill!.id);
+        const n = list[(i + 1) % list.length];
+        if (n) {
+          exSel.value = n.id;
+          loadDrill(n);
+        }
+      },
+      onHistory: () => navigate(`history/${encodeURIComponent(drill!.id)}`),
+    });
     updateStats();
   }
 
   function updateStats(): void {
     if (!run || !drill) return;
     const acc = run.accuracy();
-    $('sAcc').textContent = acc == null ? '—' : `${acc}%`;
+    $('sAcc').textContent = acc == null ? '—' : `${acc}`;
     $('sWrong').textContent = String(run.wrong);
     $('sMiss').textContent = String(run.missed);
     const best = app.best[drill.id];
-    $('sBest').textContent = best == null ? '—' : `${best}%`;
+    $('sBest').textContent = best == null ? '—' : `${best}`;
+    stage.score.textContent = acc == null ? '—' : `${acc}`;
+    stage.acc.textContent = `${run.correct} right · ${run.wrong} wrong`;
     const pos = run.pos(performance.now());
     const bb = run.transport.barBeat(pos);
-    stage.barinfo.textContent = `Bar ${bb.bar} of ${run.bars} · beat ${bb.beat}`;
+    stage.sub.textContent = `bar ${bb.bar} of ${run.bars} · beat ${bb.beat} · ${run.mode === 'wait' ? 'wait for me' : 'play along'}`;
     const next = run.nextDue(pos);
-    stage.lastin.textContent = next.length ? 'Next: ' + next.map((n) => noteName(n.n)).join(' + ') : '';
+    stage.next.innerHTML = next.length ? `next <b>${next.map((n) => noteName(n.n)).join(' + ')}</b>` : 'done';
+    const total = run.length;
+    const ticks: { at: number; phrase: boolean }[] = [];
+    for (let b = 4; b < total; b += 4) ticks.push({ at: b / total, phrase: b % 32 === 0 });
+    stage.setProgress(Math.max(0, pos) / total, ticks);
   }
 
   function draw(): void {
     if (!run) return;
-    const pos = run.pos(performance.now());
-    renderer.draw({ states: run.states, pos, hand: run.hand, pressed: run.pressed, flashes: run.flashes, expected: run.expected(pos) });
-    if (!run.active && Object.keys(run.flashes).length) requestAnimationFrame(draw);
+    const now = performance.now();
+    const pos = run.pos(now);
+    renderer.draw({ states: run.states, pos, hand: run.hand, pressed: run.pressed, flashes: run.flashes, expected: run.expected(pos), waiting: run.waiting }, now);
+    if (!run.active && renderer.effects.busy) requestAnimationFrame(draw);
   }
 
-  // wiring
   exSel.onchange = () => {
     const d = app.drill(exSel.value);
     if (d) loadDrill(d);
@@ -209,15 +240,12 @@ export const pianoView: View = (root, app, params) => {
     try {
       const parsed = parseMidiFile(new Uint8Array(await f.arrayBuffer()), f.name);
       const id = `mid-${f.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
-      const d: Drill = {
-        id, version: 1, name: `File · ${f.name}`, tier: 'Custom', profile: 'piano88', bpm: parsed.bpm,
-        bars: Math.ceil(Math.max(...parsed.notes.map((n) => n.t + n.d), 4) / 4), targets: parsed.notes, lesson: '',
-      };
+      const d: Drill = { id, version: 1, name: `File · ${f.name}`, tier: 'Custom', profile: 'piano88', bpm: parsed.bpm, bars: Math.ceil(Math.max(...parsed.notes.map((n) => n.t + n.d), 4) / 4), targets: parsed.notes, lesson: '' };
       await app.addDrill(d, 'imported');
       fill();
       loadDrill(d);
     } catch (err) {
-      alert('Could not read that MIDI file: ' + (err as Error).message);
+      app.toast('Could not read that MIDI file: ' + (err as Error).message, 4000);
     }
     input.value = '';
   };
@@ -239,7 +267,7 @@ export const pianoView: View = (root, app, params) => {
       const v = !app.settings[key];
       b.classList.toggle('on', v);
       void app.saveSettings({ [key]: v } as Partial<typeof app.settings>).then(() => {
-        if (key !== 'loop') app.sounds.ensure();
+        if (key !== 'loop') app.unlockAudio();
         else if (run && !run.active) newRun();
       });
     };
@@ -253,7 +281,9 @@ export const pianoView: View = (root, app, params) => {
     app.on('control', (ev) => {
       if (!run) return;
       if (ev.kind === 'noteon') {
-        run.noteOn(ev.note, ev.timeStamp);
+        const j = run.noteOn(ev.note, ev.timeStamp);
+        renderer.noteEvent(ev.note, j.tier, j.target?.errMs ?? null, !!j.target, performance.now());
+        if (run.active) app.sfx.play(j.target ? (j.tier === 'perfect' ? 'perfect' : 'hit') : 'miss', { gain: 0.45 });
         updateStats();
         if (!run.active) draw();
       } else if (ev.kind === 'noteoff') {
@@ -261,15 +291,21 @@ export const pianoView: View = (root, app, params) => {
         if (!run.active) draw();
       }
     }),
+    app.on('settings', () => {
+      renderer.setTheme(keyboardThemeFromCss());
+      renderer.setReducedMotion(app.reducedMotion);
+      draw();
+    }),
   );
   let mouseNote: number | null = null;
   stage.canvas.addEventListener('pointerdown', (e) => {
-    app.sounds.ensure();
+    app.unlockAudio();
     const r = stage.canvas.getBoundingClientRect();
     const n = noteAt(e.clientX - r.left, e.clientY - r.top, renderer.metrics);
     if (n != null && run) {
       mouseNote = n;
-      run.noteOn(n, performance.now());
+      const j = run.noteOn(n, performance.now());
+      renderer.noteEvent(n, j.tier, j.target?.errMs ?? null, !!j.target, performance.now());
       app.sounds.tone(n, 0.4);
       updateStats();
       draw();
@@ -291,24 +327,14 @@ export const pianoView: View = (root, app, params) => {
   };
   document.addEventListener('keydown', onKey);
   const resize = () => {
-    const { w, h } = stage.fit(0.42);
+    const { w, h } = stage.fit(0.44);
     renderer.resize(w, h);
     draw();
   };
   window.addEventListener('resize', resize);
-  const onTheme = () => {
-    renderer.setTheme(keyboardThemeFromCss());
-    draw();
-  };
-  offs.push(app.on('settings', onTheme));
-  const browse = el('p', { class: 'hint' });
-  const link = el('a', { href: '#/browse?profile=piano88' }, 'All piano exercises');
-  browse.appendChild(link);
-  lessonCard.after(browse);
-  void navigate;
-
   loadDrill(drill);
   resize();
+  void document.fonts?.ready.then(() => draw());
   (window as unknown as { __piano: unknown }).__piano = { run: () => run, start: togglePlay };
   return () => {
     cancelAnimationFrame(raf);

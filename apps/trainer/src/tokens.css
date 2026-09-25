@@ -1,0 +1,102 @@
+/* Booth: the app chrome is a matte DJ console; the highway is a lit runway inside it. */
+@import '@fontsource-variable/big-shoulders/opsz.css';
+@import '@fontsource-variable/instrument-sans';
+@import '@fontsource-variable/jetbrains-mono';
+
+:root {
+  color-scheme: dark;
+  --s0: #0a0b0e;
+  --s1: #13151b;
+  --s2: #1c1f27;
+  --s3: #262a35;
+  --line: #2a2e39;
+  --line-strong: #3a3f4d;
+  --ink: #f3f1ea;
+  --muted: #8e93a0;
+  --label: #5e6472;
+  --bg: var(--s0);
+  --panel: var(--s1);
+
+  /* lane accents by control group */
+  --deck-a: #38d5ff;
+  --deck-b: #ffb13b;
+  --mixer: #ff4fa8;
+  --pads: #b6f23a;
+  --fx: #9f84ff;
+  --select: #e9edf5;
+  --lh: var(--deck-b);
+  --rh: var(--deck-a);
+
+  /* judgement */
+  --perfect: #7cffd1;
+  --great: #38d5ff;
+  --ok: #ffd84d;
+  --early: #ff8a3d;
+  --late: #a98bff;
+  --miss: #ff3d5a;
+  --good: var(--perfect);
+  --bad: var(--miss);
+  --tap: var(--deck-a);
+  --ramp: var(--deck-b);
+
+  --euphoria: #7cf0ff;
+  --gold: #f2c14e;
+  --silver: #c9d1dc;
+  --bronze: #c97b4a;
+  --amber: #ffb13b;
+
+  --ivory: #f1ede3;
+  --ivory-edge: #d6d0c4;
+  --ebony: #1a1c22;
+  --keyline: #3a3f4d;
+  --lane: var(--s2);
+
+  --display: 'Big Shoulders Variable', 'Impact', 'Arial Narrow', sans-serif;
+  --ui: 'Instrument Sans Variable', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'JetBrains Mono Variable', ui-monospace, Menlo, monospace;
+  --font: var(--ui);
+
+  --r-s: 4px;
+  --r-m: 8px;
+  --r-l: 14px;
+  --t-micro: 120ms;
+  --t-std: 220ms;
+  --t-panel: 320ms;
+  --e-enter: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --e-exit: cubic-bezier(0.4, 0, 1, 1);
+  --e-over: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --inset: inset 0 1px 0 rgba(255, 255, 255, 0.04), inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+  --gutter: 20px;
+  --accent: var(--deck-a);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --s0: #f4f2ec;
+  --s1: #ffffff;
+  --s2: #e9e6de;
+  --s3: #dcd8cd;
+  --line: #d9d6ce;
+  --line-strong: #c4bfb3;
+  --ink: #15171d;
+  --muted: #6a6f7b;
+  --label: #8a8f9a;
+  --deck-a: #0fa9d6;
+  --deck-b: #d98a12;
+  --mixer: #d8318a;
+  --pads: #7cb61a;
+  --fx: #7a5cf0;
+  --select: #3a404c;
+  --perfect: #1aa877;
+  --great: #0fa9d6;
+  --ok: #c99a00;
+  --early: #e06a1a;
+  --late: #7a5cf0;
+  --miss: #d8203c;
+  --inset: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* cosmetic themes unlocked by level: same structure, different accents */
+:root[data-theme='neon'] { --s0: #07070d; --s1: #101020; --s2: #171833; --line: #25264a; --deck-a: #33e1ff; --deck-b: #ff3dbb; --mixer: #ffe14d; --pads: #5cff8a; --fx: #b388ff; }
+:root[data-theme='vinyl'] { --s0: #1a1512; --s1: #241d18; --s2: #2e2521; --line: #3b302a; --ink: #f3e9da; --muted: #a8968a; --deck-a: #7fb0c8; --deck-b: #e0a24a; --mixer: #d25a4a; --pads: #8bc48a; --fx: #b79ad6; }
+:root[data-theme='festival'] { --s0: #12061c; --s1: #1e0b2e; --s2: #2a1240; --line: #3a1d55; --ink: #fff3e0; --muted: #b58fc9; --deck-a: #7c6cff; --deck-b: #ffb52e; --mixer: #ff5b7a; --pads: #5ee6a0; --fx: #ff8ef5; }

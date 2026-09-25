@@ -9,7 +9,7 @@ export const reportView: View = (root, app, params) => {
   const since = Date.now() - days * 86400000;
   const atts = app.attempts.filter((a) => a.startedAt >= since);
   root.appendChild(el('h2', {}, `Practice report · last ${days} days`));
-  const bar = el('div', { class: 'toolbar' });
+  const bar = el('div', { class: 'rail' });
   const seg = el('div', { class: 'seg' });
   for (const d of [7, 30, 90]) {
     const b = el('button', {}, `${d} days`);
@@ -30,7 +30,7 @@ export const reportView: View = (root, app, params) => {
   const minutes = [...byDay.values()].reduce((a, d) => a + d.minutes, 0);
   const hero = el('div', { class: 'hero' });
   const card = (t: string, b: string, h: string) => {
-    const c = el('div', { class: 'card' });
+    const c = el('div', { class: 'panel' });
     c.innerHTML = `<h2>${t}</h2><b class="big">${b}</b><p class="hint">${h}</p>`;
     hero.appendChild(c);
   };
@@ -43,7 +43,7 @@ export const reportView: View = (root, app, params) => {
   };
   card('Average score', `${mean(atts.map((a) => a.score)) ?? '—'}%`, `timing ${mean(atts.map((a) => a.timingMeanMs)) ?? '—'} ms`);
   root.appendChild(hero);
-  const acc = el('div', { class: 'card' });
+  const acc = el('div', { class: 'panel' });
   acc.appendChild(el('h2', {}, 'Accuracy by control type'));
   acc.appendChild(bars([
     { label: 'Pad timing', value: mean(atts.map((a) => a.subScores.timing)) },
@@ -53,7 +53,7 @@ export const reportView: View = (root, app, params) => {
   root.appendChild(acc);
   const per = new Map<string, AttemptRecord[]>();
   for (const a of atts) per.set(a.drillId, [...(per.get(a.drillId) ?? []), a]);
-  const table = el('div', { class: 'card', style: 'margin-top:14px' });
+  const table = el('div', { class: 'panel', style: 'margin-top:14px' });
   table.appendChild(el('h2', {}, 'By drill'));
   const t = el('table');
   t.innerHTML = '<thead><tr><th>Drill</th><th>Tier</th><th>Attempts</th><th>Best</th><th>Latest</th><th>Timing</th><th>Where it slips</th></tr></thead>';
@@ -72,7 +72,7 @@ export const reportView: View = (root, app, params) => {
   root.appendChild(table);
   const rec = records(atts, app.drills);
   if (rec.size) {
-    const r = el('div', { class: 'card', style: 'margin-top:14px' });
+    const r = el('div', { class: 'panel', style: 'margin-top:14px' });
     r.appendChild(el('h2', {}, 'Records earned in this period'));
     for (const [tier, cards] of rec) r.appendChild(el('p', {}, `${tier}: ${cards.map((c) => c.name).join(', ')}`));
     root.appendChild(r);

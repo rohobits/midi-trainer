@@ -1,5 +1,7 @@
 import { LearnSession, exportMap, importMap, describeMidi, switchKey, type ControlMap, type MidiEvent, type Profile } from '@midi-trainer/engine';
 import { $, el, download } from './dom';
+import { confirmDialog } from './dialog';
+import { toast } from './toast';
 
 export interface LearnUi {
   open(): void;
@@ -68,8 +70,8 @@ export function createLearnUi(profile: Profile, map: ControlMap, onChange: (map:
     session.skip();
     render();
   };
-  $('clearMap').onclick = () => {
-    if (!confirm('Clear the whole control map?')) return;
+  $('clearMap').onclick = async () => {
+    if (!(await confirmDialog('Clear the whole control map?', 'Every learned control is forgotten. Export first if you want a copy.', { confirm: 'Clear map', danger: true }))) return;
     for (const k of Object.keys(map)) delete map[k];
     session.cancel();
     render();
@@ -82,12 +84,12 @@ export function createLearnUi(profile: Profile, map: ControlMap, onChange: (map:
     if (!f) return;
     try {
       const { profile: p, map: imported } = importMap(JSON.parse(await f.text()));
-      if (p && p !== profile.id && !confirm(`This map is for profile "${p}". Import into ${profile.name} anyway?`)) return;
+      if (p && p !== profile.id && !(await confirmDialog('Different profile', `This map is for "${p}". Import into ${profile.name} anyway?`, { confirm: 'Import' }))) return;
       for (const [k, v] of Object.entries(imported)) map[k] = v;
       render();
       onChange(map);
     } catch (err) {
-      alert('Could not import map: ' + (err as Error).message);
+      toast('Could not import map: ' + (err as Error).message, 5000);
     }
     input.value = '';
   };

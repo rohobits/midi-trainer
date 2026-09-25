@@ -1,6 +1,7 @@
 import { Drill as DrillSchema, parseDrillFile, formatDrillError, lanesFor, lengthBeats, generateFromTemplate, TEMPLATES, type Drill, type Target } from '@midi-trainer/engine';
 import type { View } from '../router';
 import { navigate } from '../router';
+import { confirmDialog } from '../ui/dialog';
 import { el, download } from '../ui/dom';
 
 /**
@@ -16,7 +17,7 @@ export const editorView: View = (root, app, params) => {
   const kinds = app.kinds();
 
   root.appendChild(el('h2', {}, 'Drill editor'));
-  const top = el('div', { class: 'toolbar' });
+  const top = el('div', { class: 'rail' });
   const laneSel = el('select', { id: 'laneSel' });
   for (const c of app.profile.controls) laneSel.appendChild(el('option', { value: c.id }, c.name));
   const addLane = el('button', { class: 'small' }, 'Add lane');
@@ -49,7 +50,7 @@ export const editorView: View = (root, app, params) => {
   const timelineWrap = el('div', { class: 'timeline' });
   const canvas = el('canvas');
   timelineWrap.appendChild(canvas);
-  const jsonCard = el('div', { class: 'card' });
+  const jsonCard = el('div', { class: 'panel' });
   const ta = el('textarea', { id: 'drillJson', spellcheck: 'false' });
   const errBox = el('p', { class: 'hint', id: 'jsonErr' });
   const actions = el('div', { class: 'row' });
@@ -66,7 +67,7 @@ export const editorView: View = (root, app, params) => {
   jsonCard.append(ta, errBox, actions);
   grid.append(timelineWrap, jsonCard);
   root.appendChild(grid);
-  const list = el('div', { class: 'card', style: 'margin-top:14px' });
+  const list = el('div', { class: 'panel', style: 'margin-top:14px' });
   root.appendChild(list);
 
   const ctx = canvas.getContext('2d')!;
@@ -310,20 +311,20 @@ export const editorView: View = (root, app, params) => {
       drill = loaded[0]!;
       syncFromDrill();
     } catch (e) {
-      alert('Could not import: ' + formatDrillError(e));
+      app.toast('Could not import: ' + formatDrillError(e), 5000);
     }
     importInput.value = '';
   };
   delBtn.onclick = async () => {
     if (!app.stored.some((s) => s.id === drill.id)) return app.toast('Not in my drills yet.');
-    if (!confirm(`Delete ${drill.name} from my drills?`)) return;
+    if (!(await confirmDialog(`Delete ${drill.name}?`, 'Removes it from my drills. Attempts on it stay in history.', { confirm: 'Delete', danger: true }))) return;
     await app.removeDrill(drill.id);
     app.toast('Deleted.');
   };
   const resize = () => draw();
   window.addEventListener('resize', resize);
   syncFromDrill();
-  const mine = el('div', { class: 'card', style: 'margin-top:14px' });
+  const mine = el('div', { class: 'panel', style: 'margin-top:14px' });
   mine.appendChild(el('h2', {}, 'My drills'));
   if (!app.stored.length) mine.appendChild(el('p', { class: 'hint' }, 'Nothing saved yet.'));
   for (const s of app.stored) {

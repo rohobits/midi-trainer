@@ -28,6 +28,7 @@ packages/engine   framework-free core: MIDI, clock, drill schema, judges, profil
 apps/trainer      the app (vanilla TypeScript + Vite)
 content/drills    drills as JSON, one file each, grouped by profile and tier
 docs/FEATURES.md  product spec and milestone plan
+docs/DESIGN.md    the "Booth" visual system: tokens, highway, layout rules
 docs/research/    the competitive, mechanics and skills research the spec is built on
 prototypes/       the two single-file prototypes this repo was extracted from (reference only)
 ```
@@ -97,6 +98,9 @@ Carried over from the prototypes and tunable per drill (`thresholds`) or globall
 - **Progress**: streaks, daily goal, trophies, calendar, XP and levels, records, medals by
   tier, accuracy by control type, timing histograms, replay scrubber, printable report.
 - **Editor**: timeline plus JSON with live validation, pack export / import.
+- **Look**: a pseudo-3D note highway with lane colours per control group, hit effects,
+  combo and Euphoria states, game sounds, a results sheet, and first-run onboarding. Dark
+  by default; see `docs/DESIGN.md`.
 - **Settings**: thresholds, strictness, calibration wizard with per-device offsets, themes,
   backup export / import. Installs as a PWA.
 

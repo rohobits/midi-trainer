@@ -58,6 +58,12 @@ export interface Settings {
   autoBpm: boolean;
   isolation: 'all' | 'A' | 'B' | 'mixer';
   showController: boolean;
+  muteSfx: boolean;
+  /** Beats visible above the strike line. */
+  lookahead: number;
+  /** Highway perspective strength. */
+  fov: number;
+  onboarded: boolean;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -91,6 +97,10 @@ export const DEFAULT_SETTINGS: Settings = {
   autoBpm: false,
   isolation: 'all',
   showController: false,
+  muteSfx: false,
+  lookahead: 8,
+  fov: 1.6,
+  onboarded: false,
 };
 
 export class TrainerDb extends Dexie {
