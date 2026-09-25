@@ -32,7 +32,15 @@ export interface AttemptRecord {
   timingSdMs: number | null;
   trackingMean: number | null;
   tiers: TierCounts;
-  subScores: { timing: number | null; tracking: number | null };
+  subScores: { timing: number | null; tracking: number | null; technique?: number | null };
+  /** 'lesson' (no-fail) or 'performance' (multiplier, energy). */
+  mode?: 'lesson' | 'performance';
+  /** Performance-mode results. */
+  perf?: { points: number; maxCombo: number; stars: number };
+  /** Tempo scale used (1 = drill BPM). */
+  tempoScale?: number;
+  /** Piano: accuracy details. */
+  notes?: { correct: number; wrong: number; missed: number; mode: 'wait' | 'play'; hand: 'L' | 'R' | 'B' };
   extraPresses: number;
   inputOffsetMs: number;
   strictness: number;
@@ -42,9 +50,25 @@ export interface AttemptRecord {
 }
 
 export function perTargetOf(states: readonly TargetState[]): PerTarget[] {
-  return states.map((s) => ({
-    id: s.id,
-    hit: s.hit,
-    err: s.kind === 'ramp' ? s.err : s.errMs,
-  }));
+  return states.map((s) => {
+    let err: number | null = null;
+    switch (s.kind) {
+      case 'ramp':
+      case 'cross':
+        err = s.err;
+        break;
+      case 'tap':
+      case 'cut':
+      case 'note':
+        err = s.errMs;
+        break;
+      case 'jog':
+        err = s.correct == null ? null : 1 - s.correct;
+        break;
+      case 'select':
+        err = s.hit ? 0 : s.miss ? 1 : null;
+        break;
+    }
+    return { id: s.id, hit: s.hit, err };
+  });
 }

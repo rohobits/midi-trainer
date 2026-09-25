@@ -43,6 +43,7 @@ export function judgeTap(
   best.hit = true;
   best.errMs = beatsToMs(pos - best.t, bpm);
   best.tier = tierFor(best.errMs, t, strictness);
+  best.hitAt = pos;
   return { target: best };
 }
 

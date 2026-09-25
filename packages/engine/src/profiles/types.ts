@@ -1,4 +1,5 @@
-export type ControlKind = 'tap' | 'cc';
+/** tap = press, cc = absolute 0..1, rel = relative encoder (jog rotate). */
+export type ControlKind = 'tap' | 'cc' | 'rel';
 
 export interface ControlDef {
   id: string;
@@ -33,4 +34,9 @@ export function defaultValues(profile: Profile): Record<string, number> {
   const out: Record<string, number> = {};
   for (const c of profile.controls) out[c.id] = c.kind === 'cc' ? (c.defaultValue ?? 0.5) : 0;
   return out;
+}
+
+/** Control id → kind, for target expansion. */
+export function controlKinds(profile: Profile): Record<string, ControlKind> {
+  return Object.fromEntries(profile.controls.map((c) => [c.id, c.kind]));
 }

@@ -55,7 +55,7 @@ export class LearnSession {
       return null;
     }
     if (def.kind === 'tap' && ev.kind !== 'noteon') return null;
-    if (def.kind === 'cc' && ev.kind !== 'cc') return null;
+    if ((def.kind === 'cc' || def.kind === 'rel') && ev.kind !== 'cc') return null;
     const id = this.armed;
     this.map[id] = { key: ev.key, verified: true, ...(note ? { note } : {}) };
     this.armed = this.queue.shift() ?? null;

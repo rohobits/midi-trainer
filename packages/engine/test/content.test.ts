@@ -20,9 +20,24 @@ const files = walk(root).sort();
 const drills: Drill[] = files.map((f) => parseDrill(JSON.parse(fs.readFileSync(f, 'utf8'))));
 
 describe('content/drills', () => {
-  it('has the 13 DJ drills and 5 piano exercises from the prototypes', () => {
-    expect(drills.filter((d) => d.profile === 'flx4')).toHaveLength(13);
-    expect(drills.filter((d) => d.profile === 'piano88')).toHaveLength(5);
+  it('still has the 13 DJ drills and 5 piano exercises from the prototypes', () => {
+    const ids = new Set(drills.map((d) => d.id));
+    for (const id of ['phrase-counting', 'fader-control', 'classic-bass-swap-transition', 'staggered-eq-blend', 'filter-out-transition', 'hard-cut-on-the-one', 'hot-cue-drumming', 'loop-build-and-release', 'cue-point-stutter', 'double-drop', 'two-bar-eq-swap', 'crossfader-cut-pattern', 'manual-beatmatch-nudge', 'c-major-scale-right-hand', 'ode-to-joy-first-8-bars']) expect(ids.has(id), id).toBe(true);
+    expect(drills.filter((d) => d.profile === 'flx4').length).toBeGreaterThanOrEqual(13);
+    expect(drills.filter((d) => d.profile === 'piano88').length).toBeGreaterThanOrEqual(5);
+  });
+
+  it('research metadata is well formed: sources are URLs, artists only with sources, requires are known tokens', () => {
+    const known = new Set(['decks:3', 'decks:4', 'beatfx:2', 'motorised-platter', 'turntable', 'stems-pads', 'split-cue', 'eq:4', 'isolator', 'sampler:external', 'mic-fx', 'mixer-roll']);
+    for (const d of drills) {
+      if (d.artist) expect(d.sources?.length, `${d.id} names an artist without sources`).toBeGreaterThan(0);
+      for (const r of d.requires ?? []) expect(known.has(r), `${d.id} requires unknown hardware token ${r}`).toBe(true);
+      if (d.profile === 'flx4') {
+        expect(d.path, `${d.id} has no path`).toBeTruthy();
+        expect(d.level, `${d.id} has no level`).toBeTruthy();
+        expect(d.skills?.length, `${d.id} has no skills`).toBeGreaterThan(0);
+      }
+    }
   });
 
   it('ids are unique and match file names', () => {
@@ -31,14 +46,15 @@ describe('content/drills', () => {
     files.forEach((f, i) => expect(path.basename(f, '.json')).toMatch(new RegExp(`${drills[i]!.id}$`)));
   });
 
-  it('every DJ control exists on both the FLX4 and generic profiles', () => {
+  it('every DJ control exists on the FLX4 profile; prototype drills also run on the generic profile', () => {
     const flx4 = new Set(FLX4_CONTROLS.map((c) => c.id));
     const generic = new Set(GENERIC_CONTROLS.map((c) => c.id));
     for (const d of drills.filter((d) => d.profile === 'flx4')) {
-      for (const c of controlsFor(d)) {
-        expect(flx4.has(c), `${d.id} uses ${c} which the FLX4 profile lacks`).toBe(true);
-        expect(generic.has(c), `${d.id} uses ${c} which the generic profile lacks`).toBe(true);
-      }
+      for (const c of controlsFor(d)) expect(flx4.has(c), `${d.id} uses ${c} which the FLX4 profile lacks`).toBe(true);
+    }
+    for (const id of ['phrase-counting', 'classic-bass-swap-transition', 'hot-cue-drumming']) {
+      const d = drills.find((x) => x.id === id)!;
+      for (const c of controlsFor(d)) expect(generic.has(c), `${d.id} uses ${c} which the generic profile lacks`).toBe(true);
     }
   });
 

@@ -30,3 +30,18 @@ export function themeFromCss(root: Element = document.documentElement): Theme {
     font: v('--font'),
   };
 }
+
+import type { KeyboardTheme } from './keyboard';
+
+export function keyboardThemeFromCss(root: Element = document.documentElement): KeyboardTheme {
+  const cs = getComputedStyle(root);
+  const v = (name: string) => cs.getPropertyValue(name).trim();
+  return {
+    ...themeFromCss(root),
+    ivory: v('--ivory') || '#FBF8F0',
+    ebony: v('--ebony') || '#231F1B',
+    keyline: v('--keyline') || v('--line'),
+    rh: v('--rh') || v('--tap'),
+    lh: v('--lh') || v('--ramp'),
+  };
+}

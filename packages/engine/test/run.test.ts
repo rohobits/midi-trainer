@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { DrillRun } from '../src/session/run';
 import { DEFAULT_THRESHOLDS } from '../src/scoring/thresholds';
 import { parseDrill } from '../src/drills/schema';
+import type { TapState } from '../src/scoring/judges/state';
 
 const drill = parseDrill({
   id: 'run-test',
@@ -27,8 +28,8 @@ describe('DrillRun', () => {
     expect(run.phase).toBe('running');
     // press 20 ms late on beat 0
     const j = run.onTap('hcA1', 1020);
-    expect(j.target?.errMs).toBeCloseTo(20);
-    expect(j.target?.tier).toBe('perfect');
+    expect((j.target as TapState).errMs).toBeCloseTo(20);
+    expect((j.target as TapState).tier).toBe('perfect');
     // ride the fader: perfect tracking sampled every 50 ms
     for (let t = 1000; t <= 2000; t += 50) {
       run.onValue('faderB', (t - 1000) / 1000, t);
@@ -67,7 +68,7 @@ describe('DrillRun', () => {
     expect(run.phase).toBe('running');
     expect(run.cue(-1, { hcA1: 'Hot cue A1' })).toEqual({ text: 'Tap Hot cue A1 in 1 beats', beatsAway: 1 });
     // event stamped 2020 with a 20 ms offset is judged at beat 0 exactly
-    expect(run.onTap('hcA1', 2020).target?.errMs).toBeCloseTo(0);
+    expect((run.onTap('hcA1', 2020).target as TapState).errMs).toBeCloseTo(0);
     const r = run.tick(2000 + 3000);
     expect(r.looped).toBe(true);
     expect(run.pos(5000)).toBe(0);
@@ -81,6 +82,6 @@ describe('DrillRun', () => {
     run.start(0);
     run.setBpm(60, 500); // at beat 1
     expect(run.pos(1500)).toBe(2);
-    expect(run.onTap('hcA1', 1500).target?.errMs).toBeCloseTo(0);
+    expect((run.onTap('hcA1', 1500).target as TapState).errMs).toBeCloseTo(0);
   });
 });

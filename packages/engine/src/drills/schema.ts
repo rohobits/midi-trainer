@@ -44,7 +44,99 @@ export const NoteTarget = z.object({
   hand: z.enum(['L', 'R']).optional(),
 });
 
-export const Target = z.discriminatedUnion('type', [TapTarget, RampTarget, HoldTarget, NoteTarget]);
+/** Near-instant traverse from v0 to v1 landing on beat t (crossfader drop mix, fader kill). */
+export const CutTarget = z.object({
+  type: z.literal('cut'),
+  c: z.string().min(1),
+  t: beat,
+  v0: unit,
+  v1: unit,
+  /** Traverse must complete within this many ms for full credit. Default 120. */
+  maxMs: z.number().positive().optional(),
+});
+
+/** Two mirrored ramps on two controls that must never both exceed `ceiling` (bass swap). */
+export const CrossTarget = z
+  .object({
+    type: z.literal('cross'),
+    c: z.string().min(1),
+    c2: z.string().min(1),
+    t: beat,
+    t1: beat,
+    va0: unit,
+    va1: unit,
+    vb0: unit,
+    vb1: unit,
+    /** Both controls above this at the same sample is a violation. Default 0.5. */
+    ceiling: unit.optional(),
+  })
+  .refine((r) => r.t1 > r.t, { message: 't1 must be after t' })
+  .refine((r) => r.c !== r.c2, { message: 'cross needs two different controls' });
+
+/** n hits on a subdivision grid (fader chops, transformer, cue drumming). Expands to taps or cuts. */
+export const AlternateTarget = z.object({
+  type: z.literal('alternate'),
+  c: z.string().min(1),
+  t: beat,
+  n: z.number().int().min(2).max(512),
+  step: z.number().positive(),
+  /** For continuous controls: the two values alternated between. Default 0 and 1. */
+  v0: unit.optional(),
+  v1: unit.optional(),
+});
+
+/** Presses at regular intervals then an exit press on the one (loop roll, beat roll build). Expands to taps. */
+export const StepTarget = z.object({
+  type: z.literal('step'),
+  c: z.string().min(1),
+  t: beat,
+  step: z.number().positive(),
+  count: z.number().int().min(1).max(64),
+  /** Control to press at `exitAt` (default: same control). */
+  exitC: z.string().min(1).optional(),
+  exitAt: beat.optional(),
+});
+
+/** Jog movement pattern: one direction per segment of `seg` beats between t and t1. */
+export const JogTarget = z
+  .object({
+    type: z.literal('jog'),
+    c: z.string().min(1),
+    t: beat,
+    t1: beat,
+    pattern: z.array(z.enum(['f', 'b'])).min(1),
+    /** Minimum encoder ticks per segment to count. Default 3. */
+    minTicks: z.number().int().positive().optional(),
+  })
+  .refine((r) => r.t1 > r.t, { message: 't1 must be after t' });
+
+/** Press the right control among `choices` between t and t1 (CH SELECT, key choice, curve). */
+export const SelectTarget = z
+  .object({
+    type: z.literal('select'),
+    c: z.string().min(1),
+    choices: z.array(z.string().min(1)).min(2),
+    t: beat,
+    t1: beat,
+  })
+  .refine((r) => r.t1 > r.t, { message: 't1 must be after t' })
+  .refine((r) => r.choices.includes(r.c), { message: 'c must be one of choices' });
+
+export const PrimitiveTarget = z.discriminatedUnion('type', [
+  TapTarget, RampTarget, HoldTarget, NoteTarget, CutTarget, CrossTarget, JogTarget, SelectTarget,
+]);
+
+/** Ordered chain of primitives with times relative to `t` (echo out, drop swap, routines). */
+export const SequenceTarget = z.object({
+  type: z.literal('sequence'),
+  t: beat,
+  steps: z.array(PrimitiveTarget).min(2),
+});
+
+export const Target = z.discriminatedUnion('type', [
+  TapTarget, RampTarget, HoldTarget, NoteTarget, CutTarget, CrossTarget, AlternateTarget, StepTarget,
+  JogTarget, SelectTarget, SequenceTarget,
+]);
 
 export const ScoringThresholds = z.object({
   /** Half-width of the tap acceptance window, in beats. */
@@ -96,6 +188,11 @@ export const Drill = z.object({
   needsAudio: z.boolean().optional(),
   path: z.string().optional(),
   level: z.number().int().positive().optional(),
+  /** Generated variants record their template and seed. */
+  variantOf: z.string().optional(),
+  seed: z.number().int().optional(),
+  /** Loop range for the section-loop tool, in bars (1-based, inclusive). */
+  section: z.tuple([z.number().int().positive(), z.number().int().positive()]).optional(),
 });
 
 export const DrillPack = z.object({
@@ -108,6 +205,14 @@ export type TapTarget = z.infer<typeof TapTarget>;
 export type RampTarget = z.infer<typeof RampTarget>;
 export type HoldTarget = z.infer<typeof HoldTarget>;
 export type NoteTarget = z.infer<typeof NoteTarget>;
+export type CutTarget = z.infer<typeof CutTarget>;
+export type CrossTarget = z.infer<typeof CrossTarget>;
+export type AlternateTarget = z.infer<typeof AlternateTarget>;
+export type StepTarget = z.infer<typeof StepTarget>;
+export type JogTarget = z.infer<typeof JogTarget>;
+export type SelectTarget = z.infer<typeof SelectTarget>;
+export type SequenceTarget = z.infer<typeof SequenceTarget>;
+export type PrimitiveTarget = z.infer<typeof PrimitiveTarget>;
 export type Target = z.infer<typeof Target>;
 export type ScoringThresholds = z.infer<typeof ScoringThresholds>;
 export type Drill = z.infer<typeof Drill>;

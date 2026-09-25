@@ -13,6 +13,7 @@ const tap = (id: string, name: string, group: string, deck?: Deck, mode?: string
 const cc = (id: string, name: string, group: string, defaultValue: number, deck?: Deck): ControlDef => ({
   id, name, kind: 'cc', group, defaultValue, ...(deck ? { deck } : {}),
 });
+const rel = (id: string, name: string, group: string, deck?: Deck): ControlDef => ({ id, name, kind: 'rel', group, ...(deck ? { deck } : {}) });
 
 function deckControls(d: Deck): ControlDef[] {
   const out: ControlDef[] = [
@@ -24,7 +25,7 @@ function deckControls(d: Deck): ControlDef[] {
     tap(`loopOut${d}`, `OUT ${d}`, 'Loop', d),
     tap(`reloop${d}`, `RELOOP/EXIT ${d}`, 'Loop', d),
     tap(`jogTouch${d}`, `Jog touch ${d}`, 'Jog', d),
-    cc(`jog${d}`, `Jog rotate ${d}`, 'Jog', 0.5, d),
+    rel(`jog${d}`, `Jog rotate ${d}`, 'Jog', d),
     cc(`tempo${d}`, `TEMPO ${d}`, 'Tempo', 0.5, d),
     tap(`padModeHotCue${d}`, `HOT CUE mode ${d}`, 'Pad modes', d),
     tap(`padModePadFx${d}`, `PAD FX mode ${d}`, 'Pad modes', d),
@@ -77,7 +78,7 @@ export const FLX4_CONTROLS: readonly ControlDef[] = [
   tap('browseLoadA', 'LOAD A', 'Browse'),
   tap('browseLoadB', 'LOAD B', 'Browse'),
   tap('browsePush', 'Rotary push', 'Browse'),
-  cc('browseTurn', 'Rotary turn', 'Browse', 0.5),
+  rel('browseTurn', 'Rotary turn', 'Browse'),
 ];
 
 export const FLX4_PROFILE: Profile = {
