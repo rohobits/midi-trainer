@@ -47,5 +47,22 @@
     "hip-hop"
   ],
   "path": "transitions",
-  "level": 2
+  "level": 2,
+  "tracks": [
+    {
+      "track": "age-of-love-cdw-es-remix",
+      "deck": "A",
+      "cue": "A on the arpeggio riff section."
+    },
+    {
+      "track": "swedish-house-mafia-dont-you-worry-child",
+      "deck": "B",
+      "cue": "Cue B on the first beat of its drop, not its intro. Both faders swap inside a quarter beat on bar 33; the cut only works because both tracks are on a phrase boundary."
+    },
+    {
+      "track": "green-velvet-flash",
+      "deck": "B",
+      "cue": "Alternative B: cue on the first beat of the acid bassline entry."
+    }
+  ]
 }

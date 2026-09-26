@@ -74,5 +74,17 @@
   ],
   "prereqs": [
     "phrase-matched-mix-in"
+  ],
+  "tracks": [
+    {
+      "track": "armin-van-buuren-communication",
+      "deck": "A",
+      "cue": "A goes into its long melodic breakdown on bar 1 of the drill."
+    },
+    {
+      "track": "charlotte-de-witte-doppler",
+      "deck": "B",
+      "cue": "Cue B on the first beat of its drop with the low cut, bring the beat in under A's breakdown, and on bar 17, where A's breakdown would resolve, cut A and let B's bass up: B's drop lands where A's was going to."
+    }
   ]
 }

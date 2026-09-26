@@ -339,3 +339,24 @@ dialog h2 { margin-bottom: 8px; }
 .mixerstrip .slot input[type='range'] { writing-mode: vertical-lr; direction: rtl; height: 120px; width: 22px; }
 .mixerstrip .xf { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 10px; color: var(--label); text-transform: uppercase; letter-spacing: 0.06em; }
 .mixerstrip .xf input { width: 100%; }
+
+/* ---- suggested tracks ---- */
+.tracks { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 12px; }
+.trackshead { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.trackshead h3 { margin: 0; color: var(--ink); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.trackshead .hint { flex: 1; font-size: 12px; }
+.trackrow { display: grid; grid-template-columns: 28px 1fr auto; gap: 10px; align-items: start; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.trackrow:last-child { border-bottom: 0; }
+.deckchip { width: 28px; height: 28px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 800; font-size: 14px; color: #0a0b0e; background: var(--select); box-shadow: var(--inset); }
+.deckchip.deck-a { background: var(--deck-a); } .deckchip.deck-b { background: var(--deck-b); } .deckchip.deck-any { background: var(--s3); color: var(--muted); }
+.trackbody { min-width: 0; }
+.trackname { font-size: 14px; }
+.trackname .mix { color: var(--muted); font-size: 12px; margin-left: 4px; }
+.trackmeta { font-size: 11px; color: var(--muted); margin: 2px 0 4px; }
+.trackcue { font-size: 13px; color: var(--ink); }
+.trackstructure { font-size: 12px; margin-top: 3px; }
+.trackactions { display: flex; flex-direction: column; gap: 6px; align-items: stretch; }
+.trackactions a.small { display: inline-block; text-decoration: none; text-align: center; font: inherit; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 6px; border: 1px solid var(--line); color: var(--muted); }
+.trackactions a.small:hover { color: var(--ink); border-color: var(--line-strong); }
+.badge.tracks { color: var(--deck-a); border-color: color-mix(in oklch, var(--deck-a) 50%, transparent); }
+@media (max-width: 560px) { .trackrow { grid-template-columns: 28px 1fr; } .trackactions { grid-column: 2; flex-direction: row; } }

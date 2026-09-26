@@ -2,7 +2,8 @@ import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { parseDrill, type Drill } from '../src/drills/schema';
+import { parseDrill, parseTrackPool, type Drill } from '../src/drills/schema';
+import { camelotCompatible } from '../src/audio/patterns';
 import { controlsFor } from '../src/drills/lanes';
 import { FLX4_CONTROLS } from '../src/profiles/flx4/controls';
 import { GENERIC_CONTROLS } from '../src/profiles/generic/controls';
@@ -17,6 +18,8 @@ function walk(dir: string): string[] {
 }
 
 const files = walk(root).sort();
+const pool = parseTrackPool(JSON.parse(fs.readFileSync(fileURLToPath(new URL('../../../content/tracks.json', import.meta.url)), 'utf8')));
+const poolById = new Map(pool.map((t) => [t.id, t]));
 const drills: Drill[] = files.map((f) => parseDrill(JSON.parse(fs.readFileSync(f, 'utf8'))));
 
 describe('content/drills', () => {
@@ -37,6 +40,29 @@ describe('content/drills', () => {
         expect(d.level, `${d.id} has no level`).toBeTruthy();
         expect(d.skills?.length, `${d.id} has no skills`).toBeGreaterThan(0);
       }
+    }
+  });
+
+  it('every DJ drill suggests 2–3 verified tracks at a compatible tempo and key', () => {
+    expect(new Set(pool.map((t) => t.id)).size).toBe(pool.length);
+    for (const t of pool) expect(t.url, t.id).toMatch(/^https:\/\//);
+    for (const d of drills.filter((d) => d.profile === 'flx4')) {
+      const refs = d.tracks ?? [];
+      expect(refs.length, `${d.id} has ${refs.length} suggested tracks`).toBeGreaterThanOrEqual(2);
+      expect(refs.length, d.id).toBeLessThanOrEqual(4);
+      const byDeck: Record<string, string[]> = {};
+      for (const r of refs) {
+        const t = poolById.get(r.track);
+        expect(t, `${d.id} references unknown track ${r.track}`).toBeTruthy();
+        if (!t) continue;
+        const ratio = t.bpm / d.bpm;
+        const near = (x: number) => Math.abs(ratio - x) / x <= 0.08;
+        // scratch and battle records carry a nominal tempo and no key; they are pitched to fit
+        if (t.key && !r.loose) expect(near(1) || near(2) || near(0.5), `${d.id}: ${t.id} is ${t.bpm} BPM against a ${d.bpm} BPM drill`).toBe(true);
+        expect(r.cue.length, `${d.id}: ${t.id} cue is too short`).toBeGreaterThan(20);
+        if (r.deck && t.key && !r.loose) (byDeck[r.deck] ??= []).push(t.key);
+      }
+      for (const ka of byDeck.A ?? []) for (const kb of byDeck.B ?? []) expect(camelotCompatible(ka, kb), `${d.id}: deck A ${ka} and deck B ${kb} clash`).toBe(true);
     }
   });
 

@@ -65,5 +65,17 @@
   ],
   "prereqs": [
     "jog-nudge-forward"
+  ],
+  "tracks": [
+    {
+      "track": "enrico-sangiuliano-moon-rocks",
+      "deck": "A",
+      "cue": "Two 16-bar phrases of pure percussion: nudge forward on bar 2, back on bar 4, and hear whether the groove settles back where it was."
+    },
+    {
+      "track": "anna-hidden-beauties",
+      "deck": "A",
+      "cue": "Hypnotic drum intro; the same drill against a slightly different swing."
+    }
   ]
 }

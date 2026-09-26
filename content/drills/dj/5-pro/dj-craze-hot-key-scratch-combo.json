@@ -184,5 +184,19 @@
     "baby-scratch",
     "cue-juggle-across-decks"
   ],
-  "artist": "DJ Craze"
+  "artist": "DJ Craze",
+  "tracks": [
+    {
+      "track": "nas-made-you-look",
+      "deck": "A",
+      "cue": "A1 on the 'they shootin'' hit, A2 on the kick; scratch each with a baby stroke. Scratch combo, so key is not matched.",
+      "loose": true
+    },
+    {
+      "track": "honey-drippers-impeach-the-president",
+      "deck": "B",
+      "cue": "B1 and B2 on the break's first snare and kick; snap the crossfader across and repeat on jog B.",
+      "loose": true
+    }
+  ]
 }

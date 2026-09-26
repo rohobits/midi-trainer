@@ -70,5 +70,17 @@
   "level": 1,
   "sources": [
     "https://homedjstudio.com/dj-sound-effects/"
+  ],
+  "tracks": [
+    {
+      "track": "daft-punk-one-more-time",
+      "deck": "A",
+      "cue": "A on the hook: bring LEVEL/DEPTH up over the last bar, press ON on the last beat so the final snare is what gets washed, cut on the one."
+    },
+    {
+      "track": "fisher-losing-it",
+      "deck": "B",
+      "cue": "Cue B on the first beat of its drop and start it on the same one you cut A."
+    }
   ]
 }

@@ -54,5 +54,17 @@
     "progressive"
   ],
   "path": "transitions",
-  "level": 2
+  "level": 2,
+  "tracks": [
+    {
+      "track": "lane-8-brightest-lights",
+      "deck": "A",
+      "cue": "A on its pad-led section: the pads thin beautifully under a high-pass, leaving air and hats."
+    },
+    {
+      "track": "boris-brejcha-gravity",
+      "deck": "B",
+      "cue": "Cue B at the first kick of its long minimal intro and bring it in normally, then take A's filter high-pass over 16 bars before pulling A's fader."
+    }
+  ]
 }

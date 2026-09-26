@@ -58,5 +58,17 @@
   "sources": [
     "https://www.electronicbeats.net/played-out-charlotte-de-witte/",
     "https://wearecrossfader.co.uk/blog/dj-looping-guide/"
+  ],
+  "tracks": [
+    {
+      "track": "age-of-love-cdw-es-remix",
+      "deck": "A",
+      "cue": "A near its end: the extended drum outro loops cleanly. IN on bar 9, OUT on bar 13, exit with RELOOP/EXIT on bar 21."
+    },
+    {
+      "track": "charlotte-de-witte-sgadi-li-mi",
+      "deck": "B",
+      "cue": "Cue B at its kick intro and bring it in on bar 17 over the loop."
+    }
   ]
 }

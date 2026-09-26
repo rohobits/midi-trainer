@@ -85,5 +85,17 @@
     "https://dj.studio/blog/camelot-wheel",
     "https://wearecrossfader.co.uk/blog/key-lock/",
     "https://support.serato.com/hc/en-us/articles/10173686473231-Pioneer-DJ-DDJ-FLX4-Quickstart-Guide"
+  ],
+  "tracks": [
+    {
+      "track": "eric-prydz-pjanoo",
+      "deck": "A",
+      "cue": "A on the piano riff: 6A. Melodic content makes the semitone shift on B audible."
+    },
+    {
+      "track": "lane-8-brightest-lights",
+      "deck": "B",
+      "cue": "B is 6B, one Camelot step away: load it a semitone down in rekordbox first, then press the KEY SHIFT pad that raises it back before playing on the one."
+    }
   ]
 }

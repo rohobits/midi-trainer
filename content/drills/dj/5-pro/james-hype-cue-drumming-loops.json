@@ -78,5 +78,17 @@
     "hot-cue-drumming-offbeat",
     "loop-roll-halving"
   ],
-  "artist": "James Hype"
+  "artist": "James Hype",
+  "tracks": [
+    {
+      "track": "fisher-losing-it",
+      "deck": "A",
+      "cue": "A1 kick, A2 clap, A3 hat from the intro: the drum pattern for bars 1 to 4."
+    },
+    {
+      "track": "dennis-ferrer-hey-hey",
+      "deck": "B",
+      "cue": "B's kick and snare cues take over for bars 5 to 8; the halving loop on B from bar 13, exit on 17."
+    }
+  ]
 }

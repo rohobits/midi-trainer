@@ -47,5 +47,17 @@
   ],
   "prereqs": [
     "hot-cue-drumming"
+  ],
+  "tracks": [
+    {
+      "track": "green-velvet-flash",
+      "deck": "A",
+      "cue": "Kick, snare and closed hat from the dry drum-machine intro; hat on every off-beat eighth."
+    },
+    {
+      "track": "adam-beyer-bart-skils-your-mind",
+      "deck": "A",
+      "cue": "The same from its percussion intro."
+    }
   ]
 }

@@ -96,5 +96,19 @@
   "prereqs": [
     "harmonic-key-shift-choice"
   ],
-  "needsAudio": true
+  "needsAudio": true,
+  "tracks": [
+    {
+      "track": "dr-dre-still-dre",
+      "deck": "A",
+      "cue": "Hot cue 1 on a single piano stab, KEY SHIFT mode on the pads, and play the two-bar melody from that one stab. Any tempo works; the note is what matters.",
+      "loose": true
+    },
+    {
+      "track": "beyonce-crazy-in-love",
+      "deck": "A",
+      "cue": "The Chi-Lites horn stab as the note.",
+      "loose": true
+    }
+  ]
 }

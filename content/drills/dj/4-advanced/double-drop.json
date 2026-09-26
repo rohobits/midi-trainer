@@ -53,5 +53,17 @@
     "edm"
   ],
   "path": "transitions",
-  "level": 4
+  "level": 4,
+  "tracks": [
+    {
+      "track": "martin-garrix-animals",
+      "deck": "A",
+      "cue": "A on its first drop. Both tracks at 128."
+    },
+    {
+      "track": "zedd-clarity",
+      "deck": "B",
+      "cue": "Cue B on the first beat of its drop so it lands on bar 17 of A's drop; fader slams up in the quarter beat before. 3B and 4B are one step apart, so the drops sit together."
+    }
+  ]
 }

@@ -78,5 +78,17 @@
   "prereqs": [
     "lpf-mix-out",
     "filter-out-transition"
+  ],
+  "tracks": [
+    {
+      "track": "solomun-home",
+      "deck": "A",
+      "cue": "A: close CFX A into low-pass over bars 9 to 17 while B opens."
+    },
+    {
+      "track": "adam-beyer-bart-skils-your-mind",
+      "deck": "B",
+      "cue": "Cue B at its groove intro with CFX held in high-pass; bring the fader up over 8 bars so only its top end is in, then open the filter as A's closes."
+    }
   ]
 }

@@ -98,6 +98,10 @@ Carried over from the prototypes and tunable per drill (`thresholds`) or globall
 - **Progress**: streaks, daily goal, trophies, calendar, XP and levels, records, medals by
   tier, accuracy by control type, timing histograms, replay scrubber, printable report.
 - **Editor**: timeline plus JSON with live validation, pack export / import.
+- **Suggested tracks**: every DJ drill names two or three classic records to load in rekordbox,
+  with the deck, verified BPM and Camelot key, and the phrase where the move happens; "Use
+  tempo" runs the highway at the record's BPM, and Settings exports the whole crate as CSV.
+  See `docs/research/tracks.md`.
 - **Look**: a pseudo-3D note highway with lane colours per control group, hit effects,
   combo and Euphoria states, game sounds, a results sheet, and first-run onboarding. Dark
   by default; see `docs/DESIGN.md`.

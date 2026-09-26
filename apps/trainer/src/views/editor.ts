@@ -12,7 +12,7 @@ export const editorView: View = (root, app, params) => {
   const src = params.id ? app.drill(params.id) : undefined;
   let drill: Drill = src
     ? { ...structuredClone(src), id: src.id.startsWith('custom-') ? src.id : `custom-${src.id}`, name: src.name + (src.id.startsWith('custom-') ? '' : ' (copy)'), tier: 'Custom' }
-    : { id: 'custom-new-drill', version: 1, name: 'New drill', tier: 'Custom', profile: app.profile.id, bpm: 125, bars: 8, targets: [{ type: 'tap', c: 'playA', t: 0 }], lesson: '## Why\n\nExplain the technique and what correct looks like.', skills: [], genre: [], path: 'combined', level: 1 };
+    : { id: 'custom-new-drill', version: 1, name: 'New drill', tier: 'Custom', profile: app.profile.id, bpm: 125, bars: 8, targets: [{ type: 'tap', c: 'playA', t: 0 }], lesson: '## Why\n\nExplain the technique and what correct looks like.', skills: [], genre: [], tracks: [], path: 'combined', level: 1 };
   const names = app.names();
   const kinds = app.kinds();
 

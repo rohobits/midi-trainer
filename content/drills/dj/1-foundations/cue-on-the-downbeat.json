@@ -65,5 +65,22 @@
   ],
   "prereqs": [
     "phrase-counting"
+  ],
+  "tracks": [
+    {
+      "track": "inner-city-good-life",
+      "deck": "A",
+      "cue": "Drum-machine intro: cue on the first kick, set A1 to A3 on bars 5, 9 and 13, then recall them from bar 17 and listen for the kick doubling if you are late."
+    },
+    {
+      "track": "duke-dumont-need-u-100",
+      "deck": "A",
+      "cue": "The chopped vocal fragments in the intro land on downbeats: a cue set 30 ms late doubles the fragment every time you recall it."
+    },
+    {
+      "track": "stardust-music-sounds-better-with-you",
+      "deck": "A",
+      "cue": "Cue on the first kick under the filtered guitar loop; the loop's phrase starts tell you whether each recall is on the one."
+    }
   ]
 }

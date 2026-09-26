@@ -68,5 +68,17 @@
   ],
   "prereqs": [
     "hard-cut-on-the-one"
+  ],
+  "tracks": [
+    {
+      "track": "notorious-big-hypnotize",
+      "deck": "A",
+      "cue": "A on the sung hook: Braker on beat 4 of bar 12 so the last hook line slows to a stop."
+    },
+    {
+      "track": "honey-drippers-impeach-the-president",
+      "deck": "B",
+      "cue": "Cue B on the break that opens the record and play it on the one of 13; a bare break is the perfect first sound after the brake."
+    }
   ]
 }

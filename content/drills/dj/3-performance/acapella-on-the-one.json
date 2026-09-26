@@ -52,5 +52,23 @@
   "prereqs": [
     "phrase-matched-mix-in"
   ],
-  "needsAudio": true
+  "needsAudio": true,
+  "tracks": [
+    {
+      "track": "cece-peniston-finally",
+      "deck": "B",
+      "cue": "The 'Finally' acapella (12-inch pressings) cued to its first word; play it on the one of bar 9 over an instrumental in 10A or 10B."
+    },
+    {
+      "track": "solomun-home",
+      "deck": "A",
+      "cue": "A plays the club mix's instrumental section: 10B, 120 BPM, a key and tempo match for the acapella."
+    },
+    {
+      "track": "crystal-waters-gypsy-woman",
+      "deck": "B",
+      "cue": "Alternative acapella: the 'la da dee' line, cued to its first syllable; pair it with an 8A or 8B instrumental, not with Home.",
+      "loose": true
+    }
+  ]
 }

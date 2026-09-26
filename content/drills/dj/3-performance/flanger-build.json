@@ -55,5 +55,17 @@
   ],
   "prereqs": [
     "reverb-wash-out"
+  ],
+  "tracks": [
+    {
+      "track": "martin-garrix-animals",
+      "deck": "A",
+      "cue": "Flanger ON on the one of bar 13 of the build, sweep depth to 90% over four bars, OFF exactly on the drop."
+    },
+    {
+      "track": "swedish-house-mafia-dont-you-worry-child",
+      "deck": "A",
+      "cue": "The same on the riser into the drop."
+    }
   ]
 }

@@ -354,5 +354,23 @@
   "prereqs": [
     "cue-juggle-across-decks"
   ],
-  "needsAudio": true
+  "needsAudio": true,
+  "tracks": [
+    {
+      "track": "honey-drippers-impeach-the-president",
+      "deck": "A",
+      "cue": "The break opens the record: hot cue 1 on its first beat on both decks, cut between them every two beats so the first half repeats forever."
+    },
+    {
+      "track": "honey-drippers-impeach-the-president",
+      "deck": "B",
+      "cue": "The same file on B, hot cue 1 on the break's first beat."
+    },
+    {
+      "track": "the-winstons-amen-brother",
+      "deck": "A",
+      "cue": "Alternative: the four-bar Amen break at 1:26, at its own tempo; juggle its first two beats.",
+      "loose": true
+    }
+  ]
 }

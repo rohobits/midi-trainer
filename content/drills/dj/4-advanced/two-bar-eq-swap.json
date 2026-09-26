@@ -78,5 +78,17 @@
     "techno"
   ],
   "path": "transitions",
-  "level": 4
+  "level": 4,
+  "tracks": [
+    {
+      "track": "green-velvet-flash",
+      "deck": "A",
+      "cue": "A on the acid bassline section, where the low band is everything."
+    },
+    {
+      "track": "adam-beyer-bart-skils-your-mind",
+      "deck": "B",
+      "cue": "Cue B at its groove intro with all EQ cut. Hi, mid, low of A leave in sequence over 8 beats while B's bass arrives; peak-time speed."
+    }
+  ]
 }

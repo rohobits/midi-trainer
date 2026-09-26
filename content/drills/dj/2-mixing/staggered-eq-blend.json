@@ -93,5 +93,17 @@
     "house"
   ],
   "path": "transitions",
-  "level": 2
+  "level": 2,
+  "tracks": [
+    {
+      "track": "enrico-sangiuliano-astral-projection",
+      "deck": "A",
+      "cue": "A on its groove; highs leave first, then mids, then the bass swaps last at bar 17."
+    },
+    {
+      "track": "green-velvet-flash",
+      "deck": "B",
+      "cue": "Cue B at its dry drum-machine intro. Its highs arrive first, mids over bars 9 to 13, and the acid bassline takes over at 17."
+    }
+  ]
 }

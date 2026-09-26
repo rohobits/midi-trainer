@@ -35,5 +35,17 @@
   ],
   "prereqs": [
     "loop-roll-halving"
+  ],
+  "tracks": [
+    {
+      "track": "martin-garrix-animals",
+      "deck": "A",
+      "cue": "A on the four bars before the drop: retrigger a 1/4-beat roll every two beats through bars 13 to 16, then hot cue A1 on the drop's first beat."
+    },
+    {
+      "track": "hardwell-spaceman",
+      "deck": "A",
+      "cue": "Same drill on the big-room drop; cue A1 on the drop."
+    }
   ]
 }

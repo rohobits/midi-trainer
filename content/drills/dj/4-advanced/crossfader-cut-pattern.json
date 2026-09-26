@@ -274,5 +274,18 @@
     "turntablism"
   ],
   "path": "mixer",
-  "level": 4
+  "level": 4,
+  "tracks": [
+    {
+      "track": "fab-5-freddy-change-the-beat",
+      "deck": "A",
+      "cue": "A on the 'ahhh' sample; crossfader hard left to right on every beat with the curve set sharp.",
+      "loose": true
+    },
+    {
+      "track": "eric-b-rakim-paid-in-full",
+      "deck": "B",
+      "cue": "B: the sparse verse loop as the beat to cut against."
+    }
+  ]
 }

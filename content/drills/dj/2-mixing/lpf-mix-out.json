@@ -63,5 +63,17 @@
   ],
   "prereqs": [
     "cfx-return-to-detent"
+  ],
+  "tracks": [
+    {
+      "track": "camelphat-elderbrook-cola",
+      "deck": "A",
+      "cue": "A on the 'coca-cola' hook: low-pass it over 8 bars until only the thud is left, then cut."
+    },
+    {
+      "track": "gorgon-city-ready-for-your-love",
+      "deck": "B",
+      "cue": "Cue B at the first kick of the extended mix; it comes in over 8 bars while A is still full."
+    }
   ]
 }

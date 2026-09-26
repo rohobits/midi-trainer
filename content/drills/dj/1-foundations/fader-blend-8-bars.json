@@ -52,5 +52,17 @@
   ],
   "prereqs": [
     "fader-control"
+  ],
+  "tracks": [
+    {
+      "track": "chris-lake-turn-off-the-lights",
+      "deck": "A",
+      "cue": "Deck A plays the extended version; start the drill on its percussive outro phrase."
+    },
+    {
+      "track": "hot-since-82-buggin",
+      "deck": "B",
+      "cue": "Cue B to its first kick (the 8:25 mix has a long drum intro). Play B on the one and ride its fader up over 8 bars; the intro is drums only, so nothing clashes while you learn the hand speed."
+    }
   ]
 }

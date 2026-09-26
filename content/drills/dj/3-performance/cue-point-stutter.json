@@ -96,5 +96,17 @@
     "house"
   ],
   "path": "pads",
-  "level": 2
+  "level": 2,
+  "tracks": [
+    {
+      "track": "fisher-losing-it",
+      "deck": "A",
+      "cue": "Hot cue 1 on the first kick; hit it every beat for 4 bars so the intro stutters, against deck B playing the same tempo."
+    },
+    {
+      "track": "dom-dolla-take-it",
+      "deck": "A",
+      "cue": "The 'take it' stab as the cue point: a stutter you can hear."
+    }
+  ]
 }

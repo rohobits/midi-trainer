@@ -111,5 +111,17 @@
   ],
   "prereqs": [
     "staggered-eq-blend"
+  ],
+  "tracks": [
+    {
+      "track": "anna-hidden-beauties",
+      "deck": "A",
+      "cue": "A on its pad-and-bass groove; each band leaves in turn as B's arrives."
+    },
+    {
+      "track": "patrick-topping-forget",
+      "deck": "B",
+      "cue": "Cue B at its drum intro with all three bands cut, fader up in 4 bars, then hand over one band every 4 bars, highs first; its bassline hook lands as the lows arrive."
+    }
   ]
 }

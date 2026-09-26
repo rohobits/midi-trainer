@@ -68,5 +68,17 @@
   "level": 1,
   "sources": [
     "https://djlearn.de/en/how-to-use-filters-dj"
+  ],
+  "tracks": [
+    {
+      "track": "bicep-glue",
+      "deck": "A",
+      "cue": "Sustained pads react to the filter all the way in and out; sweep CFX A into low-pass over 4 bars and back to the centre click. If the return is off the detent the pads stay dull."
+    },
+    {
+      "track": "lane-8-brightest-lights",
+      "deck": "A",
+      "cue": "The long pad outro gives you minutes of material for the high-pass half of the drill."
+    }
   ]
 }

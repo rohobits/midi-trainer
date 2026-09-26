@@ -47,5 +47,17 @@
   ],
   "prereqs": [
     "cfx-return-to-detent"
+  ],
+  "tracks": [
+    {
+      "track": "avicii-levels",
+      "deck": "A",
+      "cue": "Sweep Smart CFX right over bars 9 to 16 of the piano riff, landing back on the detent on the one of 17."
+    },
+    {
+      "track": "fisher-losing-it",
+      "deck": "A",
+      "cue": "The same over the drop; the filter-plus-echo combo on the bassline."
+    }
   ]
 }

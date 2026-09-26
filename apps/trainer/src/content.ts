@@ -1,4 +1,4 @@
-import { parseDrill, formatDrillError, type Drill } from '@midi-trainer/engine';
+import { parseDrill, parseTrackPool, formatDrillError, type Drill, type Track } from '@midi-trainer/engine';
 
 const modules = import.meta.glob('../../../content/drills/**/*.json', { eager: true, import: 'default' }) as Record<string, unknown>;
 const extras = import.meta.glob('../../../content/*.json', { eager: true, import: 'default' }) as Record<string, unknown>;
@@ -49,6 +49,20 @@ export function paths(): PathDef[] {
 export function genres(): GenreDef[] {
   const raw = Object.entries(extras).find(([k]) => k.endsWith('/genres.json'))?.[1];
   return Array.isArray(raw) ? (raw as GenreDef[]) : [{ id: 'house', name: 'House', bpmRange: [120, 128], transitionBars: 16, notes: 'Outro to intro, bass swap on the phrase.' }];
+}
+
+let pool: Track[] | null = null;
+/** The suggested-track pool, validated once. */
+export function tracks(): Track[] {
+  if (!pool) {
+    const raw = Object.entries(extras).find(([k]) => k.endsWith('/tracks.json'))?.[1];
+    pool = raw ? parseTrackPool(raw) : [];
+  }
+  return pool;
+}
+
+export function trackById(id: string): Track | undefined {
+  return tracks().find((t) => t.id === id);
 }
 
 export const TIER_ORDER = ['Foundations', 'Mixing', 'Performance', 'Advanced', 'Pro', 'Week 1', 'Generated', 'Daily', 'Custom'];

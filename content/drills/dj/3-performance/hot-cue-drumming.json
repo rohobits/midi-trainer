@@ -218,5 +218,22 @@
     "open-format"
   ],
   "path": "pads",
-  "level": 3
+  "level": 3,
+  "tracks": [
+    {
+      "track": "fisher-losing-it",
+      "deck": "A",
+      "cue": "Kick, clap, hat and the 'losing it' stab from the intro. Every hit is isolated in the first phrase, so a late pad is audible."
+    },
+    {
+      "track": "duke-dumont-need-u-100",
+      "deck": "A",
+      "cue": "Kick, clap, hat and a chopped vocal fragment from the intro."
+    },
+    {
+      "track": "dom-dolla-take-it",
+      "deck": "A",
+      "cue": "Kick, clap, hat and the 'take it' stab."
+    }
+  ]
 }

@@ -67,5 +67,17 @@
   ],
   "prereqs": [
     "hot-cue-drumming-offbeat"
+  ],
+  "tracks": [
+    {
+      "track": "duke-dumont-need-u-100",
+      "deck": "A",
+      "cue": "Kick, snare and hat from the intro; the sixteenth fill on the hat cue."
+    },
+    {
+      "track": "fisher-losing-it",
+      "deck": "A",
+      "cue": "Kick, clap and hat from the intro at 125."
+    }
   ]
 }

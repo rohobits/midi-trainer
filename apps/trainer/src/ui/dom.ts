@@ -11,6 +11,10 @@ export function el<K extends keyof HTMLElementTagNameMap>(tag: K, attrs: Record<
   return e;
 }
 
+export function escapeHtml(s: string): string {
+  return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] ?? c);
+}
+
 export function download(name: string, text: string, type = 'application/json'): void {
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([text], { type }));

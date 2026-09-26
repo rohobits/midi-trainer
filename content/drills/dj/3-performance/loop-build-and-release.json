@@ -63,5 +63,17 @@
     "techno"
   ],
   "path": "fx",
-  "level": 3
+  "level": 3,
+  "tracks": [
+    {
+      "track": "martin-garrix-animals",
+      "deck": "A",
+      "cue": "On the build: 4-beat loop at bar 9, halve to 2, 1, half, exit exactly on the drop at bar 17."
+    },
+    {
+      "track": "faithless-insomnia",
+      "deck": "A",
+      "cue": "The bars before the riff returns after the breakdown: loop-halve into the riff entry."
+    }
+  ]
 }

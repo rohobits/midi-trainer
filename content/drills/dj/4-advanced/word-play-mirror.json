@@ -77,5 +77,19 @@
   "prereqs": [
     "xf-drop-mix"
   ],
-  "needsAudio": true
+  "needsAudio": true,
+  "tracks": [
+    {
+      "track": "50-cent-in-da-club",
+      "deck": "A",
+      "cue": "A: the hook line ending on beat 4 of bar 4. Spoken words, so key does not matter; match the tempo by ear.",
+      "loose": true
+    },
+    {
+      "track": "eric-b-rakim-paid-in-full",
+      "deck": "B",
+      "cue": "B: hot cue on 'pump up the volume' (or another downbeat word); snap to B on that beat and back on beat 4 of bar 8.",
+      "loose": true
+    }
+  ]
 }

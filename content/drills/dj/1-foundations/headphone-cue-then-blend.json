@@ -53,5 +53,17 @@
   "sources": [
     "https://www.digitaldjtips.com/mixing-in-your-headphones/",
     "https://support.rane.com/en/support/solutions/articles/69000858891-understanding-and-utilizing-the-headphone-cue"
+  ],
+  "tracks": [
+    {
+      "track": "inner-city-good-life",
+      "deck": "A",
+      "cue": "A plays to the room from its first verse while you audition B."
+    },
+    {
+      "track": "dennis-ferrer-hey-hey",
+      "deck": "B",
+      "cue": "Cue B at its first kick, press CUE B and audition the percussion intro in headphones for 8 bars, then play it on the one and blend; drop the headphone feed once the 'hey hey' hook is in the room."
+    }
   ]
 }

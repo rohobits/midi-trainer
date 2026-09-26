@@ -99,5 +99,23 @@
     "decks:3"
   ],
   "needsAudio": true,
-  "artist": "Carl Cox"
+  "artist": "Carl Cox",
+  "tracks": [
+    {
+      "track": "age-of-love-cdw-es-remix",
+      "deck": "A",
+      "cue": "A and B run as in the two-deck drill: A on the arpeggio riff."
+    },
+    {
+      "track": "charlotte-de-witte-sgadi-li-mi",
+      "deck": "B",
+      "cue": "B from its kick intro, bass swapped to B at bar 17."
+    },
+    {
+      "track": "cece-peniston-finally",
+      "deck": "B",
+      "cue": "The acapella on the third deck, pitched to 130 and key-shifted in rekordbox to fit, started on the one of bar 17 over both.",
+      "loose": true
+    }
+  ]
 }

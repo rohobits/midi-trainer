@@ -64,5 +64,17 @@
   "prereqs": [
     "hard-cut-on-the-one",
     "cue-on-the-downbeat"
+  ],
+  "tracks": [
+    {
+      "track": "martin-garrix-animals",
+      "deck": "A",
+      "cue": "A is in its build: the snare roll and riser before the drop."
+    },
+    {
+      "track": "zedd-clarity",
+      "deck": "B",
+      "cue": "Hot cue B1 on the first beat of Clarity's drop; on bar 17 press B1 and snap the crossfader in one motion."
+    }
   ]
 }

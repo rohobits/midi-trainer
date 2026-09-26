@@ -53,5 +53,17 @@
   ],
   "prereqs": [
     "fader-blend-8-bars"
+  ],
+  "tracks": [
+    {
+      "track": "boris-brejcha-gravity",
+      "deck": "A",
+      "cue": "Gravity's stripped outro runs long enough for a 16-bar blend and then some. Start the drill two phrases before the end of A."
+    },
+    {
+      "track": "lane-8-brightest-lights",
+      "deck": "B",
+      "cue": "Cue B at its first kick: the pad-and-drum intro sits under Gravity for a full phrase without fighting it, which is the point of the 16-bar blend."
+    }
   ]
 }

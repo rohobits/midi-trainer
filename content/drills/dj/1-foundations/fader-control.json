@@ -55,5 +55,17 @@
     "house"
   ],
   "path": "mixer",
-  "level": 2
+  "level": 2,
+  "tracks": [
+    {
+      "track": "daft-punk-one-more-time",
+      "deck": "A",
+      "cue": "Deck A: the filtered hook loops from the start. Keep it playing at full the whole drill."
+    },
+    {
+      "track": "solomun-home",
+      "deck": "B",
+      "cue": "Cue B at the first kick of the 6:41 club mix. Every fader move in the drill happens against B's drum-and-bass intro, so an uneven ramp is audible as the bass swelling in steps."
+    }
+  ]
 }

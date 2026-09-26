@@ -87,5 +87,17 @@
   "prereqs": [
     "smart-cfx-sweep",
     "echo-out"
+  ],
+  "tracks": [
+    {
+      "track": "basement-jaxx-wheres-your-head-at",
+      "deck": "A",
+      "cue": "Sweep A's Smart CFX right over bars 13 to 16 of the hook, echo on the last half beat, snap the filter back and cut."
+    },
+    {
+      "track": "patrick-topping-forget",
+      "deck": "B",
+      "cue": "Cue B at its drum intro and play it on the beat after the cut."
+    }
   ]
 }

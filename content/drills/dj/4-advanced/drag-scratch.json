@@ -76,5 +76,23 @@
   ],
   "prereqs": [
     "baby-scratch"
+  ],
+  "tracks": [
+    {
+      "track": "fab-5-freddy-change-the-beat",
+      "deck": "A",
+      "cue": "The 'ahhh' and 'fresh' vocoder samples: cue on the 'ahhh'. Scratch material, so tempo and key are not matched.",
+      "loose": true
+    },
+    {
+      "track": "dj-qbert-superseal-6",
+      "deck": "A",
+      "cue": "Skipless locked grooves so the sample never has to be re-cued."
+    },
+    {
+      "track": "honey-drippers-impeach-the-president",
+      "deck": "B",
+      "cue": "B: the Impeach The President break; one long forward stroke across two beats, one back."
+    }
   ]
 }

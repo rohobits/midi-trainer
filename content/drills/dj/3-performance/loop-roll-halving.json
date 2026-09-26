@@ -35,5 +35,17 @@
   ],
   "prereqs": [
     "loop-build-and-release"
+  ],
+  "tracks": [
+    {
+      "track": "hardwell-spaceman",
+      "deck": "A",
+      "cue": "IN/4BEAT on each downbeat of bars 13 to 16 of the build, halving each time, RELOOP/EXIT on the drop."
+    },
+    {
+      "track": "darude-sandstorm",
+      "deck": "A",
+      "cue": "The snare-roll build before the second drop."
+    }
   ]
 }

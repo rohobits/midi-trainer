@@ -40,6 +40,20 @@ test('practice: Space starts the clock and an injected note-on scores a Perfect;
   await expect(page.locator('#playBtn')).toHaveText('Start');
 });
 
+test('suggested tracks: panel lists records, Use tempo sets the BPM, browse card shows the badge', async ({ page }) => {
+  await ready(page, 'practice/phrase-counting');
+  await page.waitForFunction(() => !!window.__practice?.run());
+  const rows = page.locator('#lesson .trackrow');
+  expect(await rows.count()).toBeGreaterThanOrEqual(2);
+  await expect(rows.first().locator('.trackcue')).not.toBeEmpty();
+  const useBtn = rows.first().locator('button', { hasText: /^Use \d+/ });
+  const bpm = (await useBtn.textContent())!.replace(/\D/g, '');
+  await useBtn.click();
+  await expect(page.locator('#bpm')).toHaveValue(bpm);
+  await ready(page, 'browse');
+  await expect(page.locator('a.drillcard[data-drill="phrase-counting"] .badge.tracks')).toContainText('track');
+});
+
 test('auto-start on Play A starts from the press; a finished section-looped drill records nothing until it ends', async ({ page }) => {
   await ready(page, 'practice/phrase-counting');
   await page.evaluate((m) => window.__trainer.setMap(m), MAP);

@@ -42,5 +42,17 @@
   "sources": [
     "https://support.serato.com/hc/en-us/articles/10173686473231-Pioneer-DJ-DDJ-FLX4-Quickstart-Guide"
   ],
-  "needsAudio": true
+  "needsAudio": true,
+  "tracks": [
+    {
+      "track": "fatman-scoop-be-faithful",
+      "deck": "A",
+      "cue": "Hold Beat Jump pad 8 on beat 4 of bars 1 and 3 to reverse the shouted word under it; the shouts land on downbeats, so the target is easy to find."
+    },
+    {
+      "track": "50-cent-in-da-club",
+      "deck": "A",
+      "cue": "The hook's opening line; reverse the last word of the bar."
+    }
+  ]
 }

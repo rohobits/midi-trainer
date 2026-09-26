@@ -155,6 +155,37 @@ export const ScoringThresholds = z.object({
   tierOkMs: z.number().positive(),
 });
 
+/** Camelot key, e.g. 8A. */
+export const CamelotKey = z.string().regex(/^(1[0-2]|[1-9])[AB]$/, 'Camelot key like 8A');
+
+/** A record in the suggested-track pool (content/tracks.json). */
+export const Track = z.object({
+  id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'id must be kebab-case'),
+  artist: z.string().min(1),
+  title: z.string().min(1),
+  mix: z.string().optional(),
+  bpm: z.number().min(20).max(400),
+  /** Absent for scratch and battle records, which have no musical key. */
+  key: CamelotKey.optional(),
+  genre: z.string().min(1),
+  year: z.number().int().optional(),
+  /** Phrase-level structure of the DJ edit: where the intro ends, bass enters, breakdown, outro. */
+  structure: z.string().min(1),
+  useFor: z.array(z.string()).optional(),
+  /** Page the BPM and key were verified from. */
+  url: z.string().url(),
+});
+
+/** A drill's pointer into the pool: which deck, and where in the record the move happens. */
+export const TrackRef = z.object({
+  track: z.string().min(1),
+  deck: z.enum(['A', 'B']).optional(),
+  /** Drill-specific: where in the track to do this move and why that spot teaches it. */
+  cue: z.string().min(1),
+  /** Tempo and key deliberately unmatched: scratch material, a spoken word, a break at its own tempo. */
+  loose: z.boolean().optional(),
+});
+
 export const Drill = z.object({
   id: z
     .string()
@@ -186,6 +217,8 @@ export const Drill = z.object({
   artist: z.string().optional(),
   /** Drill only makes sense once the in-app audio engine exists. */
   needsAudio: z.boolean().optional(),
+  /** Suggested records (2–3) to load into rekordbox for this drill. */
+  tracks: z.array(TrackRef).max(4).optional(),
   path: z.string().optional(),
   level: z.number().int().positive().optional(),
   /** Generated variants record their template and seed. */
@@ -216,7 +249,14 @@ export type PrimitiveTarget = z.infer<typeof PrimitiveTarget>;
 export type Target = z.infer<typeof Target>;
 export type ScoringThresholds = z.infer<typeof ScoringThresholds>;
 export type Drill = z.infer<typeof Drill>;
+export type Track = z.infer<typeof Track>;
+export type TrackRef = z.infer<typeof TrackRef>;
 export type DrillPack = z.infer<typeof DrillPack>;
+
+/** Parse the suggested-track pool file. */
+export function parseTrackPool(input: unknown): Track[] {
+  return z.array(Track).parse(input);
+}
 
 /** Parse one drill; throws a ZodError with a readable path on failure. */
 export function parseDrill(input: unknown): Drill {

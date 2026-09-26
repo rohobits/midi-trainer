@@ -242,5 +242,23 @@
     "beat-juggle-extend"
   ],
   "needsAudio": true,
-  "artist": "Grandmaster Flash"
+  "artist": "Grandmaster Flash",
+  "tracks": [
+    {
+      "track": "honey-drippers-impeach-the-president",
+      "deck": "A",
+      "cue": "The break opens the record, so hot cue 1 is at the very top on both decks; cut to B after two bars and spin A back while B plays."
+    },
+    {
+      "track": "honey-drippers-impeach-the-president",
+      "deck": "B",
+      "cue": "The same file on B, hot cue 1 on the break's first beat."
+    },
+    {
+      "track": "incredible-bongo-band-apache",
+      "deck": "A",
+      "cue": "Alternative: Apache's long percussion break at its own tempo, the record Kool Herc did this with.",
+      "loose": true
+    }
+  ]
 }

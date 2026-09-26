@@ -60,5 +60,19 @@
   "sources": [
     "https://djtechtools.com/2015/10/11/gain-staging-for-djs-staying-out-of-the-red/",
     "https://wearecrossfader.co.uk/blog/setting-and-managing-your-levels/"
+  ],
+  "tracks": [
+    {
+      "track": "the-winstons-amen-brother",
+      "deck": "A",
+      "cue": "A 1969 pressing is quiet next to a modern master: this is deck A, the track that needs trim up. Set it once and leave it. The two decks are not mixed together here, so tempo and key do not need to match.",
+      "loose": true
+    },
+    {
+      "track": "fisher-losing-it",
+      "deck": "B",
+      "cue": "A hot modern master: deck B needs trim down. Watch the channel meters, not the master, while you set both.",
+      "loose": true
+    }
   ]
 }

@@ -75,5 +75,17 @@
   ],
   "prereqs": [
     "fader-blend-16-bars"
+  ],
+  "tracks": [
+    {
+      "track": "charlotte-de-witte-sgadi-li-mi",
+      "deck": "A",
+      "cue": "A on its long drum outro."
+    },
+    {
+      "track": "above-beyond-sun-and-moon",
+      "deck": "B",
+      "cue": "Cue B at the first kick of the Extended Club Mix with its low off. The fader rises across two full 16-bar phrases; the chords arrive on the third phrase, right where the bass swaps at bar 33."
+    }
   ]
 }

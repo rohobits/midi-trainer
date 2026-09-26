@@ -60,5 +60,17 @@
     "jog-nudge-correct-and-return",
     "tempo-match-ramp"
   ],
-  "needsAudio": true
+  "needsAudio": true,
+  "tracks": [
+    {
+      "track": "inner-city-good-life",
+      "deck": "A",
+      "cue": "A on its drum-machine intro, sync off."
+    },
+    {
+      "track": "adam-beyer-bart-skils-your-mind",
+      "deck": "B",
+      "cue": "Headphones on B, match its dry drum intro to A over 4 bars, nudge on bar 5 and hold for 32."
+    }
+  ]
 }

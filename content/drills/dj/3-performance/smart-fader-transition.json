@@ -50,5 +50,17 @@
   ],
   "prereqs": [
     "fader-blend-8-bars"
+  ],
+  "tracks": [
+    {
+      "track": "rihanna-dont-stop-the-music",
+      "deck": "A",
+      "cue": "A at 123: play B on bar 9 and move the crossfader evenly across bars 9 to 17."
+    },
+    {
+      "track": "cece-peniston-finally",
+      "deck": "B",
+      "cue": "B at 120 in a compatible key; Smart Fader ramps B's tempo toward A and adds echo as you cross."
+    }
   ]
 }

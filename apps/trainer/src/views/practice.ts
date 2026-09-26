@@ -13,6 +13,7 @@ import { createController } from '../ui/controller';
 import { showResults, hideResults } from '../ui/results';
 import { icon } from '../ui/icons';
 import { getMixer } from './mix';
+import { renderTracks } from '../ui/tracks';
 
 function isControlDrill(d: Drill): boolean {
   return d.targets.every((t) => t.type !== 'note');
@@ -223,6 +224,16 @@ export const practiceView: View = (root, app, params) => {
       (d.sources?.length ? `<h3>Sources</h3><p class="hint">${d.sources.map((u) => `<a href="${u}" target="_blank" rel="noopener">${new URL(u).hostname}</a>`).join(' · ')}</p>` : '') +
       (d.artist ? `<p class="hint">Technique attributed to ${d.artist} by the sources above.</p>` : '') +
       (reasons.length ? `<p class="hint" style="color:var(--amber)">${reasons.join(' ')}</p>` : '');
+    lessonCard.appendChild(
+      renderTracks(d, {
+        onTempo: (bpm) => {
+          bpmInput.value = String(bpm);
+          run?.setBpm(bpm * app.settings.tempoScale, performance.now());
+          app.toast(`Highway at ${bpm} BPM.`);
+          updateStats();
+        },
+      }),
+    );
     $('hint').textContent = `${d.bars} bars at ${d.bpm} BPM · ${d.tier}${d.path ? ` · ${d.path} L${d.level ?? '?'}` : ''}. ${names[app.settings.autoStartControl] ?? 'Play A'} or Space on a phrase downbeat starts the clock. E fires Euphoria in perform mode.`;
     void app.saveSettings({ lastDrill: d.id });
     const q = params.query.toString();

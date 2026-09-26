@@ -1,0 +1,1751 @@
+[
+  {
+    "id": "fisher-losing-it",
+    "artist": "Fisher",
+    "title": "Losing It",
+    "mix": "Original Mix",
+    "bpm": 125,
+    "key": "10B",
+    "genre": "tech-house",
+    "year": 2018,
+    "structure": "typical: drum-and-bass-driven intro over two 16-bar phrases with the 'losing it' vocal stab teasing in, rising build into a stripped drop where the kick and rolling bassline carry the track; second breakdown/build mid-track; percussive outro phrase for the mix-out.",
+    "useFor": [
+      "drop",
+      "loop",
+      "phrasing",
+      "hot-cue-hits",
+      "bass-swap"
+    ],
+    "url": "https://tunebat.com/Info/Losing-It-FISHER/6ho0GyrWZN3mhi9zVRW7xi"
+  },
+  {
+    "id": "green-velvet-flash",
+    "artist": "Green Velvet",
+    "title": "Flash",
+    "mix": "Original Mix",
+    "bpm": 128,
+    "key": "11A",
+    "genre": "tech-house",
+    "year": 1995,
+    "structure": "typical: dry drum-machine intro phrases before the acid bassline and the spoken 'cameras ready, prepare to flash' vocal enter; hypnotic loop-based arrangement with vocal phrases dropping in and out rather than a defined breakdown; long percussive outro.",
+    "useFor": [
+      "loop",
+      "echo-reverb",
+      "vocal",
+      "bass-swap",
+      "blend-in",
+      "blend-out"
+    ],
+    "url": "https://tunebat.com/Info/Flash-Green-Velvet/2L9BBx9601VBbqTdVNtvPC"
+  },
+  {
+    "id": "daft-punk-one-more-time",
+    "artist": "Daft Punk",
+    "title": "One More Time",
+    "mix": "Original Mix (album version)",
+    "bpm": 123,
+    "key": "10B",
+    "genre": "house",
+    "year": 2000,
+    "structure": "typical: filtered sample hook opens immediately with the kick (short intro, so cue-in on the first downbeat), Romanthony vocal verses over 16-bar phrases, long filtered breakdown with the vocal alone in the middle third, full hook returns, extended fade-style outro. Practise phrase counting through the breakdown.",
+    "useFor": [
+      "phrasing",
+      "filter",
+      "vocal",
+      "key-shift"
+    ],
+    "url": "https://tunebat.com/Info/One-More-Time-Daft-Punk/0DiWol3AO6WpXZgp0goxAV"
+  },
+  {
+    "id": "armand-van-helden-u-dont-know-me",
+    "artist": "Armand Van Helden feat. Duane Harden",
+    "title": "U Don't Know Me",
+    "mix": "Original Mix",
+    "bpm": 130,
+    "key": "7B",
+    "genre": "house",
+    "year": 1999,
+    "structure": "typical: string-stab and drum intro phrases before the disco-sample bassline and Duane Harden vocal enter; verse/hook structure in 16-bar phrases with a strings-led breakdown mid-track; percussive outro for blending out.",
+    "useFor": [
+      "vocal",
+      "echo-reverb",
+      "phrasing",
+      "bass-swap",
+      "blend-out"
+    ],
+    "url": "https://www.beatport.com/track/u-dont-know-me-feat-duane-harden-original-mix/5704"
+  },
+  {
+    "id": "stardust-music-sounds-better-with-you",
+    "artist": "Stardust",
+    "title": "Music Sounds Better With You",
+    "mix": "Original Mix (12\" version)",
+    "bpm": 124,
+    "key": "7A",
+    "genre": "house",
+    "year": 1998,
+    "structure": "typical: filtered guitar-loop intro over the kick for the first phrases, the single repeating vocal line enters and the arrangement is built from the filter opening and closing over that loop; long filtered breakdown then full hook, then a long loop-based outro.",
+    "useFor": [
+      "filter",
+      "loop",
+      "vocal",
+      "blend-in",
+      "blend-out"
+    ],
+    "url": "https://www.beatport.com/track/music-sounds-better-with-you/12247392"
+  },
+  {
+    "id": "eric-prydz-pjanoo",
+    "artist": "Eric Prydz",
+    "title": "Pjanoo",
+    "mix": "Club Mix",
+    "bpm": 126,
+    "key": "6A",
+    "genre": "progressive-house",
+    "year": 2008,
+    "structure": "typical: drum-and-bass intro phrases before the piano riff enters, the riff is teased under a filter then fully released after a breakdown; second breakdown/build mid-track; long beat-only outro. Good for hearing a semitone shift on the piano hook.",
+    "useFor": [
+      "key-shift",
+      "filter",
+      "phrasing",
+      "blend-in",
+      "blend-out"
+    ],
+    "url": "https://tunebat.com/Info/Pjanoo-Club-Mix-Eric-Prydz/0noVd1VU93X8TEZMmpR3yN"
+  },
+  {
+    "id": "dennis-ferrer-hey-hey",
+    "artist": "Dennis Ferrer",
+    "title": "Hey Hey",
+    "mix": "Original Mix",
+    "bpm": 126,
+    "key": "10A",
+    "genre": "house",
+    "year": 2009,
+    "structure": "typical: percussion-and-bass intro phrases, the 'hey hey' vocal hook and organ stabs enter on a phrase boundary, vocal breakdown mid-track then full groove; stripped percussive outro.",
+    "useFor": [
+      "vocal",
+      "echo-reverb",
+      "phrasing",
+      "bass-swap",
+      "hot-cue-hits"
+    ],
+    "url": "https://tunebat.com/Info/Hey-Hey-Dennis-Ferrer/0R8dsqbzcoHoqUN5MLWyOi"
+  },
+  {
+    "id": "duke-dumont-need-u-100",
+    "artist": "Duke Dumont feat. A*M*E",
+    "title": "Need U (100%)",
+    "mix": "Original Mix",
+    "bpm": 124,
+    "key": "5A",
+    "genre": "house",
+    "year": 2013,
+    "structure": "typical: drum intro with chopped vocal fragments, the organ bass and full A*M*E vocal enter after the first phrases; sung breakdown mid-track leading into the main hook; beat-only outro.",
+    "useFor": [
+      "vocal",
+      "echo-reverb",
+      "hot-cue-hits",
+      "bass-swap",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Need-U-100-Duke-Dumont-A-M-E/3BCL5YNYmE6YMlZ8O1HCTV"
+  },
+  {
+    "id": "disclosure-white-noise",
+    "artist": "Disclosure feat. AlunaGeorge",
+    "title": "White Noise",
+    "mix": "Original Mix",
+    "bpm": 120,
+    "key": "3A",
+    "genre": "deep-house",
+    "year": 2013,
+    "structure": "typical: synth-bass and drum intro phrases, Aluna vocal verses in 16-bar phrases, defined 'white noise' hook, breakdown mid-track then hook; outro shortens quickly so mix out on the last hook phrase.",
+    "useFor": [
+      "vocal",
+      "bass-swap",
+      "phrasing",
+      "drop"
+    ],
+    "url": "https://tunebat.com/Info/White-Noise-Disclosure-AlunaGeorge/7mMaJKkvMKUB4KPtWjMQ8D"
+  },
+  {
+    "id": "disclosure-latch",
+    "artist": "Disclosure feat. Sam Smith",
+    "title": "Latch",
+    "mix": "Original Mix",
+    "bpm": 122,
+    "key": "3B",
+    "genre": "deep-house",
+    "year": 2012,
+    "structure": "typical: short instrumental intro, Sam Smith verses and a strongly defined chorus hook in 16-bar phrases, sung breakdown before the final chorus; short outro. Melodic content makes key changes obvious.",
+    "useFor": [
+      "vocal",
+      "key-shift",
+      "phrasing",
+      "echo-reverb"
+    ],
+    "url": "https://tunebat.com/Info/Latch-Disclosure-Sam-Smith/1DunhgeZSEgWiIYbHqXl0c"
+  },
+  {
+    "id": "chris-lake-turn-off-the-lights",
+    "artist": "Chris Lake feat. Alexis Roberts",
+    "title": "Turn Off The Lights",
+    "mix": "Extended Version",
+    "bpm": 125,
+    "key": "9A",
+    "genre": "tech-house",
+    "year": 2018,
+    "structure": "typical: extended drum intro phrases, the spoken 'turn off the lights' vocal enters on a phrase boundary and the bass drop follows a short build; vocal breakdown mid-track then second drop; percussive outro for the blend-out.",
+    "useFor": [
+      "drop",
+      "vocal",
+      "hot-cue-hits",
+      "bass-swap",
+      "blend-in",
+      "blend-out"
+    ],
+    "url": "https://www.beatport.com/track/turn-off-the-lights-feat-alexis-roberts-extended-version/10309833"
+  },
+  {
+    "id": "peggy-gou-it-goes-like-nanana",
+    "artist": "Peggy Gou",
+    "title": "(It Goes Like) Nanana",
+    "mix": "Original Mix",
+    "bpm": 130,
+    "key": "5A",
+    "genre": "house",
+    "year": 2023,
+    "structure": "typical: 6:07 original mix; drum and bass intro phrases, the piano riff and 'nanana' vocal hook enter after the intro phrases, breakdown mid-track then hook; long groove-based outro for the mix-out.",
+    "useFor": [
+      "vocal",
+      "key-shift",
+      "phrasing",
+      "blend-in",
+      "blend-out"
+    ],
+    "url": "https://www.beatport.com/track/it-goes-like-nanana/17839150"
+  },
+  {
+    "id": "bicep-glue",
+    "artist": "Bicep",
+    "title": "Glue",
+    "mix": "Original Mix",
+    "bpm": 130,
+    "key": "9A",
+    "genre": "house",
+    "year": 2017,
+    "structure": "typical: breakbeat-style drums and pad intro, the vocal-sample hook and synth line build over successive phrases rather than a single drop; sustained pads make the filter very audible; long pad-and-drum outro.",
+    "useFor": [
+      "filter",
+      "blend-in",
+      "blend-out",
+      "key-shift",
+      "loop"
+    ],
+    "url": "https://tunebat.com/Info/Glue-Bicep/5ZYAufbhkzyhLxk0u2uLqj"
+  },
+  {
+    "id": "camelphat-elderbrook-cola",
+    "artist": "CamelPhat & Elderbrook",
+    "title": "Cola",
+    "mix": "Original Mix",
+    "bpm": 122,
+    "key": "6B",
+    "genre": "house",
+    "year": 2017,
+    "structure": "typical: 6:55 original mix; long drum-and-bass intro phrases, Elderbrook vocal enters on a phrase boundary, spoken 'she drinks coca-cola' hook, sung breakdown mid-track then groove; extended percussive outro.",
+    "useFor": [
+      "vocal",
+      "echo-reverb",
+      "bass-swap",
+      "blend-in",
+      "blend-out",
+      "phrasing"
+    ],
+    "url": "https://www.beatport.com/track/cola/9382891"
+  },
+  {
+    "id": "dom-dolla-take-it",
+    "artist": "Dom Dolla",
+    "title": "Take It",
+    "mix": "Extended Mix",
+    "bpm": 123,
+    "key": "5A",
+    "genre": "tech-house",
+    "year": 2018,
+    "structure": "typical: 5:46 extended mix; percussive intro phrases, spoken 'take it' vocal stab and rolling bassline drop in after the intro, breakdown and second drop mid-track; beat-only outro.",
+    "useFor": [
+      "drop",
+      "hot-cue-hits",
+      "loop",
+      "bass-swap",
+      "blend-in"
+    ],
+    "url": "https://www.beatport.com/track/take-it/10779666"
+  },
+  {
+    "id": "john-summit-where-you-are",
+    "artist": "John Summit & Hayla",
+    "title": "Where You Are",
+    "mix": "Original Mix",
+    "bpm": 126,
+    "key": "8A",
+    "genre": "house",
+    "year": 2023,
+    "structure": "typical: short intro, Hayla verse over a bassline, big sung build into a synth-led drop, second verse/build/drop; outro is short so mix out during the last drop phrase.",
+    "useFor": [
+      "drop",
+      "vocal",
+      "key-shift",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Where-You-Are-John-Summit-HAYLA/3pUz2qJe5nqZemi3hhIxMk"
+  },
+  {
+    "id": "inner-city-good-life",
+    "artist": "Inner City",
+    "title": "Good Life",
+    "mix": "Original 12\" Mix",
+    "bpm": 125,
+    "key": "10A",
+    "genre": "house",
+    "year": 1988,
+    "structure": "typical: drum-machine and bass intro phrases, Paris Grey vocal verses and the 'good life' chorus hook, instrumental breakdown mid-track then chorus; long beat outro on the 12\" version.",
+    "useFor": [
+      "vocal",
+      "phrasing",
+      "blend-in",
+      "blend-out",
+      "bass-swap"
+    ],
+    "url": "https://tunebat.com/Info/Good-Life-Original-12-Mix-Inner-City/2tI0P1fgY3WQFogkwKei3e"
+  },
+  {
+    "id": "robin-s-show-me-love",
+    "artist": "Robin S",
+    "title": "Show Me Love",
+    "mix": "StoneBridge Club Mix (2020 Remaster)",
+    "bpm": 123,
+    "key": "8A",
+    "genre": "house",
+    "year": 1993,
+    "structure": "typical: the M1 organ bass and drums open the track, Robin S verses and the 'show me love' chorus in 16-bar phrases, breakdown mid-track then chorus; organ-and-drum outro. Dominant bassline is ideal for bass-swap practice.",
+    "useFor": [
+      "acapella",
+      "bass-swap",
+      "blend-in",
+      "echo-reverb",
+      "hook",
+      "phrasing",
+      "vocal",
+      "word"
+    ],
+    "url": "https://www.beatport.com/track/show-me-love-2020-remaster/17935393"
+  },
+  {
+    "id": "gorgon-city-ready-for-your-love",
+    "artist": "Gorgon City feat. MNEK",
+    "title": "Ready For Your Love",
+    "mix": "Extended Mix",
+    "bpm": 122,
+    "key": "6A",
+    "genre": "deep-house",
+    "year": 2014,
+    "structure": "typical: 4:52 extended mix; drum-and-bass intro phrase, MNEK verses with a defined sung chorus hook, breakdown then chorus; short beat outro.",
+    "useFor": [
+      "vocal",
+      "phrasing",
+      "bass-swap",
+      "echo-reverb"
+    ],
+    "url": "https://www.beatport.com/track/ready-for-your-love-extended-mix/15728514"
+  },
+  {
+    "id": "solomun-home",
+    "artist": "Solomun",
+    "title": "Home",
+    "mix": "Club Mix",
+    "bpm": 120,
+    "key": "10B",
+    "genre": "melodic-house",
+    "year": 2020,
+    "structure": "typical: 6:41 club mix; drum and bass intro phrases, the melodic synth theme and vocal enter after the intro, a long pad-led breakdown mid-track and a restrained return; extended melodic outro.",
+    "useFor": [
+      "filter",
+      "key-shift",
+      "blend-in",
+      "blend-out",
+      "phrasing"
+    ],
+    "url": "https://www.beatport.com/track/home/14323099"
+  },
+  {
+    "id": "lane-8-brightest-lights",
+    "artist": "Lane 8 feat. Poliça",
+    "title": "Brightest Lights",
+    "mix": "Original Mix",
+    "bpm": 125,
+    "key": "6B",
+    "genre": "melodic-house",
+    "year": 2020,
+    "structure": "typical: 6:52 original mix; long pad-and-drum intro phrases, Poliça vocal enters on a phrase boundary, a sustained melodic breakdown mid-track, gradual layered return; long pad outro that reacts well to filter sweeps.",
+    "useFor": [
+      "filter",
+      "key-shift",
+      "blend-in",
+      "blend-out",
+      "vocal"
+    ],
+    "url": "https://www.beatport.com/track/brightest-lights-original-mix/13002646"
+  },
+  {
+    "id": "boris-brejcha-gravity",
+    "artist": "Boris Brejcha feat. Laura Korinth",
+    "title": "Gravity",
+    "mix": "Original Mix",
+    "bpm": 125,
+    "key": "6B",
+    "genre": "progressive-house",
+    "year": 2019,
+    "structure": "typical: 9:24 original mix; long minimal drum intro phrases, Laura Korinth vocal and the lead synth enter after the intro, extended breakdown mid-track before the main melodic section; very long stripped outro for slow blends.",
+    "useFor": [
+      "blend-in",
+      "blend-out",
+      "phrasing",
+      "key-shift",
+      "loop"
+    ],
+    "url": "https://www.beatport.com/track/gravity-feat-laura-korinth-original-mix/12255251"
+  },
+  {
+    "id": "adam-beyer-bart-skils-your-mind",
+    "artist": "Adam Beyer & Bart Skils",
+    "title": "Your Mind",
+    "mix": "Original Mix",
+    "bpm": 126,
+    "key": "10A",
+    "genre": "techno",
+    "year": 2018,
+    "structure": "typical: 8:22 original mix; long percussive intro phrases, the 'your mind' vocal sample and rolling bassline build across phrases, sustained breakdown with the vocal alone mid-track then the full groove; long beat outro.",
+    "useFor": [
+      "blend-in",
+      "blend-out",
+      "echo-reverb",
+      "loop",
+      "hot-cue-hits"
+    ],
+    "url": "https://www.beatport.com/track/your-mind-original-mix/10670339"
+  },
+  {
+    "id": "patrick-topping-forget",
+    "artist": "Patrick Topping",
+    "title": "Forget",
+    "mix": "Original Mix",
+    "bpm": 123,
+    "key": "8B",
+    "genre": "tech-house",
+    "year": 2014,
+    "structure": "typical: drum-and-bass intro phrases, vocal sample and bassline hook enter on a phrase boundary, breakdown mid-track then groove; long percussive outro.",
+    "useFor": [
+      "loop",
+      "bass-swap",
+      "hot-cue-hits",
+      "blend-in",
+      "blend-out"
+    ],
+    "url": "https://tunebat.com/Info/Forget-Original-Mix-Patrick-Topping/3RXpeuxTgxqMzqGXVLRiCy"
+  },
+  {
+    "id": "hot-since-82-buggin",
+    "artist": "Hot Since 82 feat. Jem Cooke",
+    "title": "Buggin'",
+    "mix": "Original Mix",
+    "bpm": 124,
+    "key": "9A",
+    "genre": "tech-house",
+    "year": 2018,
+    "structure": "typical: 8:25 original mix; long drum-and-bass intro phrases, Jem Cooke vocal enters after the intro, sung breakdown mid-track then groove; long stripped outro for extended blends.",
+    "useFor": [
+      "blend-in",
+      "blend-out",
+      "vocal",
+      "bass-swap",
+      "phrasing"
+    ],
+    "url": "https://www.beatport.com/track/buggin-feat-jem-cooke-original-mix/10726480"
+  },
+  {
+    "id": "mk-17",
+    "artist": "MK",
+    "title": "17",
+    "mix": "Extended Mix",
+    "bpm": 122,
+    "key": "5A",
+    "genre": "house",
+    "year": 2017,
+    "structure": "typical: drum intro phrases, chopped vocal hook and piano chords enter on a phrase boundary, sung breakdown mid-track then hook; beat-only outro on the extended mix.",
+    "useFor": [
+      "vocal",
+      "echo-reverb",
+      "hot-cue-hits",
+      "phrasing",
+      "blend-out"
+    ],
+    "url": "https://tunebat.com/Info/17-Extended-Mix-MK/7c6ETDTzGgl7gkNWvEn4FO"
+  },
+  {
+    "id": "route-94-my-love",
+    "artist": "Route 94 feat. Jess Glynne",
+    "title": "My Love",
+    "mix": "Original Mix",
+    "bpm": 120,
+    "key": "5A",
+    "genre": "deep-house",
+    "year": 2014,
+    "structure": "typical: 4:19 original; short drum intro, deep bassline and Jess Glynne verses, defined sung chorus, breakdown mid-track then chorus; short outro so mix out on the final chorus phrase.",
+    "useFor": [
+      "vocal",
+      "bass-swap",
+      "phrasing",
+      "echo-reverb"
+    ],
+    "url": "https://www.beatport.com/track/my-love-feat-jess-glynne-original-mix/10925513"
+  },
+  {
+    "id": "basement-jaxx-wheres-your-head-at",
+    "artist": "Basement Jaxx",
+    "title": "Where's Your Head At",
+    "mix": "Original Mix",
+    "bpm": 128,
+    "key": "8B",
+    "genre": "house",
+    "year": 2001,
+    "structure": "typical: 4:45 original; the sampled synth riff and vocal hook open almost immediately, verse/hook structure in 16-bar phrases, breakdown mid-track then hook; short outro. High-energy hook suits echo-out practice.",
+    "useFor": [
+      "echo-reverb",
+      "vocal",
+      "phrasing",
+      "hot-cue-hits"
+    ],
+    "url": "https://www.beatport.com/track/wheres-your-head-at/14182783"
+  },
+  {
+    "id": "daft-punk-around-the-world",
+    "artist": "Daft Punk",
+    "title": "Around The World",
+    "mix": "Original Mix (album version)",
+    "bpm": 121,
+    "key": "9B",
+    "genre": "house",
+    "year": 1997,
+    "structure": "typical: bassline and drum intro phrases with the vocoder hook entering on a phrase boundary, elements are added and removed in 16-bar blocks rather than a single breakdown, long bass-and-drum outro. Dominant bassline is ideal for bass-swap and loop practice.",
+    "useFor": [
+      "bass-swap",
+      "loop",
+      "vocal",
+      "blend-in",
+      "blend-out",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Around-the-World-Daft-Punk/1pKYYY0dkg23sQQXi0Q5zN"
+  },
+  {
+    "id": "eric-prydz-opus",
+    "artist": "Eric Prydz",
+    "title": "Opus",
+    "mix": "Original Mix",
+    "bpm": 129,
+    "key": "11B",
+    "genre": "progressive-house",
+    "year": 2015,
+    "structure": "typical: 9:03 original mix built as one long crescendo: sparse drum-and-synth intro phrases, the arpeggio motif thickens phrase by phrase into a sustained build that peaks late in the track, followed by a long stripped outro. Practise phrase counting through a very long build.",
+    "useFor": [
+      "phrasing",
+      "blend-in",
+      "blend-out",
+      "filter",
+      "key-shift"
+    ],
+    "url": "https://www.beatport.com/track/opus-original-mix/6888199"
+  },
+  {
+    "id": "charlotte-de-witte-doppler",
+    "artist": "Charlotte de Witte",
+    "title": "Doppler",
+    "mix": "Original Mix",
+    "bpm": 135,
+    "key": "3B",
+    "genre": "techno",
+    "year": 2019,
+    "structure": "Drum/percussion intro for two 16-bar phrases; the signature Doppler-style pitch-riser is the hook and builds across a full phrase into the drop; a mid-track breakdown strips to the riser before the second drop; long stripped outro. typical: use the first two phrases for blend-in.",
+    "useFor": [
+      "blend-in",
+      "build",
+      "drop",
+      "filter",
+      "phrasing",
+      "loop"
+    ],
+    "url": "https://tunebat.com/Info/Doppler-Charlotte-de-Witte/0TtgKq96j4bpE5UQUDXrwH"
+  },
+  {
+    "id": "charlotte-de-witte-sgadi-li-mi",
+    "artist": "Charlotte de Witte",
+    "title": "Sgadi Li Mi",
+    "mix": "Original Mix",
+    "bpm": 135,
+    "key": "11A",
+    "genre": "techno",
+    "year": 2020,
+    "structure": "typical: kick/percussion intro for two 16-bar phrases, chanted vocal hook enters on the third phrase, breakdown drops the kick under the vocal then rebuilds, second peak section, long drum outro.",
+    "useFor": [
+      "blend-in",
+      "blend-out",
+      "vocal",
+      "echo-reverb",
+      "phrasing",
+      "loop"
+    ],
+    "url": "https://tunebat.com/Info/Sgadi-Li-Mi-Charlotte-de-Witte/5uQSAsOQyfMih2F9Zk8TkYH"
+  },
+  {
+    "id": "amelie-lens-higher",
+    "artist": "Amelie Lens",
+    "title": "Higher",
+    "mix": "Original Mix",
+    "bpm": 136,
+    "key": "1A",
+    "genre": "techno",
+    "year": 2019,
+    "structure": "typical: driving drum intro for two 16-bar phrases, 'higher' vocal stab and lead ride enter on the third phrase, breakdown pulls the kick and holds the vocal before a snare-roll build into the second drop, extended drum outro.",
+    "useFor": [
+      "blend-in",
+      "blend-out",
+      "vocal",
+      "build",
+      "drop",
+      "loop"
+    ],
+    "url": "https://tunebat.com/Info/Higher-Amelie-Lens/2uQWi34NKPHpka4ldYrki4"
+  },
+  {
+    "id": "jeff-mills-the-bells",
+    "artist": "Jeff Mills",
+    "title": "The Bells",
+    "mix": "Original Mix",
+    "bpm": 138,
+    "key": "9B",
+    "genre": "techno",
+    "year": 1997,
+    "structure": "Loop-based classic with no conventional breakdown: drums open, the bell-stab riff enters within the first phrases and runs almost throughout; elements drop in and out on 16-bar boundaries. typical: treat every phrase boundary as a mix point; short track so plan the blend early.",
+    "useFor": [
+      "loop",
+      "hot-cue-hits",
+      "phrasing",
+      "echo-reverb",
+      "filter"
+    ],
+    "url": "https://tunebat.com/Info/The-Bells-Jeff-Mills/0ISxyAhfop0MoMeAUw72RN"
+  },
+  {
+    "id": "underworld-born-slippy-nuxx",
+    "artist": "Underworld",
+    "title": "Born Slippy (Nuxx)",
+    "mix": "Nuxx",
+    "bpm": 140,
+    "key": "6B",
+    "genre": "techno",
+    "year": 1995,
+    "structure": "Opens beatless on the synth chord stabs and 'drive boy dog boy' vocal for the first phrases before the kick enters; long beat section with vocal phrases; the beat drops out again mid-track before returning; extended outro. typical: cue from the kick entry rather than the beatless intro.",
+    "useFor": [
+      "vocal",
+      "echo-reverb",
+      "breakdown",
+      "blend-out",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Born-Slippy-Nuxx-Underworld/1zsDbmrf4ZkjW5hsSsaDjO"
+  },
+  {
+    "id": "reinier-zonneveld-move-your-body-to-the-beat",
+    "artist": "Reinier Zonneveld",
+    "title": "Move Your Body To The Beat",
+    "mix": "Original Mix",
+    "bpm": 133,
+    "key": "4B",
+    "genre": "techno",
+    "year": 2018,
+    "structure": "typical: kick-and-acid intro for two 16-bar phrases, 'move your body to the beat' vocal enters on the third phrase, breakdown holds the vocal and acid line without kick then rebuilds, second peak, drum outro.",
+    "useFor": [
+      "vocal",
+      "filter",
+      "build",
+      "drop",
+      "loop",
+      "blend-in"
+    ],
+    "url": "https://tunebat.com/Info/Move-Your-Body-To-The-Beat-Reinier-Zonneveld/53cLYZSnsw7BeJybRHPlox"
+  },
+  {
+    "id": "age-of-love-cdw-es-remix",
+    "artist": "Age Of Love",
+    "title": "The Age Of Love",
+    "mix": "Charlotte de Witte & Enrico Sangiuliano Remix",
+    "bpm": 130,
+    "key": "11B",
+    "genre": "techno",
+    "year": 2021,
+    "structure": "typical: drum intro for two 16-bar phrases, the classic arpeggio riff enters on the third phrase, long breakdown strips to the riff and pads with a sustained riser build, drop back to full kick, extended drum outro.",
+    "useFor": [
+      "breakdown",
+      "build",
+      "drop",
+      "filter",
+      "blend-in",
+      "blend-out",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/The-Age-Of-Love-Charlotte-de-Witte-Enrico-Sangiuliano-Remix-Age-Of-Love-Charlotte-de-Witte-Enrico-Sangiuliano/6R84ZlQF7gGkPB6o3GLZXB"
+  },
+  {
+    "id": "enrico-sangiuliano-moon-rocks",
+    "artist": "Enrico Sangiuliano",
+    "title": "Moon Rocks",
+    "mix": "Original Mix",
+    "bpm": 125,
+    "key": "3B",
+    "genre": "techno",
+    "year": 2016,
+    "structure": "typical: long percussive intro across two 16-bar phrases, rolling bass groove and lead motif build in phrase by phrase, breakdown mid-track with a slow riser, second drop, long stripped outro. Tempo is below the 128 floor; use it for slow-techno blends.",
+    "useFor": [
+      "blend-in",
+      "blend-out",
+      "bass-swap",
+      "filter",
+      "loop",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Moon-Rocks-Enrico-Sangiuliano/4cTW1QdgCJiqE1Pvreb80L"
+  },
+  {
+    "id": "faithless-insomnia",
+    "artist": "Faithless",
+    "title": "Insomnia",
+    "mix": "Monster Mix",
+    "bpm": 127,
+    "key": "10A",
+    "genre": "trance",
+    "year": 1995,
+    "structure": "Long DJ intro before the first vocal; Maxi Jazz spoken verses over the groove; the famous lead-synth riff is withheld until after the breakdown roughly midway, then rides to the end; extended outro. typical: count the intro in 16-bar phrases and cue the riff entry as the main drop.",
+    "useFor": [
+      "breakdown",
+      "build",
+      "vocal",
+      "blend-in",
+      "blend-out",
+      "phrasing",
+      "echo-reverb"
+    ],
+    "url": "https://tunebat.com/Info/Insomnia-Monster-Mix-Faithless-Rollo-Armstrong-Sister-Bliss-Goetz/2FH3BLTMlJlCH1Dmkua5DW"
+  },
+  {
+    "id": "darude-sandstorm",
+    "artist": "Darude",
+    "title": "Sandstorm",
+    "mix": "Original Mix",
+    "bpm": 136,
+    "key": "10A",
+    "genre": "trance",
+    "year": 1999,
+    "structure": "The stabbing lead riff is present from the first phrase with the drums; breakdown mid-track drops the kick and rebuilds with the riff and snare roll; second drop; outro thins to riff and drums. typical: use the last two phrases for blend-out. Note: Tunebat lists this entry as B minor (10A) and an 'Original Version' entry as E minor (9A).",
+    "useFor": [
+      "build",
+      "drop",
+      "breakdown",
+      "hot-cue-hits",
+      "phrasing",
+      "echo-reverb"
+    ],
+    "url": "https://tunebat.com/Info/Sandstorm-Darude/3dxDj8pDPlIHCIrUPXuCeG"
+  },
+  {
+    "id": "armin-van-buuren-communication",
+    "artist": "Armin van Buuren",
+    "title": "Communication",
+    "mix": "Original Mix",
+    "bpm": 137,
+    "key": "4B",
+    "genre": "trance",
+    "year": 1999,
+    "structure": "typical: beat intro for two 16-bar phrases, bass and arpeggio enter on the third phrase, long breakdown with the lead melody and pads, snare-roll build into the main drop, extended drum outro.",
+    "useFor": [
+      "blend-in",
+      "blend-out",
+      "breakdown",
+      "build",
+      "drop",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Communication-Armin-van-Buuren/3Xoqg8LNJaGYvnpdsIYmOh"
+  },
+  {
+    "id": "above-beyond-sun-and-moon",
+    "artist": "Above & Beyond feat. Richard Bedford",
+    "title": "Sun & Moon",
+    "mix": "Extended Club Mix",
+    "bpm": 134,
+    "key": "11A",
+    "genre": "trance",
+    "year": 2011,
+    "structure": "typical: drum intro for two 16-bar phrases, chords enter on the third phrase, Richard Bedford vocal verse, breakdown with the vocal chorus over pads, riser build into the drop, second vocal section, long drum outro.",
+    "useFor": [
+      "vocal",
+      "breakdown",
+      "build",
+      "drop",
+      "blend-in",
+      "blend-out",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Sun-Moon-Above-Beyond-Richard-Bedford/2CG1FmeprsyjgHIPNMYCf4"
+  },
+  {
+    "id": "paul-van-dyk-for-an-angel",
+    "artist": "Paul van Dyk",
+    "title": "For An Angel",
+    "mix": "E-Werk Club Mix",
+    "bpm": 138,
+    "key": "8A",
+    "genre": "trance",
+    "year": 1998,
+    "structure": "typical: drum intro for two 16-bar phrases, bassline on the third, the arpeggiated lead melody enters a phrase later, long mid-track breakdown holding the melody over pads, snare build into the drop, extended outro.",
+    "useFor": [
+      "blend-in",
+      "blend-out",
+      "breakdown",
+      "build",
+      "filter",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/For-an-Angel-E-Werk-Club-Mix-Paul-van-Dyk/3RjDE80kRL7IWkp90nxkaS"
+  },
+  {
+    "id": "tiesto-adagio-for-strings",
+    "artist": "Tiësto",
+    "title": "Adagio For Strings",
+    "mix": "Original Mix",
+    "bpm": 141,
+    "key": "3A",
+    "genre": "trance",
+    "year": 2005,
+    "structure": "typical: drum intro for two 16-bar phrases, the Barber string theme enters and builds phrase by phrase, long central breakdown with the strings alone, extended riser and snare build into the drop, long outro.",
+    "useFor": [
+      "breakdown",
+      "build",
+      "drop",
+      "blend-in",
+      "blend-out",
+      "phrasing"
+    ],
+    "url": "https://www.audiokeychain.com/track/cv/tisto-adagio-for-strings"
+  },
+  {
+    "id": "chase-status-no-problem",
+    "artist": "Chase & Status",
+    "title": "No Problem",
+    "mix": "Original Mix",
+    "bpm": 175,
+    "key": "2B",
+    "genre": "drum-and-bass",
+    "year": 2013,
+    "structure": "typical: vocal-sample intro over sparse drums for two 16-bar phrases, build on the second phrase, first drop lands at bar 33 (start of the third phrase), mid-track breakdown, second drop, short outro.",
+    "useFor": [
+      "drop",
+      "build",
+      "vocal",
+      "double-drop",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/No-Problem-Chase-Status/5k3jdIh7BpJaV1DntDQoSD"
+  },
+  {
+    "id": "pendulum-tarantula",
+    "artist": "Pendulum",
+    "title": "Tarantula",
+    "mix": "Original Mix",
+    "bpm": 174,
+    "key": "9B",
+    "genre": "drum-and-bass",
+    "year": 2005,
+    "structure": "typical: ragga vocal intro (Tenor Fly / MC Spyda) over intro drums for two 16-bar phrases, first drop at the third phrase (bar 33) with the reese bass, breakdown with vocal, second drop, drum outro.",
+    "useFor": [
+      "drop",
+      "vocal",
+      "bass-swap",
+      "double-drop",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Tarantula-Original-Mix-Pendulum-DJ-Fresh-pyda-Tenor-Fly/7ifq3etzDP60X1IRaFVngl"
+  },
+  {
+    "id": "sub-focus-rock-it",
+    "artist": "Sub Focus",
+    "title": "Rock It",
+    "mix": "Original Mix",
+    "bpm": 174,
+    "key": "4A",
+    "genre": "drum-and-bass",
+    "year": 2009,
+    "structure": "typical: melodic intro for two 16-bar phrases with the vocal cut, riser build across the second phrase, first drop on the third phrase (bar 33), breakdown, second drop, short outro.",
+    "useFor": [
+      "drop",
+      "build",
+      "bass-swap",
+      "double-drop",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Rock-It-Sub-Focus/3VGCxo3ojR9PJQ81IqCE3p"
+  },
+  {
+    "id": "wilkinson-afterglow",
+    "artist": "Wilkinson feat. Becky Hill",
+    "title": "Afterglow",
+    "mix": "Original Mix",
+    "bpm": 174,
+    "key": "9B",
+    "genre": "drum-and-bass",
+    "year": 2013,
+    "structure": "typical: piano and Becky Hill vocal intro for two 16-bar phrases, drums fill in on the second phrase, first drop at the third phrase (bar 33), vocal breakdown mid-track, second drop, short outro. Tunebat's solo-artist entry lists the half-time 87 BPM value.",
+    "useFor": [
+      "vocal",
+      "drop",
+      "build",
+      "breakdown",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Afterglow-Wilkinson-Becky-Hill/6LW3Z1GqbL78TIjfDyg4zp"
+  },
+  {
+    "id": "andy-c-heartbeat-loud",
+    "artist": "Andy C feat. Fiora",
+    "title": "Heartbeat Loud",
+    "mix": "Original Mix",
+    "bpm": 174,
+    "key": "5B",
+    "genre": "drum-and-bass",
+    "year": 2014,
+    "structure": "typical: vocal and pad intro for two 16-bar phrases, riser build on the second, first drop at bar 33, breakdown with the Fiora vocal, second drop, drum outro.",
+    "useFor": [
+      "vocal",
+      "drop",
+      "build",
+      "double-drop",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Heartbeat-Loud-Andy-C-Fiora/5PuJ00qKGWqbGeeWbt8WJb"
+  },
+  {
+    "id": "sub-focus-dimension-desire",
+    "artist": "Sub Focus & Dimension",
+    "title": "Desire",
+    "mix": "Original Mix",
+    "bpm": 174,
+    "key": "1A",
+    "genre": "drum-and-bass",
+    "year": 2019,
+    "structure": "typical: vocal and synth intro for two 16-bar phrases, snare build, first drop at the third phrase (bar 33), breakdown on the vocal hook, second drop, short outro (short 3:35 edit so phrases are tight).",
+    "useFor": [
+      "drop",
+      "build",
+      "vocal",
+      "double-drop",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Desire-Sub-Focus-Dimension/36fTP27G79me2HwuzGSz7a"
+  },
+  {
+    "id": "skrillex-scary-monsters-and-nice-sprites",
+    "artist": "Skrillex",
+    "title": "Scary Monsters and Nice Sprites",
+    "mix": "Original Mix",
+    "bpm": 140,
+    "key": "6B",
+    "genre": "dubstep",
+    "year": 2010,
+    "structure": "Melodic synth intro with the 'oh my gosh' vocal cut, build, then the first drop lands after the intro phrases; a melodic breakdown returns before the second drop; short outro. typical: first drop at the start of the third 16-bar phrase.",
+    "useFor": [
+      "drop",
+      "build",
+      "vocal",
+      "hot-cue-hits",
+      "echo-reverb"
+    ],
+    "url": "https://tunebat.com/Info/Scary-Monsters-and-Nice-Sprites-Skrillex/4rwpZEcnalkuhPyGkEdhu0"
+  },
+  {
+    "id": "flux-pavilion-i-cant-stop",
+    "artist": "Flux Pavilion",
+    "title": "I Can't Stop",
+    "mix": "Original Mix",
+    "bpm": 140,
+    "key": "5A",
+    "genre": "dubstep",
+    "year": 2010,
+    "structure": "typical: synth-chord intro for two 16-bar phrases with the 'I can't stop' vocal, snare build, first drop at the third phrase (bar 33), breakdown on the chords, second drop, short outro.",
+    "useFor": [
+      "drop",
+      "build",
+      "vocal",
+      "bass-swap",
+      "echo-reverb"
+    ],
+    "url": "https://tunebat.com/Info/I-Can-t-Stop-Flux-Pavilion/5WSL7UTa38jMWoBzObD4BD"
+  },
+  {
+    "id": "rusko-woo-boost",
+    "artist": "Rusko",
+    "title": "Woo Boost",
+    "mix": "Original Mix",
+    "bpm": 140,
+    "key": "10A",
+    "genre": "dubstep",
+    "year": 2010,
+    "structure": "typical: 'woo' vocal-sample intro over sparse drums for two 16-bar phrases, first drop with the wobble bass on the third phrase (bar 33), breakdown, second drop, drum outro.",
+    "useFor": [
+      "drop",
+      "hot-cue-hits",
+      "vocal",
+      "bass-swap",
+      "loop"
+    ],
+    "url": "https://tunebat.com/Info/Woo-Boost-Rusko/4lY0v0skiWm1UjRZTVXCnh"
+  },
+  {
+    "id": "nero-promises-skrillex-nero-remix",
+    "artist": "Nero",
+    "title": "Promises",
+    "mix": "Skrillex & Nero Remix",
+    "bpm": 140,
+    "key": "9B",
+    "genre": "dubstep",
+    "year": 2011,
+    "structure": "typical: Alana Watson vocal intro over pads for two 16-bar phrases, snare build on the second, first drop at the third phrase (bar 33), vocal breakdown, second drop, short outro. (Nero's original is listed at 72 BPM half-time, so the remix is the DJ version.)",
+    "useFor": [
+      "vocal",
+      "drop",
+      "build",
+      "breakdown",
+      "echo-reverb"
+    ],
+    "url": "https://tunebat.com/Info/Promises-Skrillex-Nero-Remix-NERO/7569Hbv0FUS7vjkdGvdgeZ"
+  },
+  {
+    "id": "martin-garrix-animals",
+    "artist": "Martin Garrix",
+    "title": "Animals",
+    "mix": "Extended Mix",
+    "bpm": 128,
+    "key": "3B",
+    "genre": "edm",
+    "year": 2013,
+    "structure": "typical: drum intro for two 16-bar phrases, the plucked lead motif enters on the third phrase, breakdown with the melody alone and a long snare/riser build, big-room drop, second breakdown and drop, drum outro.",
+    "useFor": [
+      "build",
+      "drop",
+      "breakdown",
+      "blend-in",
+      "blend-out",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Animals-Martin-Garrix/1TWfkGrhF7ob0nwB2M6knb"
+  },
+  {
+    "id": "swedish-house-mafia-dont-you-worry-child",
+    "artist": "Swedish House Mafia feat. John Martin",
+    "title": "Don't You Worry Child",
+    "mix": "Extended Mix",
+    "bpm": 129,
+    "key": "10B",
+    "genre": "edm",
+    "year": 2012,
+    "structure": "typical: drum intro for two 16-bar phrases, piano chords and John Martin verse enter on the third phrase, chorus breakdown with the vocal over pads, riser build into the drop, second verse/chorus/drop, drum outro.",
+    "useFor": [
+      "vocal",
+      "breakdown",
+      "build",
+      "drop",
+      "blend-in",
+      "blend-out",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Don-t-You-Worry-Child-Swedish-House-Mafia-John-Martin/043bfUkTydw0xJ5JjOT91w"
+  },
+  {
+    "id": "hardwell-spaceman",
+    "artist": "Hardwell",
+    "title": "Spaceman",
+    "mix": "Extended Mix",
+    "bpm": 128,
+    "key": "2A",
+    "genre": "edm",
+    "year": 2012,
+    "structure": "typical: drum intro for two 16-bar phrases, lead enters on the third phrase, breakdown with the melodic hook and long snare build, big-room drop, second breakdown/drop, drum outro.",
+    "useFor": [
+      "build",
+      "drop",
+      "breakdown",
+      "blend-in",
+      "blend-out",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Spaceman-Hardwell/1Ca2ELRlvACAeI7xz9c9jR"
+  },
+  {
+    "id": "avicii-levels",
+    "artist": "Avicii",
+    "title": "Levels",
+    "mix": "Original Version",
+    "bpm": 126,
+    "key": "12A",
+    "genre": "edm",
+    "year": 2011,
+    "structure": "typical: drum intro for two 16-bar phrases, the piano riff enters on the third phrase, breakdown on the Etta James vocal sample, riser build into the drop, second breakdown and drop, drum outro.",
+    "useFor": [
+      "build",
+      "drop",
+      "key-shift",
+      "phrasing",
+      "blend-in",
+      "blend-out"
+    ],
+    "url": "https://tunebat.com/Info/Levels-Avicii/6dfXwa0dI1sBm4CIePuOYM"
+  },
+  {
+    "id": "zedd-clarity",
+    "artist": "Zedd feat. Foxes",
+    "title": "Clarity",
+    "mix": "Original Mix",
+    "bpm": 128,
+    "key": "4B",
+    "genre": "edm",
+    "year": 2012,
+    "structure": "typical: piano and Foxes vocal intro, verse, sung chorus build into the synth drop, second verse and drop, short outro. Vocal-led, so cue from the first downbeat of the verse.",
+    "useFor": [
+      "vocal",
+      "build",
+      "drop",
+      "key-shift",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Clarity-Zedd-Foxes/60wwxj6Dd9NJlirf84wr2c"
+  },
+  {
+    "id": "jack-u-where-are-u-now",
+    "artist": "Jack Ü feat. Justin Bieber",
+    "title": "Where Are Ü Now",
+    "mix": "Original Mix",
+    "bpm": 139,
+    "key": "9A",
+    "genre": "bass",
+    "year": 2015,
+    "structure": "typical: piano and vocal intro for two 16-bar phrases, the pitched 'dolphin' vocal hook is the drop on the third phrase, vocal breakdown, second drop, short outro.",
+    "useFor": [
+      "vocal",
+      "drop",
+      "hot-cue-hits",
+      "echo-reverb"
+    ],
+    "url": "https://tunebat.com/Info/Where-Are-Now-with-Justin-Bieber-Jack-Skrillex-Diplo-Justin-Bieber/66hayvUbTotekKU3H4ta1f"
+  },
+  {
+    "id": "netsky-rio",
+    "artist": "Netsky feat. Digital Farm Animals",
+    "title": "Rio",
+    "mix": "Original Mix",
+    "bpm": 173,
+    "key": "8B",
+    "genre": "drum-and-bass",
+    "year": 2015,
+    "structure": "typical: vocal intro over pads for two 16-bar phrases, snare build, first drop at the third phrase (bar 33), vocal breakdown, second drop, short outro.",
+    "useFor": [
+      "vocal",
+      "drop",
+      "build",
+      "double-drop",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Rio-feat-Digital-Farm-Animals-Netsky-Digital-Farm-Animals/5IfSQQzGijWKd7dbkbqHuN"
+  },
+  {
+    "id": "pendulum-hold-your-colour",
+    "artist": "Pendulum",
+    "title": "Hold Your Colour",
+    "mix": "Original Mix",
+    "bpm": 174,
+    "key": "6A",
+    "genre": "drum-and-bass",
+    "year": 2005,
+    "structure": "typical: melodic intro for two 16-bar phrases, riser build, first drop at the third phrase (bar 33), long melodic breakdown, second drop, drum outro. Tunebat lists the half-time 87 BPM value.",
+    "useFor": [
+      "drop",
+      "build",
+      "breakdown",
+      "double-drop",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Hold-Your-Colour-Pendulum/2pZXlPFnqc1uqEKFE7SjwQ"
+  },
+  {
+    "id": "kevin-de-vries-dance-with-me",
+    "artist": "Kevin de Vries",
+    "title": "Dance With Me",
+    "mix": "Original Mix",
+    "bpm": 124,
+    "key": "2B",
+    "genre": "melodic-techno",
+    "year": 2022,
+    "structure": "typical: drum and bass intro for two 16-bar phrases, the lead synth motif enters on the third phrase, long melodic breakdown mid-track with a riser, drop back to the groove, long stripped outro.",
+    "useFor": [
+      "blend-in",
+      "blend-out",
+      "filter",
+      "breakdown",
+      "build",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Dance-With-Me-Kevin-de-Vries/0VbexUMmRVxsshn5PPqrfW"
+  },
+  {
+    "id": "anna-hidden-beauties",
+    "artist": "ANNA",
+    "title": "Hidden Beauties",
+    "mix": "Original Mix",
+    "bpm": 125,
+    "key": "8B",
+    "genre": "techno",
+    "year": 2018,
+    "structure": "typical: hypnotic drum intro for two 16-bar phrases, the pad theme and bassline enter on the third phrase, a long breakdown mid-track with a slow riser, return to the groove, long outro.",
+    "useFor": [
+      "blend-in",
+      "blend-out",
+      "filter",
+      "bass-swap",
+      "phrasing",
+      "loop"
+    ],
+    "url": "https://tunebat.com/Info/Hidden-Beauties-ANNA/7IEEGzIQPidYujSduMuEBa"
+  },
+  {
+    "id": "enrico-sangiuliano-astral-projection",
+    "artist": "Enrico Sangiuliano",
+    "title": "Astral Projection",
+    "mix": "Original Mix",
+    "bpm": 125,
+    "key": "11A",
+    "genre": "techno",
+    "year": 2017,
+    "structure": "typical: percussive intro across two 16-bar phrases, the lead motif builds in phrase by phrase, long central breakdown with a riser, drop, extended stripped outro.",
+    "useFor": [
+      "blend-in",
+      "blend-out",
+      "filter",
+      "breakdown",
+      "build",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Astral-Projection-Enrico-Sangiuliano/32nw9Qc5rYjsPWGLy14Yh5"
+  },
+  {
+    "id": "dr-dre-still-dre",
+    "artist": "Dr. Dre feat. Snoop Dogg",
+    "title": "Still D.R.E.",
+    "mix": "Album Version (2001)",
+    "bpm": 93,
+    "key": "1B",
+    "genre": "hip-hop",
+    "year": 1999,
+    "structure": "typical: the Scott Storch piano stab loops from bar 1 with no lead-in, drums enter after the first phrase, hook is Snoop's 'Still D.R.E.' refrain every 16 bars; the isolated piano stab is the standard hot-cue hit.",
+    "useFor": [
+      "hook",
+      "hot-cue-hits",
+      "phrasing",
+      "blend-in"
+    ],
+    "url": "https://tunebat.com/Info/Still-D-R-E-Dr-Dre-Snoop-Dogg/6ltPEsP4edATzvinHOzvk2"
+  },
+  {
+    "id": "nas-made-you-look",
+    "artist": "Nas",
+    "title": "Made You Look",
+    "mix": "Album Version (God's Son)",
+    "bpm": 96,
+    "key": "4A",
+    "genre": "hip-hop",
+    "year": 2002,
+    "structure": "typical: built on the Incredible Bongo Band 'Apache' break, so the drum-only intro doubles as a scratchable break; 'They shootin'!' vocal hits sit on downbeats; hook every 16 bars.",
+    "useFor": [
+      "hook",
+      "hot-cue-hits",
+      "break",
+      "word",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Made-You-Look-Nas/3qRPc4QpHGNwKFAzCdqwxA"
+  },
+  {
+    "id": "eric-b-rakim-paid-in-full",
+    "artist": "Eric B. & Rakim",
+    "title": "Paid In Full",
+    "mix": "Album Version (Paid In Full, 1987)",
+    "bpm": 99,
+    "key": "9B",
+    "genre": "hip-hop",
+    "year": 1987,
+    "structure": "typical: 'Thinkin' of a master plan' opens the single verse over a sparse drum/bass loop, making it a long steady blend bed; famous spoken 'Pump up the volume' and other word hits land on downbeats.",
+    "useFor": [
+      "phrasing",
+      "blend-in",
+      "blend-out",
+      "word",
+      "vocal"
+    ],
+    "url": "https://tunebat.com/Info/Paid-In-Full-Eric-B-Rakim-Marley-Marl/20s3FayrStM8GY0m4dRFsw"
+  },
+  {
+    "id": "jay-z-dirt-off-your-shoulder",
+    "artist": "JAY-Z",
+    "title": "Dirt Off Your Shoulder",
+    "mix": "Album Version (The Black Album)",
+    "bpm": 82,
+    "key": "3B",
+    "genre": "hip-hop",
+    "year": 2003,
+    "structure": "Tunebat lists 164 BPM, C-sharp major (3B); DJs count it half-time at 82. typical: synth riff intro with no vocal for the first phrase, hook 'get that dirt off your shoulder' every 16 bars; works as a half/double-time bridge into 160s trap or drum & bass.",
+    "useFor": [
+      "hook",
+      "tempo-bridge",
+      "phrasing",
+      "hot-cue-hits"
+    ],
+    "url": "https://tunebat.com/Info/Dirt-Off-Your-Shoulder-JAY-Z/3IrkbGQCoEPAkzJ0Tkv8nm"
+  },
+  {
+    "id": "kendrick-lamar-humble",
+    "artist": "Kendrick Lamar",
+    "title": "HUMBLE.",
+    "mix": "Album Version (DAMN.)",
+    "bpm": 150,
+    "key": "12A",
+    "genre": "hip-hop",
+    "year": 2017,
+    "structure": "typical: 'Nobody pray for me' spoken intro then the piano riff drops with the beat; 'Sit down, be humble' hook is the drop-mix point; half-time at 75 bridges into 90s hip-hop when pitched.",
+    "useFor": [
+      "hook",
+      "hot-cue-hits",
+      "tempo-bridge",
+      "word"
+    ],
+    "url": "https://tunebat.com/Info/HUMBLE-Kendrick-Lamar/7KXjTSCq5nL1LoYtL7XAwS"
+  },
+  {
+    "id": "notorious-big-hypnotize",
+    "artist": "The Notorious B.I.G.",
+    "title": "Hypnotize",
+    "mix": "2014 Remaster",
+    "bpm": 93,
+    "key": "11B",
+    "genre": "hip-hop",
+    "year": 1997,
+    "structure": "typical: bass-line intro, first verse follows after one phrase, sung 'Biggie Biggie Biggie, can't you see' hook every 16 bars; the 'Uh' ad-libs are clean vocal hits.",
+    "useFor": [
+      "hook",
+      "phrasing",
+      "hot-cue-hits",
+      "vocal"
+    ],
+    "url": "https://tunebat.com/Info/Hypnotize-2014-Remaster-The-Notorious-B-I-G-/7KwZNVEaqikRSBSpyhXK2j"
+  },
+  {
+    "id": "50-cent-in-da-club",
+    "artist": "50 Cent",
+    "title": "In Da Club",
+    "mix": "Album Version (Get Rich or Die Tryin')",
+    "bpm": 90,
+    "key": "12A",
+    "genre": "hip-hop",
+    "year": 2003,
+    "structure": "Sources list 89-90 BPM, C-sharp minor (12A); one mirror gives F-sharp minor (11A). typical: the string/synth riff intro runs clean before 'Go shorty, it's your birthday', which opens with the hook rather than a verse, so the hook is available as a drop-in from the top; hook returns every 16 bars.",
+    "useFor": [
+      "hook",
+      "hot-cue-hits",
+      "phrasing",
+      "word",
+      "blend-in"
+    ],
+    "url": "https://tunebat.com/Info/In-Da-Club-50-Cent/7iL6o9tox1zgHpKUfh9vuC"
+  },
+  {
+    "id": "house-of-pain-jump-around",
+    "artist": "House Of Pain",
+    "title": "Jump Around",
+    "mix": "Album Version",
+    "bpm": 107,
+    "key": "8A",
+    "genre": "hip-hop",
+    "year": 1992,
+    "structure": "typical: horn-stab intro, the squeal sample hits on beat 1 of the hook, 'Jump around' chant every 16 bars; horn stab and squeal are the classic hot-cue hits.",
+    "useFor": [
+      "hook",
+      "hot-cue-hits",
+      "phrasing",
+      "scratch"
+    ],
+    "url": "https://tunebat.com/Info/Jump-Around-House-Of-Pain/3TZwjdclvWt7iPJUnMpgcs"
+  },
+  {
+    "id": "fatman-scoop-be-faithful",
+    "artist": "Fatman Scoop feat. The Crooklyn Clan",
+    "title": "Be Faithful",
+    "mix": "Original",
+    "bpm": 101,
+    "key": "9B",
+    "genre": "hip-hop",
+    "year": 1999,
+    "structure": "typical: party-rocking call-and-response record, shouted 'You got a hundred dollar bill, put your hands up' hooks every 8 bars over the 'Love Like This' loop; individual shouts are word hits for word-play drills.",
+    "useFor": [
+      "hook",
+      "word",
+      "vocal",
+      "hot-cue-hits",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Be-Faithful-Fatman-Scoop-The-Crooklyn-Clan/2jGUAB6hKlzK0pZmZpQ02g"
+  },
+  {
+    "id": "the-winstons-amen-brother",
+    "artist": "The Winstons",
+    "title": "Amen, Brother",
+    "mix": "Original 1969 single (B-side of 'Color Him Father')",
+    "bpm": 130,
+    "key": "3B",
+    "genre": "breaks",
+    "year": 1969,
+    "structure": "Documented: the Amen break is a four-bar drum solo by Gregory Coleman at 1:26, lasting about seven seconds; bars 1-2 repeat the previous groove, bar 3 delays a snare, bar 4 leaves beat 1 empty with a syncopated pattern and early crash. Use those four bars for juggling.",
+    "useFor": [
+      "break",
+      "scratch",
+      "phrasing",
+      "hot-cue-hits"
+    ],
+    "url": "https://tunebat.com/Info/Amen-Brother-The-Winstons/32Rf95ZT8gxisQMK6xAhba"
+  },
+  {
+    "id": "incredible-bongo-band-apache",
+    "artist": "Incredible Bongo Band",
+    "title": "Apache",
+    "mix": "Album Version (Bongo Rock)",
+    "bpm": 118,
+    "key": "9B",
+    "genre": "breaks",
+    "year": 1973,
+    "structure": "Documented: an uncommonly long bongo/conga percussion break in the middle of the song is what Kool Herc looped with two copies ('merry-go-round'). Exact timestamp not stated by source. typical: the break is the drum/bongo-only passage after the second melody statement.",
+    "useFor": [
+      "break",
+      "scratch",
+      "phrasing",
+      "hot-cue-hits"
+    ],
+    "url": "https://tunebat.com/Info/Apache-Incredible-Bongo-Band/51ml2bJs9zDLv1PbzNQzPP"
+  },
+  {
+    "id": "james-brown-funky-drummer",
+    "artist": "James Brown",
+    "title": "Funky Drummer",
+    "mix": "Original (Pt. 1 & 2 single edit / full version)",
+    "bpm": 91,
+    "key": "1B",
+    "genre": "breaks",
+    "year": 1970,
+    "structure": "Documented: the eight-bar, roughly 20-second Clyde Stubblefield drum break sits at 5:34 on the full-length version, with Brown's 'Ain't it funky?' spoken four times over it. The rest is a loosely arranged jam, so only the break is phrase-stable.",
+    "useFor": [
+      "break",
+      "scratch",
+      "word",
+      "hot-cue-hits"
+    ],
+    "url": "https://tunebat.com/Info/Funky-Drummer-James-Brown/0VbpqlboEkGQ7Pu6juJljZ"
+  },
+  {
+    "id": "lyn-collins-think-about-it",
+    "artist": "Lyn Collins",
+    "title": "Think (About It)",
+    "mix": "Single Version",
+    "bpm": 113,
+    "key": "11B",
+    "genre": "breaks",
+    "year": 1972,
+    "structure": "Single version listed at 113-114 BPM, A major (11B); Tunebat's full-length entry instead lists 126 BPM, F-sharp minor (11A), so confirm before relying on tempo. typical: the 'Yeah! Woo!' drum-and-shout break (the 'It Takes Two' sample) sits mid-song; the shouts land on downbeats for word play.",
+    "useFor": [
+      "break",
+      "scratch",
+      "word",
+      "hot-cue-hits",
+      "vocal"
+    ],
+    "url": "https://tunebat.com/Info/Think-About-It-Single-Version-Lyn-Collins/41VralobTkW7XgR5TebwNk"
+  },
+  {
+    "id": "bob-james-nautilus",
+    "artist": "Bob James",
+    "title": "Nautilus",
+    "mix": "Album Version (One, 1974)",
+    "bpm": 96,
+    "key": "8A",
+    "genre": "breaks",
+    "year": 1974,
+    "structure": "typical: sparse drum-and-bass intro before the Fender Rhodes enters, so the opening bars are a clean blend bed; the Rhodes stabs are hot-cue hits.",
+    "useFor": [
+      "break",
+      "blend-in",
+      "blend-out",
+      "hot-cue-hits",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Nautilus-Bob-James/3q75LH3CaYL8g3CwUJ8yy3"
+  },
+  {
+    "id": "honey-drippers-impeach-the-president",
+    "artist": "The Honey Drippers",
+    "title": "Impeach The President",
+    "mix": "Original 1973 single (Alaga)",
+    "bpm": 96,
+    "key": "11B",
+    "genre": "breaks",
+    "year": 1973,
+    "structure": "Documented: the drum break opens the record (the beat that opens the song, with the hi-hat lifted near the end of the pattern), so the break is at the very top; Marley Marl looped it for MC Shan's 'The Bridge' in 1986.",
+    "useFor": [
+      "break",
+      "scratch",
+      "hot-cue-hits",
+      "blend-in"
+    ],
+    "url": "https://tunebat.com/Info/Impeach-the-President-The-Honey-Drippers/2KKyVgKvMf0oZPP4pQTETi"
+  },
+  {
+    "id": "fab-5-freddy-change-the-beat",
+    "artist": "Fab 5 Freddy / Beside",
+    "title": "Change The Beat",
+    "mix": "Original Mix (Celluloid 12\", 1982)",
+    "bpm": 97,
+    "key": "7A",
+    "genre": "breaks",
+    "year": 1982,
+    "structure": "Beatport lists 97 BPM, D minor (7A); Side A runs 7:37 with Fab 5 Freddy rapping in English and French. Documented: the vocoder tag 'Ahhh, this stuff is really fresh!' closes the Beside (B-side, Ann Boyle) version and is one of the most-sampled scratch sounds ever. Exact timestamp not stated by source.",
+    "useFor": [
+      "scratch",
+      "word",
+      "hot-cue-hits"
+    ],
+    "url": "https://www.beatport.com/track/change-the-beat-original-mix/4765493"
+  },
+  {
+    "id": "dj-qbert-superseal-6",
+    "artist": "DJ Q-Bert",
+    "title": "Superseal 6",
+    "mix": "Thud Rumble 12\" (skipless battle record)",
+    "bpm": 100,
+    "genre": "scratch",
+    "year": 2021,
+    "structure": "Discogs states Side A is for scratching electro and half-tempo beats at 133 BPM (with a bonus drum-scratching section), Side B for mid-tempo beats at 100 BPM. No musical key (atonal scratch samples). Skipless: each locked groove repeats the same sample every rotation.",
+    "useFor": [
+      "scratch",
+      "hot-cue-hits",
+      "break"
+    ],
+    "url": "https://www.discogs.com/release/20534938-DJ-Q-Bert-SuperSeal-6"
+  },
+  {
+    "id": "thud-rumble-battle-breaks",
+    "artist": "Thud Rumble (Dirtstyle)",
+    "title": "Battle Breaks",
+    "mix": "7\" reissue (BB001)",
+    "bpm": 100,
+    "genre": "scratch",
+    "year": 1992,
+    "structure": "Documented: first released as a 12\" in 1992 and described as the first record made specifically for scratch battle DJs; the 7\" reissue is BB001. BPM is nominal: source does not state a tempo, and skipless battle loops at 33 rpm are commonly cut at 100 or 133.33 BPM. No musical key.",
+    "useFor": [
+      "scratch",
+      "hot-cue-hits",
+      "break"
+    ],
+    "url": "https://www.thudrumble.com/products/bb001"
+  },
+  {
+    "id": "dj-woody-scratch-sounds-no-2",
+    "artist": "DJ Woody",
+    "title": "Scratch Sounds No.2 (Reggae Clash)",
+    "mix": "Woodwurk 7\" (skipless)",
+    "bpm": 100,
+    "genre": "scratch",
+    "structure": "Discogs states 28 skip-proof scratch phrases, side one programmed at 83.33 BPM and side two at 100 BPM. No musical key. Release year not confirmed from source.",
+    "useFor": [
+      "scratch",
+      "hot-cue-hits",
+      "word"
+    ],
+    "url": "https://www.discogs.com/release/13800286-DJ-Woody-Scratch-Sounds-No2"
+  },
+  {
+    "id": "skratchy-seal-super-seal-giant-robo-v1",
+    "artist": "Skratchy Seal (DJ Q-Bert)",
+    "title": "Super Seal Giant Robo V.1 (Head)",
+    "mix": "Thud Rumble / Dirt Style 7\" (skipless)",
+    "bpm": 100,
+    "genre": "scratch",
+    "year": 2016,
+    "structure": "Discogs states one side has skipless samples for half-time and fast beats (66 / 133 BPM) and the other side skipless samples for funky mid-tempo at 100 BPM; part of a seven-record Giant Robo set. No musical key.",
+    "useFor": [
+      "scratch",
+      "hot-cue-hits",
+      "break",
+      "tempo-bridge"
+    ],
+    "url": "https://www.discogs.com/release/9594041-Skratchy-Seal-Super-Seal-Giant-Robo-V1-Head"
+  },
+  {
+    "id": "crystal-waters-gypsy-woman",
+    "artist": "Crystal Waters",
+    "title": "Gypsy Woman (She's Homeless)",
+    "mix": "Original / Basement Boys 1991 mix",
+    "bpm": 119,
+    "key": "8A",
+    "genre": "house",
+    "year": 1991,
+    "structure": "typical: 'La da dee, la da da' hook is an isolated vocal phrase that lands on the downbeat, ideal for word-play; organ riff intro runs one phrase before the vocal.",
+    "useFor": [
+      "acapella",
+      "vocal",
+      "hook",
+      "word",
+      "phrasing"
+    ],
+    "url": "https://tunebat.com/Info/Gypsy-Woman-Crystal-Waters/2jBQYMPjY0UspZAVyYPRUG"
+  },
+  {
+    "id": "cece-peniston-finally",
+    "artist": "CeCe Peniston",
+    "title": "Finally",
+    "mix": "Original Mix",
+    "bpm": 120,
+    "key": "10A",
+    "genre": "house",
+    "year": 1991,
+    "structure": "typical: piano-vamp intro with no vocal for the first phrase, 'Finally, it has happened to me' hook every 16 bars; the 12\" Choice Mix carries the club arrangement and an acapella circulates widely.",
+    "useFor": [
+      "acapella",
+      "vocal",
+      "hook",
+      "phrasing",
+      "blend-in"
+    ],
+    "url": "https://tunebat.com/Info/Finally-CeCe-Peniston/0uqvSVhGgQTIdj9G51vhvv"
+  },
+  {
+    "id": "whitney-houston-its-not-right-thunderpuss",
+    "artist": "Whitney Houston",
+    "title": "It's Not Right But It's Okay",
+    "mix": "Thunderpuss Mix",
+    "bpm": 130,
+    "key": "4B",
+    "genre": "house",
+    "year": 1999,
+    "structure": "typical: long drum/filtered intro before the vocal; the 'It's not right, but it's okay' hook is a clean 8-bar drop and 'Uh-huh' ad-libs are word hits on downbeats.",
+    "useFor": [
+      "vocal",
+      "hook",
+      "word",
+      "phrasing",
+      "blend-in",
+      "blend-out"
+    ],
+    "url": "https://tunebat.com/Info/It-s-Not-Right-But-It-s-Okay-Thunderpuss-Mix-Whitney-Houston/1oj8BhbCjzdd8oHNzdCw6L"
+  },
+  {
+    "id": "bruno-mars-24k-magic",
+    "artist": "Bruno Mars",
+    "title": "24K Magic",
+    "mix": "Album Version",
+    "bpm": 107,
+    "key": "3B",
+    "genre": "open-format",
+    "year": 2016,
+    "structure": "Tunebat mirrors list 107 BPM, D-flat major (3B); some other analyzers give F minor (4A, the relative minor). typical: talk-box 'Tonight, I just want to take you higher' intro phrase before the drums drop, hook 'Twenty-four karat magic in the air' every 16 bars; the drum drop is the drop-mix point.",
+    "useFor": [
+      "hook",
+      "hot-cue-hits",
+      "phrasing",
+      "word",
+      "blend-in"
+    ],
+    "url": "https://tunebat.com/Info/24K-Magic-Bruno-Mars/6b8Be6ljOzmkOmFslEb23P"
+  },
+  {
+    "id": "dua-lipa-dont-start-now",
+    "artist": "Dua Lipa",
+    "title": "Don't Start Now",
+    "mix": "Album Version (Future Nostalgia)",
+    "bpm": 124,
+    "key": "10A",
+    "genre": "open-format",
+    "year": 2019,
+    "structure": "typical: bass-and-vocal intro from bar 1, pre-chorus build then 'Don't show up, don't come out' hook every 16 bars; the string stabs are hot-cue hits and 124 makes it a house-tempo bridge.",
+    "useFor": [
+      "hook",
+      "phrasing",
+      "hot-cue-hits",
+      "blend-out",
+      "tempo-bridge"
+    ],
+    "url": "https://tunebat.com/Info/Don-t-Start-Now-Dua-Lipa/3PfIrDoz19wz7qK7tYeu62"
+  },
+  {
+    "id": "beyonce-crazy-in-love",
+    "artist": "Beyoncé feat. JAY-Z",
+    "title": "Crazy In Love",
+    "mix": "Album Version (Dangerously In Love)",
+    "bpm": 99,
+    "key": "6A",
+    "genre": "open-format",
+    "year": 2003,
+    "structure": "typical: the Chi-Lites horn riff opens with no drums for the first phrase, 'Uh oh, uh oh' vocal hits sit on the downbeat, hook every 16 bars; the horn stab is the standard hot-cue hit and the JAY-Z verse is a clean 16 for blend-outs.",
+    "useFor": [
+      "hook",
+      "hot-cue-hits",
+      "word",
+      "phrasing",
+      "blend-in"
+    ],
+    "url": "https://tunebat.com/Info/Crazy-In-Love-Beyonc-JAY-Z/5IVuqXILoxVWvWEPm82Jxr"
+  },
+  {
+    "id": "rihanna-dont-stop-the-music",
+    "artist": "Rihanna",
+    "title": "Don't Stop The Music",
+    "mix": "Album Version (Good Girl Gone Bad)",
+    "bpm": 123,
+    "key": "11A",
+    "genre": "open-format",
+    "year": 2007,
+    "structure": "typical: 'Please don't stop the music' spoken intro before the beat, 'Mama-say mama-sa' Michael Jackson chant is an isolated vocal hook on the downbeat; steady four-on-the-floor makes it the house-to-pop transition staple.",
+    "useFor": [
+      "hook",
+      "word",
+      "vocal",
+      "phrasing",
+      "blend-in",
+      "blend-out"
+    ],
+    "url": "https://tunebat.com/Info/Don-t-Stop-The-Music-Rihanna/1Jo0Zg7XlrA6z0mFTZVdkn"
+  }
+]

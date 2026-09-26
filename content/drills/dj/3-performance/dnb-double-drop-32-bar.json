@@ -78,5 +78,22 @@
   ],
   "prereqs": [
     "double-drop"
+  ],
+  "tracks": [
+    {
+      "track": "pendulum-tarantula",
+      "deck": "A",
+      "cue": "A on its first drop (the third 16-bar phrase). B enters on the second drop section."
+    },
+    {
+      "track": "wilkinson-afterglow",
+      "deck": "B",
+      "cue": "Both 9B: cue B so its drop lands 32 bars after B's fader comes up; on bar 33 the two drops hit and B's bass takes over in half a bar."
+    },
+    {
+      "track": "netsky-rio",
+      "deck": "B",
+      "cue": "Alternative B in 8B: cue on the first beat of its drop."
+    }
   ]
 }

@@ -88,5 +88,17 @@
     "beat-roll-build",
     "cue-point-stutter"
   ],
-  "artist": "Carl Cox"
+  "artist": "Carl Cox",
+  "tracks": [
+    {
+      "track": "age-of-love-cdw-es-remix",
+      "deck": "A",
+      "cue": "A on the arpeggio riff: from bar 13 its CUE button stutters on beats then eighths, PLAY on 17 so it runs on."
+    },
+    {
+      "track": "charlotte-de-witte-sgadi-li-mi",
+      "deck": "B",
+      "cue": "Cue B at its kick intro with the low cut; the bass swaps to B in bar 17 as A's stutter resolves."
+    }
+  ]
 }

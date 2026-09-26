@@ -48,5 +48,17 @@
     "techno"
   ],
   "path": "jog",
-  "level": 2
+  "level": 2,
+  "tracks": [
+    {
+      "track": "inner-city-good-life",
+      "deck": "A",
+      "cue": "A on its drum-machine intro, sync off; it sets the tempo."
+    },
+    {
+      "track": "adam-beyer-bart-skils-your-mind",
+      "deck": "B",
+      "cue": "Push B's tempo fader up a small even amount over 4 bars against A's kick, hold, bring it back."
+    }
+  ]
 }

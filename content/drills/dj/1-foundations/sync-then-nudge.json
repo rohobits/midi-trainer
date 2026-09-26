@@ -46,5 +46,17 @@
     "https://www.digitaldjtips.com/5-tips-for-better-sync-mixing/",
     "https://djtechtools.com/2014/04/23/how-to-set-beatgrids-and-use-sync-properly-in-serato-dj/"
   ],
-  "needsAudio": true
+  "needsAudio": true,
+  "tracks": [
+    {
+      "track": "fisher-losing-it",
+      "deck": "A",
+      "cue": "Master deck: A on its drum intro sets the tempo."
+    },
+    {
+      "track": "dennis-ferrer-hey-hey",
+      "deck": "B",
+      "cue": "Press SYNC on B on A's downbeat, then nudge forward on bar 2 and back on bar 6 while both intros play; the two kicks tell you whether the beatgrid is right."
+    }
+  ]
 }

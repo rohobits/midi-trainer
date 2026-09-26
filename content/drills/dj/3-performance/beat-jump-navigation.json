@@ -61,5 +61,17 @@
   ],
   "prereqs": [
     "phrase-counting"
+  ],
+  "tracks": [
+    {
+      "track": "adam-beyer-bart-skils-your-mind",
+      "deck": "B",
+      "cue": "B's 32-beat beatless intro is what BEAT JUMP 32 is for; jump 8 and 4 to correct the other two situations while A plays."
+    },
+    {
+      "track": "fisher-losing-it",
+      "deck": "A",
+      "cue": "A plays through from its intro; every jump on B is judged against A's phrase count."
+    }
   ]
 }

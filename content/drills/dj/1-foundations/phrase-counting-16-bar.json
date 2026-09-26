@@ -67,5 +67,22 @@
   ],
   "prereqs": [
     "phrase-counting"
+  ],
+  "tracks": [
+    {
+      "track": "green-velvet-flash",
+      "deck": "A",
+      "cue": "Loop-based tech-house with the spoken 'cameras ready' lines dropping in on 16-bar lines. Count from the first kick: A1 on each 16, A2 on the 8 in between, and check yourself against the vocal entries."
+    },
+    {
+      "track": "fisher-losing-it",
+      "deck": "A",
+      "cue": "Start at the first kick of the intro. The 'losing it' stab teases in on 8-bar lines and the drop lands on a 16-bar line, so the pads confirm your count."
+    },
+    {
+      "track": "adam-beyer-bart-skils-your-mind",
+      "deck": "A",
+      "cue": "Long percussive intro across two 16-bar phrases before the 'your mind' vocal. Count it in and hit A1 exactly where the vocal enters."
+    }
   ]
 }

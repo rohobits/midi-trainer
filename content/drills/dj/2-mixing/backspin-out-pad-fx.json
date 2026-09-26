@@ -68,5 +68,17 @@
   ],
   "prereqs": [
     "hard-cut-on-the-one"
+  ],
+  "tracks": [
+    {
+      "track": "duke-dumont-need-u-100",
+      "deck": "A",
+      "cue": "A on the hook: press Pad FX Backspin on beat 4 of bar 12, kill the fader on the one of 13."
+    },
+    {
+      "track": "mk-17",
+      "deck": "B",
+      "cue": "Cue B on the first chopped vocal hit of the extended mix and start it on the one of bar 13 with the fader coming up."
+    }
   ]
 }

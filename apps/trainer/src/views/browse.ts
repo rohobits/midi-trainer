@@ -4,6 +4,7 @@ import { navigate } from '../router';
 import { paths, genres, tierRank } from '../content';
 import { el } from '../ui/dom';
 import { icon } from '../ui/icons';
+import { resolveTracks } from '../ui/tracks';
 
 const GROUP_VAR: Record<LaneGroup, string> = { deckA: '--deck-a', deckB: '--deck-b', mixer: '--mixer', pads: '--pads', fx: '--fx', select: '--select', lh: '--lh', rh: '--rh' };
 
@@ -167,7 +168,7 @@ export const browseView: View = (root, app, params) => {
   root.appendChild(list);
 
   function matches(d: Drill): boolean {
-    if (filters.text && !`${d.name} ${d.lesson} ${(d.skills ?? []).join(' ')}`.toLowerCase().includes(filters.text.toLowerCase())) return false;
+    if (filters.text && !`${d.name} ${d.lesson} ${(d.skills ?? []).join(' ')} ${resolveTracks(d).map((r) => `${r.track.artist} ${r.track.title}`).join(' ')}`.toLowerCase().includes(filters.text.toLowerCase())) return false;
     if (filters.skill && !(d.skills ?? []).includes(filters.skill)) return false;
     if (filters.genre && !(d.genre ?? []).includes(filters.genre)) return false;
     if (filters.control && !d.targets.some((t) => 'c' in t && app.controlName(t.c) === filters.control)) return false;
@@ -189,6 +190,8 @@ export const browseView: View = (root, app, params) => {
     a.appendChild(el('div', { class: 'meta' }, `${d.bars} bars · ${d.bpm} BPM${d.level ? ` · L${d.level}` : ''}${d.artist ? ` · ${d.artist}` : ''}`));
     const badges = el('div', { class: 'row', style: 'gap:4px' });
     if (due.some((r) => r.drillId === d.id)) badges.appendChild(el('span', { class: 'badge due' }, 'due'));
+    const nTracks = resolveTracks(d).length;
+    if (nTracks) badges.appendChild(el('span', { class: 'badge tracks', title: resolveTracks(d).map((r) => `${r.track.artist} – ${r.track.title}`).join('\n') }, `♪ ${nTracks} track${nTracks > 1 ? 's' : ''}`));
     const prereqs = (d.prereqs ?? []).filter((p) => (app.best[p] ?? 0) < 80);
     if (prereqs.length) badges.appendChild(el('span', { class: 'badge', title: prereqs.map((p) => app.drill(p)?.name ?? p).join(', ') }, `after ${app.drill(prereqs[0]!)?.name ?? prereqs[0]}${prereqs.length > 1 ? ` +${prereqs.length - 1}` : ''}`));
     for (const r of av.reasons) {

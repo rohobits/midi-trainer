@@ -116,5 +116,19 @@
   ],
   "prereqs": [
     "xf-drop-mix"
+  ],
+  "tracks": [
+    {
+      "track": "dr-dre-still-dre",
+      "deck": "A",
+      "cue": "A1 on the first piano stab. Quick-mix cuts between hooks; key is not matched.",
+      "loose": true
+    },
+    {
+      "track": "nas-made-you-look",
+      "deck": "B",
+      "cue": "B1 on the 'they shootin'' hit, B2 on the hook; every 8 bars press the next cue and snap the crossfader on the one.",
+      "loose": true
+    }
   ]
 }

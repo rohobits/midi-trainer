@@ -44,5 +44,17 @@
   "level": 1,
   "sources": [
     "https://dj.studio/blog/dj-tempo-change-techniques"
+  ],
+  "tracks": [
+    {
+      "track": "boris-brejcha-gravity",
+      "deck": "A",
+      "cue": "A: a long, sparse track where a 2% tempo change is not obvious to the room, only to the phase."
+    },
+    {
+      "track": "lane-8-brightest-lights",
+      "deck": "B",
+      "cue": "B: creep B's tempo up 2% over 16 bars against A, hold, then bring A up to meet it. With both tracks so sparse you hear the phase drift, not a pitch change."
+    }
   ]
 }

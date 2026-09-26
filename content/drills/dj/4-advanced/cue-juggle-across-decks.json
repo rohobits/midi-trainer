@@ -486,5 +486,17 @@
   "prereqs": [
     "hot-cue-drumming",
     "xf-drop-mix"
+  ],
+  "tracks": [
+    {
+      "track": "cece-peniston-finally",
+      "deck": "A",
+      "cue": "A1 on the first piano chord of the vamp, A2 on the 'finally' hook."
+    },
+    {
+      "track": "dua-lipa-dont-start-now",
+      "deck": "B",
+      "cue": "B1 on a string stab, B2 on the first bass note; A on the one, B on the two, and so on."
+    }
   ]
 }

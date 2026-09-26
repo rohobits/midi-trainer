@@ -66,5 +66,17 @@
   ],
   "prereqs": [
     "phrase-counting"
+  ],
+  "tracks": [
+    {
+      "track": "inner-city-good-life",
+      "deck": "A",
+      "cue": "A on its first verse; you press PLAY B exactly on A's bar 9."
+    },
+    {
+      "track": "dennis-ferrer-hey-hey",
+      "deck": "B",
+      "cue": "Cue B exactly on its first kick with its bass cut. PLAY on A's bar 9, fader up over 8, swap the bass at 17; the 'hey hey' hook then arrives on A's phrase line."
+    }
   ]
 }

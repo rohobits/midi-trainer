@@ -104,5 +104,17 @@
   ],
   "prereqs": [
     "reverb-wash-out"
+  ],
+  "tracks": [
+    {
+      "track": "dennis-ferrer-hey-hey",
+      "deck": "A",
+      "cue": "Echo, flanger, reverb and roll pressed and released on the vocal-and-organ hook; each release has to be as clean as the press."
+    },
+    {
+      "track": "basement-jaxx-wheres-your-head-at",
+      "deck": "A",
+      "cue": "The shouted hook makes every stab and its release obvious."
+    }
   ]
 }

@@ -113,5 +113,17 @@
   ],
   "prereqs": [
     "echo-out"
+  ],
+  "tracks": [
+    {
+      "track": "john-summit-where-you-are",
+      "deck": "A",
+      "cue": "First echo out on A's drop: A is leaving, so CH SELECT 1 in the bar before the phrase end."
+    },
+    {
+      "track": "chris-lake-turn-off-the-lights",
+      "deck": "B",
+      "cue": "B comes in under the tail; before the second echo out, CH SELECT 2 because now B is leaving."
+    }
   ]
 }

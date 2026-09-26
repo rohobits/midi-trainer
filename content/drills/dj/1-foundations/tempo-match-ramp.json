@@ -60,5 +60,17 @@
   "sources": [
     "https://manual.mixxx.org/2.4/en/chapters/djing_with_mixxx.html",
     "https://pirate.com/en/blog/how-to-beatmatch/"
+  ],
+  "tracks": [
+    {
+      "track": "eric-prydz-opus",
+      "deck": "A",
+      "cue": "A stays on the master tempo through its slow build."
+    },
+    {
+      "track": "age-of-love-cdw-es-remix",
+      "deck": "B",
+      "cue": "Move TEMPO B in the small, held steps the drill asks for while B's drum intro runs; a straight-line arrival with no overshoot is the whole exercise."
+    }
   ]
 }

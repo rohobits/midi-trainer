@@ -33,5 +33,17 @@
   ],
   "prereqs": [
     "fader-control"
+  ],
+  "tracks": [
+    {
+      "track": "nas-made-you-look",
+      "deck": "A",
+      "cue": "Chop A's fader over the drum-only intro (the Apache break): 32 moves, one per eighth, with nothing melodic to hide sloppy timing."
+    },
+    {
+      "track": "honey-drippers-impeach-the-president",
+      "deck": "A",
+      "cue": "The break opens the record: the same chops over a raw break."
+    }
   ]
 }

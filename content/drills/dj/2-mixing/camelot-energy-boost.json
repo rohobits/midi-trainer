@@ -62,5 +62,17 @@
   ],
   "prereqs": [
     "harmonic-key-shift-choice"
+  ],
+  "tracks": [
+    {
+      "track": "hardwell-spaceman",
+      "deck": "A",
+      "cue": "A on the drum-only section after its breakdown."
+    },
+    {
+      "track": "kevin-de-vries-dance-with-me",
+      "deck": "B",
+      "cue": "Cue B at its drum intro, mix it in over 8 bars, then in the last bar before bar 13 KEY SHIFT B two semitones up: the lead motif makes the lift obvious."
+    }
   ]
 }

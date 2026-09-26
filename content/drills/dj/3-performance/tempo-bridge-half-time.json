@@ -87,5 +87,18 @@
   "prereqs": [
     "echo-out"
   ],
-  "needsAudio": true
+  "needsAudio": true,
+  "tracks": [
+    {
+      "track": "dua-lipa-dont-start-now",
+      "deck": "A",
+      "cue": "A at 124 echoes out on the last beat of bar 16."
+    },
+    {
+      "track": "pendulum-tarantula",
+      "deck": "B",
+      "cue": "B is 174 heard at half time (87): cue it so its half-time feel lands on the one of bar 17; the double-time kick arrives at the drop.",
+      "loose": true
+    }
+  ]
 }

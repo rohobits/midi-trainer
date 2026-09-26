@@ -91,5 +91,17 @@
   "prereqs": [
     "outro-to-intro-full-volume"
   ],
-  "artist": "Fisher"
+  "artist": "Fisher",
+  "tracks": [
+    {
+      "track": "fisher-losing-it",
+      "deck": "A",
+      "cue": "A on its last drop; the drill starts on the first beat of that phrase."
+    },
+    {
+      "track": "dennis-ferrer-hey-hey",
+      "deck": "B",
+      "cue": "Cue B so its hook entry lands on bar 33: B starts with the low cut on bar 17, rises over 8 bars, the one-bar breath at bar 26, and the 'hey hey' hook drops two bars after A is killed."
+    }
+  ]
 }

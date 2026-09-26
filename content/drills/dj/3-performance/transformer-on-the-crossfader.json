@@ -34,5 +34,23 @@
   ],
   "prereqs": [
     "crossfader-cut-pattern"
+  ],
+  "tracks": [
+    {
+      "track": "fab-5-freddy-change-the-beat",
+      "deck": "A",
+      "cue": "The 'ahhh, fresh' sound on A, crossfader hard right; 64 clicks across 4 bars. Scratch material, so key is not matched.",
+      "loose": true
+    },
+    {
+      "track": "dj-qbert-superseal-6",
+      "deck": "A",
+      "cue": "Any skipless locked groove on the 100 side; the transformer pattern over a beat on B."
+    },
+    {
+      "track": "dr-dre-still-dre",
+      "deck": "B",
+      "cue": "B supplies the beat under the transformer clicks."
+    }
   ]
 }

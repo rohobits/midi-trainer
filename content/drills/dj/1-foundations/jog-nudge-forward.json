@@ -58,5 +58,17 @@
   "sources": [
     "https://pirate.com/en/blog/how-to-beatmatch/",
     "https://bangerz-army.com/blog/mastering-dj-beat-matching-techniques-a-comprehensive-guide/"
+  ],
+  "tracks": [
+    {
+      "track": "adam-beyer-bart-skils-your-mind",
+      "deck": "A",
+      "cue": "Long dry drum intro: nudge the jog edge forward on the downbeat of bars 2, 4, 6 and 8 and listen to the hats bend and settle. Nothing melodic is in the way."
+    },
+    {
+      "track": "green-velvet-flash",
+      "deck": "A",
+      "cue": "The acid line makes a pitch bend impossible to miss; use it once the drum-only version feels easy."
+    }
   ]
 }

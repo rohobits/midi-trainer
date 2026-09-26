@@ -94,5 +94,17 @@
   ],
   "prereqs": [
     "tempo-match-ramp"
+  ],
+  "tracks": [
+    {
+      "track": "adam-beyer-bart-skils-your-mind",
+      "deck": "A",
+      "cue": "Ride the tempo fader against the dry intro: push up two beats, straight back, and the hats tell you whether you returned to the exact value."
+    },
+    {
+      "track": "green-velvet-flash",
+      "deck": "A",
+      "cue": "Ride against the acid bassline: the pitch of the 303 exposes any return that misses the starting value."
+    }
   ]
 }

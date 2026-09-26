@@ -78,5 +78,17 @@
   ],
   "prereqs": [
     "hard-cut-on-the-one"
+  ],
+  "tracks": [
+    {
+      "track": "basement-jaxx-wheres-your-head-at",
+      "deck": "A",
+      "cue": "A on the hook: the shouted riff is what the echo tail is made of. Press ON on the last beat of bar 16 and pull the fader inside half a beat."
+    },
+    {
+      "track": "patrick-topping-forget",
+      "deck": "B",
+      "cue": "Cue B at its first kick and play it on the one of bar 17, under the echo tail."
+    }
   ]
 }

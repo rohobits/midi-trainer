@@ -112,5 +112,17 @@
     "loop-the-outro",
     "top-down-eq-handover"
   ],
-  "artist": "Charlotte de Witte"
+  "artist": "Charlotte de Witte",
+  "tracks": [
+    {
+      "track": "charlotte-de-witte-doppler",
+      "deck": "A",
+      "cue": "An 8-bar loop on A's peak section from bar 9; exit on 33 and reverb A out."
+    },
+    {
+      "track": "reinier-zonneveld-move-your-body-to-the-beat",
+      "deck": "B",
+      "cue": "Cue B at its kick-and-acid intro with highs and lows cut; fader up over 4 bars from 17, highs back over 25 to 29, bass swap 29 to 31."
+    }
+  ]
 }

@@ -97,5 +97,23 @@
   ],
   "prereqs": [
     "jog-nudge-correct-and-return"
+  ],
+  "tracks": [
+    {
+      "track": "fab-5-freddy-change-the-beat",
+      "deck": "A",
+      "cue": "The 'ahhh' and 'fresh' vocoder samples: cue on the 'ahhh'. Scratch material, so tempo and key are not matched.",
+      "loose": true
+    },
+    {
+      "track": "dj-qbert-superseal-6",
+      "deck": "A",
+      "cue": "Skipless locked grooves so the sample never has to be re-cued."
+    },
+    {
+      "track": "james-brown-funky-drummer",
+      "deck": "B",
+      "cue": "B: the Funky Drummer break (at 5:34 on the full version) as the beat to scratch over; eight strokes a bar, each the same length."
+    }
   ]
 }

@@ -65,5 +65,17 @@
   ],
   "prereqs": [
     "classic-bass-swap-transition"
+  ],
+  "tracks": [
+    {
+      "track": "fisher-losing-it",
+      "deck": "A",
+      "cue": "A on its drop: the rolling bassline is dominant, so a slow swap is mud."
+    },
+    {
+      "track": "dennis-ferrer-hey-hey",
+      "deck": "B",
+      "cue": "Cue B at its first kick with its low off. Bring it in over 8 bars; on bar 9 swap the lows inside one bar so B's organ bass takes over cleanly."
+    }
   ]
 }

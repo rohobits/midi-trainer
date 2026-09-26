@@ -3,6 +3,7 @@ import type { View } from '../router';
 import { navigate } from '../router';
 import { el, download } from '../ui/dom';
 import { confirmDialog } from '../ui/dialog';
+import { tracksCsv } from '../ui/tracks';
 
 export const settingsView: View = (root, app) => {
   const s = app.settings;
@@ -136,6 +137,9 @@ export const settingsView: View = (root, app) => {
     }
   };
   imp.appendChild(impInput);
+  const csv = el('button', {}, 'Export suggested tracks (CSV)');
+  csv.title = 'Every drill\'s suggested records with BPM, key and cue, for building the crate in rekordbox or Beatport';
+  csv.onclick = () => download('midi-trainer-suggested-tracks.csv', tracksCsv(app.drills.filter((d) => d.profile !== 'piano88')), 'text/csv');
   const wipe = el('button', { class: 'ghost' }, 'Delete all attempts');
   wipe.onclick = async () => {
     if (!(await confirmDialog('Delete every attempt?', 'Maps and settings stay. This cannot be undone.', { confirm: 'Delete', danger: true }))) return;
@@ -143,7 +147,7 @@ export const settingsView: View = (root, app) => {
     await app.reloadAttempts();
     app.toast('Attempts deleted.');
   };
-  rowEl.append(exp, imp, wipe);
+  rowEl.append(exp, imp, csv, wipe);
   data.appendChild(rowEl);
   page.appendChild(data);
 

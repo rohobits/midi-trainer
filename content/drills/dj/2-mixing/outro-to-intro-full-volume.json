@@ -79,5 +79,17 @@
   ],
   "prereqs": [
     "classic-bass-swap-transition"
+  ],
+  "tracks": [
+    {
+      "track": "hot-since-82-buggin",
+      "deck": "A",
+      "cue": "A is in its long stripped outro; both channels sit at full for 22 bars because the outro has no bass to fight."
+    },
+    {
+      "track": "chris-lake-turn-off-the-lights",
+      "deck": "B",
+      "cue": "Cue B at the first kick of the extended version with the low cut, fader straight to full. Swap the bass at bar 17 when B's vocal enters and take A out only over bars 25 to 33."
+    }
   ]
 }

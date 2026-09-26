@@ -137,5 +137,17 @@
   "prereqs": [
     "cue-point-stutter",
     "transformer-on-the-crossfader"
+  ],
+  "tracks": [
+    {
+      "track": "nas-made-you-look",
+      "deck": "A",
+      "cue": "Hot cue A1 on the 'they shootin'' stab: press on the beat, then chop the fader twice in the half beat after."
+    },
+    {
+      "track": "50-cent-in-da-club",
+      "deck": "A",
+      "cue": "A1 on 'go shorty'; the same press-and-chop."
+    }
   ]
 }

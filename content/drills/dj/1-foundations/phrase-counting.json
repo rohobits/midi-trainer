@@ -58,5 +58,22 @@
     "techno"
   ],
   "path": "pads",
-  "level": 1
+  "level": 1,
+  "tracks": [
+    {
+      "track": "faithless-insomnia",
+      "deck": "A",
+      "cue": "The Monster Mix has one of the longest DJ intros in the canon. Start on the first kick and count 8-bar phrases; the vocal, the breakdown and the riff all arrive on 16- or 32-bar lines, so every one of your A1 presses should land where something changes."
+    },
+    {
+      "track": "eric-prydz-opus",
+      "deck": "A",
+      "cue": "Nine minutes of one slow crescendo. Elements are added on phrase boundaries, never mid-phrase, so if your count drifts you hear it immediately. Practise from the first kick through the peak."
+    },
+    {
+      "track": "daft-punk-around-the-world",
+      "deck": "A",
+      "cue": "Elements come in and out in 16-bar blocks over a bassline that never stops. Count from the first kick; when the vocoder hook arrives you should be on a phrase downbeat."
+    }
+  ]
 }

@@ -63,5 +63,22 @@
     "techno"
   ],
   "path": "transitions",
-  "level": 1
+  "level": 1,
+  "tracks": [
+    {
+      "track": "robin-s-show-me-love",
+      "deck": "A",
+      "cue": "The M1 organ bass is the whole track. A plays from the verse; at bar 17 its low knob comes down over 4 bars and the room hears exactly one bassline the whole time."
+    },
+    {
+      "track": "patrick-topping-forget",
+      "deck": "B",
+      "cue": "Cue B at its first kick with the low knob off. Bring it in on hi and mid; its bassline hook arrives on a phrase line, so time the swap so B's low is at centre when the hook lands."
+    },
+    {
+      "track": "stardust-music-sounds-better-with-you",
+      "deck": "B",
+      "cue": "Alternative B: the filtered loop rides on a bass that never stops, so any moment both lows are up is audible mud. Good for hearing why the swap has to be clean."
+    }
+  ]
 }

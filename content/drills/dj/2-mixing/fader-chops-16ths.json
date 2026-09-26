@@ -34,5 +34,17 @@
   ],
   "prereqs": [
     "fader-chops-8ths"
+  ],
+  "tracks": [
+    {
+      "track": "nas-made-you-look",
+      "deck": "A",
+      "cue": "Sixteenth chops on the Apache-break intro at 96; work up from 8ths."
+    },
+    {
+      "track": "eric-b-rakim-paid-in-full",
+      "deck": "A",
+      "cue": "The sparse loop under the verse leaves space for every click to be heard."
+    }
   ]
 }

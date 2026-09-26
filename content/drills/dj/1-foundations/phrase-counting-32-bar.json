@@ -67,5 +67,22 @@
   ],
   "prereqs": [
     "phrase-counting-16-bar"
+  ],
+  "tracks": [
+    {
+      "track": "above-beyond-sun-and-moon",
+      "deck": "A",
+      "cue": "Extended club mix: drum intro for two 16-bar phrases, chords on the third. A1 on the first kick and on the chord entry (bar 33); A2 on 17 and 49; A3 on every 8."
+    },
+    {
+      "track": "age-of-love-cdw-es-remix",
+      "deck": "A",
+      "cue": "Drum intro for two 16-bar phrases, the arpeggio riff on the third. Your bar-33 A1 should coincide with the riff."
+    },
+    {
+      "track": "paul-van-dyk-for-an-angel",
+      "deck": "A",
+      "cue": "E-Werk Club Mix: bassline on the third 16-bar phrase, melody a phrase later. The 32-bar count puts A1 on each of those entries."
+    }
   ]
 }

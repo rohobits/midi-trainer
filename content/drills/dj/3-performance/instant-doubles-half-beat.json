@@ -53,5 +53,17 @@
   "sources": [
     "https://wearecrossfader.co.uk/blog/instant-doubles-routine-how-its-done/"
   ],
-  "needsAudio": true
+  "needsAudio": true,
+  "tracks": [
+    {
+      "track": "fisher-losing-it",
+      "deck": "A",
+      "cue": "Instant doubles of Losing It: hot cue 1 on the first kick of both decks, press B1 half a beat after A1 for the flam."
+    },
+    {
+      "track": "fisher-losing-it",
+      "deck": "B",
+      "cue": "The same file on B, hot cue 1 on the same first kick."
+    }
+  ]
 }

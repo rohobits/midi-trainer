@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { parseDrill, parseDrillFile, describeIssues, Drill } from '../src/drills/schema';
+import { parseDrill, parseTrackPool, parseDrillFile, describeIssues, Drill } from '../src/drills/schema';
+import { camelotCompatible } from '../src/audio/patterns';
 import { lanesFor, lengthBeats, controlsFor } from '../src/drills/lanes';
 import { availability } from '../src/drills/availability';
 
@@ -44,6 +45,15 @@ describe('drill schema', () => {
   it('accepts research metadata fields', () => {
     const d = parseDrill({ ...base, skills: ['phrasing'], genre: ['house'], requires: ['decks:3'], sources: ['https://example.com'], needsAudio: true, artist: 'Carl Cox' });
     expect(d.requires).toEqual(['decks:3']);
+  });
+
+  it('accepts suggested track refs and validates the pool', () => {
+    const d = parseDrill({ ...base, tracks: [{ track: 'fisher-losing-it', deck: 'B', cue: 'Start the blend on the third 16-bar phrase.' }] });
+    expect(d.tracks?.[0]?.deck).toBe('B');
+    expect(() => parseTrackPool([{ id: 'x', artist: 'A', title: 'T', bpm: 125, key: '13A', genre: 'house', structure: 's', url: 'https://example.com' }])).toThrow();
+    expect(camelotCompatible('8A', '8B')).toBe(true);
+    expect(camelotCompatible('12A', '1A')).toBe(true);
+    expect(camelotCompatible('8A', '10A')).toBe(false);
   });
 });
 

@@ -68,5 +68,19 @@
   ],
   "prereqs": [
     "hard-cut-on-the-one"
+  ],
+  "tracks": [
+    {
+      "track": "50-cent-in-da-club",
+      "deck": "A",
+      "cue": "A on the riff intro; crossfader hard left. Hip-hop drop mixes cut between hooks, so key is not matched here.",
+      "loose": true
+    },
+    {
+      "track": "dr-dre-still-dre",
+      "deck": "B",
+      "cue": "Cue B on the first piano stab, silent on the right. Snap to B on bar 9, back to A on bar 17: a switch, no fade.",
+      "loose": true
+    }
   ]
 }

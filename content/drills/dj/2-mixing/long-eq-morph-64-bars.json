@@ -98,5 +98,17 @@
   ],
   "prereqs": [
     "top-down-eq-handover"
+  ],
+  "tracks": [
+    {
+      "track": "tiesto-adagio-for-strings",
+      "deck": "A",
+      "cue": "A on its long build: the string theme keeps evolving, so any single move you make is masked and only the sum is heard."
+    },
+    {
+      "track": "charlotte-de-witte-doppler",
+      "deck": "B",
+      "cue": "Cue B at its percussion intro and take 64 bars to arrive: fader, mids, then the bass swap across bars 33 to 37 where B's riser begins."
+    }
   ]
 }
