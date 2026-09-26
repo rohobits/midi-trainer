@@ -40,6 +40,10 @@ export const practiceView: View = (root, app, params) => {
   let lastCombo = 0;
   let lastPointerMove = 0;
   let placementTimer = 0;
+  /** Fixed per run: the highway scrolls at one constant speed, like a song. */
+  let runLookahead = s.lookahead;
+  let lastStatsAt = 0;
+  let lastPerfHtml = '';
   const tapTempo = new TapTempo();
   const offs: Array<() => void> = [];
   const testMode = params.query.get('test') === '1';
@@ -174,6 +178,7 @@ export const practiceView: View = (root, app, params) => {
     run = buildRun(null);
     const only = onlyLanes();
     if (only) run = buildRun(only);
+    runLookahead = chooseLookahead(run);
     const bpmOverride = Number(bpmInput.value);
     if (bpmOverride && bpmOverride !== d.bpm) run.setBpm(bpmOverride * app.settings.tempoScale, performance.now());
     lastCombo = 0;
@@ -185,6 +190,21 @@ export const practiceView: View = (root, app, params) => {
     rail.classList.remove('dim');
     updateStats();
     draw();
+  }
+
+  /**
+   * Sparse drills (phrase counting: one press every 32 beats) would leave the highway
+   * empty at the default lookahead. Widen once, before the run, to the typical gap plus a
+   * bar, capped at 8 bars, so the stream is constant instead of rescaling mid-run.
+   */
+  function chooseLookahead(r: DrillRun): number {
+    const base = app.settings.lookahead;
+    const starts = [...new Set(r.states.map((st) => st.t))].sort((a, b) => a - b);
+    const gaps = starts.slice(1).map((t, i) => t - starts[i]!).filter((g) => g > 0.01).sort((a, b) => a - b);
+    if (!gaps.length) return base;
+    const median = gaps[Math.floor(gaps.length / 2)]!;
+    if (median <= base) return base;
+    return Math.min(bpb() * 8, Math.ceil((median + bpb()) / bpb()) * bpb());
   }
 
   function loadDrill(d: Drill): void {
@@ -320,7 +340,10 @@ export const practiceView: View = (root, app, params) => {
     void cue;
     stage.msg.style.display = 'none';
     if (t - lastPointerMove > 2000) rail.classList.add('dim');
-    updateStats();
+    if (t - lastStatsAt > 80) {
+      lastStatsAt = t;
+      updateStats();
+    }
     draw(frame);
     if (r.ended) {
       playBtn.textContent = 'Start';
@@ -427,7 +450,11 @@ export const practiceView: View = (root, app, params) => {
     stage.setProgress(Math.max(0, pos) / total, ticks);
     if (run.perf) {
       const p = run.perf.snapshot();
-      stage.perf.innerHTML = `<div class="mult">${p.multiplier}×</div><div class="pts">${p.points.toLocaleString()} pts · combo ${p.combo}</div><div class="charge ${p.euphoriaCharge && p.euphoriaActiveUntil == null ? 'ready' : ''}">${p.euphoriaActiveUntil != null ? 'EUPHORIA' : p.euphoriaCharge ? `${'⚡'.repeat(p.euphoriaCharge)} press E` : 'clean phrase charges Euphoria'}</div><div class="energy"><i style="width:${Math.round(p.energy * 100)}%"></i></div>`;
+      const html = `<div class="mult">${p.multiplier}×</div><div class="pts">${p.points.toLocaleString()} pts · combo ${p.combo}</div><div class="charge ${p.euphoriaCharge && p.euphoriaActiveUntil == null ? 'ready' : ''}">${p.euphoriaActiveUntil != null ? 'EUPHORIA' : p.euphoriaCharge ? `${'⚡'.repeat(p.euphoriaCharge)} press E` : 'clean phrase charges Euphoria'}</div><div class="energy"><i style="width:${Math.round(p.energy * 100)}%"></i></div>`;
+      if (html !== lastPerfHtml) {
+        lastPerfHtml = html;
+        stage.perf.innerHTML = html;
+      }
     }
   }
 
@@ -452,7 +479,8 @@ export const practiceView: View = (root, app, params) => {
       mapped: app.mapped(),
       pos,
       beatsPerBar: bpb(),
-      lookahead: app.settings.lookahead,
+      lookahead: runLookahead,
+      autoWiden: false,
       hitWindowBeats: app.settings.showHitWindow ? r.thresholds.tapWindowBeats : undefined,
       fade: app.settings.masterMode && goldCount() >= 3 ? 1 : 0,
       ghost: ghostLog(),

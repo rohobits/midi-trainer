@@ -90,6 +90,9 @@ export class HighwayRenderer {
   private theme: HighwayTheme;
   private fov = 1.6;
   private comboScaleAt = 0;
+  /** Lookahead currently on screen; eases toward the frame's request so the grid never snaps. */
+  private shownLookahead = 0;
+  private lastDrawAt = 0;
   private euphoriaAt: number | null = null;
   private lastEuphoriaActive = false;
   private trailCanvas: HTMLCanvasElement | OffscreenCanvas | null = null;
@@ -224,6 +227,16 @@ export class HighwayRenderer {
       }
       if (nearest !== Infinity && nearest > f.lookahead) lookahead = Math.min(Math.max(f.lookahead, nearest + f.beatsPerBar), f.beatsPerBar * 8);
     }
+    // ease the visible lookahead (about 350 ms) so a change glides instead of snapping
+    const dtSec = this.lastDrawAt ? Math.min(0.1, (now - this.lastDrawAt) / 1000) : 0;
+    this.lastDrawAt = now;
+    if (!this.shownLookahead || this.effects.reducedMotion) this.shownLookahead = lookahead;
+    else {
+      const k = 1 - Math.exp(-dtSec * 8);
+      this.shownLookahead += (lookahead - this.shownLookahead) * k;
+      if (Math.abs(this.shownLookahead - lookahead) < 0.02) this.shownLookahead = lookahead;
+    }
+    lookahead = this.shownLookahead;
     const p = this.ensureProjection(f, lookahead);
     const shake = this.effects.shakeOffset(now);
     const euphoria = f.combo?.euphoriaActive ?? false;
@@ -365,9 +378,9 @@ export class HighwayRenderer {
     if (f.hitWindowBeats) {
       const y0 = p.y(p.depth(f.hitWindowBeats));
       const y1 = p.y(p.depth(-f.hitWindowBeats));
-      ctx.fillStyle = rgba(T.perfect, 0.06);
+      ctx.fillStyle = rgba(T.perfect, 0.03);
       ctx.fillRect(leftAt(0), y0, rightAt(0) - leftAt(0), y1 - y0);
-      ctx.strokeStyle = rgba(T.perfect, 0.18);
+      ctx.strokeStyle = rgba(T.perfect, 0.12);
       ctx.beginPath();
       ctx.moveTo(leftAt(0), y0);
       ctx.lineTo(rightAt(0), y0);
@@ -400,6 +413,9 @@ export class HighwayRenderer {
     }
     // ---- targets (crisp pass) ----
     const targetAlpha = 1 - (f.fade ?? 0);
+    /** Depth below the strike where a passed note has faded out. */
+    const PAST = -0.05;
+    const pastFade = (t: number) => (t < 0 ? Math.max(0, 1 + t / -PAST) : 1);
     const nearGlow: { x: number; y: number; color: string; size: number; alpha: number }[] = [];
     if (targetAlpha > 0.01) {
       for (const s of f.states) {
@@ -413,34 +429,45 @@ export class HighwayRenderer {
         const color = s.hit ? T.perfect : s.miss ? dimmed(base) : euphoria ? mix(base, T.euphoria, 0.6) : base;
         switch (s.kind) {
           case 'tap': {
+            // a hit gem bursts (ring + sparks) and is gone; a missed one sails past, dimmed
+            if (s.hit) break;
             const t = p.depth(s.t - f.pos);
-            if (t > 1 || t < -0.12) break;
+            if (t > 1 || t < PAST) break;
+            ctx.globalAlpha = alpha * pastFade(t);
             const y = p.y(t);
             const w = p.laneWidth(i, Math.max(0, t)) * 0.78;
             const x = p.laneCentre(i, Math.max(0, t)) - w / 2;
-            const hgt = Math.max(6, 14 * T.noteScale * p.scale(Math.max(0, t)));
-            const near = t >= 0 && t < 0.06 && !s.hit && !s.miss;
-            ctx.fillStyle = near ? mix(color, '#ffffff', 0.2) : color;
+            const hgt = Math.max(7, 18 * T.noteScale * p.scale(Math.max(0, t)));
+            const near = !s.miss && t >= 0 && t < 0.12 ? (1 - t / 0.12) * 0.3 : 0;
+            const body = near ? mix(color, '#ffffff', near) : color;
+            // bevelled gem: body, lighter top face, darker underside
+            ctx.fillStyle = body;
             ctx.beginPath();
             ctx.roundRect(x, y - hgt / 2, w, hgt, hgt / 2);
             ctx.fill();
-            ctx.fillStyle = rgba('#ffffff', 0.35);
+            ctx.fillStyle = rgba('#000000', 0.28);
             ctx.beginPath();
-            ctx.roundRect(x + 3, y - hgt / 2 + 1.5, w - 6, Math.max(1.5, hgt * 0.25), 2);
+            ctx.roundRect(x + 2, y + hgt * 0.1, w - 4, hgt * 0.4, hgt * 0.2);
             ctx.fill();
-            if (t < 0.35 && !s.miss) nearGlow.push({ x: x + w / 2, y, color, size: w * 1.6, alpha: alpha * (s.hit ? 0.3 : 0.45) });
+            ctx.fillStyle = rgba('#ffffff', 0.38);
+            ctx.beginPath();
+            ctx.roundRect(x + 3, y - hgt / 2 + 2, w - 6, Math.max(2, hgt * 0.28), 3);
+            ctx.fill();
+            if (t < 0.35 && !s.miss) nearGlow.push({ x: x + w / 2, y, color, size: w * 1.6, alpha: alpha * 0.45 });
             break;
           }
           case 'cut': {
+            if (s.hit) break;
             const t = p.depth(s.t - f.pos);
-            if (t > 1 || t < -0.12) break;
+            if (t > 1 || t < PAST) break;
+            ctx.globalAlpha = alpha * pastFade(t);
             const tt = Math.max(0, t);
             const y = p.y(t);
             const x0 = p.valueX(i, s.v0, tt);
             const x1 = p.valueX(i, s.v1, tt);
             const dir = Math.sign(x1 - x0) || 1;
             ctx.strokeStyle = color;
-            ctx.lineWidth = 7 * T.noteScale * p.scale(tt);
+            ctx.lineWidth = 9 * T.noteScale * p.scale(tt);
             ctx.lineCap = 'round';
             ctx.beginPath();
             ctx.moveTo(x0, y);
@@ -465,20 +492,26 @@ export class HighwayRenderer {
             }
             const t0 = p.depth(s.t - f.pos);
             const t1 = p.depth(s.t1 - f.pos);
-            if (t1 < -0.12 || t0 > 1) break;
+            if (t1 < PAST || t0 > 1) break;
             const done = s.done;
             const col = done ? (s.hit ? T.perfect : dimmed(base)) : color;
             const isHold = s.kind === 'ramp' && s.source === 'hold';
             for (const sp of spans) {
-              // sample the ribbon along depth so perspective bends it correctly
+              // sample the ribbon along depth so perspective bends it correctly; an active
+              // ribbon is consumed at the strike line (Guitar Hero sustain), a finished one
+              // sails past
               const steps = 14;
+              const tFrom = done ? Math.max(t0, PAST) : Math.max(t0, 0);
+              if (done) ctx.globalAlpha = alpha * pastFade(t1);
+              const tTo = Math.min(t1, 1);
               ctx.beginPath();
               const pts: [number, number][] = [];
-              for (let k = 0; k <= steps; k++) {
-                const tt = t0 + (t1 - t0) * (k / steps);
-                if (tt > 1 || tt < -0.12) continue;
-                const v = sp.v0 + (sp.v1 - sp.v0) * (k / steps);
-                pts.push([p.valueX(sp.lane, v, Math.max(0, tt)), p.y(tt)]);
+              if (tTo > tFrom) {
+                for (let k = 0; k <= steps; k++) {
+                  const tt = tFrom + (tTo - tFrom) * (k / steps);
+                  const v = sp.v0 + (sp.v1 - sp.v0) * ((tt - t0) / Math.max(1e-6, t1 - t0));
+                  pts.push([p.valueX(sp.lane, v, Math.max(0, tt)), p.y(tt)]);
+                }
               }
               if (pts.length < 2) continue;
               // ribbon: a translucent body as wide as a fader cap, a bright rail down the
@@ -499,11 +532,11 @@ export class HighwayRenderer {
               ctx.strokeStyle = rgba(T.ink, 0.55);
               ctx.lineWidth = 1;
               ctx.setLineDash([5, 7]);
-              ctx.lineDashOffset = this.effects.reducedMotion ? 0 : -((f.pos * 24) % 12);
+              ctx.lineDashOffset = 0;
               ctx.stroke();
               ctx.setLineDash([]);
               ctx.lineDashOffset = 0;
-              if (!done && t0 <= 1 && t1 >= -0.12) nearGlow.push({ x: pts[Math.floor(pts.length / 2)]![0], y: pts[Math.floor(pts.length / 2)]![1], color: col, size: bodyW * 3, alpha: alpha * 0.25 });
+              if (!done && t0 <= 1 && t1 >= 0) nearGlow.push({ x: pts[Math.floor(pts.length / 2)]![0], y: pts[Math.floor(pts.length / 2)]![1], color: col, size: bodyW * 3, alpha: alpha * 0.25 });
               // end marker and value
               const end = pts[pts.length - 1]!;
               if (t1 <= 1 && t1 >= 0) {
@@ -527,7 +560,9 @@ export class HighwayRenderer {
                 ctx.moveTo(ex, strike - 10);
                 ctx.lineTo(ex, strike + 10);
                 ctx.stroke();
-                nearGlow.push({ x: ex, y: strike, color: Math.abs(v - expected) < 0.18 ? T.perfect : T.miss, size: 36, alpha: alpha * 0.45 });
+                const onIt = Math.abs(v - expected) < 0.18;
+                nearGlow.push({ x: ex, y: strike, color: onIt ? T.perfect : T.miss, size: onIt ? 90 : 36, alpha: alpha * (onIt ? 0.7 : 0.45) });
+                if (onIt) nearGlow.push({ x: pts[0]![0], y: pts[0]![1] - 40, color: col, size: bodyW * 5, alpha: alpha * 0.35 });
               }
             }
             break;
@@ -535,11 +570,11 @@ export class HighwayRenderer {
           case 'jog': {
             const t0 = p.depth(s.t - f.pos);
             const t1 = p.depth(s.t1 - f.pos);
-            if (t1 < -0.12 || t0 > 1) break;
+            if (t1 < PAST || t0 > 1) break;
             const segs = s.pattern.length;
             for (let k = 0; k < segs; k++) {
               const tt = t0 + (t1 - t0) * ((k + 0.5) / segs);
-              if (tt > 1 || tt < -0.1) continue;
+              if (tt > 1 || tt < PAST) continue;
               const cx = p.laneCentre(i, Math.max(0, tt));
               const cy = p.y(tt);
               const r = 11 * p.scale(Math.max(0, tt));
@@ -566,9 +601,9 @@ export class HighwayRenderer {
           case 'select': {
             const t0 = p.depth(s.t - f.pos);
             const t1 = p.depth(s.t1 - f.pos);
-            if (t1 < -0.12 || t0 > 1) break;
+            if (t1 < PAST || t0 > 1) break;
             const ya = p.y(Math.min(1, Math.max(0, t1)));
-            const yb = p.y(Math.max(-0.1, t0));
+            const yb = p.y(Math.max(PAST, t0));
             const tt = Math.max(0, Math.min(1, t0));
             const w = p.laneWidth(i, tt) * 0.7;
             const x = p.laneCentre(i, tt) - w / 2;

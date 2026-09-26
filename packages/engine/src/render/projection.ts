@@ -73,7 +73,9 @@ export class Projection {
 
   /** Screen y for depth t (may be below strike for t < 0, past targets). */
   y(t: number): number {
-    if (t <= 0) return this.strikeY - t * (this.strikeY - this.horizonY) * 0.9;
+    // below the strike keep the slope the curve has at t = 0, so a note crossing the line
+    // neither slows nor jumps
+    if (t <= 0) return this.strikeY - t * (this.strikeY - this.horizonY) * (1 + this.fov);
     const k = (t * (1 + this.fov)) / (1 + this.fov * t);
     return this.strikeY - (this.strikeY - this.horizonY) * k;
   }
