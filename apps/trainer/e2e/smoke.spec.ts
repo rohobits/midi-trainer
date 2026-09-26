@@ -103,6 +103,14 @@ test('editor validates JSON and saves a custom drill; decks, report and replay v
   await expect(page.locator('#chooseDj')).toBeVisible();
   await ready(page, 'placement');
   await expect(page.locator('#placementStart')).toBeVisible();
+  await page.click('#placementStart');
+  await expect(page.locator('h2').first()).toContainText('drill 1');
+  await page.click('text=Quit');
+  await ready(page, 'settings');
+  await page.fill('.settings input[type="number"] >> nth=3', '77');
+  await page.dispatchEvent('.settings input[type="number"] >> nth=3', 'change');
+  await page.click('text=Reset thresholds');
+  await expect(page.locator('.settings input[type="number"] >> nth=3')).not.toHaveValue('77');
 });
 
 test('history and replay work after a finished attempt', async ({ page }) => {

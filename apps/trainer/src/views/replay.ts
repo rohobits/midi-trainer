@@ -29,13 +29,15 @@ export const replayView: View = (root, app, params) => {
   const id = Number(params.id);
   let raf = 0;
   let playing = false;
-  let pos = 0;
+  let pos = -4;
+  let disposed = false;
   let lastTs = 0;
   let resize: () => void = () => {};
   const holder = el('div');
   root.appendChild(holder);
   void (async () => {
     const attempt = await app.db.attempts.get(id);
+    if (disposed) return;
     const drill = attempt ? app.drill(attempt.drillId) : undefined;
     if (!attempt || !drill) {
       holder.appendChild(el('p', {}, 'Attempt not found.'));
@@ -154,6 +156,7 @@ export const replayView: View = (root, app, params) => {
     holder.appendChild(stats);
   })();
   return () => {
+    disposed = true;
     cancelAnimationFrame(raf);
     window.removeEventListener('resize', resize);
   };

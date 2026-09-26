@@ -282,7 +282,9 @@ export const editorView: View = (root, app, params) => {
       tb.appendChild(tr);
     });
     t.appendChild(tb);
-    list.appendChild(t);
+    const tw = el('div', { class: 'tablewrap' });
+    tw.appendChild(t);
+    list.appendChild(tw);
   }
   saveBtn.onclick = async () => {
     if (!validate()) return;

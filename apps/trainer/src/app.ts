@@ -150,6 +150,14 @@ export class App {
     else root.dataset.theme = 'dark';
     root.dataset.lanes = this.settings.laneSkin;
     root.dataset.reduced = this.settings.reducedMotion || matchMedia('(prefers-reduced-motion: reduce)').matches ? '1' : '0';
+    // mirror for the pre-paint script in index.html, and keep the browser chrome in step
+    try {
+      localStorage.setItem('midi-trainer:theme', root.dataset.theme ?? 'dark');
+    } catch {
+      /* private mode */
+    }
+    const meta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    if (meta) meta.content = getComputedStyle(root).getPropertyValue('--s0').trim() || '#0a0b0e';
     this.sfx.muted = this.settings.muteSfx;
   }
 

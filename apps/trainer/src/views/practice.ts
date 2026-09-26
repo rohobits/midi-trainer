@@ -39,6 +39,7 @@ export const practiceView: View = (root, app, params) => {
   let section: [number, number] | null = drill.section ?? null;
   let lastCombo = 0;
   let lastPointerMove = 0;
+  let placementTimer = 0;
   const tapTempo = new TapTempo();
   const offs: Array<() => void> = [];
   const testMode = params.query.get('test') === '1';
@@ -316,12 +317,8 @@ export const practiceView: View = (root, app, params) => {
     if (r.looped) renderer.effects.clear();
     const pos = run.pos(t);
     const cue = run.cue(pos, names, 2);
-    if (r.waiting) {
-      stage.msg.style.display = 'none';
-    } else if (cue && run.phase === 'running') {
-      stage.msg.style.display = 'block';
-      stage.msg.textContent = cue.text.replace(/ in \d+ beats$/, '');
-    } else stage.msg.style.display = 'none';
+    void cue;
+    stage.msg.style.display = 'none';
     if (t - lastPointerMove > 2000) rail.classList.add('dim');
     updateStats();
     draw(frame);
@@ -369,7 +366,7 @@ export const practiceView: View = (root, app, params) => {
     });
     updateStats();
     if (params.query.get('placement')) {
-      setTimeout(() => navigate(`placement?score=${attempt.score ?? 'null'}`), 2400);
+      placementTimer = window.setTimeout(() => navigate(`placement?score=${attempt.score ?? 'null'}`), 2400);
       return;
     }
     if (app.settings.autoBpm && attempt.passed && app.settings.tempoScale < 1) {
@@ -423,7 +420,7 @@ export const practiceView: View = (root, app, params) => {
     if (cue && run.active) {
       const beats = cue.beatsAway;
       const bars = Math.floor(beats / bpb());
-      stage.next.innerHTML = `next <b>${cue.text.replace(/^(Tap|Move|Cut|Swap|Jog|Choose|Hold) /, '').replace(/ in \d+ beats$/, '')}</b> in ${bars >= 1 ? `${bars} bar${bars > 1 ? 's' : ''}` : `${beats} beat${beats === 1 ? '' : 's'}`}`;
+      stage.next.innerHTML = `next <b>${cue.text.replace(/^(Tap|Move|Cut|Swap|Jog|Choose|Hold) /, '').replace(/ in \d+ beats$/, '')}</b> ${beats <= 0 ? ' · now' : ` in ${bars >= 1 ? `${bars} bar${bars > 1 ? 's' : ''}` : `${beats} beat${beats === 1 ? '' : 's'}`}`}`;
     } else stage.next.textContent = run.active ? 'no more targets' : `${drill.tier}${drill.path ? ` · ${drill.path}` : ''} · Space to start`;
     const ticks: { at: number; phrase: boolean }[] = [];
     for (let b = bpb(); b < total; b += bpb()) ticks.push({ at: b / total, phrase: b % phraseLen === 0 });
@@ -472,7 +469,7 @@ export const practiceView: View = (root, app, params) => {
   }
 
   function step(dir: 1 | -1): void {
-    const i = ordered.findIndex((d) => d.id === drill!.id);
+    const i = Math.max(0, ordered.findIndex((d) => d.id === drill!.id));
     const n = ordered[(i + dir + ordered.length) % ordered.length];
     if (n) loadDrill(n);
   }
@@ -532,7 +529,7 @@ export const practiceView: View = (root, app, params) => {
   });
   const applySection = () => {
     const a = Number(secFrom.value);
-    const b = Number(secTo.value);
+    const b = Number(secTo.value) || (a >= 1 ? drill!.bars : 0);
     section = a >= 1 && b >= a ? [a, b] : null;
     newRun();
   };
@@ -710,6 +707,7 @@ export const practiceView: View = (root, app, params) => {
 
   return () => {
     cancelAnimationFrame(raf);
+    clearTimeout(placementTimer);
     offs.forEach((f) => f());
     document.removeEventListener('keydown', onKey);
     document.removeEventListener('pointermove', onMove);

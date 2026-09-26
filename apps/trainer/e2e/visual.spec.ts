@@ -57,6 +57,30 @@ test('browse and decks chrome', async ({ page }) => {
   await expect(page.locator('.console')).toHaveScreenshot('console.png', SHOT);
 });
 
+test('reduced motion still shows the results rows and medal', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/#/practice/hot-cue-drumming?test=1');
+  await page.waitForFunction(() => !!window.__practice?.run());
+  await page.evaluate(() => window.__practice.finish());
+  await expect(page.locator('#result')).toHaveClass(/open/);
+  await page.waitForTimeout(300);
+  const rowOpacity = await page.locator('#result .rows div').first().evaluate((e) => getComputedStyle(e).opacity);
+  expect(Number(rowOpacity)).toBeGreaterThan(0.9);
+  const medalScale = await page.locator('#result .medal').evaluate((e) => getComputedStyle(e).transform);
+  expect(medalScale).not.toContain('matrix(0, 0, 0, 0');
+});
+
+test('phone viewport has no horizontal scroll', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const route of ['browse', 'practice/hot-cue-drumming', 'mix', 'settings', 'dashboard']) {
+    await page.goto(`/#/${route}?test=1`);
+    await page.waitForFunction(() => !!window.__trainer && window.__trainer.state().drills > 0);
+    await page.waitForTimeout(300);
+    const sw = await page.evaluate(() => document.documentElement.scrollWidth);
+    expect(sw, route).toBeLessThanOrEqual(390);
+  }
+});
+
 test('frame time: 200 frames of the densest drill stay under budget', async ({ page }) => {
   await page.goto('/#/practice/transformer-on-the-crossfader?test=1');
   await page.waitForFunction(() => !!window.__practice?.run());

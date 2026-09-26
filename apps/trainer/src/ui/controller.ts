@@ -21,6 +21,8 @@ export function createController(app: App, host: HTMLElement, opts: { compact?: 
     const grp = g ? laneGroupOf(g) : 'select';
     return { deckA: 'var(--deck-a)', deckB: 'var(--deck-b)', mixer: 'var(--mixer)', pads: 'var(--pads)', fx: 'var(--fx)', select: 'var(--select)', lh: 'var(--lh)', rh: 'var(--rh)' }[grp] ?? DEFAULT_PALETTE.select;
   };
+  const cols = { A: el('div', { class: 'col' }), M: el('div', { class: 'col' }), B: el('div', { class: 'col' }) };
+  wrap.append(cols.A, cols.M, cols.B);
   for (const [name, controls] of groups) {
     const deck = el('div', { class: 'deck' });
     deck.appendChild(el('h3', {}, name));
@@ -69,7 +71,8 @@ export function createController(app: App, host: HTMLElement, opts: { compact?: 
     }
     if (pads.children.length) deck.appendChild(pads);
     if (knobs.children.length) deck.appendChild(knobs);
-    wrap.appendChild(deck);
+    const first = controls[0];
+    (first?.deck === 'A' ? cols.A : first?.deck === 'B' ? cols.B : cols.M).appendChild(deck);
   }
   const off = app.on('control', (ev) => {
     if (ev.kind === 'cc') {

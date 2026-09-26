@@ -51,6 +51,7 @@ export class Effects {
   private lastNow = 0;
 
   spark(x: number, y: number, color: string, count = 8, now = 0): void {
+    now = Math.min(now, performance.now());
     if (this.reducedMotion) count = Math.min(count, 3);
     for (let i = 0; i < count; i++) {
       const k = this.snext;
@@ -69,15 +70,18 @@ export class Effects {
   }
 
   ring(x: number, y: number, r0: number, r1: number, color: string, now: number, life = 220): void {
+    now = Math.min(now, performance.now());
     this.rings.push({ x, y, r0, r1, color, born: now, life });
     if (this.rings.length > 24) this.rings.shift();
   }
 
   flash(lane: number, color: string, now: number, life = 150): void {
+    now = Math.min(now, performance.now());
     this.flashes.set(lane, { color, born: now, life });
   }
 
   press(lane: number, now: number): void {
+    now = Math.min(now, performance.now());
     this.presses.set(lane, now);
   }
 
@@ -85,7 +89,7 @@ export class Effects {
   pressAmount(lane: number, now: number): number {
     const t = this.presses.get(lane);
     if (t == null) return 0;
-    const k = (now - t) / 250;
+    const k = Math.max(0, (now - t) / 250);
     if (k >= 1) {
       this.presses.delete(lane);
       return 0;
@@ -94,7 +98,11 @@ export class Effects {
   }
 
   popup(text: string, sub: string | null, x: number, y: number, color: string, now: number, life = 420): void {
-    this.popups.push({ text, sub, x, y, color, born: now, life });
+    now = Math.min(now, performance.now());
+    // stagger popups that land on the same spot within a beat so they don't overprint
+    let yy = y;
+    for (const q of this.popups) if (Math.abs(q.x - x) < 30 && Math.abs(now - q.born) < 300 && Math.abs(q.y - yy) < 12) yy -= 18;
+    this.popups.push({ text, sub, x, y: yy, color, born: now, life });
     if (this.popups.length > 12) this.popups.shift();
   }
 
@@ -128,27 +136,40 @@ export class Effects {
   }
 
   /** Draw everything additive (sparks, rings, flashes) then popups. Call with the highway's ctx. */
-  draw(ctx: CanvasRenderingContext2D, now: number, laneRect: (lane: number) => { x: number; w: number; top: number; bottom: number }, font: string): void {
+  /**
+   * `laneQuad` returns the lane's screen quad from the strike line up to a fraction of the
+   * highway depth, so flashes follow the perspective instead of painting a screen rectangle.
+   */
+  draw(ctx: CanvasRenderingContext2D, now: number, laneQuad: (lane: number) => { x0: number; x1: number; y0: number; x2: number; x3: number; y1: number }, font: string): void {
     const dt = Math.min(0.05, this.lastNow ? (now - this.lastNow) / 1000 : 0.016);
     this.lastNow = now;
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
     // lane flashes
     for (const [lane, f] of this.flashes) {
-      const k = (now - f.born) / f.life;
+      const k = Math.max(0, (now - f.born) / f.life);
       if (k >= 1) {
         this.flashes.delete(lane);
         continue;
       }
-      const r = laneRect(lane);
-      ctx.globalAlpha = 0.25 * (1 - k);
-      ctx.fillStyle = f.color;
-      ctx.fillRect(r.x, r.top, r.w, r.bottom - r.top);
+      const q = laneQuad(lane);
+      const g = ctx.createLinearGradient(0, q.y0, 0, q.y1);
+      g.addColorStop(0, rgba(f.color, 0.22 * (1 - k)));
+      g.addColorStop(1, rgba(f.color, 0));
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.moveTo(q.x0, q.y0);
+      ctx.lineTo(q.x1, q.y0);
+      ctx.lineTo(q.x3, q.y1);
+      ctx.lineTo(q.x2, q.y1);
+      ctx.closePath();
+      ctx.fill();
     }
     // rings
     for (let i = this.rings.length - 1; i >= 0; i--) {
       const r = this.rings[i]!;
-      const k = (now - r.born) / r.life;
+      const k = Math.max(0, (now - r.born) / r.life);
       if (k >= 1) {
         this.rings.splice(i, 1);
         continue;
@@ -162,7 +183,7 @@ export class Effects {
     // sparks
     for (let i = 0; i < MAX_SPARKS; i++) {
       if (!this.salive[i]) continue;
-      const k = (now - this.sborn[i]!) / this.slife[i]!;
+      const k = Math.max(0, (now - this.sborn[i]!) / this.slife[i]!);
       if (k >= 1) {
         this.salive[i] = 0;
         continue;
@@ -180,7 +201,7 @@ export class Effects {
     ctx.textAlign = 'center';
     for (let i = this.popups.length - 1; i >= 0; i--) {
       const p = this.popups[i]!;
-      const k = (now - p.born) / p.life;
+      const k = Math.max(0, (now - p.born) / p.life);
       if (k >= 1) {
         this.popups.splice(i, 1);
         continue;

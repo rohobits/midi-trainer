@@ -120,6 +120,7 @@ export function showResults(host: HTMLElement, r: ResultsInput): void {
   const delay = r.reduced ? 0 : 450;
   let lastTick = -1;
   const step = () => {
+    if (!sheet.isConnected) return;
     const t = performance.now() - start;
     const k = Math.max(0, Math.min(1, (t - delay) / dur));
     const e = 1 - Math.pow(1 - k, 5);
@@ -136,11 +137,12 @@ export function showResults(host: HTMLElement, r: ResultsInput): void {
       txt.textContent = a.score == null ? '—' : String(score);
       const stampAt = r.reduced ? 0 : 150;
       setTimeout(() => {
+        if (!sheet.isConnected) return;
         medal.classList.add('stamp');
         if (a.medal) r.sfx.play(a.medal === 'gold' ? 'medalGold' : a.medal === 'silver' ? 'medalSilver' : 'medalBronze');
         else r.sfx.play('thunk', { gain: 0.6 });
         stars.querySelectorAll('i').forEach((s, i) => {
-          if (i < starCount) setTimeout(() => s.classList.add('lit'), r.reduced ? 0 : 900 + i * 150);
+          if (i < starCount) setTimeout(() => sheet.isConnected && s.classList.add('lit'), r.reduced ? 0 : 900 + i * 150);
         });
       }, stampAt);
     }

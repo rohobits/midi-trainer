@@ -100,13 +100,12 @@ export const calibrateView: View = (root, app, params) => {
     result.innerHTML = '';
     let i = 0;
     const t0 = performance.now() + 500;
+    clicks = Array.from({ length: N }, (_, k) => t0 + (COUNT + k) * period);
     const fire = () => {
       const at = t0 + i * period;
       const wait = at - performance.now();
       timer = window.setTimeout(() => {
-        const now = performance.now();
         app.sounds.click(i % 4 === 0);
-        if (i >= COUNT) clicks.push(now);
         step.textContent = i < COUNT ? `${COUNT - i}` : `${i - COUNT + 1} / ${N}`;
         i++;
         if (i < COUNT + N) fire();

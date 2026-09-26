@@ -29,7 +29,14 @@ export const onboardingView: View = (root, app, params) => {
       const choice = el('div', { class: 'choice', style: 'margin-top:16px' });
       const dj = el('button', { id: 'chooseDj' });
       dj.innerHTML = flx4Svg + '<b>DJ controller</b><span class="hint">Pioneer DDJ-FLX4 with the shipped map, or any MIDI controller via learn.</span>';
-      dj.onclick = () => go(2, { lastProfile: 'flx4' });
+      dj.onclick = () => {
+        if (app.profile.id !== 'flx4') {
+          const sel = document.getElementById('profile') as HTMLSelectElement | null;
+          if (sel) sel.value = 'flx4';
+          void app.setProfile('flx4');
+        }
+        go(2, { lastProfile: 'flx4' });
+      };
       const piano = el('button', { id: 'choosePiano' });
       piano.innerHTML = pianoSvg + '<b>Piano</b><span class="hint">Any 88-key MIDI keyboard. Falling notes, wait mode, .mid files.</span>';
       piano.onclick = () => go(2, { lastProfile: 'flx4', onboarded: true }, 'piano');

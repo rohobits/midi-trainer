@@ -51,5 +51,11 @@ export class Router {
 }
 
 export function navigate(to: string): void {
-  location.hash = to.startsWith('#') ? to : `#/${to}`;
+  const next = to.startsWith('#') ? to : `#/${to}`;
+  if (location.hash === next) {
+    // same route: the browser fires no hashchange, so re-mount explicitly
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
+    return;
+  }
+  location.hash = next;
 }

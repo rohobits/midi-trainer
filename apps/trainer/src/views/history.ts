@@ -69,6 +69,8 @@ export const historyView: View = (root, app, params) => {
     tb.appendChild(tr);
   }
   t.appendChild(tb);
-  table.appendChild(t);
+  const tw = el('div', { class: 'tablewrap' });
+  tw.appendChild(t);
+  table.appendChild(tw);
   root.appendChild(table);
 };

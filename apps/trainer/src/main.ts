@@ -17,7 +17,7 @@ import { $ } from './ui/dom';
 
 const app = new App();
 
-const ACCENT: Record<string, string> = { browse: 'var(--deck-a)', practice: 'var(--deck-a)', piano: 'var(--deck-b)', mix: 'var(--mixer)', dashboard: 'var(--pads)', editor: 'var(--fx)', settings: 'var(--select)', history: 'var(--pads)', replay: 'var(--pads)', report: 'var(--pads)', calibrate: 'var(--select)', placement: 'var(--deck-a)', welcome: 'var(--deck-a)' };
+const ACCENT: Record<string, string> = { browse: 'var(--deck-a)', practice: 'var(--deck-a)', piano: 'var(--deck-b)', mix: 'var(--mixer)', dashboard: 'var(--pads)', editor: 'var(--fx)', settings: 'var(--fx)', history: 'var(--pads)', replay: 'var(--pads)', report: 'var(--pads)', calibrate: 'var(--fx)', placement: 'var(--deck-a)', welcome: 'var(--deck-a)' };
 
 async function boot(): Promise<void> {
   await app.boot();
@@ -40,7 +40,7 @@ async function boot(): Promise<void> {
   };
   // First run lands on onboarding; a direct link to any page (or test mode) skips it.
   const firstRun = !app.settings.onboarded && !location.hash.includes('test=1');
-  if (firstRun && (location.hash === '' || location.hash === '#/' || location.hash === '#')) location.hash = '#/welcome';
+  if (firstRun && (location.hash === '' || location.hash === '#/' || location.hash === '#')) history.replaceState(null, '', '#/welcome');
   router.start('browse');
   document.addEventListener('pointerdown', () => app.unlockAudio(), { once: true });
   (window as unknown as { __trainer: unknown }).__trainer = {

@@ -13,6 +13,8 @@ export interface HighwayTheme extends LanePalette, JudgementColors {
   euphoria: string;
   displayFont: string;
   monoFont: string;
+  /** Lane skin: 0.7 thin, 1 classic, 1.35 bold. Scales note bodies and pads. */
+  noteScale: number;
 }
 
 export const DEFAULT_HIGHWAY_THEME: HighwayTheme = {
@@ -31,6 +33,7 @@ export const DEFAULT_HIGHWAY_THEME: HighwayTheme = {
   euphoria: '#7cf0ff',
   displayFont: "'Big Shoulders Variable', Impact, 'Arial Narrow', sans-serif",
   monoFont: "'JetBrains Mono Variable', ui-monospace, Menlo, monospace",
+  noteScale: 1,
 };
 
 export interface ComboInfo {
@@ -159,7 +162,8 @@ export class HighwayRenderer {
         const x = f.kinds[ev.lane] === 'cc' ? p.valueX(i, ev.value ?? f.values[ev.lane] ?? 0) : p.laneCentre(i);
         const y = p.strikeY;
         const j = Effects.judgement(ev.tier, ev.errMs, T);
-        this.effects.ring(x, y, p.laneWidth(i) * 0.35, p.laneWidth(i) * 0.85, ev.tier === 'perfect' ? '#ffffff' : color, now);
+        const rw = Math.min(p.laneWidth(i), 110);
+        this.effects.ring(x, y, rw * 0.3, rw * 0.8, ev.tier === 'perfect' ? '#ffffff' : color, now);
         this.effects.spark(x, y, color, ev.tier === 'perfect' ? 10 : 6, now);
         this.effects.flash(i, color, now);
         this.effects.press(i, now);
@@ -414,7 +418,7 @@ export class HighwayRenderer {
             const y = p.y(t);
             const w = p.laneWidth(i, Math.max(0, t)) * 0.78;
             const x = p.laneCentre(i, Math.max(0, t)) - w / 2;
-            const hgt = Math.max(6, 14 * p.scale(Math.max(0, t)));
+            const hgt = Math.max(6, 14 * T.noteScale * p.scale(Math.max(0, t)));
             const near = t >= 0 && t < 0.06 && !s.hit && !s.miss;
             ctx.fillStyle = near ? mix(color, '#ffffff', 0.2) : color;
             ctx.beginPath();
@@ -436,7 +440,7 @@ export class HighwayRenderer {
             const x1 = p.valueX(i, s.v1, tt);
             const dir = Math.sign(x1 - x0) || 1;
             ctx.strokeStyle = color;
-            ctx.lineWidth = 7 * p.scale(tt);
+            ctx.lineWidth = 7 * T.noteScale * p.scale(tt);
             ctx.lineCap = 'round';
             ctx.beginPath();
             ctx.moveTo(x0, y);
@@ -480,7 +484,7 @@ export class HighwayRenderer {
               // ribbon: a translucent body as wide as a fader cap, a bright rail down the
               // middle, a dashed guide so the slope reads as motion
               const mid = Math.max(0, Math.min(1, (t0 + t1) / 2));
-              const bodyW = Math.min(isHold ? 30 : 24, Math.max(10, p.laneWidth(sp.lane, mid) * (isHold ? 0.16 : 0.12)));
+              const bodyW = T.noteScale * Math.min(isHold ? 30 : 24, Math.max(10, p.laneWidth(sp.lane, mid) * (isHold ? 0.16 : 0.12)));
               ctx.lineCap = 'round';
               ctx.lineJoin = 'round';
               ctx.beginPath();
@@ -593,7 +597,7 @@ export class HighwayRenderer {
       ctx.drawImage(this.effects.sprites.glow(g.color, 64), g.x - g.size / 2, g.y - g.size / 2, g.size, g.size);
     }
     ctx.restore();
-    this.effects.draw(ctx, now, (lane) => ({ x: p.laneLeft(lane, 0), w: p.laneWidth(lane, 0), top: p.horizonY, bottom: strike + 6 }), T.displayFont);
+    this.effects.draw(ctx, now, (lane) => ({ x0: p.laneLeft(lane, 0), x1: p.laneLeft(lane, 0) + p.laneWidth(lane, 0), y0: strike + 6, x2: p.laneLeft(lane, 0.22), x3: p.laneLeft(lane, 0.22) + p.laneWidth(lane, 0.22), y1: p.y(0.22) }), T.displayFont);
     // ---- strike line and pads ----
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
@@ -652,7 +656,7 @@ export class HighwayRenderer {
         const a = mapped ? 0.55 + 0.45 * pressed : 0.2;
         ctx.fillStyle = rgba(color, a);
         ctx.beginPath();
-        ctx.roundRect(cx - pw / 2, strike + 10, pw, 12, 4);
+        ctx.roundRect(cx - pw / 2, strike + 10, pw, 12 * Math.max(0.8, T.noteScale), 4);
         ctx.fill();
         ctx.strokeStyle = rgba('#000000', 0.5);
         ctx.lineWidth = 1;

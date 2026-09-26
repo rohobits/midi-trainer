@@ -77,7 +77,7 @@ export const mixView: View = (root, app, params) => {
     const loadRow = el('div', { class: 'row' });
     const genreSel = el('select');
     for (const g of genres) genreSel.appendChild(el('option', { value: g }, g));
-    genreSel.value = (app.settings.genre as Genre) in genres ? app.settings.genre : 'house';
+    genreSel.value = genres.includes(app.settings.genre as Genre) ? app.settings.genre : 'house';
     const seed = el('input', { type: 'number', value: String(name === 'A' ? 7 : 21), style: 'width:64px', 'aria-label': 'Seed' });
     const load = el('button', { id: `load${name}`, class: 'small' }, 'Load');
     load.onclick = () => void loadDeck(name, Number(seed.value) || 1, genreSel.value as Genre);
@@ -151,7 +151,7 @@ export const mixView: View = (root, app, params) => {
       ui.grid.appendChild(i);
     }
     for (const sec of d.spec.sections) ui.grid.appendChild(el('span', { class: 'sec', style: `left:${((100 * sec.start) / d.spec.bars).toFixed(1)}%` }, sec.kind));
-    const head = el('div', { class: 'head', style: 'left:0' });
+    const head = el('div', { class: 'playhead', style: 'left:0' });
     ui.grid.appendChild(head);
     ui.head = head;
   }
@@ -390,8 +390,9 @@ export const mixView: View = (root, app, params) => {
   startBtn.onclick = async () => {
     await ensureMixer();
     startBtn.textContent = 'Audio running';
-    if (!mixer!.a.loaded) await loadDeck('A', 7, (app.settings.genre as Genre) || 'house');
-    if (!mixer!.b.loaded) await loadDeck('B', 21, (app.settings.genre as Genre) || 'house');
+    const g: Genre = genres.includes(app.settings.genre as Genre) ? (app.settings.genre as Genre) : 'house';
+    if (!mixer!.a.loaded) await loadDeck('A', 7, g);
+    if (!mixer!.b.loaded) await loadDeck('B', 21, g);
     mixer!.a.setFader(1);
   };
   let focus = false;

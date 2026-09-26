@@ -189,7 +189,7 @@ export class KeyboardRenderer {
     ctx.globalAlpha = 0.5;
     ctx.drawImage(this.effects.sprites.band(T.ink, 64, 20), 0, top - 10, W, 20);
     ctx.restore();
-    this.effects.draw(ctx, now, () => ({ x: 0, w: W, top: 0, bottom: top }), T.displayFont);
+    this.effects.draw(ctx, now, () => ({ x0: 0, x1: W, y0: top, x2: 0, x3: W, y1: Math.max(0, top - 140) }), T.displayFont);
     // strike line
     if (f.waiting && !this.effects.reducedMotion) ctx.setLineDash([6, 6]);
     ctx.strokeStyle = rgba(T.ink, f.waiting ? 0.5 + 0.3 * Math.sin(now / 160) : 0.75);
